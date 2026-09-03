@@ -1,0 +1,5 @@
+
+> @family-kitchen/mini-app@0.1.0 typecheck H:\codex\林家餐厅小程序\family-kitchen\mini-app
+> echo "(mini-app uses JS; type-check via jsconfig in IDE)" && exit 0
+
+"(mini-app uses JS; type-check via jsconfig in IDE)" 

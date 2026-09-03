@@ -1,0 +1,3 @@
+Scope: 2 of 5 workspace projects
+Lockfile is up to date, resolution step is skipped
+Done in 2.3s

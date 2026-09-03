@@ -1,0 +1,17 @@
+
+> @family-kitchen/mini-app@0.1.0 dev:h5 H:\codex\林家餐厅小程序\family-kitchen\mini-app
+> uni "--host" "127.0.0.1"
+
+Please note that in running mode, due to log output, sourcemap, and uncompressed source code, the performance and package size are not as good as release mode.
+Vite is compiled on demand, and clicking on an uncompiled page at runtime will compile first and then load, resulting in a slower display, and there is no such problem after release.
+Compiler version: 5.07（vue3）
+Compiling...
+
+uni-app 有新版本发布，请执行 `npx @dcloudio/uvm@latest` 更新，更新日志详见：https://download1.dcloud.net.cn/hbuilderx/changelog/5.24.2026081301.html
+
+  vite v5.2.8 dev server running at:
+
+  ➜  Local:   http://127.0.0.1:5173/
+
+  ready in 4918ms.
+

@@ -1,0 +1,5 @@
+
+> @family-kitchen/mini-app@0.1.0 test H:\codex\林家餐厅小程序\family-kitchen\mini-app
+> echo "(no automated tests for mini-app MVP yet)" && exit 0
+
+"(no automated tests for mini-app MVP yet)" 

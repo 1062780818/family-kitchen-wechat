@@ -1,0 +1,5 @@
+多菜本地选择/再次点击移除：通过隔离函数验证；未调用后端。
+缺陷复现：recipe/edit 连续调用保存两次，会触发两次 create；saving 只改变样式，没有方法级防重。
+缺陷复现：order/detail 首次请求失败后 order 仍为空，无独立 error 状态；模板根节点 v-if=order。
+耦合复现：HTTPS 无显式端口 API 被推导为 wss://example.test:3001；不是同源 443。
+静态检查：mini-app/src 没有 requestSubscribeMessage 调用；不代表微信订阅通知已验证。

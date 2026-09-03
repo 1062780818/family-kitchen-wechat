@@ -1,0 +1,2541 @@
+{
+  "summary": {
+    "pages": 31,
+    "tabs": [
+      {
+        "pagePath": "pages/tabbar/home/home",
+        "text": "小厨房"
+      },
+      {
+        "pagePath": "pages/tabbar/menu/menu",
+        "text": "菜单"
+      },
+      {
+        "pagePath": "pages/tabbar/timeline/timeline",
+        "text": "时间线"
+      },
+      {
+        "pagePath": "pages/tabbar/profile/profile",
+        "text": "我的"
+      }
+    ],
+    "customComponents": 2,
+    "stores": 5,
+    "apiFiles": 16,
+    "wotTags": [
+      "wd-button",
+      "wd-cell",
+      "wd-cell-group",
+      "wd-checkbox",
+      "wd-icon",
+      "wd-input",
+      "wd-popup",
+      "wd-rate",
+      "wd-search",
+      "wd-switch",
+      "wd-tab",
+      "wd-tabbar",
+      "wd-tabbar-item",
+      "wd-tabs",
+      "wd-textarea"
+    ],
+    "missing": [],
+    "unregistered": []
+  },
+  "inventory": [
+    {
+      "file": "mini-app/src/api/achievement.js",
+      "imports": [
+        "./http.js"
+      ],
+      "tags": [],
+      "apiCalls": [],
+      "forms": [],
+      "evidence": []
+    },
+    {
+      "file": "mini-app/src/api/ai.js",
+      "imports": [
+        "./http.js"
+      ],
+      "tags": [],
+      "apiCalls": [],
+      "forms": [],
+      "evidence": []
+    },
+    {
+      "file": "mini-app/src/api/auth.js",
+      "imports": [
+        "./http.js"
+      ],
+      "tags": [],
+      "apiCalls": [],
+      "forms": [],
+      "evidence": []
+    },
+    {
+      "file": "mini-app/src/api/business-config.js",
+      "imports": [
+        "./http"
+      ],
+      "tags": [],
+      "apiCalls": [],
+      "forms": [],
+      "evidence": []
+    },
+    {
+      "file": "mini-app/src/api/family.js",
+      "imports": [
+        "./http.js"
+      ],
+      "tags": [],
+      "apiCalls": [],
+      "forms": [],
+      "evidence": []
+    },
+    {
+      "file": "mini-app/src/api/feedback.js",
+      "imports": [
+        "./http.js"
+      ],
+      "tags": [],
+      "apiCalls": [],
+      "forms": [],
+      "evidence": []
+    },
+    {
+      "file": "mini-app/src/api/http.js",
+      "imports": [],
+      "tags": [],
+      "apiCalls": [],
+      "forms": [],
+      "evidence": [
+        {
+          "line": 16,
+          "text": "uni.showToast({ title: String(message).slice(0, 30), icon: 'none' });"
+        },
+        {
+          "line": 34,
+          "text": "// 清本地凭证，但不再强制 reLaunch；由调用方/页面决定是否引导登录"
+        }
+      ]
+    },
+    {
+      "file": "mini-app/src/api/love-point.js",
+      "imports": [
+        "./http.js"
+      ],
+      "tags": [],
+      "apiCalls": [],
+      "forms": [],
+      "evidence": []
+    },
+    {
+      "file": "mini-app/src/api/message.js",
+      "imports": [
+        "./http.js"
+      ],
+      "tags": [],
+      "apiCalls": [],
+      "forms": [],
+      "evidence": []
+    },
+    {
+      "file": "mini-app/src/api/notification.js",
+      "imports": [
+        "./http.js"
+      ],
+      "tags": [],
+      "apiCalls": [],
+      "forms": [],
+      "evidence": []
+    },
+    {
+      "file": "mini-app/src/api/order.js",
+      "imports": [
+        "./http.js"
+      ],
+      "tags": [],
+      "apiCalls": [],
+      "forms": [],
+      "evidence": []
+    },
+    {
+      "file": "mini-app/src/api/recipe.js",
+      "imports": [
+        "./http.js"
+      ],
+      "tags": [],
+      "apiCalls": [],
+      "forms": [],
+      "evidence": []
+    },
+    {
+      "file": "mini-app/src/api/storage.js",
+      "imports": [
+        "./http.js"
+      ],
+      "tags": [],
+      "apiCalls": [],
+      "forms": [],
+      "evidence": [
+        {
+          "line": 21,
+          "text": "uni.showToast({ title: data?.message || '上传失败', icon: 'none' });"
+        },
+        {
+          "line": 25,
+          "text": "uni.showToast({ title: '上传响应解析失败', icon: 'none' });"
+        },
+        {
+          "line": 30,
+          "text": "uni.showToast({ title: '网络错误', icon: 'none' });"
+        }
+      ]
+    },
+    {
+      "file": "mini-app/src/api/timeline.js",
+      "imports": [
+        "./http.js"
+      ],
+      "tags": [],
+      "apiCalls": [],
+      "forms": [],
+      "evidence": []
+    },
+    {
+      "file": "mini-app/src/api/user.js",
+      "imports": [
+        "./http.js"
+      ],
+      "tags": [],
+      "apiCalls": [],
+      "forms": [],
+      "evidence": []
+    },
+    {
+      "file": "mini-app/src/api/ws.js",
+      "imports": [],
+      "tags": [
+        "string",
+        "typeof"
+      ],
+      "apiCalls": [],
+      "forms": [],
+      "evidence": []
+    },
+    {
+      "file": "mini-app/src/App.vue",
+      "imports": [
+        "@/api/ws.js",
+        "@/stores/business-config",
+        "@/stores/chat-unread.js",
+        "@/stores/family.js",
+        "@/utils/chat-active.js"
+      ],
+      "tags": [
+        "script"
+      ],
+      "apiCalls": [],
+      "forms": [],
+      "evidence": [
+        {
+          "line": 23,
+          "text": "ws.on('family:member_left', (data) => {"
+        },
+        {
+          "line": 25,
+          "text": "uni.showToast({ title: `${name} 已退出小厨房`, icon: 'none', duration: 3000 });"
+        },
+        {
+          "line": 32,
+          "text": "ws.on('order:message', (data) => {"
+        },
+        {
+          "line": 45,
+          "text": "uni.showToast({"
+        },
+        {
+          "line": 56,
+          "text": "uni.showModal({"
+        }
+      ]
+    },
+    {
+      "file": "mini-app/src/components/custom-tabbar.vue",
+      "imports": [],
+      "tags": [
+        "script",
+        "template",
+        "wd-tabbar",
+        "wd-tabbar-item"
+      ],
+      "apiCalls": [],
+      "forms": [
+        "active"
+      ],
+      "evidence": [
+        {
+          "line": 44,
+          "text": "uni.switchTab({ url: urlMap[value] });"
+        }
+      ]
+    },
+    {
+      "file": "mini-app/src/components/guest-placeholder.vue",
+      "imports": [],
+      "tags": [
+        "script",
+        "template",
+        "text",
+        "view",
+        "wd-button",
+        "wd-icon"
+      ],
+      "apiCalls": [],
+      "forms": [],
+      "evidence": [
+        {
+          "line": 26,
+          "text": "uni.navigateTo({ url: '/pages/auth/login' });"
+        }
+      ]
+    },
+    {
+      "file": "mini-app/src/composables/use-auth-guard.js",
+      "imports": [
+        "@/stores/auth.js"
+      ],
+      "tags": [],
+      "apiCalls": [],
+      "forms": [],
+      "evidence": [
+        {
+          "line": 18,
+          "text": "uni.showModal({"
+        },
+        {
+          "line": 28,
+          "text": "uni.navigateTo({ url: '/pages/auth/login' });"
+        }
+      ]
+    },
+    {
+      "file": "mini-app/src/composables/use-family-guard.js",
+      "imports": [
+        "./use-auth-guard.js",
+        "@/stores/family.js"
+      ],
+      "tags": [],
+      "apiCalls": [],
+      "forms": [],
+      "evidence": [
+        {
+          "line": 26,
+          "text": "uni.showModal({"
+        },
+        {
+          "line": 36,
+          "text": "uni.navigateTo({ url: '/pages/family/setup' });"
+        }
+      ]
+    },
+    {
+      "file": "mini-app/src/main.js",
+      "imports": [
+        "./App.vue",
+        "pinia",
+        "vue"
+      ],
+      "tags": [],
+      "apiCalls": [],
+      "forms": [],
+      "evidence": []
+    },
+    {
+      "file": "mini-app/src/pages/ai/nutrition.vue",
+      "imports": [
+        "@/api/ai.js",
+        "@/api/recipe.js",
+        "vue"
+      ],
+      "tags": [
+        "script",
+        "template",
+        "text",
+        "view",
+        "wd-button"
+      ],
+      "apiCalls": [
+        "aiApi.nutritionAnalyze",
+        "recipeApi.list"
+      ],
+      "forms": [],
+      "evidence": [
+        {
+          "line": 18,
+          "text": "uni.showToast({ title: '加载菜谱失败', icon: 'none' });"
+        },
+        {
+          "line": 32,
+          "text": "uni.showToast({ title: '请至少选择一个菜谱', icon: 'none' });"
+        },
+        {
+          "line": 41,
+          "text": "uni.showToast({ title: e.message || '分析失败', icon: 'none' });"
+        },
+        {
+          "line": 64,
+          "text": "<text v-if=\"selectedIds.includes(r.id)\" class=\"check-mark\">&#10003;</text>"
+        },
+        {
+          "line": 70,
+          "text": "<wd-button type=\"primary\" block :loading=\"analyzing\" :disabled=\"selectedIds.length === 0\" @click=\"analyze\" style=\"margin-top: 20rpx;\">"
+        },
+        {
+          "line": 75,
+          "text": "<view v-if=\"analysis\" class=\"result\">"
+        },
+        {
+          "line": 81,
+          "text": "<view v-if=\"analysis.recipes\" class=\"nutrition-cards\">"
+        },
+        {
+          "line": 105,
+          "text": "<view v-if=\"analysis.totalNutrition\" class=\"total\">"
+        },
+        {
+          "line": 115,
+          "text": "<view v-if=\"analysis.suggestions?.length\" class=\"suggestions\">"
+        }
+      ]
+    },
+    {
+      "file": "mini-app/src/pages/ai/recipe-gen.vue",
+      "imports": [
+        "@/api/ai.js",
+        "vue"
+      ],
+      "tags": [
+        "input",
+        "picker",
+        "script",
+        "template",
+        "text",
+        "view",
+        "wd-button"
+      ],
+      "apiCalls": [
+        "aiApi.generateRecipe",
+        "aiApi.saveRecipe"
+      ],
+      "forms": [
+        "inputText",
+        "notes"
+      ],
+      "evidence": [
+        {
+          "line": 46,
+          "text": "uni.showToast({ title: '请至少输入一个食材', icon: 'none' });"
+        },
+        {
+          "line": 61,
+          "text": "uni.showToast({ title: e.message || '生成失败', icon: 'none' });"
+        },
+        {
+          "line": 81,
+          "text": "uni.showToast({ title: '已保存到菜谱', icon: 'success' });"
+        },
+        {
+          "line": 83,
+          "text": "uni.showToast({ title: e.message || '保存失败', icon: 'none' });"
+        },
+        {
+          "line": 131,
+          "text": "<wd-button type=\"primary\" block :loading=\"loading\" :disabled=\"ingredients.length === 0\" @click=\"generate\">"
+        },
+        {
+          "line": 136,
+          "text": "<view v-if=\"recipe\" class=\"result\">"
+        },
+        {
+          "line": 141,
+          "text": "<text v-if=\"recipe.cookingTimeMinutes\">{{ recipe.cookingTimeMinutes }}分钟</text>"
+        },
+        {
+          "line": 145,
+          "text": "<view v-if=\"recipe.ingredients?.length\" class=\"sub-section\">"
+        },
+        {
+          "line": 150,
+          "text": "<view v-if=\"recipe.steps?.length\" class=\"sub-section\">"
+        },
+        {
+          "line": 158,
+          "text": "<view v-if=\"recipe.tips?.length\" class=\"sub-section\">"
+        },
+        {
+          "line": 163,
+          "text": "<wd-button type=\"primary\" block :loading=\"saving\" @click=\"saveRecipe\" class=\"save-btn\">"
+        }
+      ]
+    },
+    {
+      "file": "mini-app/src/pages/ai/recommend.vue",
+      "imports": [
+        "@/api/ai.js",
+        "vue"
+      ],
+      "tags": [
+        "input",
+        "picker",
+        "script",
+        "template",
+        "text",
+        "view",
+        "wd-button"
+      ],
+      "apiCalls": [
+        "aiApi.recommend",
+        "aiApi.saveRecipe"
+      ],
+      "forms": [
+        "preference"
+      ],
+      "evidence": [
+        {
+          "line": 28,
+          "text": "uni.showToast({ title: e.message || '推荐失败', icon: 'none' });"
+        },
+        {
+          "line": 36,
+          "text": "uni.navigateTo({ url: `/pages/recipe/detail?id=${id}` });"
+        },
+        {
+          "line": 47,
+          "text": "uni.showToast({ title: '已保存', icon: 'success' });"
+        },
+        {
+          "line": 49,
+          "text": "uni.showToast({ title: '保存失败', icon: 'none' });"
+        },
+        {
+          "line": 64,
+          "text": "<wd-button type=\"primary\" block :loading=\"loading\" @click=\"recommend\" style=\"margin-top: 20rpx;\">"
+        },
+        {
+          "line": 69,
+          "text": "<view v-if=\"recommendations.length > 0\" class=\"cards\">"
+        },
+        {
+          "line": 73,
+          "text": "<text v-if=\"item.isExistingRecipe\" class=\"card-badge\">已有菜谱</text>"
+        },
+        {
+          "line": 74,
+          "text": "<text v-else class=\"card-badge new\">新菜谱</text>"
+        },
+        {
+          "line": 80,
+          "text": "<wd-button v-if=\"item.recipeId\" size=\"small\" type=\"primary\" plain @click=\"goToRecipe(item.recipeId)\">查看菜谱</wd-button>"
+        },
+        {
+          "line": 81,
+          "text": "<wd-button v-if=\"!item.isExistingRecipe\" size=\"small\" type=\"primary\" @click=\"saveAsRecipe(item)\">保存</wd-button>"
+        },
+        {
+          "line": 87,
+          "text": "<view v-if=\"!loading && recommendations.length === 0\" class=\"empty\">"
+        }
+      ]
+    },
+    {
+      "file": "mini-app/src/pages/ai/weekly-plan.vue",
+      "imports": [
+        "@/api/ai.js",
+        "vue"
+      ],
+      "tags": [
+        "input",
+        "script",
+        "template",
+        "text",
+        "view",
+        "wd-button"
+      ],
+      "apiCalls": [
+        "aiApi.weeklyPlan"
+      ],
+      "forms": [
+        "preference"
+      ],
+      "evidence": [
+        {
+          "line": 20,
+          "text": "uni.showToast({ title: e.message || '生成失败', icon: 'none' });"
+        },
+        {
+          "line": 31,
+          "text": "uni.navigateTo({ url: `/pages/recipe/detail?id=${id}` });"
+        },
+        {
+          "line": 48,
+          "text": "<wd-button type=\"primary\" block :loading=\"loading\" @click=\"generate\" style=\"margin-top: 20rpx;\">"
+        },
+        {
+          "line": 53,
+          "text": "<view v-if=\"plan\" class=\"plan\">"
+        },
+        {
+          "line": 54,
+          "text": "<view v-if=\"plan.balanceScore\" class=\"score-bar\">"
+        },
+        {
+          "line": 59,
+          "text": "<view v-if=\"plan.days\" class=\"days\">"
+        },
+        {
+          "line": 72,
+          "text": "<view v-if=\"plan.totalWeekCalories\" class=\"total-bar\">"
+        },
+        {
+          "line": 76,
+          "text": "<view v-if=\"plan.suggestions?.length\" class=\"suggestions\">"
+        },
+        {
+          "line": 82,
+          "text": "<view v-if=\"!loading && !plan\" class=\"empty\">"
+        }
+      ]
+    },
+    {
+      "file": "mini-app/src/pages/auth/agreement-privacy.vue",
+      "imports": [],
+      "tags": [
+        "template",
+        "text",
+        "view"
+      ],
+      "apiCalls": [],
+      "forms": [],
+      "evidence": []
+    },
+    {
+      "file": "mini-app/src/pages/auth/agreement-user.vue",
+      "imports": [],
+      "tags": [
+        "template",
+        "text",
+        "view"
+      ],
+      "apiCalls": [],
+      "forms": [],
+      "evidence": []
+    },
+    {
+      "file": "mini-app/src/pages/auth/login.vue",
+      "imports": [
+        "@/api/user.js",
+        "@/stores/auth.js",
+        "@/stores/business-config.js",
+        "@/stores/family.js"
+      ],
+      "tags": [
+        "script",
+        "template",
+        "text",
+        "view",
+        "wd-button",
+        "wd-checkbox",
+        "wd-icon",
+        "wd-input"
+      ],
+      "apiCalls": [
+        "userApi.updateMe"
+      ],
+      "forms": [
+        "agreed",
+        "password",
+        "phone"
+      ],
+      "evidence": [
+        {
+          "line": 24,
+          "text": ":loading=\"loading\""
+        },
+        {
+          "line": 25,
+          "text": ":disabled=\"loading\""
+        },
+        {
+          "line": 57,
+          "text": ":loading=\"loading\""
+        },
+        {
+          "line": 58,
+          "text": ":disabled=\"loading\""
+        },
+        {
+          "line": 98,
+          "text": "uni.redirectTo({ url: '/pages/onboarding/index' });"
+        },
+        {
+          "line": 107,
+          "text": "uni.switchTab({ url: '/pages/tabbar/home/home' });"
+        },
+        {
+          "line": 112,
+          "text": "uni.navigateTo({ url: `/pages/auth/${path}` });"
+        },
+        {
+          "line": 118,
+          "text": "uni.showModal({"
+        },
+        {
+          "line": 142,
+          "text": "uni.showToast({"
+        },
+        {
+          "line": 150,
+          "text": "uni.switchTab({ url: '/pages/tabbar/home/home' });"
+        },
+        {
+          "line": 170,
+          "text": "uni.showToast({ title: '请输入正确的手机号', icon: 'none' });"
+        },
+        {
+          "line": 174,
+          "text": "uni.showToast({ title: '密码至少 6 位', icon: 'none' });"
+        }
+      ]
+    },
+    {
+      "file": "mini-app/src/pages/chat/list.vue",
+      "imports": [
+        "@/api/message.js",
+        "@/api/order.js",
+        "@/api/ws.js",
+        "@/stores/auth.js",
+        "@/stores/business-config.js",
+        "@/stores/chat-unread.js",
+        "@/utils/labels.js"
+      ],
+      "tags": [
+        "image",
+        "script",
+        "template",
+        "text",
+        "view",
+        "wd-icon"
+      ],
+      "apiCalls": [
+        "messageApi.list",
+        "orderApi.list"
+      ],
+      "forms": [],
+      "evidence": [
+        {
+          "line": 4,
+          "text": "<view v-if=\"!loading && conversations.length === 0\" class=\"empty\">"
+        },
+        {
+          "line": 10,
+          "text": "<view v-else class=\"list\">"
+        },
+        {
+          "line": 25,
+          "text": "<view v-if=\"item.unread > 0\" class=\"conv-badge\">"
+        },
+        {
+          "line": 63,
+          "text": "ws.on('order:message', this._wsHandler);"
+        },
+        {
+          "line": 152,
+          "text": "uni.navigateTo({ url: `/pages/order/chat?id=${orderId}` });"
+        }
+      ]
+    },
+    {
+      "file": "mini-app/src/pages/family/settings.vue",
+      "imports": [
+        "@/api/family.js",
+        "@/api/user.js",
+        "@/stores/business-config.js",
+        "@/stores/family.js",
+        "@/utils/labels.js"
+      ],
+      "tags": [
+        "image",
+        "script",
+        "template",
+        "text",
+        "view",
+        "wd-button",
+        "wd-cell",
+        "wd-icon",
+        "wd-input",
+        "wd-popup",
+        "wd-switch"
+      ],
+      "apiCalls": [
+        "familyApi.refreshInviteCode",
+        "userApi.getNotificationPrefs",
+        "userApi.updateNotificationPrefs"
+      ],
+      "forms": [
+        "newName",
+        "notifyPrefs.achievementUnlocked",
+        "notifyPrefs.orderAccepted",
+        "notifyPrefs.orderRushed",
+        "notifyPrefs.orderServed",
+        "renameDialog"
+      ],
+      "evidence": [
+        {
+          "line": 3,
+          "text": "<view v-if=\"!family\" class=\"empty\">"
+        },
+        {
+          "line": 8,
+          "text": "<view v-else class=\"content\">"
+        },
+        {
+          "line": 59,
+          "text": "v-if=\"family.members.length < 2\""
+        },
+        {
+          "line": 70,
+          "text": "<view v-if=\"inviteResult\" class=\"card\">"
+        },
+        {
+          "line": 221,
+          "text": "uni.navigateTo({ url: '/pages/family/setup' });"
+        },
+        {
+          "line": 230,
+          "text": "uni.showToast({ title: '已更新', icon: 'success' });"
+        },
+        {
+          "line": 248,
+          "text": "success: () => uni.showToast({ title: '已复制', icon: 'success' }),"
+        },
+        {
+          "line": 257,
+          "text": "success: () => uni.showToast({ title: '邀请语已复制', icon: 'success' }),"
+        },
+        {
+          "line": 264,
+          "text": "uni.showModal({"
+        },
+        {
+          "line": 275,
+          "text": "uni.showToast({ title: '已退出', icon: 'success' });"
+        },
+        {
+          "line": 276,
+          "text": "setTimeout(() => uni.reLaunch({ url: '/pages/family/setup' }), 600);"
+        }
+      ]
+    },
+    {
+      "file": "mini-app/src/pages/family/setup.vue",
+      "imports": [
+        "@/api/family.js",
+        "@/stores/family.js"
+      ],
+      "tags": [
+        "script",
+        "template",
+        "text",
+        "view",
+        "wd-button",
+        "wd-icon",
+        "wd-input"
+      ],
+      "apiCalls": [
+        "familyApi.refreshInviteCode"
+      ],
+      "forms": [
+        "familyName",
+        "inviteCode"
+      ],
+      "evidence": [
+        {
+          "line": 5,
+          "text": "<view v-if=\"mode !== 'choose'\" class=\"nav-back\" @click=\"mode = 'choose'\">"
+        },
+        {
+          "line": 12,
+          "text": "<view v-if=\"mode === 'choose'\" class=\"step step--choose\">"
+        },
+        {
+          "line": 49,
+          "text": "<view v-else-if=\"mode === 'create'\" class=\"step step--form\">"
+        },
+        {
+          "line": 67,
+          "text": ":loading=\"loading\""
+        },
+        {
+          "line": 68,
+          "text": ":disabled=\"!familyName.trim() || loading\""
+        },
+        {
+          "line": 77,
+          "text": "<view v-else-if=\"mode === 'join'\" class=\"step step--form\">"
+        },
+        {
+          "line": 101,
+          "text": ":loading=\"loading\""
+        },
+        {
+          "line": 102,
+          "text": ":disabled=\"!inviteCode.trim() || loading\""
+        },
+        {
+          "line": 147,
+          "text": "showToast: false,"
+        },
+        {
+          "line": 149,
+          "text": "uni.showModal({"
+        },
+        {
+          "line": 155,
+          "text": "uni.switchTab({ url: '/pages/tabbar/home/home' });"
+        },
+        {
+          "line": 172,
+          "text": "uni.showToast({ title: '加入成功', icon: 'success' });"
+        },
+        {
+          "line": 173,
+          "text": "setTimeout(() => uni.switchTab({ url: '/pages/tabbar/home/home' }), 600);"
+        }
+      ]
+    },
+    {
+      "file": "mini-app/src/pages/notification/list.vue",
+      "imports": [
+        "@/api/notification.js",
+        "@/utils/labels.js"
+      ],
+      "tags": [
+        "script",
+        "template",
+        "text",
+        "view",
+        "wd-icon"
+      ],
+      "apiCalls": [
+        "notificationApi.list",
+        "notificationApi.markAllRead",
+        "notificationApi.markRead"
+      ],
+      "forms": [],
+      "evidence": [
+        {
+          "line": 3,
+          "text": "<view v-if=\"!notifications.length && !loading\" class=\"empty\">"
+        },
+        {
+          "line": 11,
+          "text": "<view v-else class=\"list\">"
+        },
+        {
+          "line": 29,
+          "text": "<view v-if=\"!item.readAt\" class=\"item-badge\" />"
+        },
+        {
+          "line": 32,
+          "text": "<view v-if=\"hasMore\" class=\"load-more\" @click=\"loadMore\">加载更多</view>"
+        },
+        {
+          "line": 33,
+          "text": "<view v-else-if=\"notifications.length\" class=\"load-more muted\">没有更多了</view>"
+        },
+        {
+          "line": 37,
+          "text": "<view v-if=\"hasUnread\" class=\"footer\">"
+        },
+        {
+          "line": 125,
+          "text": "uni.navigateTo({ url: `/pages/order/detail?id=${data.orderId}` });"
+        },
+        {
+          "line": 134,
+          "text": "uni.showToast({ title: '已全部已读', icon: 'success' });"
+        }
+      ]
+    },
+    {
+      "file": "mini-app/src/pages/onboarding/index.vue",
+      "imports": [],
+      "tags": [
+        "script",
+        "swiper",
+        "swiper-item",
+        "template",
+        "text",
+        "view"
+      ],
+      "apiCalls": [],
+      "forms": [],
+      "evidence": [
+        {
+          "line": 37,
+          "text": "<text v-if=\"current < pages.length - 1\" class=\"skip\" @click=\"finish\">跳过</text>"
+        },
+        {
+          "line": 38,
+          "text": "<view v-else class=\"start-btn\" @click=\"finish\">"
+        },
+        {
+          "line": 71,
+          "text": "uni.redirectTo({ url: '/pages/auth/login?skipOnboarding=1' });"
+        }
+      ]
+    },
+    {
+      "file": "mini-app/src/pages/order/chat.vue",
+      "imports": [
+        "@/api/ai.js",
+        "@/api/message.js",
+        "@/api/order.js",
+        "@/api/ws.js",
+        "@/stores/auth.js",
+        "@/stores/business-config.js",
+        "@/stores/chat-unread.js",
+        "@/utils/chat-active.js",
+        "@/utils/labels.js"
+      ],
+      "tags": [
+        "image",
+        "input",
+        "script",
+        "scroll-view",
+        "span",
+        "template",
+        "text",
+        "view",
+        "wd-icon"
+      ],
+      "apiCalls": [
+        "aiApi.cookingChat",
+        "messageApi.list",
+        "messageApi.markRead",
+        "messageApi.rush",
+        "messageApi.sendEmoji",
+        "messageApi.sendText",
+        "orderApi.get"
+      ],
+      "forms": [
+        "msgText"
+      ],
+      "evidence": [
+        {
+          "line": 47,
+          "text": "<view v-if=\"msg.type === 'system' || !msg.senderUserId\" class=\"msg-sys\">"
+        },
+        {
+          "line": 54,
+          "text": "<view v-else-if=\"msg.type === 'ai_assistant'\" class=\"msg-row--ai\">"
+        },
+        {
+          "line": 64,
+          "text": "<template v-else>"
+        },
+        {
+          "line": 66,
+          "text": "v-if=\"msg.senderUserId !== myUserId\""
+        },
+        {
+          "line": 76,
+          "text": "<view v-if=\"msg.type === 'tip'\" class=\"msg-card msg-card--tip\">"
+        },
+        {
+          "line": 82,
+          "text": "<text v-if=\"msg.content?.title\" class=\"msg-card-sub\">{{"
+        },
+        {
+          "line": 88,
+          "text": "<view v-else-if=\"msg.type === 'rush'\" class=\"msg-card msg-card--rush\">"
+        },
+        {
+          "line": 99,
+          "text": "v-else"
+        },
+        {
+          "line": 104,
+          "text": "<text v-if=\"msg.type === 'text'\" class=\"msg-text\">{{ msg.content?.text }}</text>"
+        },
+        {
+          "line": 106,
+          "text": "<text v-else-if=\"msg.type === 'emoji'\" class=\"msg-emoji\">{{"
+        },
+        {
+          "line": 111,
+          "text": "v-else-if=\"msg.type === 'image'\""
+        },
+        {
+          "line": 118,
+          "text": "<text v-else class=\"msg-text\">{{ JSON.stringify(msg.content) }}</text>"
+        },
+        {
+          "line": 123,
+          "text": "v-if=\"msg.senderUserId === myUserId && msg.type !== 'system'\""
+        },
+        {
+          "line": 134,
+          "text": "v-if=\"msg.senderUserId === myUserId\""
+        },
+        {
+          "line": 143,
+          "text": "<view v-if=\"aiStreaming && aiStreamContent\" class=\"msg-row--ai\">"
+        },
+        {
+          "line": 158,
+          "text": "<view v-if=\"newMsgCount > 0\" class=\"new-msg-hint\" @click=\"onNewMsgTap\">"
+        },
+        {
+          "line": 164,
+          "text": "<view v-if=\"!isTerminal\" class=\"input-area\">"
+        },
+        {
+          "line": 165,
+          "text": "<view v-if=\"emojiOpen\" class=\"emoji-panel\">"
+        },
+        {
+          "line": 176,
+          "text": "<view v-if=\"canRush\" class=\"bar-icon\" @click=\"sendRush\">"
+        },
+        {
+          "line": 202,
+          "text": "<view v-else class=\"terminal-hint\">"
+        },
+        {
+          "line": 320,
+          "text": "ws.on('order:message', this._wsHandler);"
+        },
+        {
+          "line": 329,
+          "text": "ws.on('order:messagesRead', this._wsReadHandler);"
+        },
+        {
+          "line": 356,
+          "text": "ws.on('ai:stream', this._wsAiHandler);"
+        },
+        {
+          "line": 488,
+          "text": "uni.showToast({ title: e.message || 'AI 助手暂时不可用', icon: 'none' });"
+        },
+        {
+          "line": 496,
+          "text": "uni.navigateTo({ url: `/pages/order/detail?id=${this.orderId}` });"
+        }
+      ]
+    },
+    {
+      "file": "mini-app/src/pages/order/create.vue",
+      "imports": [
+        "@/api/order.js",
+        "@/api/recipe.js",
+        "@/composables/use-family-guard.js",
+        "@/stores/auth.js",
+        "@/stores/business-config.js",
+        "@/stores/family.js"
+      ],
+      "tags": [
+        "image",
+        "picker",
+        "script",
+        "scroll-view",
+        "template",
+        "text",
+        "view",
+        "wd-button",
+        "wd-icon",
+        "wd-input",
+        "wd-rate",
+        "wd-textarea"
+      ],
+      "apiCalls": [
+        "orderApi.create",
+        "recipeApi.list"
+      ],
+      "forms": [
+        "form.customerNotes",
+        "item.customNotes"
+      ],
+      "evidence": [
+        {
+          "line": 14,
+          "text": "<view v-if=\"candidateChefs.length\" class=\"chef-row\">"
+        },
+        {
+          "line": 28,
+          "text": "<wd-icon v-if=\"form.chefUserId === m.userId\" name=\"check\" size=\"20rpx\" color=\"#fff\" />"
+        },
+        {
+          "line": 34,
+          "text": "<view v-else class=\"empty-hint\">"
+        },
+        {
+          "line": 54,
+          "text": "<view v-if=\"!form.items.length\" class=\"empty-hint\">"
+        },
+        {
+          "line": 58,
+          "text": "<view v-else class=\"items\">"
+        },
+        {
+          "line": 98,
+          "text": "<text v-if=\"expectedTime\" class=\"clear-link\" @click=\"expectedTime = ''\">清除</text>"
+        },
+        {
+          "line": 128,
+          "text": ":loading=\"saving\""
+        },
+        {
+          "line": 129,
+          "text": ":disabled=\"!canSubmit || saving\""
+        },
+        {
+          "line": 138,
+          "text": "<view v-if=\"pickerOpen\" class=\"overlay\" @click=\"pickerOpen = false\">"
+        },
+        {
+          "line": 177,
+          "text": "<view v-if=\"!recipeOptions.length\" class=\"empty-hint center\">"
+        },
+        {
+          "line": 304,
+          "text": "uni.showToast({ title: '已下单', icon: 'success' });"
+        },
+        {
+          "line": 306,
+          "text": "uni.redirectTo({ url: `/pages/order/detail?id=${order.id}` });"
+        }
+      ]
+    },
+    {
+      "file": "mini-app/src/pages/order/detail.vue",
+      "imports": [
+        "@/api/order.js",
+        "@/api/storage.js",
+        "@/stores/active-order.js",
+        "@/stores/auth.js",
+        "@/utils/labels.js"
+      ],
+      "tags": [
+        "image",
+        "script",
+        "template",
+        "text",
+        "textarea",
+        "view",
+        "wd-icon",
+        "wd-rate"
+      ],
+      "apiCalls": [
+        "orderApi.accept",
+        "orderApi.cancel",
+        "orderApi.get",
+        "orderApi.rate",
+        "orderApi.reject",
+        "orderApi.serve",
+        "orderApi.setCooking",
+        "orderApi.setPrepping"
+      ],
+      "forms": [
+        "rateForm.comment"
+      ],
+      "evidence": [
+        {
+          "line": 2,
+          "text": "<view v-if=\"order\" class=\"page\">"
+        },
+        {
+          "line": 13,
+          "text": "<view v-if=\"order.expectedServeAt\" class=\"status-time\">"
+        },
+        {
+          "line": 31,
+          "text": "<text v-if=\"item.customNotes\" class=\"item-notes\">{{ item.customNotes }}</text>"
+        },
+        {
+          "line": 33,
+          "text": "<view v-if=\"order.customerNotes\" class=\"overall-notes\">"
+        },
+        {
+          "line": 41,
+          "text": "v-if=\"order.servedImageUrls && order.servedImageUrls.length\""
+        },
+        {
+          "line": 63,
+          "text": "<view v-if=\"order.rating\" class=\"card fade-up fade-up--1\">"
+        },
+        {
+          "line": 69,
+          "text": "<text v-if=\"order.rating.isAutoGenerated\" class=\"auto-tag\">自动</text>"
+        },
+        {
+          "line": 81,
+          "text": "<text v-if=\"order.rating.comment\" class=\"comment\">{{ order.rating.comment }}</text>"
+        },
+        {
+          "line": 98,
+          "text": "<view v-if=\"myRole === 'chef' && hasChefActions\" class=\"actions-section fade-up fade-up--3\">"
+        },
+        {
+          "line": 99,
+          "text": "<view v-if=\"canAccept\" class=\"action-btn action-btn--primary\" @click=\"handleAccept\">"
+        },
+        {
+          "line": 103,
+          "text": "<view v-if=\"canReject\" class=\"action-btn action-btn--danger\" @click=\"handleReject\">"
+        },
+        {
+          "line": 106,
+          "text": "<view v-if=\"canPrepping\" class=\"action-btn action-btn--primary\" @click=\"handlePrepping\">"
+        },
+        {
+          "line": 110,
+          "text": "<view v-if=\"canCooking\" class=\"action-btn action-btn--primary\" @click=\"handleCooking\">"
+        },
+        {
+          "line": 114,
+          "text": "<view v-if=\"canServe\" class=\"action-btn action-btn--primary\" @click=\"handleServe\">"
+        },
+        {
+          "line": 120,
+          "text": "<view v-if=\"myRole === 'customer' && canRate\" class=\"actions-section fade-up fade-up--3\">"
+        },
+        {
+          "line": 127,
+          "text": "<view v-if=\"isTerminal\" class=\"actions-section fade-up fade-up--3\">"
+        },
+        {
+          "line": 134,
+          "text": "<view v-if=\"canCancel\" class=\"actions-section fade-up fade-up--3\">"
+        },
+        {
+          "line": 144,
+          "text": "<view v-if=\"rateDialog\" class=\"overlay\" @click=\"rateDialog = false\">"
+        },
+        {
+          "line": 256,
+          "text": "uni.navigateTo({ url: `/pages/order/chat?id=${this.id}` });"
+        },
+        {
+          "line": 278,
+          "text": "uni.showModal({"
+        },
+        {
+          "line": 308,
+          "text": "uni.showToast({ title: '选图失败，请检查权限', icon: 'none' });"
+        },
+        {
+          "line": 323,
+          "text": "uni.showModal({"
+        },
+        {
+          "line": 344,
+          "text": "uni.navigateTo({"
+        },
+        {
+          "line": 356,
+          "text": "uni.showToast({ title: '已评价', icon: 'success' });"
+        }
+      ]
+    },
+    {
+      "file": "mini-app/src/pages/order/history.vue",
+      "imports": [
+        "@/api/order.js",
+        "@/utils/labels.js"
+      ],
+      "tags": [
+        "script",
+        "scroll-view",
+        "template",
+        "text",
+        "view",
+        "wd-icon"
+      ],
+      "apiCalls": [
+        "orderApi.list"
+      ],
+      "forms": [],
+      "evidence": [
+        {
+          "line": 19,
+          "text": "<view v-if=\"!items.length && !loading\" class=\"empty\">"
+        },
+        {
+          "line": 27,
+          "text": "<view v-else class=\"list\">"
+        },
+        {
+          "line": 67,
+          "text": "<view v-if=\"o.totalLovePoints\" class=\"lp\">"
+        },
+        {
+          "line": 78,
+          "text": "<view v-if=\"hasMore\" class=\"load-more\" @click=\"loadMore\">"
+        },
+        {
+          "line": 81,
+          "text": "<view v-else-if=\"items.length\" class=\"load-end\">"
+        },
+        {
+          "line": 156,
+          "text": "uni.navigateTo({ url: `/pages/order/detail?id=${id}` });"
+        }
+      ]
+    },
+    {
+      "file": "mini-app/src/pages/profile/about.vue",
+      "imports": [],
+      "tags": [
+        "script",
+        "template",
+        "text",
+        "view",
+        "wd-cell",
+        "wd-cell-group",
+        "wd-icon"
+      ],
+      "apiCalls": [],
+      "forms": [],
+      "evidence": [
+        {
+          "line": 35,
+          "text": "uni.navigateTo({ url: '/pages/auth/agreement-user' });"
+        },
+        {
+          "line": 38,
+          "text": "uni.navigateTo({ url: '/pages/auth/agreement-privacy' });"
+        }
+      ]
+    },
+    {
+      "file": "mini-app/src/pages/profile/achievements.vue",
+      "imports": [
+        "@/api/achievement.js",
+        "@/stores/auth.js",
+        "@/stores/family.js",
+        "@/utils/labels.js",
+        "@/utils/share-card.js"
+      ],
+      "tags": [
+        "canvas",
+        "script",
+        "scroll-view",
+        "template",
+        "text",
+        "view",
+        "wd-button",
+        "wd-icon"
+      ],
+      "apiCalls": [
+        "achievementApi.getProgress",
+        "achievementApi.listFamily",
+        "achievementApi.listMine"
+      ],
+      "forms": [],
+      "evidence": [
+        {
+          "line": 3,
+          "text": "<view v-if=\"!hasFamily\" class=\"empty\">"
+        },
+        {
+          "line": 8,
+          "text": "<template v-else>"
+        },
+        {
+          "line": 34,
+          "text": "<view v-if=\"filteredBadges.length === 0\" class=\"empty\">"
+        },
+        {
+          "line": 38,
+          "text": "<view v-else class=\"grid\">"
+        },
+        {
+          "line": 51,
+          "text": "<view v-if=\"badge.hidden && badge.isUnlocked\" class=\"surprise-tag\">惊喜!</view>"
+        },
+        {
+          "line": 59,
+          "text": "<view v-if=\"badge.isUnlocked\" class=\"badge-unlocked-area\">"
+        },
+        {
+          "line": 68,
+          "text": "<view v-else-if=\"badge.target && badge.current !== null\" class=\"badge-progress\">"
+        },
+        {
+          "line": 79,
+          "text": "<view v-else class=\"badge-status\">"
+        },
+        {
+          "line": 134,
+          "text": "uni.navigateTo({ url: '/pages/family/setup' });"
+        },
+        {
+          "line": 184,
+          "text": "uni.showActionSheet({"
+        },
+        {
+          "line": 190,
+          "text": "success: () => uni.showToast({ title: '已保存', icon: 'success' }),"
+        },
+        {
+          "line": 191,
+          "text": "fail: () => uni.showToast({ title: '保存失败', icon: 'none' }),"
+        },
+        {
+          "line": 197,
+          "text": "uni.showToast({ title: '生成失败', icon: 'none' });"
+        }
+      ]
+    },
+    {
+      "file": "mini-app/src/pages/profile/bind-credentials.vue",
+      "imports": [
+        "@/api/user.js",
+        "@/stores/auth.js"
+      ],
+      "tags": [
+        "script",
+        "template",
+        "text",
+        "view",
+        "wd-button",
+        "wd-icon",
+        "wd-input"
+      ],
+      "apiCalls": [
+        "userApi.bindCredentials",
+        "userApi.me"
+      ],
+      "forms": [
+        "password",
+        "phone"
+      ],
+      "evidence": [
+        {
+          "line": 42,
+          "text": "<wd-button type=\"error\" round block :loading=\"saving\" @click=\"handleSave\">"
+        },
+        {
+          "line": 45,
+          "text": "<view v-if=\"alreadyBound\" class=\"bound-tip\">当前已绑定手机号，可重新设置</view>"
+        },
+        {
+          "line": 67,
+          "text": "uni.showToast({ title: '请输入正确的手机号', icon: 'none' });"
+        },
+        {
+          "line": 71,
+          "text": "uni.showToast({ title: '密码至少 6 位', icon: 'none' });"
+        },
+        {
+          "line": 78,
+          "text": "uni.showToast({ title: '已开通网页版登录', icon: 'success' });"
+        },
+        {
+          "line": 83,
+          "text": "uni.showModal({"
+        }
+      ]
+    },
+    {
+      "file": "mini-app/src/pages/profile/chef-level.vue",
+      "imports": [
+        "@/api/user.js"
+      ],
+      "tags": [
+        "script",
+        "template",
+        "text",
+        "view",
+        "wd-icon"
+      ],
+      "apiCalls": [
+        "userApi.getChefLevel"
+      ],
+      "forms": [],
+      "evidence": [
+        {
+          "line": 4,
+          "text": "<view v-if=\"info\" class=\"current-card\">"
+        },
+        {
+          "line": 23,
+          "text": "<view v-if=\"info?.nextLevel\" class=\"next-card\">"
+        },
+        {
+          "line": 59,
+          "text": "<text v-if=\"lv.minOrders === 0\">初始等级</text>"
+        },
+        {
+          "line": 60,
+          "text": "<text v-else>{{ lv.minOrders }} 单 + 平均 {{ lv.minAvgRating }} 分</text>"
+        },
+        {
+          "line": 63,
+          "text": "<view v-if=\"lv.key === info?.level\" class=\"level-current\">"
+        }
+      ]
+    },
+    {
+      "file": "mini-app/src/pages/profile/edit.vue",
+      "imports": [
+        "@/api/storage.js",
+        "@/api/user.js",
+        "@/stores/auth.js",
+        "@/stores/business-config.js"
+      ],
+      "tags": [
+        "image",
+        "script",
+        "scroll-view",
+        "template",
+        "text",
+        "view",
+        "wd-button",
+        "wd-icon",
+        "wd-input",
+        "wd-textarea"
+      ],
+      "apiCalls": [
+        "userApi.me",
+        "userApi.updateMe"
+      ],
+      "forms": [
+        "form.nickname",
+        "form.signature"
+      ],
+      "evidence": [
+        {
+          "line": 43,
+          "text": "<wd-button type=\"error\" round block :loading=\"saving\" @click=\"handleSave\"> 保存修改 </wd-button>"
+        },
+        {
+          "line": 46,
+          "text": "<view v-if=\"showAvatarPicker\" class=\"avatar-popup-mask\" @click=\"showAvatarPicker = false\">"
+        },
+        {
+          "line": 66,
+          "text": "<view v-if=\"form.avatarUrl === url\" class=\"cell-check\">"
+        },
+        {
+          "line": 137,
+          "text": "uni.showActionSheet({"
+        },
+        {
+          "line": 159,
+          "text": "uni.showToast({ title: '上传失败', icon: 'none' });"
+        },
+        {
+          "line": 173,
+          "text": "uni.showToast({ title: '选择图片失败', icon: 'none' });"
+        },
+        {
+          "line": 193,
+          "text": "uni.showToast({ title: '已保存', icon: 'success' });"
+        }
+      ]
+    },
+    {
+      "file": "mini-app/src/pages/profile/feedback.vue",
+      "imports": [
+        "@/api/feedback.js"
+      ],
+      "tags": [
+        "script",
+        "template",
+        "text",
+        "view",
+        "wd-button",
+        "wd-icon",
+        "wd-input",
+        "wd-textarea"
+      ],
+      "apiCalls": [
+        "feedbackApi.create"
+      ],
+      "forms": [
+        "form.contact",
+        "form.content"
+      ],
+      "evidence": [
+        {
+          "line": 29,
+          "text": ":loading=\"saving\""
+        },
+        {
+          "line": 30,
+          "text": ":disabled=\"!canSubmit\""
+        },
+        {
+          "line": 64,
+          "text": "uni.showToast({ title: '已提交，谢谢', icon: 'success' });"
+        }
+      ]
+    },
+    {
+      "file": "mini-app/src/pages/profile/love-points.vue",
+      "imports": [
+        "@/api/love-point.js",
+        "@/stores/family.js",
+        "@/utils/labels.js"
+      ],
+      "tags": [
+        "script",
+        "template",
+        "text",
+        "view",
+        "wd-button",
+        "wd-icon",
+        "wd-tab",
+        "wd-tabs"
+      ],
+      "apiCalls": [
+        "lovePointApi.balance",
+        "lovePointApi.checkIn",
+        "lovePointApi.logs",
+        "lovePointApi.reverse"
+      ],
+      "forms": [
+        "scope"
+      ],
+      "evidence": [
+        {
+          "line": 3,
+          "text": "<view v-if=\"!hasFamily\" class=\"empty\">"
+        },
+        {
+          "line": 8,
+          "text": "<template v-else>"
+        },
+        {
+          "line": 40,
+          "text": "<view v-if=\"!logs.length && !loading\" class=\"empty\">"
+        },
+        {
+          "line": 44,
+          "text": "<view v-else class=\"list\">"
+        },
+        {
+          "line": 63,
+          "text": "<view v-if=\"canReverse(l)\" class=\"log-actions\">"
+        },
+        {
+          "line": 70,
+          "text": "<view v-if=\"hasMore\" class=\"load-more\" @click=\"loadMore\">加载更多</view>"
+        },
+        {
+          "line": 71,
+          "text": "<view v-else-if=\"logs.length\" class=\"load-more muted\">没有更多了</view>"
+        },
+        {
+          "line": 119,
+          "text": "uni.navigateTo({ url: '/pages/family/setup' });"
+        },
+        {
+          "line": 156,
+          "text": "uni.showToast({ title: `签到成功 +${res.earned}`, icon: 'success' });"
+        },
+        {
+          "line": 184,
+          "text": "uni.showModal({"
+        },
+        {
+          "line": 193,
+          "text": "uni.showToast({ title: '已撤回', icon: 'success' });"
+        }
+      ]
+    },
+    {
+      "file": "mini-app/src/pages/recipe/detail.vue",
+      "imports": [
+        "@/api/recipe.js",
+        "@/composables/use-auth-guard.js",
+        "@/composables/use-family-guard.js",
+        "@/stores/auth.js",
+        "@/utils/labels.js"
+      ],
+      "tags": [
+        "image",
+        "script",
+        "swiper",
+        "swiper-item",
+        "template",
+        "text",
+        "view",
+        "wd-icon",
+        "wd-rate"
+      ],
+      "apiCalls": [
+        "recipeApi.favorite",
+        "recipeApi.get",
+        "recipeApi.remove",
+        "recipeApi.unfavorite"
+      ],
+      "forms": [],
+      "evidence": [
+        {
+          "line": 3,
+          "text": "<view v-if=\"recipe\" class=\"page\">"
+        },
+        {
+          "line": 6,
+          "text": "v-if=\"recipe.imageUrls.length\""
+        },
+        {
+          "line": 16,
+          "text": "<view v-else class=\"cover-placeholder\">"
+        },
+        {
+          "line": 46,
+          "text": "<view v-if=\"recipe.orderCount\" class=\"meta-item\">"
+        },
+        {
+          "line": 50,
+          "text": "<view v-if=\"recipe.avgRating != null\" class=\"meta-item\">"
+        },
+        {
+          "line": 59,
+          "text": "v-if=\"recipe.mealTags.length || recipe.flavorTags.length\""
+        },
+        {
+          "line": 75,
+          "text": "<view v-if=\"recipe.notes\" class=\"card fade-up fade-up--2\">"
+        },
+        {
+          "line": 115,
+          "text": "<view v-else class=\"empty-detail\">"
+        },
+        {
+          "line": 120,
+          "text": "<view v-if=\"!isLoggedIn\" class=\"empty-action\" @click=\"goLogin\">"
+        },
+        {
+          "line": 181,
+          "text": "uni.navigateTo({ url: `/pages/recipe/edit?id=${this.id}` });"
+        },
+        {
+          "line": 186,
+          "text": "uni.showModal({"
+        },
+        {
+          "line": 198,
+          "text": "uni.showToast({ title: '已删除', icon: 'success' });"
+        },
+        {
+          "line": 206,
+          "text": "uni.navigateTo({ url: `/pages/order/create?recipeId=${this.id}` });"
+        },
+        {
+          "line": 209,
+          "text": "uni.navigateTo({ url: '/pages/auth/login' });"
+        }
+      ]
+    },
+    {
+      "file": "mini-app/src/pages/recipe/edit.vue",
+      "imports": [
+        "@/api/recipe.js",
+        "@/api/storage.js",
+        "@/composables/use-family-guard.js",
+        "@/utils/labels.js"
+      ],
+      "tags": [
+        "image",
+        "input",
+        "script",
+        "template",
+        "text",
+        "textarea",
+        "view",
+        "wd-icon",
+        "wd-rate"
+      ],
+      "apiCalls": [
+        "recipeApi.create",
+        "recipeApi.get",
+        "recipeApi.update"
+      ],
+      "forms": [
+        "form.difficulty",
+        "form.name",
+        "form.notes"
+      ],
+      "evidence": [
+        {
+          "line": 38,
+          "text": "<view v-if=\"form.imageUrls.length < 5\" class=\"img-add\" @click=\"addImage\">"
+        },
+        {
+          "line": 133,
+          "text": "<text v-if=\"saving\">保存中…</text>"
+        },
+        {
+          "line": 134,
+          "text": "<text v-else>{{ isEdit ? '保存菜谱' : '创建菜谱' }}</text>"
+        },
+        {
+          "line": 234,
+          "text": "uni.showToast({ title: '保存成功', icon: 'success' });"
+        }
+      ]
+    },
+    {
+      "file": "mini-app/src/pages/tabbar/home/home.vue",
+      "imports": [
+        "@/api/notification.js",
+        "@/api/recipe.js",
+        "@/components/custom-tabbar.vue",
+        "@/components/guest-placeholder.vue",
+        "@/composables/use-auth-guard.js",
+        "@/composables/use-family-guard.js",
+        "@/stores/active-order.js",
+        "@/stores/auth.js",
+        "@/stores/chat-unread.js",
+        "@/stores/family.js",
+        "@/utils/labels.js"
+      ],
+      "tags": [
+        "custom-tabbar",
+        "guest-placeholder",
+        "image",
+        "script",
+        "template",
+        "text",
+        "view",
+        "wd-button",
+        "wd-icon",
+        "wd-rate"
+      ],
+      "apiCalls": [
+        "notificationApi.unreadCount",
+        "recipeApi.random"
+      ],
+      "forms": [],
+      "evidence": [
+        {
+          "line": 17,
+          "text": "<view v-if=\"unreadNotifications > 0\" class=\"hero-msg-badge\">"
+        },
+        {
+          "line": 23,
+          "text": "<view v-if=\"totalUnread > 0\" class=\"hero-msg-badge\">"
+        },
+        {
+          "line": 37,
+          "text": "v-if=\"!isLoggedIn\""
+        },
+        {
+          "line": 44,
+          "text": "<template v-else>"
+        },
+        {
+          "line": 47,
+          "text": "<view v-if=\"!hasFamily\" class=\"card welcome fade-up fade-up--1\">"
+        },
+        {
+          "line": 58,
+          "text": "v-else-if=\"activeOrder\""
+        },
+        {
+          "line": 88,
+          "text": "<template v-if=\"activeOrder.expectedServeAt\">"
+        },
+        {
+          "line": 97,
+          "text": "<view v-else class=\"card empty-card fade-up fade-up--1\">"
+        },
+        {
+          "line": 116,
+          "text": "<view v-if=\"recommendRecipe\" class=\"recommend-card fade-up\" @click=\"goToRecommendOrder\">"
+        },
+        {
+          "line": 119,
+          "text": "v-if=\"recommendRecipe.imageUrls && recommendRecipe.imageUrls.length\""
+        },
+        {
+          "line": 149,
+          "text": "<view v-if=\"hasFamily\" class=\"shortcuts fade-up fade-up--2\">"
+        },
+        {
+          "line": 189,
+          "text": "<view v-if=\"hasFamily\" class=\"ai-section fade-up fade-up--3\">"
+        },
+        {
+          "line": 296,
+          "text": "uni.navigateTo({ url: '/pages/family/setup' });"
+        },
+        {
+          "line": 300,
+          "text": "uni.navigateTo({ url: '/pages/order/create' });"
+        },
+        {
+          "line": 303,
+          "text": "uni.navigateTo({ url: `/pages/order/detail?id=${id}` });"
+        },
+        {
+          "line": 306,
+          "text": "uni.switchTab({ url: '/pages/tabbar/menu/menu' });"
+        },
+        {
+          "line": 310,
+          "text": "uni.navigateTo({ url: '/pages/order/history' });"
+        },
+        {
+          "line": 314,
+          "text": "uni.switchTab({ url: '/pages/tabbar/timeline/timeline' });"
+        },
+        {
+          "line": 318,
+          "text": "uni.navigateTo({ url: '/pages/profile/love-points' });"
+        },
+        {
+          "line": 322,
+          "text": "uni.navigateTo({ url: '/pages/profile/achievements' });"
+        },
+        {
+          "line": 326,
+          "text": "uni.navigateTo({ url: '/pages/chat/list' });"
+        },
+        {
+          "line": 333,
+          "text": "uni.showToast({ title: '还没有菜谱哦', icon: 'none' });"
+        },
+        {
+          "line": 338,
+          "text": "uni.navigateTo({"
+        },
+        {
+          "line": 352,
+          "text": "uni.navigateTo({ url: '/pages/notification/list' });"
+        },
+        {
+          "line": 355,
+          "text": "uni.navigateTo({ url: '/pages/ai/recipe-gen' });"
+        },
+        {
+          "line": 358,
+          "text": "uni.navigateTo({ url: '/pages/ai/recommend' });"
+        },
+        {
+          "line": 361,
+          "text": "uni.navigateTo({ url: '/pages/ai/nutrition' });"
+        },
+        {
+          "line": 364,
+          "text": "uni.navigateTo({ url: '/pages/ai/weekly-plan' });"
+        }
+      ]
+    },
+    {
+      "file": "mini-app/src/pages/tabbar/menu/menu.vue",
+      "imports": [
+        "@/api/recipe.js",
+        "@/components/custom-tabbar.vue",
+        "@/components/guest-placeholder.vue",
+        "@/composables/use-auth-guard.js",
+        "@/composables/use-family-guard.js",
+        "@/stores/auth.js",
+        "@/stores/family.js",
+        "@/utils/labels.js"
+      ],
+      "tags": [
+        "custom-tabbar",
+        "guest-placeholder",
+        "image",
+        "script",
+        "scroll-view",
+        "template",
+        "text",
+        "view",
+        "wd-button",
+        "wd-icon",
+        "wd-rate",
+        "wd-search"
+      ],
+      "apiCalls": [
+        "recipeApi.list"
+      ],
+      "forms": [
+        "searchText"
+      ],
+      "evidence": [
+        {
+          "line": 4,
+          "text": "v-if=\"!isLoggedIn\""
+        },
+        {
+          "line": 10,
+          "text": "<template v-else>"
+        },
+        {
+          "line": 49,
+          "text": "<view v-if=\"!hasFamily\" class=\"empty\">"
+        },
+        {
+          "line": 59,
+          "text": "<view v-else-if=\"!loading && items.length === 0\" class=\"empty\">"
+        },
+        {
+          "line": 72,
+          "text": "<view v-else class=\"list\">"
+        },
+        {
+          "line": 84,
+          "text": "<view v-if=\"r.isFavorited\" class=\"fav-badge\">"
+        },
+        {
+          "line": 99,
+          "text": "<text v-if=\"r.orderCount\" class=\"stat\">"
+        },
+        {
+          "line": 103,
+          "text": "<text v-if=\"r.avgRating != null\" class=\"stat\">"
+        },
+        {
+          "line": 111,
+          "text": "<view v-if=\"hasMore\" class=\"load-more\" @click=\"loadMore\">加载更多</view>"
+        },
+        {
+          "line": 112,
+          "text": "<view v-else-if=\"items.length > 0\" class=\"load-more muted\">— 没有更多了 —</view>"
+        },
+        {
+          "line": 115,
+          "text": "<view v-if=\"hasFamily\" class=\"fab-btn\" @click=\"goToCreate\">"
+        },
+        {
+          "line": 223,
+          "text": "uni.navigateTo({ url: `/pages/recipe/detail?id=${id}` });"
+        },
+        {
+          "line": 227,
+          "text": "uni.navigateTo({ url: '/pages/recipe/edit' });"
+        },
+        {
+          "line": 231,
+          "text": "uni.navigateTo({ url: '/pages/family/setup' });"
+        }
+      ]
+    },
+    {
+      "file": "mini-app/src/pages/tabbar/profile/profile.vue",
+      "imports": [
+        "@/api/achievement.js",
+        "@/api/love-point.js",
+        "@/api/user.js",
+        "@/components/custom-tabbar.vue",
+        "@/stores/auth.js",
+        "@/stores/business-config.js",
+        "@/stores/family.js"
+      ],
+      "tags": [
+        "custom-tabbar",
+        "image",
+        "script",
+        "template",
+        "text",
+        "view",
+        "wd-icon"
+      ],
+      "apiCalls": [
+        "achievementApi.listFamily",
+        "achievementApi.listMine",
+        "lovePointApi.balance",
+        "userApi.getChefLevel"
+      ],
+      "forms": [],
+      "evidence": [
+        {
+          "line": 10,
+          "text": "v-if=\"isLoggedIn && (user?.avatarUrl || avatarFallback)\""
+        },
+        {
+          "line": 15,
+          "text": "<view v-else class=\"avatar avatar--empty\">"
+        },
+        {
+          "line": 22,
+          "text": "<view v-if=\"chefLevel\" class=\"chef-level-badge\" @click.stop=\"goChefLevel\">"
+        },
+        {
+          "line": 34,
+          "text": "<view v-if=\"!isLoggedIn\" class=\"login-btn\" @click=\"goLogin\">"
+        },
+        {
+          "line": 41,
+          "text": "<view v-if=\"isLoggedIn\" class=\"metrics fade-up fade-up--1\">"
+        },
+        {
+          "line": 63,
+          "text": "<view v-if=\"isLoggedIn\" class=\"menu-card fade-up fade-up--2\">"
+        },
+        {
+          "line": 91,
+          "text": "<view v-if=\"isLoggedIn\" class=\"menu-card fade-up fade-up--3\">"
+        },
+        {
+          "line": 110,
+          "text": "<view v-if=\"isLoggedIn\" class=\"logout-section fade-up fade-up--4\">"
+        },
+        {
+          "line": 190,
+          "text": "uni.navigateTo({ url: '/pages/auth/login' });"
+        },
+        {
+          "line": 193,
+          "text": "uni.navigateTo({ url: '/pages/profile/love-points' });"
+        },
+        {
+          "line": 196,
+          "text": "uni.navigateTo({ url: '/pages/profile/achievements' });"
+        },
+        {
+          "line": 199,
+          "text": "uni.navigateTo({ url: '/pages/family/settings' });"
+        },
+        {
+          "line": 202,
+          "text": "uni.navigateTo({ url: '/pages/profile/edit' });"
+        },
+        {
+          "line": 205,
+          "text": "uni.navigateTo({ url: '/pages/profile/bind-credentials' });"
+        },
+        {
+          "line": 208,
+          "text": "uni.navigateTo({ url: '/pages/profile/feedback' });"
+        },
+        {
+          "line": 211,
+          "text": "uni.navigateTo({ url: '/pages/profile/about' });"
+        },
+        {
+          "line": 214,
+          "text": "uni.navigateTo({ url: '/pages/profile/chef-level' });"
+        },
+        {
+          "line": 218,
+          "text": "uni.showModal({"
+        }
+      ]
+    },
+    {
+      "file": "mini-app/src/pages/tabbar/timeline/timeline.vue",
+      "imports": [
+        "@/api/timeline.js",
+        "@/components/custom-tabbar.vue",
+        "@/components/guest-placeholder.vue",
+        "@/composables/use-family-guard.js",
+        "@/stores/auth.js",
+        "@/stores/family.js",
+        "@/utils/labels.js"
+      ],
+      "tags": [
+        "custom-tabbar",
+        "guest-placeholder",
+        "image",
+        "script",
+        "template",
+        "text",
+        "textarea",
+        "view",
+        "wd-icon"
+      ],
+      "apiCalls": [
+        "timelineApi.list",
+        "timelineApi.remove",
+        "timelineApi.reply"
+      ],
+      "forms": [
+        "replyDialog.comment"
+      ],
+      "evidence": [
+        {
+          "line": 4,
+          "text": "v-if=\"!isLoggedIn\""
+        },
+        {
+          "line": 10,
+          "text": "<template v-else>"
+        },
+        {
+          "line": 29,
+          "text": "<view v-if=\"!items.length && !loading\" class=\"empty\">"
+        },
+        {
+          "line": 38,
+          "text": "<view v-else class=\"timeline\">"
+        },
+        {
+          "line": 49,
+          "text": "<view v-if=\"i < items.length - 1\" class=\"tl-line\" />"
+        },
+        {
+          "line": 56,
+          "text": "<view v-if=\"e.sourceType === 'manual'\" class=\"manual-tag\"> 手动补记 </view>"
+        },
+        {
+          "line": 59,
+          "text": "<view v-if=\"e.imageUrls.length\" class=\"entry-images\">"
+        },
+        {
+          "line": 70,
+          "text": "<view v-if=\"e.customerComment || e.chefComment\" class=\"comments\">"
+        },
+        {
+          "line": 71,
+          "text": "<view v-if=\"e.customerComment\" class=\"comment comment--rose\">"
+        },
+        {
+          "line": 77,
+          "text": "<view v-if=\"e.chefComment\" class=\"comment comment--slate\">"
+        },
+        {
+          "line": 86,
+          "text": "<view v-else-if=\"e.sourceType === 'order'\" class=\"entry-summary\">"
+        },
+        {
+          "line": 94,
+          "text": "<view v-if=\"canReply(e)\" class=\"reply-hint\" @click.stop=\"openReplyDialog(e)\">"
+        },
+        {
+          "line": 101,
+          "text": "<view v-if=\"hasMore\" class=\"load-more\" @click=\"loadMore\">加载更多</view>"
+        },
+        {
+          "line": 102,
+          "text": "<view v-else-if=\"items.length\" class=\"load-more muted\">— 没有更多了 —</view>"
+        },
+        {
+          "line": 111,
+          "text": "<view v-if=\"replyDialog.visible\" class=\"reply-overlay\" @click.stop=\"closeReplyDialog\">"
+        },
+        {
+          "line": 226,
+          "text": "uni.navigateTo({ url: `/pages/order/detail?id=${e.sourceOrderId}` });"
+        },
+        {
+          "line": 233,
+          "text": "uni.showActionSheet({"
+        },
+        {
+          "line": 244,
+          "text": "uni.showModal({"
+        },
+        {
+          "line": 255,
+          "text": "uni.showToast({ title: '已删除', icon: 'success' });"
+        },
+        {
+          "line": 285,
+          "text": "uni.showToast({ title: '回复成功', icon: 'success' });"
+        },
+        {
+          "line": 290,
+          "text": "uni.showToast({ title: '回复失败', icon: 'none' });"
+        },
+        {
+          "line": 297,
+          "text": "uni.navigateTo({ url: '/pages/timeline/monthly' });"
+        },
+        {
+          "line": 301,
+          "text": "uni.navigateTo({ url: '/pages/timeline/manual' });"
+        }
+      ]
+    },
+    {
+      "file": "mini-app/src/pages/timeline/manual.vue",
+      "imports": [
+        "@/api/storage.js",
+        "@/api/timeline.js",
+        "@/composables/use-family-guard.js"
+      ],
+      "tags": [
+        "image",
+        "picker",
+        "script",
+        "template",
+        "text",
+        "textarea",
+        "view",
+        "wd-icon"
+      ],
+      "apiCalls": [
+        "timelineApi.createManual"
+      ],
+      "forms": [
+        "form.comment"
+      ],
+      "evidence": [
+        {
+          "line": 65,
+          "text": "<view v-if=\"form.imageUrls.length < 5\" class=\"img-add\" @click=\"addImage\">"
+        },
+        {
+          "line": 141,
+          "text": "uni.showToast({ title: '已记录', icon: 'success' });"
+        }
+      ]
+    },
+    {
+      "file": "mini-app/src/pages/timeline/monthly.vue",
+      "imports": [
+        "@/api/timeline.js",
+        "@/utils/labels.js",
+        "@qiun/ucharts"
+      ],
+      "tags": [
+        "canvas",
+        "script",
+        "template",
+        "text",
+        "view",
+        "wd-icon"
+      ],
+      "apiCalls": [
+        "timelineApi.monthlySummary"
+      ],
+      "forms": [],
+      "evidence": [
+        {
+          "line": 8,
+          "text": "<view v-if=\"summary\" class=\"metrics\">"
+        },
+        {
+          "line": 25,
+          "text": "<view v-if=\"summary?.topRecipes.length\" class=\"card\">"
+        },
+        {
+          "line": 37,
+          "text": "<view v-if=\"summary?.contributors.length\" class=\"card\">"
+        },
+        {
+          "line": 49,
+          "text": "<view v-if=\"summary?.unlockedBadgeKeys.length\" class=\"card\">"
+        },
+        {
+          "line": 61,
+          "text": "<view v-if=\"!summary || summary.totalOrders === 0\" class=\"empty muted\"> 本月还没有点单 </view>"
+        }
+      ]
+    },
+    {
+      "file": "mini-app/src/stores/active-order.js",
+      "imports": [
+        "@/api/order.js",
+        "pinia",
+        "vue"
+      ],
+      "tags": [],
+      "apiCalls": [
+        "orderApi.getActive"
+      ],
+      "forms": [],
+      "evidence": []
+    },
+    {
+      "file": "mini-app/src/stores/auth.js",
+      "imports": [
+        "@/api/auth.js",
+        "@/api/ws.js",
+        "pinia",
+        "vue"
+      ],
+      "tags": [],
+      "apiCalls": [
+        "authApi.passwordLogin",
+        "authApi.wxLogin"
+      ],
+      "forms": [],
+      "evidence": []
+    },
+    {
+      "file": "mini-app/src/stores/business-config.js",
+      "imports": [
+        "@/api/business-config",
+        "pinia"
+      ],
+      "tags": [],
+      "apiCalls": [],
+      "forms": [],
+      "evidence": []
+    },
+    {
+      "file": "mini-app/src/stores/chat-unread.js",
+      "imports": [
+        "pinia",
+        "vue"
+      ],
+      "tags": [],
+      "apiCalls": [],
+      "forms": [],
+      "evidence": []
+    },
+    {
+      "file": "mini-app/src/stores/family.js",
+      "imports": [
+        "@/api/family.js",
+        "pinia",
+        "vue"
+      ],
+      "tags": [],
+      "apiCalls": [
+        "familyApi.create",
+        "familyApi.getMine",
+        "familyApi.joinByCode",
+        "familyApi.leave",
+        "familyApi.updateMine"
+      ],
+      "forms": [],
+      "evidence": []
+    },
+    {
+      "file": "mini-app/src/utils/chat-active.js",
+      "imports": [],
+      "tags": [],
+      "apiCalls": [],
+      "forms": [],
+      "evidence": []
+    },
+    {
+      "file": "mini-app/src/utils/colors.js",
+      "imports": [],
+      "tags": [],
+      "apiCalls": [],
+      "forms": [],
+      "evidence": []
+    },
+    {
+      "file": "mini-app/src/utils/labels.js",
+      "imports": [],
+      "tags": [],
+      "apiCalls": [],
+      "forms": [],
+      "evidence": []
+    },
+    {
+      "file": "mini-app/src/utils/share-card.js",
+      "imports": [],
+      "tags": [
+        "string"
+      ],
+      "apiCalls": [],
+      "forms": [],
+      "evidence": []
+    }
+  ]
+}
