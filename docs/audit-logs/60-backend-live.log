@@ -1,0 +1,235 @@
+{"label":"60-backend-live","cwd":"H:\\codex\\林家餐厅小程序\\family-kitchen-c01","node":"v24.19.0","pnpmCli":"C:\\Users\\Administrator\\AppData\\Local\\pnpm\\store\\v11\\links\\@\\pnpm\\9.12.0\\49d8fa80e8205096741f5238215a507a7cc04fc3d20ff2b1c8b726b65d71c883\\node_modules\\pnpm\\bin\\pnpm.cjs","args":["--filter","@family-kitchen/backend","start"],"started":"2026-09-03T16:10:28.704Z","timeoutSeconds":300,"sourceChanged":false,"databaseName":"c01_baseline_replay","localServicePorts":[33300,33301,33316,33319]}
+
+> @family-kitchen/backend@0.1.0 start H:\codex\林家餐厅小程序\family-kitchen-c01\backend
+> node dist/main.js
+
+🚀 Family Kitchen backend listening on http://localhost:33300/api/v1
+📚 Swagger UI:  http://localhost:33300/api/v1/docs
+[00:10:36.624] [32mINFO[39m (27792): [36mStarting Nest application...[39m [90m{"context":"NestFactory"}[39m
+[00:10:36.624] [32mINFO[39m (27792): [36mPrismaModule dependencies initialized[39m [90m{"context":"InstanceLoader"}[39m
+[00:10:36.624] [32mINFO[39m (27792): [36mThrottlerModule dependencies initialized[39m [90m{"context":"InstanceLoader"}[39m
+[00:10:36.624] [32mINFO[39m (27792): [36mConfigHostModule dependencies initialized[39m [90m{"context":"InstanceLoader"}[39m
+[00:10:36.624] [32mINFO[39m (27792): [36mDiscoveryModule dependencies initialized[39m [90m{"context":"InstanceLoader"}[39m
+[00:10:36.624] [32mINFO[39m (27792): [36mLoggerModule dependencies initialized[39m [90m{"context":"InstanceLoader"}[39m
+[00:10:36.624] [32mINFO[39m (27792): [36mConfigModule dependencies initialized[39m [90m{"context":"InstanceLoader"}[39m
+[00:10:36.624] [32mINFO[39m (27792): [36mConfigModule dependencies initialized[39m [90m{"context":"InstanceLoader"}[39m
+[00:10:36.624] [32mINFO[39m (27792): [36mHealthModule dependencies initialized[39m [90m{"context":"InstanceLoader"}[39m
+[00:10:36.624] [32mINFO[39m (27792): [36mScheduleModule dependencies initialized[39m [90m{"context":"InstanceLoader"}[39m
+[00:10:36.624] [32mINFO[39m (27792): [36mTimelineModule dependencies initialized[39m [90m{"context":"InstanceLoader"}[39m
+[00:10:36.624] [32mINFO[39m (27792): [36mFeedbackModule dependencies initialized[39m [90m{"context":"InstanceLoader"}[39m
+[00:10:36.624] [32mINFO[39m (27792): [36mAchievementModule dependencies initialized[39m [90m{"context":"InstanceLoader"}[39m
+[00:10:36.624] [32mINFO[39m (27792): [36mJwtModule dependencies initialized[39m [90m{"context":"InstanceLoader"}[39m
+[00:10:36.624] [32mINFO[39m (27792): [36mStorageModule dependencies initialized[39m [90m{"context":"InstanceLoader"}[39m
+[00:10:36.624] [32mINFO[39m (27792): [36mLovePointModule dependencies initialized[39m [90m{"context":"InstanceLoader"}[39m
+[00:10:36.624] [32mINFO[39m (27792): [36mRecipeModule dependencies initialized[39m [90m{"context":"InstanceLoader"}[39m
+[00:10:36.624] [32mINFO[39m (27792): [36mAppModule dependencies initialized[39m [90m{"context":"InstanceLoader"}[39m
+[00:10:36.624] [32mINFO[39m (27792): [36mWsModule dependencies initialized[39m [90m{"context":"InstanceLoader"}[39m
+[00:10:36.624] [32mINFO[39m (27792): [36mAdminModule dependencies initialized[39m [90m{"context":"InstanceLoader"}[39m
+[00:10:36.624] [32mINFO[39m (27792): [36mNotificationModule dependencies initialized[39m [90m{"context":"InstanceLoader"}[39m
+[00:10:36.624] [32mINFO[39m (27792): [36mBusinessConfigModule dependencies initialized[39m [90m{"context":"InstanceLoader"}[39m
+[00:10:36.624] [32mINFO[39m (27792): [36mAuthModule dependencies initialized[39m [90m{"context":"InstanceLoader"}[39m
+[00:10:36.624] [32mINFO[39m (27792): [36mCronModule dependencies initialized[39m [90m{"context":"InstanceLoader"}[39m
+[00:10:36.624] [32mINFO[39m (27792): [36mUserModule dependencies initialized[39m [90m{"context":"InstanceLoader"}[39m
+[00:10:36.624] [32mINFO[39m (27792): [36mFamilyModule dependencies initialized[39m [90m{"context":"InstanceLoader"}[39m
+[00:10:36.624] [32mINFO[39m (27792): [36mOrderModule dependencies initialized[39m [90m{"context":"InstanceLoader"}[39m
+[00:10:36.624] [32mINFO[39m (27792): [36mAiModule dependencies initialized[39m [90m{"context":"InstanceLoader"}[39m
+[00:10:36.624] [32mINFO[39m (27792): [36mBusinessConfigController {/api/v1/admin/business-config}:[39m [90m{"context":"RoutesResolver"}[39m
+[00:10:36.624] [32mINFO[39m (27792): [36mMapped {/api/v1/admin/business-config, GET} route[39m [90m{"context":"RouterExplorer"}[39m
+[00:10:36.624] [32mINFO[39m (27792): [36mMapped {/api/v1/admin/business-config/-/changes/all, GET} route[39m [90m{"context":"RouterExplorer"}[39m
+[00:10:36.624] [32mINFO[39m (27792): [36mMapped {/api/v1/admin/business-config/:groupKey, GET} route[39m [90m{"context":"RouterExplorer"}[39m
+[00:10:36.624] [32mINFO[39m (27792): [36mMapped {/api/v1/admin/business-config/:groupKey, PATCH} route[39m [90m{"context":"RouterExplorer"}[39m
+[00:10:36.624] [32mINFO[39m (27792): [36mMapped {/api/v1/admin/business-config/:groupKey/changes, GET} route[39m [90m{"context":"RouterExplorer"}[39m
+[00:10:36.624] [32mINFO[39m (27792): [36mPublicConfigController {/api/v1/config}:[39m [90m{"context":"RoutesResolver"}[39m
+[00:10:36.624] [32mINFO[39m (27792): [36mMapped {/api/v1/config/public, GET} route[39m [90m{"context":"RouterExplorer"}[39m
+[00:10:36.624] [32mINFO[39m (27792): [36mHealthController {/api/v1/health}:[39m [90m{"context":"RoutesResolver"}[39m
+[00:10:36.624] [32mINFO[39m (27792): [36mMapped {/api/v1/health, GET} route[39m [90m{"context":"RouterExplorer"}[39m
+[00:10:36.624] [32mINFO[39m (27792): [36mMapped {/api/v1/health/db, GET} route[39m [90m{"context":"RouterExplorer"}[39m
+[00:10:36.624] [32mINFO[39m (27792): [36mAuthController {/api/v1/auth}:[39m [90m{"context":"RoutesResolver"}[39m
+[00:10:36.624] [32mINFO[39m (27792): [36mMapped {/api/v1/auth/wx-login, POST} route[39m [90m{"context":"RouterExplorer"}[39m
+[00:10:36.624] [32mINFO[39m (27792): [36mMapped {/api/v1/auth/password-login, POST} route[39m [90m{"context":"RouterExplorer"}[39m
+[00:10:36.624] [32mINFO[39m (27792): [36mMapped {/api/v1/auth/admin/login, POST} route[39m [90m{"context":"RouterExplorer"}[39m
+[00:10:36.624] [32mINFO[39m (27792): [36mMapped {/api/v1/auth/me, GET} route[39m [90m{"context":"RouterExplorer"}[39m
+[00:10:36.624] [32mINFO[39m (27792): [36mUserController {/api/v1/users}:[39m [90m{"context":"RoutesResolver"}[39m
+[00:10:36.624] [32mINFO[39m (27792): [36mMapped {/api/v1/users/me, GET} route[39m [90m{"context":"RouterExplorer"}[39m
+[00:10:36.624] [32mINFO[39m (27792): [36mMapped {/api/v1/users/me/chef-level, GET} route[39m [90m{"context":"RouterExplorer"}[39m
+[00:10:36.624] [32mINFO[39m (27792): [36mMapped {/api/v1/users/me, PATCH} route[39m [90m{"context":"RouterExplorer"}[39m
+[00:10:36.624] [32mINFO[39m (27792): [36mMapped {/api/v1/users/me/credentials, PATCH} route[39m [90m{"context":"RouterExplorer"}[39m
+[00:10:36.624] [32mINFO[39m (27792): [36mMapped {/api/v1/users/me, DELETE} route[39m [90m{"context":"RouterExplorer"}[39m
+[00:10:36.624] [32mINFO[39m (27792): [36mMapped {/api/v1/users/me/notification-prefs, GET} route[39m [90m{"context":"RouterExplorer"}[39m
+[00:10:36.624] [32mINFO[39m (27792): [36mMapped {/api/v1/users/me/notification-prefs, PATCH} route[39m [90m{"context":"RouterExplorer"}[39m
+[00:10:36.624] [32mINFO[39m (27792): [36mFamilyController {/api/v1/families}:[39m [90m{"context":"RoutesResolver"}[39m
+[00:10:36.624] [32mINFO[39m (27792): [36mMapped {/api/v1/families, POST} route[39m [90m{"context":"RouterExplorer"}[39m
+[00:10:36.624] [32mINFO[39m (27792): [36mMapped {/api/v1/families/join, POST} route[39m [90m{"context":"RouterExplorer"}[39m
+[00:10:36.624] [32mINFO[39m (27792): [36mMapped {/api/v1/families/me, GET} route[39m [90m{"context":"RouterExplorer"}[39m
+[00:10:36.624] [32mINFO[39m (27792): [36mMapped {/api/v1/families/me, PATCH} route[39m [90m{"context":"RouterExplorer"}[39m
+[00:10:36.624] [32mINFO[39m (27792): [36mMapped {/api/v1/families/me/invite-code, POST} route[39m [90m{"context":"RouterExplorer"}[39m
+[00:10:36.624] [32mINFO[39m (27792): [36mMapped {/api/v1/families/me/leave, POST} route[39m [90m{"context":"RouterExplorer"}[39m
+[00:10:36.624] [32mINFO[39m (27792): [36mRecipeController {/api/v1/recipes}:[39m [90m{"context":"RoutesResolver"}[39m
+[00:10:36.624] [32mINFO[39m (27792): [36mMapped {/api/v1/recipes, POST} route[39m [90m{"context":"RouterExplorer"}[39m
+[00:10:36.624] [32mINFO[39m (27792): [36mMapped {/api/v1/recipes, GET} route[39m [90m{"context":"RouterExplorer"}[39m
+[00:10:36.624] [32mINFO[39m (27792): [36mMapped {/api/v1/recipes/random, GET} route[39m [90m{"context":"RouterExplorer"}[39m
+[00:10:36.624] [32mINFO[39m (27792): [36mMapped {/api/v1/recipes/:id, GET} route[39m [90m{"context":"RouterExplorer"}[39m
+[00:10:36.624] [32mINFO[39m (27792): [36mMapped {/api/v1/recipes/:id, PATCH} route[39m [90m{"context":"RouterExplorer"}[39m
+[00:10:36.624] [32mINFO[39m (27792): [36mMapped {/api/v1/recipes/:id, DELETE} route[39m [90m{"context":"RouterExplorer"}[39m
+[00:10:36.624] [32mINFO[39m (27792): [36mMapped {/api/v1/recipes/:id/favorite, POST} route[39m [90m{"context":"RouterExplorer"}[39m
+[00:10:36.624] [32mINFO[39m (27792): [36mMapped {/api/v1/recipes/:id/favorite, DELETE} route[39m [90m{"context":"RouterExplorer"}[39m
+[00:10:36.624] [32mINFO[39m (27792): [36mOrderController {/api/v1/orders}:[39m [90m{"context":"RoutesResolver"}[39m
+[00:10:36.624] [32mINFO[39m (27792): [36mMapped {/api/v1/orders, POST} route[39m [90m{"context":"RouterExplorer"}[39m
+[00:10:36.624] [32mINFO[39m (27792): [36mMapped {/api/v1/orders/active, GET} route[39m [90m{"context":"RouterExplorer"}[39m
+[00:10:36.624] [32mINFO[39m (27792): [36mMapped {/api/v1/orders, GET} route[39m [90m{"context":"RouterExplorer"}[39m
+[00:10:36.624] [32mINFO[39m (27792): [36mMapped {/api/v1/orders/:id, GET} route[39m [90m{"context":"RouterExplorer"}[39m
+[00:10:36.624] [32mINFO[39m (27792): [36mMapped {/api/v1/orders/:id/accept, POST} route[39m [90m{"context":"RouterExplorer"}[39m
+[00:10:36.624] [32mINFO[39m (27792): [36mMapped {/api/v1/orders/:id/reject, POST} route[39m [90m{"context":"RouterExplorer"}[39m
+[00:10:36.624] [32mINFO[39m (27792): [36mMapped {/api/v1/orders/:id/prepping, POST} route[39m [90m{"context":"RouterExplorer"}[39m
+[00:10:36.624] [32mINFO[39m (27792): [36mMapped {/api/v1/orders/:id/cooking, POST} route[39m [90m{"context":"RouterExplorer"}[39m
+[00:10:36.624] [32mINFO[39m (27792): [36mMapped {/api/v1/orders/:id/serve, POST} route[39m [90m{"context":"RouterExplorer"}[39m
+[00:10:36.624] [32mINFO[39m (27792): [36mMapped {/api/v1/orders/:id/cancel, POST} route[39m [90m{"context":"RouterExplorer"}[39m
+[00:10:36.624] [32mINFO[39m (27792): [36mMapped {/api/v1/orders/:id/rating, POST} route[39m [90m{"context":"RouterExplorer"}[39m
+[00:10:36.624] [32mINFO[39m (27792): [36mMessageController {/api/v1/orders/:orderId/messages}:[39m [90m{"context":"RoutesResolver"}[39m
+[00:10:36.624] [32mINFO[39m (27792): [36mMapped {/api/v1/orders/:orderId/messages, GET} route[39m [90m{"context":"RouterExplorer"}[39m
+[00:10:36.624] [32mINFO[39m (27792): [36mMapped {/api/v1/orders/:orderId/messages, POST} route[39m [90m{"context":"RouterExplorer"}[39m
+[00:10:36.624] [32mINFO[39m (27792): [36mMapped {/api/v1/orders/:orderId/messages/read, POST} route[39m [90m{"context":"RouterExplorer"}[39m
+[00:10:36.624] [32mINFO[39m (27792): [36mLovePointController {/api/v1/love-points}:[39m [90m{"context":"RoutesResolver"}[39m
+[00:10:36.624] [32mINFO[39m (27792): [36mMapped {/api/v1/love-points/balance, GET} route[39m [90m{"context":"RouterExplorer"}[39m
+[00:10:36.624] [32mINFO[39m (27792): [36mMapped {/api/v1/love-points/logs, GET} route[39m [90m{"context":"RouterExplorer"}[39m
+[00:10:36.624] [32mINFO[39m (27792): [36mMapped {/api/v1/love-points/check-in, POST} route[39m [90m{"context":"RouterExplorer"}[39m
+[00:10:36.624] [32mINFO[39m (27792): [36mMapped {/api/v1/love-points/logs/:id/reverse, POST} route[39m [90m{"context":"RouterExplorer"}[39m
+[00:10:36.624] [32mINFO[39m (27792): [36mTimelineController {/api/v1/timeline}:[39m [90m{"context":"RoutesResolver"}[39m
+[00:10:36.624] [32mINFO[39m (27792): [36mMapped {/api/v1/timeline, GET} route[39m [90m{"context":"RouterExplorer"}[39m
+[00:10:36.624] [32mINFO[39m (27792): [36mMapped {/api/v1/timeline/monthly-summary, GET} route[39m [90m{"context":"RouterExplorer"}[39m
+[00:10:36.624] [32mINFO[39m (27792): [36mMapped {/api/v1/timeline/manual, POST} route[39m [90m{"context":"RouterExplorer"}[39m
+[00:10:36.624] [32mINFO[39m (27792): [36mMapped {/api/v1/timeline/:id/reply, PATCH} route[39m [90m{"context":"RouterExplorer"}[39m
+[00:10:36.624] [32mINFO[39m (27792): [36mMapped {/api/v1/timeline/:id/hide, PATCH} route[39m [90m{"context":"RouterExplorer"}[39m
+[00:10:36.624] [32mINFO[39m (27792): [36mMapped {/api/v1/timeline/:id/unhide, PATCH} route[39m [90m{"context":"RouterExplorer"}[39m
+[00:10:36.624] [32mINFO[39m (27792): [36mMapped {/api/v1/timeline/:id, DELETE} route[39m [90m{"context":"RouterExplorer"}[39m
+[00:10:36.624] [32mINFO[39m (27792): [36mStorageController {/api/v1/storage}:[39m [90m{"context":"RoutesResolver"}[39m
+[00:10:36.624] [32mINFO[39m (27792): [36mMapped {/api/v1/storage/upload, POST} route[39m [90m{"context":"RouterExplorer"}[39m
+[00:10:36.624] [32mINFO[39m (27792): [36mAchievementController {/api/v1/achievements}:[39m [90m{"context":"RoutesResolver"}[39m
+[00:10:36.624] [32mINFO[39m (27792): [36mMapped {/api/v1/achievements/me, GET} route[39m [90m{"context":"RouterExplorer"}[39m
+[00:10:36.624] [32mINFO[39m (27792): [36mMapped {/api/v1/achievements/family, GET} route[39m [90m{"context":"RouterExplorer"}[39m
+[00:10:36.624] [32mINFO[39m (27792): [36mMapped {/api/v1/achievements/progress, GET} route[39m [90m{"context":"RouterExplorer"}[39m
+[00:10:36.624] [32mINFO[39m (27792): [36mNotificationLogController {/api/v1/notifications}:[39m [90m{"context":"RoutesResolver"}[39m
+[00:10:36.624] [32mINFO[39m (27792): [36mMapped {/api/v1/notifications/unread-count, GET} route[39m [90m{"context":"RouterExplorer"}[39m
+[00:10:36.624] [32mINFO[39m (27792): [36mMapped {/api/v1/notifications, GET} route[39m [90m{"context":"RouterExplorer"}[39m
+[00:10:36.624] [32mINFO[39m (27792): [36mMapped {/api/v1/notifications/:id/read, POST} route[39m [90m{"context":"RouterExplorer"}[39m
+[00:10:36.624] [32mINFO[39m (27792): [36mMapped {/api/v1/notifications/read-all, POST} route[39m [90m{"context":"RouterExplorer"}[39m
+[00:10:36.624] [32mINFO[39m (27792): [36mAdminMetricsController {/api/v1/admin/metrics}:[39m [90m{"context":"RoutesResolver"}[39m
+[00:10:36.624] [32mINFO[39m (27792): [36mMapped {/api/v1/admin/metrics, GET} route[39m [90m{"context":"RouterExplorer"}[39m
+[00:10:36.624] [32mINFO[39m (27792): [36mAdminFamilyController {/api/v1/admin/families}:[39m [90m{"context":"RoutesResolver"}[39m
+[00:10:36.624] [32mINFO[39m (27792): [36mMapped {/api/v1/admin/families, GET} route[39m [90m{"context":"RouterExplorer"}[39m
+[00:10:36.624] [32mINFO[39m (27792): [36mMapped {/api/v1/admin/families/:id, GET} route[39m [90m{"context":"RouterExplorer"}[39m
+[00:10:36.624] [32mINFO[39m (27792): [36mMapped {/api/v1/admin/families/:id/love-point-ledger, GET} route[39m [90m{"context":"RouterExplorer"}[39m
+[00:10:36.624] [32mINFO[39m (27792): [36mMapped {/api/v1/admin/families/:id/recipes, GET} route[39m [90m{"context":"RouterExplorer"}[39m
+[00:10:36.624] [32mINFO[39m (27792): [36mMapped {/api/v1/admin/families/:id/achievements, GET} route[39m [90m{"context":"RouterExplorer"}[39m
+[00:10:36.624] [32mINFO[39m (27792): [36mAdminUserController {/api/v1/admin/users}:[39m [90m{"context":"RoutesResolver"}[39m
+[00:10:36.624] [32mINFO[39m (27792): [36mMapped {/api/v1/admin/users, GET} route[39m [90m{"context":"RouterExplorer"}[39m
+[00:10:36.624] [32mINFO[39m (27792): [36mMapped {/api/v1/admin/users/:id, GET} route[39m [90m{"context":"RouterExplorer"}[39m
+[00:10:36.624] [32mINFO[39m (27792): [36mMapped {/api/v1/admin/users/:id/love-point-logs, GET} route[39m [90m{"context":"RouterExplorer"}[39m
+[00:10:36.624] [32mINFO[39m (27792): [36mMapped {/api/v1/admin/users/:id/achievements, GET} route[39m [90m{"context":"RouterExplorer"}[39m
+[00:10:36.624] [32mINFO[39m (27792): [36mMapped {/api/v1/admin/users/:id/orders, GET} route[39m [90m{"context":"RouterExplorer"}[39m
+[00:10:36.624] [32mINFO[39m (27792): [36mAdminOrderController {/api/v1/admin/orders}:[39m [90m{"context":"RoutesResolver"}[39m
+[00:10:36.624] [32mINFO[39m (27792): [36mMapped {/api/v1/admin/orders, GET} route[39m [90m{"context":"RouterExplorer"}[39m
+[00:10:36.624] [32mINFO[39m (27792): [36mMapped {/api/v1/admin/orders/:id, GET} route[39m [90m{"context":"RouterExplorer"}[39m
+[00:10:36.624] [32mINFO[39m (27792): [36mMapped {/api/v1/admin/orders/:id/messages, GET} route[39m [90m{"context":"RouterExplorer"}[39m
+[00:10:36.624] [32mINFO[39m (27792): [36mMapped {/api/v1/admin/orders/:id/freeze, POST} route[39m [90m{"context":"RouterExplorer"}[39m
+[00:10:36.624] [32mINFO[39m (27792): [36mAdminBadgeController {/api/v1/admin/badges}:[39m [90m{"context":"RoutesResolver"}[39m
+[00:10:36.624] [32mINFO[39m (27792): [36mMapped {/api/v1/admin/badges, GET} route[39m [90m{"context":"RouterExplorer"}[39m
+[00:10:36.624] [32mINFO[39m (27792): [36mMapped {/api/v1/admin/badges/seed, GET} route[39m [90m{"context":"RouterExplorer"}[39m
+[00:10:36.624] [32mINFO[39m (27792): [36mMapped {/api/v1/admin/badges/:key, GET} route[39m [90m{"context":"RouterExplorer"}[39m
+[00:10:36.624] [32mINFO[39m (27792): [36mMapped {/api/v1/admin/badges, POST} route[39m [90m{"context":"RouterExplorer"}[39m
+[00:10:36.624] [32mINFO[39m (27792): [36mMapped {/api/v1/admin/badges/:key, PATCH} route[39m [90m{"context":"RouterExplorer"}[39m
+[00:10:36.624] [32mINFO[39m (27792): [36mMapped {/api/v1/admin/badges/:key/toggle, PATCH} route[39m [90m{"context":"RouterExplorer"}[39m
+[00:10:36.624] [32mINFO[39m (27792): [36mMapped {/api/v1/admin/badges/:key, DELETE} route[39m [90m{"context":"RouterExplorer"}[39m
+[00:10:36.624] [32mINFO[39m (27792): [36mMapped {/api/v1/admin/badges/:key/stats, GET} route[39m [90m{"context":"RouterExplorer"}[39m
+[00:10:36.624] [32mINFO[39m (27792): [36mAdminAnalyticsController {/api/v1/admin/analytics}:[39m [90m{"context":"RoutesResolver"}[39m
+[00:10:36.624] [32mINFO[39m (27792): [36mMapped {/api/v1/admin/analytics, GET} route[39m [90m{"context":"RouterExplorer"}[39m
+[00:10:36.624] [32mINFO[39m (27792): [36mAdminChefLevelController {/api/v1/admin/chef-levels}:[39m [90m{"context":"RoutesResolver"}[39m
+[00:10:36.624] [32mINFO[39m (27792): [36mMapped {/api/v1/admin/chef-levels, GET} route[39m [90m{"context":"RouterExplorer"}[39m
+[00:10:36.624] [32mINFO[39m (27792): [36mMapped {/api/v1/admin/chef-levels/seed, GET} route[39m [90m{"context":"RouterExplorer"}[39m
+[00:10:36.624] [32mINFO[39m (27792): [36mMapped {/api/v1/admin/chef-levels/:key, GET} route[39m [90m{"context":"RouterExplorer"}[39m
+[00:10:36.624] [32mINFO[39m (27792): [36mMapped {/api/v1/admin/chef-levels, POST} route[39m [90m{"context":"RouterExplorer"}[39m
+[00:10:36.624] [32mINFO[39m (27792): [36mMapped {/api/v1/admin/chef-levels/:key, PATCH} route[39m [90m{"context":"RouterExplorer"}[39m
+[00:10:36.624] [32mINFO[39m (27792): [36mMapped {/api/v1/admin/chef-levels/:key/toggle, PATCH} route[39m [90m{"context":"RouterExplorer"}[39m
+[00:10:36.624] [32mINFO[39m (27792): [36mMapped {/api/v1/admin/chef-levels/:key, DELETE} route[39m [90m{"context":"RouterExplorer"}[39m
+[00:10:36.624] [32mINFO[39m (27792): [36mFeedbackController {/api/v1}:[39m [90m{"context":"RoutesResolver"}[39m
+[00:10:36.624] [32mINFO[39m (27792): [36mMapped {/api/v1/feedback, POST} route[39m [90m{"context":"RouterExplorer"}[39m
+[00:10:36.624] [32mINFO[39m (27792): [36mMapped {/api/v1/admin/feedback, GET} route[39m [90m{"context":"RouterExplorer"}[39m
+[00:10:36.624] [32mINFO[39m (27792): [36mMapped {/api/v1/admin/feedback/:id, PATCH} route[39m [90m{"context":"RouterExplorer"}[39m
+[00:10:36.624] [32mINFO[39m (27792): [36mAiController {/api/v1/ai}:[39m [90m{"context":"RoutesResolver"}[39m
+[00:10:36.624] [32mINFO[39m (27792): [36mMapped {/api/v1/ai/recipes/generate, POST} route[39m [90m{"context":"RouterExplorer"}[39m
+[00:10:36.624] [32mINFO[39m (27792): [36mMapped {/api/v1/ai/recipes/save, POST} route[39m [90m{"context":"RouterExplorer"}[39m
+[00:10:36.624] [32mINFO[39m (27792): [36mMapped {/api/v1/ai/recommend, POST} route[39m [90m{"context":"RouterExplorer"}[39m
+[00:10:36.624] [32mINFO[39m (27792): [36mMapped {/api/v1/ai/cooking-assistant/chat, POST} route[39m [90m{"context":"RouterExplorer"}[39m
+[00:10:36.624] [32mINFO[39m (27792): [36mMapped {/api/v1/ai/nutrition/analyze, POST} route[39m [90m{"context":"RouterExplorer"}[39m
+[00:10:36.624] [32mINFO[39m (27792): [36mMapped {/api/v1/ai/nutrition/weekly-plan, POST} route[39m [90m{"context":"RouterExplorer"}[39m
+[00:10:36.624] [32mINFO[39m (27792): [36mAdminAiController {/api/v1/admin/ai}:[39m [90m{"context":"RoutesResolver"}[39m
+[00:10:36.624] [32mINFO[39m (27792): [36mMapped {/api/v1/admin/ai/config, GET} route[39m [90m{"context":"RouterExplorer"}[39m
+[00:10:36.624] [32mINFO[39m (27792): [36mMapped {/api/v1/admin/ai/config, POST} route[39m [90m{"context":"RouterExplorer"}[39m
+[00:10:36.624] [32mINFO[39m (27792): [36mMapped {/api/v1/admin/ai/test-connection, POST} route[39m [90m{"context":"RouterExplorer"}[39m
+[00:10:36.624] [32mINFO[39m (27792): [36mMapped {/api/v1/admin/ai/usage/stats, GET} route[39m [90m{"context":"RouterExplorer"}[39m
+[00:10:36.624] [32mINFO[39m (27792): [36mMapped {/api/v1/admin/ai/usage/logs, GET} route[39m [90m{"context":"RouterExplorer"}[39m
+[00:10:36.624] [32mINFO[39m (27792): [36mseeded love_point_formula[39m [90m{"context":"BusinessConfigService"}[39m
+[00:10:36.624] [32mINFO[39m (27792): [36mseeded rush_limits[39m [90m{"context":"BusinessConfigService"}[39m
+[00:10:36.624] [32mINFO[39m (27792): [36mseeded order_timing[39m [90m{"context":"BusinessConfigService"}[39m
+[00:10:36.624] [32mINFO[39m (27792): [36mseeded recipe_limits[39m [90m{"context":"BusinessConfigService"}[39m
+[00:10:36.624] [32mINFO[39m (27792): [36mseeded family_limits[39m [90m{"context":"BusinessConfigService"}[39m
+[00:10:36.624] [32mINFO[39m (27792): [36mseeded rating_limits[39m [90m{"context":"BusinessConfigService"}[39m
+[00:10:36.624] [32mINFO[39m (27792): [36mseeded pagination[39m [90m{"context":"BusinessConfigService"}[39m
+[00:10:36.624] [32mINFO[39m (27792): [36mseeded wx_template_ids[39m [90m{"context":"BusinessConfigService"}[39m
+[00:10:36.624] [32mINFO[39m (27792): [36mseeded ai_config[39m [90m{"context":"BusinessConfigService"}[39m
+[00:10:36.624] [32mINFO[39m (27792): [36mMinIO bucket "family-kitchen" created[39m [90m{"context":"StorageService"}[39m
+[00:10:36.624] [32mINFO[39m (27792): [36mseeded system/default-avatar-male.jpg to object storage[39m [90m{"context":"StorageService"}[39m
+[00:10:36.624] [32mINFO[39m (27792): [36mseeded system/default-avatar-female.jpg to object storage[39m [90m{"context":"StorageService"}[39m
+[00:10:36.624] [32mINFO[39m (27792): [36mWebSocket server listening on port 33301[39m [90m{"context":"WsGateway"}[39m
+[00:10:36.624] [32mINFO[39m (27792): [36mNest application successfully started[39m [90m{"context":"NestApplication"}[39m
+[00:11:02.571] [32mINFO[39m (27792): [36mrequest completed[39m [90m{"req":{"id":"req-1","method":"GET","url":"/api/v1/health","query":{},"headers":{"host":"127.0.0.1:33300","connection":"keep-alive","accept":"*/*","accept-language":"*","sec-fetch-mode":"cors","user-agent":"node","accept-encoding":"gzip, deflate"},"remoteAddress":"127.0.0.1","remotePort":51107},"res":{"statusCode":200,"headers":{}},"responseTime":1}[39m
+[00:11:02.577] [32mINFO[39m (27792): [36mrequest completed[39m [90m{"req":{"id":"req-2","method":"GET","url":"/api/v1/health/db","query":{},"headers":{"host":"127.0.0.1:33300","connection":"keep-alive","accept":"*/*","accept-language":"*","sec-fetch-mode":"cors","user-agent":"node","accept-encoding":"gzip, deflate"},"remoteAddress":"127.0.0.1","remotePort":51108},"res":{"statusCode":200,"headers":{}},"responseTime":1}[39m
+[00:11:02.588] [32mINFO[39m (27792): [36mrequest completed[39m [90m{"req":{"id":"req-3","method":"GET","url":"/api/v1/orders","query":{},"headers":{"host":"127.0.0.1:33300","connection":"keep-alive","accept":"*/*","accept-language":"*","sec-fetch-mode":"cors","user-agent":"node","accept-encoding":"gzip, deflate"},"remoteAddress":"127.0.0.1","remotePort":51107},"res":{"statusCode":401,"headers":{}},"responseTime":1}[39m
+[00:11:02.700] [32mINFO[39m (27792): [36mrequest completed[39m [90m{"req":{"id":"req-4","method":"POST","url":"/api/v1/auth/password-login","query":{},"headers":{"host":"127.0.0.1:33300","connection":"keep-alive","content-type":"application/json","accept":"*/*","accept-language":"*","sec-fetch-mode":"cors","user-agent":"node","accept-encoding":"gzip, deflate","content-length":"76"},"remoteAddress":"127.0.0.1","remotePort":51108},"res":{"statusCode":200,"headers":{}},"responseTime":96}[39m
+[00:11:02.809] [32mINFO[39m (27792): [36mrequest completed[39m [90m{"req":{"id":"req-5","method":"POST","url":"/api/v1/auth/password-login","query":{},"headers":{"host":"127.0.0.1:33300","connection":"keep-alive","content-type":"application/json","accept":"*/*","accept-language":"*","sec-fetch-mode":"cors","user-agent":"node","accept-encoding":"gzip, deflate","content-length":"78"},"remoteAddress":"127.0.0.1","remotePort":51107},"res":{"statusCode":200,"headers":{}},"responseTime":98}[39m
+[00:11:02.909] [32mINFO[39m (27792): [36mrequest completed[39m [90m{"req":{"id":"req-6","method":"POST","url":"/api/v1/auth/password-login","query":{},"headers":{"host":"127.0.0.1:33300","connection":"keep-alive","content-type":"application/json","accept":"*/*","accept-language":"*","sec-fetch-mode":"cors","user-agent":"node","accept-encoding":"gzip, deflate","content-length":"60"},"remoteAddress":"127.0.0.1","remotePort":51108},"res":{"statusCode":200,"headers":{}},"responseTime":88}[39m
+[00:11:02.914] [32mINFO[39m (27792): [36mrequest completed[39m [90m{"req":{"id":"req-7","method":"POST","url":"/api/v1/auth/admin/login","query":{},"headers":{"host":"127.0.0.1:33300","connection":"keep-alive","content-type":"application/json","accept":"*/*","accept-language":"*","sec-fetch-mode":"cors","user-agent":"node","accept-encoding":"gzip, deflate","content-length":"45"},"remoteAddress":"127.0.0.1","remotePort":51107},"res":{"statusCode":200,"headers":{}},"responseTime":1}[39m
+[00:11:02.933] [32mINFO[39m (27792): [36mrequest completed[39m [90m{"req":{"id":"req-8","method":"GET","url":"/api/v1/admin/users","query":{},"headers":{"host":"127.0.0.1:33300","connection":"keep-alive","authorization":"[Redacted]","accept":"*/*","accept-language":"*","sec-fetch-mode":"cors","user-agent":"node","accept-encoding":"gzip, deflate"},"remoteAddress":"127.0.0.1","remotePort":51108},"res":{"statusCode":200,"headers":{}},"responseTime":4}[39m
+[00:11:02.946] [32mINFO[39m (27792): [36mrequest completed[39m [90m{"req":{"id":"req-9","method":"GET","url":"/api/v1/admin/users","query":{},"headers":{"host":"127.0.0.1:33300","connection":"keep-alive","authorization":"[Redacted]","accept":"*/*","accept-language":"*","sec-fetch-mode":"cors","user-agent":"node","accept-encoding":"gzip, deflate"},"remoteAddress":"127.0.0.1","remotePort":51107},"res":{"statusCode":403,"headers":{}},"responseTime":2}[39m
+[00:11:03.197] [32mINFO[39m (27792): [36mrequest completed[39m [90m{"req":{"id":"req-a","method":"POST","url":"/api/v1/families","query":{},"headers":{"host":"127.0.0.1:33300","connection":"keep-alive","authorization":"[Redacted]","content-type":"application/json","accept":"*/*","accept-language":"*","sec-fetch-mode":"cors","user-agent":"node","accept-encoding":"gzip, deflate","content-length":"32"},"remoteAddress":"127.0.0.1","remotePort":51108},"res":{"statusCode":201,"headers":{}},"responseTime":237}[39m
+[00:11:03.364] [32mINFO[39m (27792): [36munlocked badge family_first_day for family:cmtlq29bn0004mn9nm8ta3jhd[39m [90m{"req":{"id":"req-a","method":"POST","url":"/api/v1/families","query":{},"headers":{"host":"127.0.0.1:33300","connection":"keep-alive","authorization":"[Redacted]","content-type":"application/json","accept":"*/*","accept-language":"*","sec-fetch-mode":"cors","user-agent":"node","accept-encoding":"gzip, deflate","content-length":"32"},"remoteAddress":"127.0.0.1","remotePort":51108},"context":"AchievementService"}[39m
+[00:11:03.386] [32mINFO[39m (27792): [36mrequest completed[39m [90m{"req":{"id":"req-b","method":"POST","url":"/api/v1/families/me/invite-code","query":{},"headers":{"host":"127.0.0.1:33300","connection":"keep-alive","authorization":"[Redacted]","content-type":"application/json","accept":"*/*","accept-language":"*","sec-fetch-mode":"cors","user-agent":"node","accept-encoding":"gzip, deflate","content-length":"2"},"remoteAddress":"127.0.0.1","remotePort":51107},"res":{"statusCode":200,"headers":{}},"responseTime":178}[39m
+[00:11:03.467] [32mINFO[39m (27792): [36mrequest completed[39m [90m{"req":{"id":"req-c","method":"POST","url":"/api/v1/families/join","query":{},"headers":{"host":"127.0.0.1:33300","connection":"keep-alive","authorization":"[Redacted]","content-type":"application/json","accept":"*/*","accept-language":"*","sec-fetch-mode":"cors","user-agent":"node","accept-encoding":"gzip, deflate","content-length":"25"},"remoteAddress":"127.0.0.1","remotePort":51108},"res":{"statusCode":200,"headers":{}},"responseTime":75}[39m
+[00:11:03.532] [32mINFO[39m (27792): [36mrequest completed[39m [90m{"req":{"id":"req-d","method":"POST","url":"/api/v1/families","query":{},"headers":{"host":"127.0.0.1:33300","connection":"keep-alive","authorization":"[Redacted]","content-type":"application/json","accept":"*/*","accept-language":"*","sec-fetch-mode":"cors","user-agent":"node","accept-encoding":"gzip, deflate","content-length":"26"},"remoteAddress":"127.0.0.1","remotePort":51107},"res":{"statusCode":201,"headers":{}},"responseTime":64}[39m
+[00:11:03.608] [32mINFO[39m (27792): [36munlocked badge family_first_day for family:cmtlq29pr000dmn9n2bspvi9a[39m [90m{"req":{"id":"req-d","method":"POST","url":"/api/v1/families","query":{},"headers":{"host":"127.0.0.1:33300","connection":"keep-alive","authorization":"[Redacted]","content-type":"application/json","accept":"*/*","accept-language":"*","sec-fetch-mode":"cors","user-agent":"node","accept-encoding":"gzip, deflate","content-length":"26"},"remoteAddress":"127.0.0.1","remotePort":51107},"context":"AchievementService"}[39m
+[00:11:03.623] [32mINFO[39m (27792): [36mrequest completed[39m [90m{"req":{"id":"req-e","method":"POST","url":"/api/v1/storage/upload","query":{},"headers":{"host":"127.0.0.1:33300","connection":"keep-alive","authorization":"[Redacted]","content-type":"multipart/form-data; boundary=----formdata-undici-033673188927","accept":"*/*","accept-language":"*","sec-fetch-mode":"cors","user-agent":"node","accept-encoding":"gzip, deflate","content-length":"238"},"remoteAddress":"127.0.0.1","remotePort":51108},"res":{"statusCode":201,"headers":{}},"responseTime":89}[39m
+[00:11:03.687] [32mINFO[39m (27792): [36mrequest completed[39m [90m{"req":{"id":"req-f","method":"POST","url":"/api/v1/recipes","query":{},"headers":{"host":"127.0.0.1:33300","connection":"keep-alive","authorization":"[Redacted]","content-type":"application/json","accept":"*/*","accept-language":"*","sec-fetch-mode":"cors","user-agent":"node","accept-encoding":"gzip, deflate","content-length":"159"},"remoteAddress":"127.0.0.1","remotePort":51107},"res":{"statusCode":201,"headers":{}},"responseTime":60}[39m
+[00:11:03.731] [32mINFO[39m (27792): [36munlocked badge recipe_first_create for user:cmtlq292e0000mn9nb2akgsq4[39m [90m{"req":{"id":"req-f","method":"POST","url":"/api/v1/recipes","query":{},"headers":{"host":"127.0.0.1:33300","connection":"keep-alive","authorization":"[Redacted]","content-type":"application/json","accept":"*/*","accept-language":"*","sec-fetch-mode":"cors","user-agent":"node","accept-encoding":"gzip, deflate","content-length":"159"},"remoteAddress":"127.0.0.1","remotePort":51107},"context":"AchievementService"}[39m
+[00:11:03.798] [32mINFO[39m (27792): [36mrequest completed[39m [90m{"req":{"id":"req-g","method":"POST","url":"/api/v1/recipes","query":{},"headers":{"host":"127.0.0.1:33300","connection":"keep-alive","authorization":"[Redacted]","content-type":"application/json","accept":"*/*","accept-language":"*","sec-fetch-mode":"cors","user-agent":"node","accept-encoding":"gzip, deflate","content-length":"41"},"remoteAddress":"127.0.0.1","remotePort":51108},"res":{"statusCode":201,"headers":{}},"responseTime":99}[39m
+[00:11:03.814] [32mINFO[39m (27792): [36mrequest completed[39m [90m{"req":{"id":"req-h","method":"GET","url":"/api/v1/recipes","query":{},"headers":{"host":"127.0.0.1:33300","connection":"keep-alive","authorization":"[Redacted]","accept":"*/*","accept-language":"*","sec-fetch-mode":"cors","user-agent":"node","accept-encoding":"gzip, deflate"},"remoteAddress":"127.0.0.1","remotePort":51107},"res":{"statusCode":200,"headers":{}},"responseTime":6}[39m
+[00:11:03.842] [32mINFO[39m (27792): [36munlocked badge recipe_first_create for user:cmtlq295f0001mn9n4l4nilpe[39m [90m{"req":{"id":"req-g","method":"POST","url":"/api/v1/recipes","query":{},"headers":{"host":"127.0.0.1:33300","connection":"keep-alive","authorization":"[Redacted]","content-type":"application/json","accept":"*/*","accept-language":"*","sec-fetch-mode":"cors","user-agent":"node","accept-encoding":"gzip, deflate","content-length":"41"},"remoteAddress":"127.0.0.1","remotePort":51108},"context":"AchievementService"}[39m
+[00:11:03.910] [32mINFO[39m (27792): [36mrequest completed[39m [90m{"req":{"id":"req-i","method":"POST","url":"/api/v1/orders","query":{},"headers":{"host":"127.0.0.1:33300","connection":"keep-alive","authorization":"[Redacted]","content-type":"application/json","accept":"*/*","accept-language":"*","sec-fetch-mode":"cors","user-agent":"node","accept-encoding":"gzip, deflate","content-length":"230"},"remoteAddress":"127.0.0.1","remotePort":51108},"res":{"statusCode":201,"headers":{}},"responseTime":87}[39m
+[00:11:03.919] [32mINFO[39m (27792): [36mrequest completed[39m [90m{"req":{"id":"req-j","method":"GET","url":"/api/v1/orders/cmtlq29zo000rmn9ntcz9tk5m","query":{},"headers":{"host":"127.0.0.1:33300","connection":"keep-alive","authorization":"[Redacted]","accept":"*/*","accept-language":"*","sec-fetch-mode":"cors","user-agent":"node","accept-encoding":"gzip, deflate"},"remoteAddress":"127.0.0.1","remotePort":51107},"res":{"statusCode":403,"headers":{}},"responseTime":6}[39m
+[00:11:03.923] [32mINFO[39m (27792): [36mrequest completed[39m [90m{"req":{"id":"req-k","method":"POST","url":"/api/v1/orders/cmtlq29zo000rmn9ntcz9tk5m/accept","query":{},"headers":{"host":"127.0.0.1:33300","connection":"keep-alive","authorization":"[Redacted]","content-type":"application/json","accept":"*/*","accept-language":"*","sec-fetch-mode":"cors","user-agent":"node","accept-encoding":"gzip, deflate","content-length":"2"},"remoteAddress":"127.0.0.1","remotePort":51108},"res":{"statusCode":403,"headers":{}},"responseTime":3}[39m
+[00:11:03.952] [32mINFO[39m (27792): [36munlocked badge customer_first_order for user:cmtlq295f0001mn9n4l4nilpe[39m [90m{"req":{"id":"req-i","method":"POST","url":"/api/v1/orders","query":{},"headers":{"host":"127.0.0.1:33300","connection":"keep-alive","authorization":"[Redacted]","content-type":"application/json","accept":"*/*","accept-language":"*","sec-fetch-mode":"cors","user-agent":"node","accept-encoding":"gzip, deflate","content-length":"230"},"remoteAddress":"127.0.0.1","remotePort":51108},"context":"AchievementService"}[39m
+[00:11:04.031] [32mINFO[39m (27792): [36mrequest completed[39m [90m{"req":{"id":"req-l","method":"POST","url":"/api/v1/orders/cmtlq29zo000rmn9ntcz9tk5m/accept","query":{},"headers":{"host":"127.0.0.1:33300","connection":"keep-alive","authorization":"[Redacted]","content-type":"application/json","accept":"*/*","accept-language":"*","sec-fetch-mode":"cors","user-agent":"node","accept-encoding":"gzip, deflate","content-length":"2"},"remoteAddress":"127.0.0.1","remotePort":51107},"res":{"statusCode":200,"headers":{}},"responseTime":99}[39m
+[00:11:04.034] [31mERROR[39m (27792): [36mwx template id missing for ORDER_ACCEPTED — skipping push[39m [90m{"req":{"id":"req-l","method":"POST","url":"/api/v1/orders/cmtlq29zo000rmn9ntcz9tk5m/accept","query":{},"headers":{"host":"127.0.0.1:33300","connection":"keep-alive","authorization":"[Redacted]","content-type":"application/json","accept":"*/*","accept-language":"*","sec-fetch-mode":"cors","user-agent":"node","accept-encoding":"gzip, deflate","content-length":"2"},"remoteAddress":"127.0.0.1","remotePort":51107},"context":"NotificationService"}[39m
+[00:11:04.210] [32mINFO[39m (27792): [36mrequest completed[39m [90m{"req":{"id":"req-m","method":"POST","url":"/api/v1/orders/cmtlq29zo000rmn9ntcz9tk5m/prepping","query":{},"headers":{"host":"127.0.0.1:33300","connection":"keep-alive","authorization":"[Redacted]","content-type":"application/json","accept":"*/*","accept-language":"*","sec-fetch-mode":"cors","user-agent":"node","accept-encoding":"gzip, deflate","content-length":"2"},"remoteAddress":"127.0.0.1","remotePort":51108},"res":{"statusCode":200,"headers":{}},"responseTime":169}[39m
+[00:11:04.376] [32mINFO[39m (27792): [36mrequest completed[39m [90m{"req":{"id":"req-n","method":"POST","url":"/api/v1/orders/cmtlq29zo000rmn9ntcz9tk5m/cooking","query":{},"headers":{"host":"127.0.0.1:33300","connection":"keep-alive","authorization":"[Redacted]","content-type":"application/json","accept":"*/*","accept-language":"*","sec-fetch-mode":"cors","user-agent":"node","accept-encoding":"gzip, deflate","content-length":"2"},"remoteAddress":"127.0.0.1","remotePort":51107},"res":{"statusCode":200,"headers":{}},"responseTime":149}[39m
+[00:11:04.500] [32mINFO[39m (27792): [36mrequest completed[39m [90m{"req":{"id":"req-o","method":"POST","url":"/api/v1/orders/cmtlq29zo000rmn9ntcz9tk5m/serve","query":{},"headers":{"host":"127.0.0.1:33300","connection":"keep-alive","authorization":"[Redacted]","content-type":"application/json","accept":"*/*","accept-language":"*","sec-fetch-mode":"cors","user-agent":"node","accept-encoding":"gzip, deflate","content-length":"119"},"remoteAddress":"127.0.0.1","remotePort":51108},"res":{"statusCode":200,"headers":{}},"responseTime":116}[39m
+[00:11:04.503] [31mERROR[39m (27792): [36mwx template id missing for ORDER_SERVED — skipping push[39m [90m{"req":{"id":"req-o","method":"POST","url":"/api/v1/orders/cmtlq29zo000rmn9ntcz9tk5m/serve","query":{},"headers":{"host":"127.0.0.1:33300","connection":"keep-alive","authorization":"[Redacted]","content-type":"application/json","accept":"*/*","accept-language":"*","sec-fetch-mode":"cors","user-agent":"node","accept-encoding":"gzip, deflate","content-length":"119"},"remoteAddress":"127.0.0.1","remotePort":51108},"context":"NotificationService"}[39m
+[00:11:04.597] [32mINFO[39m (27792): [36munlocked badge chef_midnight for user:cmtlq292e0000mn9nb2akgsq4[39m [90m{"req":{"id":"req-o","method":"POST","url":"/api/v1/orders/cmtlq29zo000rmn9ntcz9tk5m/serve","query":{},"headers":{"host":"127.0.0.1:33300","connection":"keep-alive","authorization":"[Redacted]","content-type":"application/json","accept":"*/*","accept-language":"*","sec-fetch-mode":"cors","user-agent":"node","accept-encoding":"gzip, deflate","content-length":"119"},"remoteAddress":"127.0.0.1","remotePort":51108},"context":"AchievementService"}[39m
+[00:11:04.689] [32mINFO[39m (27792): [36mrequest completed[39m [90m{"req":{"id":"req-p","method":"POST","url":"/api/v1/orders/cmtlq29zo000rmn9ntcz9tk5m/rating","query":{},"headers":{"host":"127.0.0.1:33300","connection":"keep-alive","authorization":"[Redacted]","content-type":"application/json","accept":"*/*","accept-language":"*","sec-fetch-mode":"cors","user-agent":"node","accept-encoding":"gzip, deflate","content-length":"45"},"remoteAddress":"127.0.0.1","remotePort":51107},"res":{"statusCode":200,"headers":{}},"responseTime":181}[39m
+[00:11:04.702] [32mINFO[39m (27792): [36mrequest completed[39m [90m{"req":{"id":"req-q","method":"GET","url":"/api/v1/orders","query":{},"headers":{"host":"127.0.0.1:33300","connection":"keep-alive","authorization":"[Redacted]","accept":"*/*","accept-language":"*","sec-fetch-mode":"cors","user-agent":"node","accept-encoding":"gzip, deflate"},"remoteAddress":"127.0.0.1","remotePort":51108},"res":{"statusCode":200,"headers":{}},"responseTime":6}[39m
+[00:11:04.775] [32mINFO[39m (27792): [36munlocked badge chef_speed for user:cmtlq292e0000mn9nb2akgsq4[39m [90m{"req":{"id":"req-o","method":"POST","url":"/api/v1/orders/cmtlq29zo000rmn9ntcz9tk5m/serve","query":{},"headers":{"host":"127.0.0.1:33300","connection":"keep-alive","authorization":"[Redacted]","content-type":"application/json","accept":"*/*","accept-language":"*","sec-fetch-mode":"cors","user-agent":"node","accept-encoding":"gzip, deflate","content-length":"119"},"remoteAddress":"127.0.0.1","remotePort":51108},"context":"AchievementService"}[39m
+[00:11:04.799] [32mINFO[39m (27792): [36munlocked badge chef_first_dish for user:cmtlq295f0001mn9n4l4nilpe[39m [90m{"req":{"id":"req-p","method":"POST","url":"/api/v1/orders/cmtlq29zo000rmn9ntcz9tk5m/rating","query":{},"headers":{"host":"127.0.0.1:33300","connection":"keep-alive","authorization":"[Redacted]","content-type":"application/json","accept":"*/*","accept-language":"*","sec-fetch-mode":"cors","user-agent":"node","accept-encoding":"gzip, deflate","content-length":"45"},"remoteAddress":"127.0.0.1","remotePort":51107},"context":"AchievementService"}[39m
+[00:11:04.806] [33mWARN[39m (27792): [36mbadge chef_hard_3 evaluate failed: 
+Invalid `ctx.prisma.order.findMany()` invocation in
+H:\codex\林家餐厅小程序\family-kitchen-c01\backend\dist\modules\achievement\evaluator-registry.js:451:51
+
+  448 const scopeValue = ownerType === 'user' ? ctx.userId : ctx.familyId;
+  449 const recipeDifficulty = itemFilter.recipeDifficulty;
+  450 if (recipeDifficulty) {
+→ 451     const orders = await ctx.prisma.order.findMany(
+Error occurred during query execution:
+ConnectorError(ConnectorError { user_facing_error: None, kind: QueryError(Server(MysqlError { code: 3143, message: "Invalid JSON path expression. The error is around character position 1.", state: "42000" })), transient: false })[39m [90m{"req":{"id":"req-p","method":"POST","url":"/api/v1/orders/cmtlq29zo000rmn9ntcz9tk5m/rating","query":{},"headers":{"host":"127.0.0.1:33300","connection":"keep-alive","authorization":"[Redacted]","content-type":"application/json","accept":"*/*","accept-language":"*","sec-fetch-mode":"cors","user-agent":"node","accept-encoding":"gzip, deflate","content-length":"45"},"remoteAddress":"127.0.0.1","remotePort":51107},"context":"AchievementService"}[39m
+[00:11:04.866] [32mINFO[39m (27792): [36munlocked badge rater_first_comment for user:cmtlq295f0001mn9n4l4nilpe[39m [90m{"req":{"id":"req-p","method":"POST","url":"/api/v1/orders/cmtlq29zo000rmn9ntcz9tk5m/rating","query":{},"headers":{"host":"127.0.0.1:33300","connection":"keep-alive","authorization":"[Redacted]","content-type":"application/json","accept":"*/*","accept-language":"*","sec-fetch-mode":"cors","user-agent":"node","accept-encoding":"gzip, deflate","content-length":"45"},"remoteAddress":"127.0.0.1","remotePort":51107},"context":"AchievementService"}[39m
+[00:11:04.921] [32mINFO[39m (27792): [36munlocked badge family_first_dish for family:cmtlq29bn0004mn9nm8ta3jhd[39m [90m{"req":{"id":"req-p","method":"POST","url":"/api/v1/orders/cmtlq29zo000rmn9ntcz9tk5m/rating","query":{},"headers":{"host":"127.0.0.1:33300","connection":"keep-alive","authorization":"[Redacted]","content-type":"application/json","accept":"*/*","accept-language":"*","sec-fetch-mode":"cors","user-agent":"node","accept-encoding":"gzip, deflate","content-length":"45"},"remoteAddress":"127.0.0.1","remotePort":51107},"context":"AchievementService"}[39m
+[00:11:04.989] [32mINFO[39m (27792): [36munlocked badge love_first_earn for user:cmtlq292e0000mn9nb2akgsq4[39m [90m{"req":{"id":"req-p","method":"POST","url":"/api/v1/orders/cmtlq29zo000rmn9ntcz9tk5m/rating","query":{},"headers":{"host":"127.0.0.1:33300","connection":"keep-alive","authorization":"[Redacted]","content-type":"application/json","accept":"*/*","accept-language":"*","sec-fetch-mode":"cors","user-agent":"node","accept-encoding":"gzip, deflate","content-length":"45"},"remoteAddress":"127.0.0.1","remotePort":51107},"context":"AchievementService"}[39m
+
+{"label":"60-backend-live","cwd":"H:\\codex\\林家餐厅小程序\\family-kitchen-c01","node":"v24.19.0","pnpmCli":"C:\\Users\\Administrator\\AppData\\Local\\pnpm\\store\\v11\\links\\@\\pnpm\\9.12.0\\49d8fa80e8205096741f5238215a507a7cc04fc3d20ff2b1c8b726b65d71c883\\node_modules\\pnpm\\bin\\pnpm.cjs","args":["--filter","@family-kitchen/backend","start"],"started":"2026-09-03T16:10:28.704Z","timeoutSeconds":300,"sourceChanged":false,"databaseName":"c01_baseline_replay","localServicePorts":[33300,33301,33316,33319],"pid":23340,"code":1,"signal":null,"timedOut":true,"seconds":300.168}

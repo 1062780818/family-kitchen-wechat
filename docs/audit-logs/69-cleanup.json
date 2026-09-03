@@ -1,0 +1,7 @@
+{
+  "at": "2026-09-04T00:23:24.5711266+08:00",
+  "mysqlShutdownExit": 0,
+  "minioStopped": true,
+  "dataRetained": true,
+  "note": "只关闭本次隔离服务，数据和下载工具保留"
+}

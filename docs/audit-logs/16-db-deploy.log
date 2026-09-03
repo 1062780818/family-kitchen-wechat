@@ -1,0 +1,28 @@
+{"label":"16-db-deploy","cwd":"H:\\codex\\林家餐厅小程序\\family-kitchen-c01","node":"v24.19.0","pnpmCli":"C:\\Users\\Administrator\\AppData\\Local\\pnpm\\store\\v11\\links\\@\\pnpm\\9.12.0\\49d8fa80e8205096741f5238215a507a7cc04fc3d20ff2b1c8b726b65d71c883\\node_modules\\pnpm\\bin\\pnpm.cjs","args":["--filter","@family-kitchen/backend","db:migrate:deploy"],"started":"2026-09-03T15:54:19.920Z","timeoutSeconds":60,"sourceChanged":false,"localServicePorts":[33300,33301,33316,33319]}
+
+> @family-kitchen/backend@0.1.0 db:migrate:deploy H:\codex\林家餐厅小程序\family-kitchen-c01\backend
+> prisma migrate deploy
+
+node:internal/modules/cjs/loader:1520
+  throw err;
+  ^
+
+Error: Cannot find module 'H:\codex\林家餐厅小程序\family-kitchen-c01\backend\node_modules\prisma\build\index.js'
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1517:15)
+    at wrapResolveFilename (node:internal/modules/cjs/loader:1071:27)
+    at defaultResolveImplForCJSLoading (node:internal/modules/cjs/loader:1095:10)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1122:12)
+    at Module._load (node:internal/modules/cjs/loader:1294:5)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:255:19)
+    at Module.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:154:5)
+    at node:internal/main/run_main_module:33:47 {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: []
+}
+
+Node.js v24.19.0
+H:\codex\林家餐厅小程序\family-kitchen-c01\backend:
+ ERR_PNPM_RECURSIVE_RUN_FIRST_FAIL  @family-kitchen/backend@0.1.0 db:migrate:deploy: `prisma migrate deploy`
+Exit status 1
+
+{"label":"16-db-deploy","cwd":"H:\\codex\\林家餐厅小程序\\family-kitchen-c01","node":"v24.19.0","pnpmCli":"C:\\Users\\Administrator\\AppData\\Local\\pnpm\\store\\v11\\links\\@\\pnpm\\9.12.0\\49d8fa80e8205096741f5238215a507a7cc04fc3d20ff2b1c8b726b65d71c883\\node_modules\\pnpm\\bin\\pnpm.cjs","args":["--filter","@family-kitchen/backend","db:migrate:deploy"],"started":"2026-09-03T15:54:19.920Z","timeoutSeconds":60,"sourceChanged":false,"localServicePorts":[33300,33301,33316,33319],"code":1,"signal":null,"timedOut":false,"seconds":1.622}

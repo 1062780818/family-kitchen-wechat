@@ -1,0 +1,16 @@
+{"label":"31-mini-dev","cwd":"H:\\codex\\林家餐厅小程序\\family-kitchen-c01","node":"v24.19.0","pnpmCli":"C:\\Users\\Administrator\\AppData\\Local\\pnpm\\store\\v11\\links\\@\\pnpm\\9.12.0\\49d8fa80e8205096741f5238215a507a7cc04fc3d20ff2b1c8b726b65d71c883\\node_modules\\pnpm\\bin\\pnpm.cjs","args":["--filter","@family-kitchen/mini-app","dev"],"started":"2026-09-03T15:57:20.521Z","timeoutSeconds":35,"sourceChanged":false,"localServicePorts":[33300,33301,33316,33319]}
+
+> @family-kitchen/mini-app@0.1.0 dev H:\codex\林家餐厅小程序\family-kitchen-c01\mini-app
+> uni -p mp-weixin
+
+Please note that in running mode, due to log output, sourcemap, and uncompressed source code, the performance and package size are not as good as release mode.To officially release, please click the release menu or use the cli release command to release
+Compiling...
+DONE  Build complete. Watching for changes...
+Run method: open Weixin Mini Program Devtools, import dist\dev\mp-weixin run.
+ready in 5400ms.
+
+H:\codex\林家餐厅小程序\family-kitchen-c01\mini-app:
+ ERR_PNPM_RECURSIVE_RUN_FIRST_FAIL  @family-kitchen/mini-app@0.1.0 dev: `uni -p mp-weixin`
+Exit status 4294967295
+
+{"label":"31-mini-dev","cwd":"H:\\codex\\林家餐厅小程序\\family-kitchen-c01","node":"v24.19.0","pnpmCli":"C:\\Users\\Administrator\\AppData\\Local\\pnpm\\store\\v11\\links\\@\\pnpm\\9.12.0\\49d8fa80e8205096741f5238215a507a7cc04fc3d20ff2b1c8b726b65d71c883\\node_modules\\pnpm\\bin\\pnpm.cjs","args":["--filter","@family-kitchen/mini-app","dev"],"started":"2026-09-03T15:57:20.521Z","timeoutSeconds":35,"sourceChanged":false,"localServicePorts":[33300,33301,33316,33319],"code":4294967295,"signal":null,"timedOut":true,"seconds":126.634}

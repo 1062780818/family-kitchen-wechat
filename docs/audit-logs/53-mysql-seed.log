@@ -1,0 +1,32 @@
+{"label":"53-mysql-seed","cwd":"H:\\codex\\林家餐厅小程序\\family-kitchen-c01","node":"v24.19.0","pnpmCli":"C:\\Users\\Administrator\\AppData\\Local\\pnpm\\store\\v11\\links\\@\\pnpm\\9.12.0\\49d8fa80e8205096741f5238215a507a7cc04fc3d20ff2b1c8b726b65d71c883\\node_modules\\pnpm\\bin\\pnpm.cjs","args":["--filter","@family-kitchen/backend","exec","prisma","db","seed"],"started":"2026-09-03T16:08:06.839Z","timeoutSeconds":90,"sourceChanged":false,"localServicePorts":[33300,33301,33316,33319]}
+Running seed command `ts-node prisma/seed.ts` ...
+🌱 开始播种徽章定义 (60 个)...
+
+🌱 开始播种模拟数据...
+
+❌ 徽章定义播种失败: PrismaClientKnownRequestError: 
+Invalid `prisma.badgeDefinition.upsert()` invocation in
+H:\codex\林家餐厅小程序\family-kitchen-c01\backend\prisma\seed-badges.ts:1071:49
+
+  1068 let skipped = 0;
+  1069 
+  1070 for (const badge of BADGES) {
+→ 1071   const result = await prisma.badgeDefinition.upsert(
+The table `badge_definition` does not exist in the current database.
+    at $n.handleRequestError (H:\codex\林家餐厅小程序\family-kitchen-c01\node_modules\.pnpm\@prisma+client@5.22.0_prisma@5.22.0\node_modules\@prisma\client\runtime\library.js:121:7315)
+    at $n.handleAndLogRequestError (H:\codex\林家餐厅小程序\family-kitchen-c01\node_modules\.pnpm\@prisma+client@5.22.0_prisma@5.22.0\node_modules\@prisma\client\runtime\library.js:121:6623)
+    at $n.request (H:\codex\林家餐厅小程序\family-kitchen-c01\node_modules\.pnpm\@prisma+client@5.22.0_prisma@5.22.0\node_modules\@prisma\client\runtime\library.js:121:6307)
+    at async l (H:\codex\林家餐厅小程序\family-kitchen-c01\node_modules\.pnpm\@prisma+client@5.22.0_prisma@5.22.0\node_modules\@prisma\client\runtime\library.js:130:9633)
+    at async main (H:\codex\林家餐厅小程序\family-kitchen-c01\backend\prisma\seed-badges.ts:1071:20) {
+  code: 'P2021',
+  clientVersion: '5.22.0',
+  meta: { modelName: 'BadgeDefinition', table: 'badge_definition' }
+}
+
+An error occurred while running the seed command:
+Error: Command failed with exit code 1: ts-node prisma/seed.ts
+undefined
+H:\codex\林家餐厅小程序\family-kitchen-c01\backend:
+ ERR_PNPM_RECURSIVE_EXEC_FIRST_FAIL  Command "prisma" not found
+
+{"label":"53-mysql-seed","cwd":"H:\\codex\\林家餐厅小程序\\family-kitchen-c01","node":"v24.19.0","pnpmCli":"C:\\Users\\Administrator\\AppData\\Local\\pnpm\\store\\v11\\links\\@\\pnpm\\9.12.0\\49d8fa80e8205096741f5238215a507a7cc04fc3d20ff2b1c8b726b65d71c883\\node_modules\\pnpm\\bin\\pnpm.cjs","args":["--filter","@family-kitchen/backend","exec","prisma","db","seed"],"started":"2026-09-03T16:08:06.839Z","timeoutSeconds":90,"sourceChanged":false,"localServicePorts":[33300,33301,33316,33319],"pid":30320,"code":1,"signal":null,"timedOut":false,"seconds":3.727}

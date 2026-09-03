@@ -1,0 +1,455 @@
+{"label":"06-backend-build-generated","cwd":"H:\\codex\\林家餐厅小程序\\family-kitchen-c01","node":"v24.19.0","pnpmCli":"C:\\Users\\Administrator\\AppData\\Local\\pnpm\\store\\v11\\links\\@\\pnpm\\9.12.0\\49d8fa80e8205096741f5238215a507a7cc04fc3d20ff2b1c8b726b65d71c883\\node_modules\\pnpm\\bin\\pnpm.cjs","args":["--filter","@family-kitchen/backend","build"],"started":"2026-09-03T15:53:22.476Z","timeoutSeconds":120,"sourceChanged":false,"localServicePorts":[33300,33301,33316,33319]}
+
+> @family-kitchen/backend@0.1.0 build H:\codex\林家餐厅小程序\family-kitchen-c01\backend
+> nest build
+
+[96msrc/modules/achievement/achievement.service.ts[0m:[93m2[0m:[93m15[0m - [91merror[0m[90m TS2305: [0mModule '"@prisma/client"' has no exported member 'Achievement'.
+
+[7m2[0m import type { Achievement, BadgeDefinition, Prisma } from '@prisma/client';
+[7m [0m [91m              ~~~~~~~~~~~[0m
+[96msrc/modules/achievement/achievement.service.ts[0m:[93m2[0m:[93m28[0m - [91merror[0m[90m TS2305: [0mModule '"@prisma/client"' has no exported member 'BadgeDefinition'.
+
+[7m2[0m import type { Achievement, BadgeDefinition, Prisma } from '@prisma/client';
+[7m [0m [91m                           ~~~~~~~~~~~~~~~[0m
+[96msrc/modules/achievement/achievement.service.ts[0m:[93m69[0m:[93m57[0m - [91merror[0m[90m TS2694: [0mNamespace '"H:/codex/\u6797\u5BB6\u9910\u5385\u5C0F\u7A0B\u5E8F/family-kitchen-c01/node_modules/.pnpm/@prisma+client@5.22.0_prisma@5.22.0/node_modules/.prisma/client/default".Prisma' has no exported member 'InputJsonValue'.
+
+[7m69[0m             metadata: (result.metadata ?? {}) as Prisma.InputJsonValue,
+[7m  [0m [91m                                                        ~~~~~~~~~~~~~~[0m
+[96msrc/modules/achievement/achievement.service.ts[0m:[93m124[0m:[93m23[0m - [91merror[0m[90m TS7006: [0mParameter 'a' implicitly has an 'any' type.
+
+[7m124[0m     return items.map((a) => this.toDto(a));
+[7m   [0m [91m                      ~[0m
+[96msrc/modules/achievement/achievement.service.ts[0m:[93m135[0m:[93m23[0m - [91merror[0m[90m TS7006: [0mParameter 'a' implicitly has an 'any' type.
+
+[7m135[0m     return items.map((a) => this.toDto(a));
+[7m   [0m [91m                      ~[0m
+[96msrc/modules/achievement/achievement.service.ts[0m:[93m160[0m:[93m32[0m - [91merror[0m[90m TS7006: [0mParameter 'a' implicitly has an 'any' type.
+
+[7m160[0m       ...userAchievements.map((a) => a.badgeKey),
+[7m   [0m [91m                               ~[0m
+[96msrc/modules/achievement/achievement.service.ts[0m:[93m161[0m:[93m34[0m - [91merror[0m[90m TS7006: [0mParameter 'a' implicitly has an 'any' type.
+
+[7m161[0m       ...familyAchievements.map((a) => a.badgeKey),
+[7m   [0m [91m                                 ~[0m
+[96msrc/modules/achievement/badge-registry.ts[0m:[93m89[0m:[93m25[0m - [91merror[0m[90m TS7006: [0mParameter 'o' implicitly has an 'any' type.
+
+[7m89[0m       if (recent.every((o) => o.rating?.stars === 5)) {
+[7m  [0m [91m                        ~[0m
+[96msrc/modules/admin/admin-analytics.service.ts[0m:[93m88[0m:[93m17[0m - [91merror[0m[90m TS7006: [0mParameter 'r' implicitly has an 'any' type.
+
+[7m88[0m       rows.map((r) => ({
+[7m  [0m [91m                ~[0m
+[96msrc/modules/admin/admin-analytics.service.ts[0m:[93m104[0m:[93m22[0m - [91merror[0m[90m TS7006: [0mParameter 'r' implicitly has an 'any' type.
+
+[7m104[0m     return rows.map((r) => ({ status: r.status, count: r._count }));
+[7m   [0m [91m                     ~[0m
+[96msrc/modules/admin/admin-analytics.service.ts[0m:[93m200[0m:[93m25[0m - [91merror[0m[90m TS7006: [0mParameter 'r' implicitly has an 'any' type.
+
+[7m200[0m     return recipes.map((r) => ({
+[7m   [0m [91m                        ~[0m
+[96msrc/modules/admin/admin-badge.service.ts[0m:[93m93[0m:[93m25[0m - [91merror[0m[90m TS2694: [0mNamespace '"H:/codex/\u6797\u5BB6\u9910\u5385\u5C0F\u7A0B\u5E8F/family-kitchen-c01/node_modules/.pnpm/@prisma+client@5.22.0_prisma@5.22.0/node_modules/.prisma/client/default".Prisma' has no exported member 'BadgeDefinitionWhereInput'.
+
+[7m93[0m     const where: Prisma.BadgeDefinitionWhereInput = {};
+[7m  [0m [91m                        ~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+[96msrc/modules/admin/admin-badge.service.ts[0m:[93m116[0m:[93m18[0m - [91merror[0m[90m TS7006: [0mParameter 'item' implicitly has an 'any' type.
+
+[7m116[0m       items.map((item) => ({
+[7m   [0m [91m                 ~~~~[0m
+[96msrc/modules/admin/admin-badge.service.ts[0m:[93m153[0m:[93m56[0m - [91merror[0m[90m TS2694: [0mNamespace '"H:/codex/\u6797\u5BB6\u9910\u5385\u5C0F\u7A0B\u5E8F/family-kitchen-c01/node_modules/.pnpm/@prisma+client@5.22.0_prisma@5.22.0/node_modules/.prisma/client/default".Prisma' has no exported member 'InputJsonValue'.
+
+[7m153[0m         evaluatorConfig: dto.evaluatorConfig as Prisma.InputJsonValue,
+[7m   [0m [91m                                                       ~~~~~~~~~~~~~~[0m
+[96msrc/modules/admin/admin-badge.service.ts[0m:[93m176[0m:[93m62[0m - [91merror[0m[90m TS2694: [0mNamespace '"H:/codex/\u6797\u5BB6\u9910\u5385\u5C0F\u7A0B\u5E8F/family-kitchen-c01/node_modules/.pnpm/@prisma+client@5.22.0_prisma@5.22.0/node_modules/.prisma/client/default".Prisma' has no exported member 'InputJsonValue'.
+
+[7m176[0m           ? { evaluatorConfig: dto.evaluatorConfig as Prisma.InputJsonValue }
+[7m   [0m [91m                                                             ~~~~~~~~~~~~~~[0m
+[96msrc/modules/admin/admin-badge.service.ts[0m:[93m227[0m:[93m37[0m - [91merror[0m[90m TS7006: [0mParameter 'g' implicitly has an 'any' type.
+
+[7m227[0m       byOwnerType: byOwnerType.map((g) => ({
+[7m   [0m [91m                                    ~[0m
+[96msrc/modules/admin/admin-family.service.ts[0m:[93m18[0m:[93m25[0m - [91merror[0m[90m TS2694: [0mNamespace '"H:/codex/\u6797\u5BB6\u9910\u5385\u5C0F\u7A0B\u5E8F/family-kitchen-c01/node_modules/.pnpm/@prisma+client@5.22.0_prisma@5.22.0/node_modules/.prisma/client/default".Prisma' has no exported member 'FamilyWhereInput'.
+
+[7m18[0m     const where: Prisma.FamilyWhereInput = {};
+[7m  [0m [91m                        ~~~~~~~~~~~~~~~~[0m
+[96msrc/modules/admin/admin-family.service.ts[0m:[93m36[0m:[93m21[0m - [91merror[0m[90m TS7006: [0mParameter 'f' implicitly has an 'any' type.
+
+[7m36[0m       families.map((f) => ({
+[7m  [0m [91m                    ~[0m
+[96msrc/modules/admin/admin-family.service.ts[0m:[93m79[0m:[93m36[0m - [91merror[0m[90m TS7006: [0mParameter 'm' implicitly has an 'any' type.
+
+[7m79[0m       members: family.members.map((m) => ({
+[7m  [0m [91m                                   ~[0m
+[96msrc/modules/admin/admin-family.service.ts[0m:[93m105[0m:[93m17[0m - [91merror[0m[90m TS7006: [0mParameter 'l' implicitly has an 'any' type.
+
+[7m105[0m       logs.map((l) => ({
+[7m   [0m [91m                ~[0m
+[96msrc/modules/admin/admin-family.service.ts[0m:[93m136[0m:[93m20[0m - [91merror[0m[90m TS7006: [0mParameter 'r' implicitly has an 'any' type.
+
+[7m136[0m       recipes.map((r) => ({
+[7m   [0m [91m                   ~[0m
+[96msrc/modules/admin/admin-metrics.service.ts[0m:[93m58[0m:[93m32[0m - [91merror[0m[90m TS7006: [0mParameter 'o' implicitly has an 'any' type.
+
+[7m58[0m     return new Set(orders.map((o) => o.familyId));
+[7m  [0m [91m                               ~[0m
+[96msrc/modules/admin/admin-metrics.service.ts[0m:[93m119[0m:[93m49[0m - [91merror[0m[90m TS7006: [0mParameter 'm' implicitly has an 'any' type.
+
+[7m119[0m       const allMembersActive = f.members.every((m) => active.has(m.userId));
+[7m   [0m [91m                                                ~[0m
+[96msrc/modules/admin/admin-order.service.ts[0m:[93m29[0m:[93m25[0m - [91merror[0m[90m TS2694: [0mNamespace '"H:/codex/\u6797\u5BB6\u9910\u5385\u5C0F\u7A0B\u5E8F/family-kitchen-c01/node_modules/.pnpm/@prisma+client@5.22.0_prisma@5.22.0/node_modules/.prisma/client/default".Prisma' has no exported member 'OrderWhereInput'.
+
+[7m29[0m     const where: Prisma.OrderWhereInput = {};
+[7m  [0m [91m                        ~~~~~~~~~~~~~~~[0m
+[96msrc/modules/admin/admin-order.service.ts[0m:[93m48[0m:[93m19[0m - [91merror[0m[90m TS7006: [0mParameter 'o' implicitly has an 'any' type.
+
+[7m48[0m       orders.map((o) => ({
+[7m  [0m [91m                  ~[0m
+[96msrc/modules/admin/admin-order.service.ts[0m:[93m97[0m:[93m31[0m - [91merror[0m[90m TS7006: [0mParameter 'i' implicitly has an 'any' type.
+
+[7m97[0m       items: order.items.map((i) => ({
+[7m  [0m [91m                              ~[0m
+[96msrc/modules/admin/admin-order.service.ts[0m:[93m142[0m:[93m26[0m - [91merror[0m[90m TS7006: [0mParameter 'm' implicitly has an 'any' type.
+
+[7m142[0m     return messages.map((m) => ({
+[7m   [0m [91m                         ~[0m
+[96msrc/modules/admin/admin-user.service.ts[0m:[93m19[0m:[93m25[0m - [91merror[0m[90m TS2694: [0mNamespace '"H:/codex/\u6797\u5BB6\u9910\u5385\u5C0F\u7A0B\u5E8F/family-kitchen-c01/node_modules/.pnpm/@prisma+client@5.22.0_prisma@5.22.0/node_modules/.prisma/client/default".Prisma' has no exported member 'UserWhereInput'.
+
+[7m19[0m     const where: Prisma.UserWhereInput = {};
+[7m  [0m [91m                        ~~~~~~~~~~~~~~[0m
+[96msrc/modules/admin/admin-user.service.ts[0m:[93m41[0m:[93m18[0m - [91merror[0m[90m TS7006: [0mParameter 'u' implicitly has an 'any' type.
+
+[7m41[0m       users.map((u) => ({
+[7m  [0m [91m                 ~[0m
+[96msrc/modules/admin/admin-user.service.ts[0m:[93m110[0m:[93m17[0m - [91merror[0m[90m TS7006: [0mParameter 'l' implicitly has an 'any' type.
+
+[7m110[0m       logs.map((l) => ({
+[7m   [0m [91m                ~[0m
+[96msrc/modules/admin/admin-user.service.ts[0m:[93m142[0m:[93m25[0m - [91merror[0m[90m TS2694: [0mNamespace '"H:/codex/\u6797\u5BB6\u9910\u5385\u5C0F\u7A0B\u5E8F/family-kitchen-c01/node_modules/.pnpm/@prisma+client@5.22.0_prisma@5.22.0/node_modules/.prisma/client/default".Prisma' has no exported member 'OrderWhereInput'.
+
+[7m142[0m     const where: Prisma.OrderWhereInput = {
+[7m   [0m [91m                        ~~~~~~~~~~~~~~~[0m
+[96msrc/modules/admin/admin-user.service.ts[0m:[93m155[0m:[93m19[0m - [91merror[0m[90m TS7006: [0mParameter 'o' implicitly has an 'any' type.
+
+[7m155[0m       orders.map((o) => ({
+[7m   [0m [91m                  ~[0m
+[96msrc/modules/ai/services/nutrition.service.ts[0m:[93m34[0m:[93m37[0m - [91merror[0m[90m TS7006: [0mParameter 'r' implicitly has an 'any' type.
+
+[7m34[0m     const recipes = recipesRaw.map((r) => ({
+[7m  [0m [91m                                    ~[0m
+[96msrc/modules/ai/services/nutrition.service.ts[0m:[93m61[0m:[93m53[0m - [91merror[0m[90m TS7006: [0mParameter 'r' implicitly has an 'any' type.
+
+[7m61[0m     const existingRecipes = existingRecipesRaw.map((r) => ({
+[7m  [0m [91m                                                    ~[0m
+[96msrc/modules/ai/services/recipe-gen.service.ts[0m:[93m30[0m:[93m47[0m - [91merror[0m[90m TS7006: [0mParameter 'r' implicitly has an 'any' type.
+
+[7m30[0m     const existingRecipeNames = existing.map((r) => r.name);
+[7m  [0m [91m                                              ~[0m
+[96msrc/modules/ai/services/recommend.service.ts[0m:[93m30[0m:[93m53[0m - [91merror[0m[90m TS7006: [0mParameter 'r' implicitly has an 'any' type.
+
+[7m30[0m     const existingRecipes = existingRecipesRaw.map((r) => ({
+[7m  [0m [91m                                                    ~[0m
+[96msrc/modules/ai/services/recommend.service.ts[0m:[93m44[0m:[93m17[0m - [91merror[0m[90m TS7006: [0mParameter 'o' implicitly has an 'any' type.
+
+[7m44[0m       .flatMap((o) => o.items.map((i) => (i.recipeSnapshot as Record<string, string>)?.name))
+[7m  [0m [91m                ~[0m
+[96msrc/modules/ai/services/recommend.service.ts[0m:[93m44[0m:[93m36[0m - [91merror[0m[90m TS7006: [0mParameter 'i' implicitly has an 'any' type.
+
+[7m44[0m       .flatMap((o) => o.items.map((i) => (i.recipeSnapshot as Record<string, string>)?.name))
+[7m  [0m [91m                                   ~[0m
+[96msrc/modules/business-config/business-config.controller.ts[0m:[93m32[0m:[93m22[0m - [91merror[0m[90m TS7006: [0mParameter 'r' implicitly has an 'any' type.
+
+[7m32[0m     return rows.map((r) => ({
+[7m  [0m [91m                     ~[0m
+[96msrc/modules/business-config/business-config.service.ts[0m:[93m41[0m:[93m17[0m - [91merror[0m[90m TS7006: [0mParameter 'r' implicitly has an 'any' type.
+
+[7m41[0m       rows.map((r) => [r.groupKey as GroupKey, r.value as Record<string, unknown>]),
+[7m  [0m [91m                ~[0m
+[96msrc/modules/business-config/business-config.service.ts[0m:[93m62[0m:[93m22[0m - [91merror[0m[90m TS2638: [0mType '{}' may represent a primitive value, which is not permitted as the right operand of the 'in' operator.
+
+[7m62[0m         if (!(key in dbValue)) {
+[7m  [0m [91m                     ~~~~~~~[0m
+[96msrc/modules/business-config/business-config.service.ts[0m:[93m157[0m:[93m43[0m - [91merror[0m[90m TS7006: [0mParameter 'tx' implicitly has an 'any' type.
+
+[7m157[0m     await this.prisma.$transaction(async (tx) => {
+[7m   [0m [91m                                          ~~[0m
+[96msrc/modules/family/family.service.ts[0m:[93m44[0m:[93m58[0m - [91merror[0m[90m TS7006: [0mParameter 'tx' implicitly has an 'any' type.
+
+[7m44[0m     const family = await this.prisma.$transaction(async (tx) => {
+[7m  [0m [91m                                                         ~~[0m
+[96msrc/modules/family/family.service.ts[0m:[93m137[0m:[93m43[0m - [91merror[0m[90m TS7006: [0mParameter 'tx' implicitly has an 'any' type.
+
+[7m137[0m     await this.prisma.$transaction(async (tx) => {
+[7m   [0m [91m                                          ~~[0m
+[96msrc/modules/family/family.service.ts[0m:[93m185[0m:[93m43[0m - [91merror[0m[90m TS7006: [0mParameter 'tx' implicitly has an 'any' type.
+
+[7m185[0m     await this.prisma.$transaction(async (tx) => {
+[7m   [0m [91m                                          ~~[0m
+[96msrc/modules/family/family.service.ts[0m:[93m300[0m:[93m60[0m - [91merror[0m[90m TS7006: [0mParameter 'm' implicitly has an 'any' type.
+
+[7m300[0m     const members: FamilyMemberDto[] = family.members.map((m) => ({
+[7m   [0m [91m                                                           ~[0m
+[96msrc/modules/family/family.service.ts[0m:[93m307[0m:[93m43[0m - [91merror[0m[90m TS7006: [0mParameter 'm' implicitly has an 'any' type.
+
+[7m307[0m     const myMember = family.members.find((m) => m.userId === userId);
+[7m   [0m [91m                                          ~[0m
+[96msrc/modules/feedback/feedback.service.ts[0m:[93m2[0m:[93m15[0m - [91merror[0m[90m TS2305: [0mModule '"@prisma/client"' has no exported member 'Feedback'.
+
+[7m2[0m import type { Feedback, Prisma } from '@prisma/client';
+[7m [0m [91m              ~~~~~~~~[0m
+[96msrc/modules/feedback/feedback.service.ts[0m:[93m30[0m:[93m25[0m - [91merror[0m[90m TS2694: [0mNamespace '"H:/codex/\u6797\u5BB6\u9910\u5385\u5C0F\u7A0B\u5E8F/family-kitchen-c01/node_modules/.pnpm/@prisma+client@5.22.0_prisma@5.22.0/node_modules/.prisma/client/default".Prisma' has no exported member 'FeedbackWhereInput'.
+
+[7m30[0m     const where: Prisma.FeedbackWhereInput = {};
+[7m  [0m [91m                        ~~~~~~~~~~~~~~~~~~[0m
+[96msrc/modules/feedback/feedback.service.ts[0m:[93m44[0m:[93m18[0m - [91merror[0m[90m TS7006: [0mParameter 'f' implicitly has an 'any' type.
+
+[7m44[0m       items.map((f) => this.toDto(f)),
+[7m  [0m [91m                 ~[0m
+[96msrc/modules/love-point/love-point.service.ts[0m:[93m8[0m:[93m15[0m - [91merror[0m[90m TS2305: [0mModule '"@prisma/client"' has no exported member 'LovePointLog'.
+
+[7m8[0m import type { LovePointLog, Prisma, PrismaClient } from '@prisma/client';
+[7m [0m [91m              ~~~~~~~~~~~~[0m
+[96msrc/modules/love-point/love-point.service.ts[0m:[93m72[0m:[93m25[0m - [91merror[0m[90m TS2694: [0mNamespace '"H:/codex/\u6797\u5BB6\u9910\u5385\u5C0F\u7A0B\u5E8F/family-kitchen-c01/node_modules/.pnpm/@prisma+client@5.22.0_prisma@5.22.0/node_modules/.prisma/client/default".Prisma' has no exported member 'LovePointLogWhereInput'.
+
+[7m72[0m     const where: Prisma.LovePointLogWhereInput =
+[7m  [0m [91m                        ~~~~~~~~~~~~~~~~~~~~~~[0m
+[96msrc/modules/love-point/love-point.service.ts[0m:[93m89[0m:[93m17[0m - [91merror[0m[90m TS7006: [0mParameter 'l' implicitly has an 'any' type.
+
+[7m89[0m       logs.map((l) => this.toDto(l)),
+[7m  [0m [91m                ~[0m
+[96msrc/modules/love-point/love-point.service.ts[0m:[93m221[0m:[93m58[0m - [91merror[0m[90m TS7006: [0mParameter 'tx' implicitly has an 'any' type.
+
+[7m221[0m     const result = await this.prisma.$transaction(async (tx) => {
+[7m   [0m [91m                                                         ~~[0m
+[96msrc/modules/notification/notification-log.service.ts[0m:[93m51[0m:[93m18[0m - [91merror[0m[90m TS7006: [0mParameter 'i' implicitly has an 'any' type.
+
+[7m51[0m       items.map((i) => ({
+[7m  [0m [91m                 ~[0m
+[96msrc/modules/order/message.service.ts[0m:[93m8[0m:[93m15[0m - [91merror[0m[90m TS2305: [0mModule '"@prisma/client"' has no exported member 'Order'.
+
+[7m8[0m import type { Order, OrderMessage, Prisma } from '@prisma/client';
+[7m [0m [91m              ~~~~~[0m
+[96msrc/modules/order/message.service.ts[0m:[93m8[0m:[93m22[0m - [91merror[0m[90m TS2305: [0mModule '"@prisma/client"' has no exported member 'OrderMessage'.
+
+[7m8[0m import type { Order, OrderMessage, Prisma } from '@prisma/client';
+[7m [0m [91m                     ~~~~~~~~~~~~[0m
+[96msrc/modules/order/message.service.ts[0m:[93m49[0m:[93m21[0m - [91merror[0m[90m TS7006: [0mParameter 'm' implicitly has an 'any' type.
+
+[7m49[0m       messages.map((m) => this.toDto(m)),
+[7m  [0m [91m                    ~[0m
+[96msrc/modules/order/message.service.ts[0m:[93m94[0m:[93m29[0m - [91merror[0m[90m TS7006: [0mParameter 'm' implicitly has an 'any' type.
+
+[7m94[0m     const ids = unread.map((m) => m.id);
+[7m  [0m [91m                            ~[0m
+[96msrc/modules/order/message.service.ts[0m:[93m118[0m:[93m21[0m - [91merror[0m[90m TS2694: [0mNamespace '"H:/codex/\u6797\u5BB6\u9910\u5385\u5C0F\u7A0B\u5E8F/family-kitchen-c01/node_modules/.pnpm/@prisma+client@5.22.0_prisma@5.22.0/node_modules/.prisma/client/default".Prisma' has no exported member 'InputJsonValue'.
+
+[7m118[0m   ): Promise<Prisma.InputJsonValue> {
+[7m   [0m [91m                    ~~~~~~~~~~~~~~[0m
+[96msrc/modules/order/message.service.ts[0m:[93m234[0m:[93m43[0m - [91merror[0m[90m TS7006: [0mParameter 'tx' implicitly has an 'any' type.
+
+[7m234[0m     await this.prisma.$transaction(async (tx) => {
+[7m   [0m [91m                                          ~~[0m
+[96msrc/modules/order/order.service.ts[0m:[93m30[0m:[93m29[0m - [91merror[0m[90m TS2694: [0mNamespace '"H:/codex/\u6797\u5BB6\u9910\u5385\u5C0F\u7A0B\u5E8F/family-kitchen-c01/node_modules/.pnpm/@prisma+client@5.22.0_prisma@5.22.0/node_modules/.prisma/client/default".Prisma' has no exported member 'OrderInclude'.
+
+[7m30[0m } as const satisfies Prisma.OrderInclude;
+[7m  [0m [91m                            ~~~~~~~~~~~~[0m
+[96msrc/modules/order/order.service.ts[0m:[93m32[0m:[93m30[0m - [91merror[0m[90m TS2694: [0mNamespace '"H:/codex/\u6797\u5BB6\u9910\u5385\u5C0F\u7A0B\u5E8F/family-kitchen-c01/node_modules/.pnpm/@prisma+client@5.22.0_prisma@5.22.0/node_modules/.prisma/client/default".Prisma' has no exported member 'OrderGetPayload'.
+
+[7m32[0m type OrderWithItems = Prisma.OrderGetPayload<{ include: typeof orderInclude }>;
+[7m  [0m [91m                             ~~~~~~~~~~~~~~~[0m
+[96msrc/modules/order/order.service.ts[0m:[93m85[0m:[93m44[0m - [91merror[0m[90m TS7006: [0mParameter 'r' implicitly has an 'any' type.
+
+[7m85[0m     const recipeMap = new Map(recipes.map((r) => [r.id, r]));
+[7m  [0m [91m                                           ~[0m
+[96msrc/modules/order/order.service.ts[0m:[93m99[0m:[93m32[0m - [91merror[0m[90m TS2339: [0mProperty 'id' does not exist on type '{}'.
+
+[7m99[0m               recipeId: recipe.id,
+[7m  [0m [91m                               ~~[0m
+[96msrc/modules/order/order.service.ts[0m:[93m101[0m:[93m30[0m - [91merror[0m[90m TS2339: [0mProperty 'name' does not exist on type '{}'.
+
+[7m101[0m                 name: recipe.name,
+[7m   [0m [91m                             ~~~~[0m
+[96msrc/modules/order/order.service.ts[0m:[93m102[0m:[93m49[0m - [91merror[0m[90m TS2339: [0mProperty 'imageUrls' does not exist on type '{}'.
+
+[7m102[0m                 imageUrls: Array.isArray(recipe.imageUrls) ? (recipe.imageUrls as string[]) : [],
+[7m   [0m [91m                                                ~~~~~~~~~[0m
+[96msrc/modules/order/order.service.ts[0m:[93m102[0m:[93m70[0m - [91merror[0m[90m TS2339: [0mProperty 'imageUrls' does not exist on type '{}'.
+
+[7m102[0m                 imageUrls: Array.isArray(recipe.imageUrls) ? (recipe.imageUrls as string[]) : [],
+[7m   [0m [91m                                                                     ~~~~~~~~~[0m
+[96msrc/modules/order/order.service.ts[0m:[93m103[0m:[93m36[0m - [91merror[0m[90m TS2339: [0mProperty 'difficulty' does not exist on type '{}'.
+
+[7m103[0m                 difficulty: recipe.difficulty,
+[7m   [0m [91m                                   ~~~~~~~~~~[0m
+[96msrc/modules/order/order.service.ts[0m:[93m104[0m:[93m27[0m - [91merror[0m[90m TS2694: [0mNamespace '"H:/codex/\u6797\u5BB6\u9910\u5385\u5C0F\u7A0B\u5E8F/family-kitchen-c01/node_modules/.pnpm/@prisma+client@5.22.0_prisma@5.22.0/node_modules/.prisma/client/default".Prisma' has no exported member 'InputJsonValue'.
+
+[7m104[0m               } as Prisma.InputJsonValue,
+[7m   [0m [91m                          ~~~~~~~~~~~~~~[0m
+[96msrc/modules/order/order.service.ts[0m:[93m145[0m:[93m25[0m - [91merror[0m[90m TS2694: [0mNamespace '"H:/codex/\u6797\u5BB6\u9910\u5385\u5C0F\u7A0B\u5E8F/family-kitchen-c01/node_modules/.pnpm/@prisma+client@5.22.0_prisma@5.22.0/node_modules/.prisma/client/default".Prisma' has no exported member 'OrderWhereInput'.
+
+[7m145[0m     const where: Prisma.OrderWhereInput = { familyId };
+[7m   [0m [91m                        ~~~~~~~~~~~~~~~[0m
+[96msrc/modules/order/order.service.ts[0m:[93m171[0m:[93m37[0m - [91merror[0m[90m TS7006: [0mParameter 'o' implicitly has an 'any' type.
+
+[7m171[0m           orderId: { in: items.map((o) => o.id) },
+[7m   [0m [91m                                    ~[0m
+[96msrc/modules/order/order.service.ts[0m:[93m181[0m:[93m18[0m - [91merror[0m[90m TS7006: [0mParameter 'o' implicitly has an 'any' type.
+
+[7m181[0m       items.map((o) => this.toDto(o, userId, unreadMap.get(o.id) || 0)),
+[7m   [0m [91m                 ~[0m
+[96msrc/modules/order/order.service.ts[0m:[93m242[0m:[93m61[0m - [91merror[0m[90m TS2694: [0mNamespace '"H:/codex/\u6797\u5BB6\u9910\u5385\u5C0F\u7A0B\u5E8F/family-kitchen-c01/node_modules/.pnpm/@prisma+client@5.22.0_prisma@5.22.0/node_modules/.prisma/client/default".Prisma' has no exported member 'InputJsonValue'.
+
+[7m242[0m         servedImageUrls: dto.imageUrls as unknown as Prisma.InputJsonValue,
+[7m   [0m [91m                                                            ~~~~~~~~~~~~~~[0m
+[96msrc/modules/order/order.service.ts[0m:[93m360[0m:[93m35[0m - [91merror[0m[90m TS7006: [0mParameter 'i' implicitly has an 'any' type.
+
+[7m360[0m           items: order.items.map((i) => ({
+[7m   [0m [91m                                  ~[0m
+[96msrc/modules/order/order.service.ts[0m:[93m373[0m:[93m58[0m - [91merror[0m[90m TS7006: [0mParameter 'i' implicitly has an 'any' type.
+
+[7m373[0m     const items: OrderItemOutputDto[] = order.items.map((i) => {
+[7m   [0m [91m                                                         ~[0m
+[96msrc/modules/order/rating.service.ts[0m:[93m92[0m:[93m58[0m - [91merror[0m[90m TS7006: [0mParameter 'tx' implicitly has an 'any' type.
+
+[7m92[0m     const result = await this.prisma.$transaction(async (tx) => {
+[7m  [0m [91m                                                         ~~[0m
+[96msrc/modules/order/rating.service.ts[0m:[93m100[0m:[93m65[0m - [91merror[0m[90m TS2694: [0mNamespace '"H:/codex/\u6797\u5BB6\u9910\u5385\u5C0F\u7A0B\u5E8F/family-kitchen-c01/node_modules/.pnpm/@prisma+client@5.22.0_prisma@5.22.0/node_modules/.prisma/client/default".Prisma' has no exported member 'InputJsonValue'.
+
+[7m100[0m           imageUrls: (dto.imageUrls ?? []) as unknown as Prisma.InputJsonValue,
+[7m   [0m [91m                                                                ~~~~~~~~~~~~~~[0m
+[96msrc/modules/recipe/recipe.service.ts[0m:[93m7[0m:[93m23[0m - [91merror[0m[90m TS2305: [0mModule '"@prisma/client"' has no exported member 'Recipe'.
+
+[7m7[0m import type { Prisma, Recipe } from '@prisma/client';
+[7m [0m [91m                      ~~~~~~[0m
+[96msrc/modules/recipe/recipe.service.ts[0m:[93m49[0m:[93m25[0m - [91merror[0m[90m TS2694: [0mNamespace '"H:/codex/\u6797\u5BB6\u9910\u5385\u5C0F\u7A0B\u5E8F/family-kitchen-c01/node_modules/.pnpm/@prisma+client@5.22.0_prisma@5.22.0/node_modules/.prisma/client/default".Prisma' has no exported member 'RecipeWhereInput'.
+
+[7m49[0m     const where: Prisma.RecipeWhereInput = {
+[7m  [0m [91m                        ~~~~~~~~~~~~~~~~[0m
+[96msrc/modules/recipe/recipe.service.ts[0m:[93m74[0m:[93m25[0m - [91merror[0m[90m TS2694: [0mNamespace '"H:/codex/\u6797\u5BB6\u9910\u5385\u5C0F\u7A0B\u5E8F/family-kitchen-c01/node_modules/.pnpm/@prisma+client@5.22.0_prisma@5.22.0/node_modules/.prisma/client/default".Prisma' has no exported member 'RecipeWhereInput'.
+
+[7m74[0m     const where: Prisma.RecipeWhereInput = {
+[7m  [0m [91m                        ~~~~~~~~~~~~~~~~[0m
+[96msrc/modules/recipe/recipe.service.ts[0m:[93m82[0m:[93m47[0m - [91merror[0m[90m TS2694: [0mNamespace '"H:/codex/\u6797\u5BB6\u9910\u5385\u5C0F\u7A0B\u5E8F/family-kitchen-c01/node_modules/.pnpm/@prisma+client@5.22.0_prisma@5.22.0/node_modules/.prisma/client/default".Prisma' has no exported member 'RecipeWhereInput'.
+
+[7m82[0m       where.AND = (where.AND ?? []) as Prisma.RecipeWhereInput[];
+[7m  [0m [91m                                              ~~~~~~~~~~~~~~~~[0m
+[96msrc/modules/recipe/recipe.service.ts[0m:[93m83[0m:[93m28[0m - [91merror[0m[90m TS2694: [0mNamespace '"H:/codex/\u6797\u5BB6\u9910\u5385\u5C0F\u7A0B\u5E8F/family-kitchen-c01/node_modules/.pnpm/@prisma+client@5.22.0_prisma@5.22.0/node_modules/.prisma/client/default".Prisma' has no exported member 'RecipeWhereInput'.
+
+[7m83[0m       (where.AND as Prisma.RecipeWhereInput[]).push({
+[7m  [0m [91m                           ~~~~~~~~~~~~~~~~[0m
+[96msrc/modules/recipe/recipe.service.ts[0m:[93m90[0m:[93m47[0m - [91merror[0m[90m TS2694: [0mNamespace '"H:/codex/\u6797\u5BB6\u9910\u5385\u5C0F\u7A0B\u5E8F/family-kitchen-c01/node_modules/.pnpm/@prisma+client@5.22.0_prisma@5.22.0/node_modules/.prisma/client/default".Prisma' has no exported member 'RecipeWhereInput'.
+
+[7m90[0m       where.AND = (where.AND ?? []) as Prisma.RecipeWhereInput[];
+[7m  [0m [91m                                              ~~~~~~~~~~~~~~~~[0m
+[96msrc/modules/recipe/recipe.service.ts[0m:[93m91[0m:[93m28[0m - [91merror[0m[90m TS2694: [0mNamespace '"H:/codex/\u6797\u5BB6\u9910\u5385\u5C0F\u7A0B\u5E8F/family-kitchen-c01/node_modules/.pnpm/@prisma+client@5.22.0_prisma@5.22.0/node_modules/.prisma/client/default".Prisma' has no exported member 'RecipeWhereInput'.
+
+[7m91[0m       (where.AND as Prisma.RecipeWhereInput[]).push({
+[7m  [0m [91m                           ~~~~~~~~~~~~~~~~[0m
+[96msrc/modules/recipe/recipe.service.ts[0m:[93m101[0m:[93m27[0m - [91merror[0m[90m TS2694: [0mNamespace '"H:/codex/\u6797\u5BB6\u9910\u5385\u5C0F\u7A0B\u5E8F/family-kitchen-c01/node_modules/.pnpm/@prisma+client@5.22.0_prisma@5.22.0/node_modules/.prisma/client/default".Prisma' has no exported member 'RecipeOrderByWithRelationInput'.
+
+[7m101[0m     const orderBy: Prisma.RecipeOrderByWithRelationInput = (() => {
+[7m   [0m [91m                          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+[96msrc/modules/recipe/recipe.service.ts[0m:[93m126[0m:[93m18[0m - [91merror[0m[90m TS7006: [0mParameter 'r' implicitly has an 'any' type.
+
+[7m126[0m       items.map((r) => r.id),
+[7m   [0m [91m                 ~[0m
+[96msrc/modules/recipe/recipe.service.ts[0m:[93m130[0m:[93m18[0m - [91merror[0m[90m TS7006: [0mParameter 'r' implicitly has an 'any' type.
+
+[7m130[0m       items.map((r) => this.toDto(r, favSet.has(r.id))),
+[7m   [0m [91m                 ~[0m
+[96msrc/modules/recipe/recipe.service.ts[0m:[93m206[0m:[93m30[0m - [91merror[0m[90m TS7006: [0mParameter 'r' implicitly has an 'any' type.
+
+[7m206[0m     return new Set(rows.map((r) => r.recipeId));
+[7m   [0m [91m                             ~[0m
+[96msrc/modules/timeline/timeline.service.ts[0m:[93m2[0m:[93m37[0m - [91merror[0m[90m TS2305: [0mModule '"@prisma/client"' has no exported member 'TimelineEntry'.
+
+[7m2[0m import type { Prisma, PrismaClient, TimelineEntry } from '@prisma/client';
+[7m [0m [91m                                    ~~~~~~~~~~~~~[0m
+[96msrc/modules/timeline/timeline.service.ts[0m:[93m41[0m:[93m25[0m - [91merror[0m[90m TS2694: [0mNamespace '"H:/codex/\u6797\u5BB6\u9910\u5385\u5C0F\u7A0B\u5E8F/family-kitchen-c01/node_modules/.pnpm/@prisma+client@5.22.0_prisma@5.22.0/node_modules/.prisma/client/default".Prisma' has no exported member 'TimelineEntryWhereInput'.
+
+[7m41[0m     const where: Prisma.TimelineEntryWhereInput = { familyId };
+[7m  [0m [91m                        ~~~~~~~~~~~~~~~~~~~~~~~[0m
+[96msrc/modules/timeline/timeline.service.ts[0m:[93m63[0m:[93m18[0m - [91merror[0m[90m TS7006: [0mParameter 'e' implicitly has an 'any' type.
+
+[7m63[0m       items.map((e) => this.toDto(e, userId)),
+[7m  [0m [91m                 ~[0m
+[96msrc/modules/timeline/timeline.service.ts[0m:[93m77[0m:[93m63[0m - [91merror[0m[90m TS2694: [0mNamespace '"H:/codex/\u6797\u5BB6\u9910\u5385\u5C0F\u7A0B\u5E8F/family-kitchen-c01/node_modules/.pnpm/@prisma+client@5.22.0_prisma@5.22.0/node_modules/.prisma/client/default".Prisma' has no exported member 'InputJsonValue'.
+
+[7m77[0m         imageUrls: (dto.imageUrls ?? []) as unknown as Prisma.InputJsonValue,
+[7m  [0m [91m                                                              ~~~~~~~~~~~~~~[0m
+[96msrc/modules/timeline/timeline.service.ts[0m:[93m181[0m:[93m47[0m - [91merror[0m[90m TS7006: [0mParameter 's' implicitly has an 'any' type.
+
+[7m181[0m     const ratingSum = completedOrders.reduce((s, o) => (o.rating ? s + o.rating.stars : s), 0);
+[7m   [0m [91m                                              ~[0m
+[96msrc/modules/timeline/timeline.service.ts[0m:[93m181[0m:[93m50[0m - [91merror[0m[90m TS7006: [0mParameter 'o' implicitly has an 'any' type.
+
+[7m181[0m     const ratingSum = completedOrders.reduce((s, o) => (o.rating ? s + o.rating.stars : s), 0);
+[7m   [0m [91m                                                 ~[0m
+[96msrc/modules/timeline/timeline.service.ts[0m:[93m182[0m:[93m49[0m - [91merror[0m[90m TS7006: [0mParameter 'o' implicitly has an 'any' type.
+
+[7m182[0m     const ratingCount = completedOrders.filter((o) => o.rating).length;
+[7m   [0m [91m                                                ~[0m
+[96msrc/modules/timeline/timeline.service.ts[0m:[93m185[0m:[93m53[0m - [91merror[0m[90m TS7006: [0mParameter 's' implicitly has an 'any' type.
+
+[7m185[0m     const totalLovePoints = completedOrders.reduce((s, o) => s + o.totalLovePoints, 0);
+[7m   [0m [91m                                                    ~[0m
+[96msrc/modules/timeline/timeline.service.ts[0m:[93m185[0m:[93m56[0m - [91merror[0m[90m TS7006: [0mParameter 'o' implicitly has an 'any' type.
+
+[7m185[0m     const totalLovePoints = completedOrders.reduce((s, o) => s + o.totalLovePoints, 0);
+[7m   [0m [91m                                                       ~[0m
+[96msrc/modules/timeline/timeline.service.ts[0m:[93m220[0m:[93m44[0m - [91merror[0m[90m TS7006: [0mParameter 'u' implicitly has an 'any' type.
+
+[7m220[0m     const userNameMap = new Map(users.map((u) => [u.id, u.nickname]));
+[7m   [0m [91m                                           ~[0m
+[96msrc/modules/timeline/timeline.service.ts[0m:[93m254[0m:[93m44[0m - [91merror[0m[90m TS7006: [0mParameter 'm' implicitly has an 'any' type.
+
+[7m254[0m     const memberIds = familyMemberIds.map((m) => m.userId);
+[7m   [0m [91m                                           ~[0m
+[96msrc/modules/timeline/timeline.service.ts[0m:[93m268[0m:[93m68[0m - [91merror[0m[90m TS7006: [0mParameter 'a' implicitly has an 'any' type.
+
+[7m268[0m     const unlockedBadgeKeys = Array.from(new Set(achievements.map((a) => a.badgeKey)));
+[7m   [0m [91m                                                                   ~[0m
+[96msrc/modules/timeline/timeline.service.ts[0m:[93m276[0m:[93m7[0m - [91merror[0m[90m TS2322: [0mType '{ userId: string; nickname: {}; cookedCount: number; orderedCount: number; }[]' is not assignable to type 'MonthlyContributorDto[]'.
+  Type '{ userId: string; nickname: {}; cookedCount: number; orderedCount: number; }' is not assignable to type 'MonthlyContributorDto'.
+    Types of property 'nickname' are incompatible.
+      Type '{}' is not assignable to type 'string'.
+
+[7m276[0m       contributors,
+[7m   [0m [91m      ~~~~~~~~~~~~[0m
+
+  [96msrc/modules/timeline/dto/monthly-summary.dto.ts[0m:[93m57[0m:[93m3[0m
+    [7m57[0m   contributors!: MonthlyContributorDto[];
+    [7m  [0m [96m  ~~~~~~~~~~~~[0m
+    The expected type comes from property 'contributors' which is declared here on type 'MonthlySummaryDto'
+[96msrc/modules/timeline/timeline.service.ts[0m:[93m277[0m:[93m7[0m - [91merror[0m[90m TS2322: [0mType 'unknown[]' is not assignable to type 'string[]'.
+  Type 'unknown' is not assignable to type 'string'.
+
+[7m277[0m       unlockedBadgeKeys,
+[7m   [0m [91m      ~~~~~~~~~~~~~~~~~[0m
+
+  [96msrc/modules/timeline/dto/monthly-summary.dto.ts[0m:[93m60[0m:[93m3[0m
+    [7m60[0m   unlockedBadgeKeys!: string[];
+    [7m  [0m [96m  ~~~~~~~~~~~~~~~~~[0m
+    The expected type comes from property 'unlockedBadgeKeys' which is declared here on type 'MonthlySummaryDto'
+[96msrc/modules/timeline/timeline.service.ts[0m:[93m290[0m:[93m65[0m - [91merror[0m[90m TS2694: [0mNamespace '"H:/codex/\u6797\u5BB6\u9910\u5385\u5C0F\u7A0B\u5E8F/family-kitchen-c01/node_modules/.pnpm/@prisma+client@5.22.0_prisma@5.22.0/node_modules/.prisma/client/default".Prisma' has no exported member 'InputJsonValue'.
+
+[7m290[0m         imageUrls: (input.imageUrls ?? []) as unknown as Prisma.InputJsonValue,
+[7m   [0m [91m                                                                ~~~~~~~~~~~~~~[0m
+[96msrc/modules/user/user.service.ts[0m:[93m71[0m:[93m46[0m - [91merror[0m[90m TS7006: [0mParameter 'l' implicitly has an 'any' type.
+
+[7m71[0m     const currentIdx = chefLevels.findIndex((l) => l.key === currentLevel.key);
+[7m  [0m [91m                                             ~[0m
+[96msrc/modules/user/user.service.ts[0m:[93m87[0m:[93m31[0m - [91merror[0m[90m TS7006: [0mParameter 'lv' implicitly has an 'any' type.
+
+[7m87[0m       levels: chefLevels.map((lv) => ({
+[7m  [0m [91m                              ~~[0m
+[96msrc/modules/user/user.service.ts[0m:[93m187[0m:[93m43[0m - [91merror[0m[90m TS7006: [0mParameter 'tx' implicitly has an 'any' type.
+
+[7m187[0m     await this.prisma.$transaction(async (tx) => {
+[7m   [0m [91m                                          ~~[0m
+
+Found 107 error(s).
+
+H:\codex\林家餐厅小程序\family-kitchen-c01\backend:
+ ERR_PNPM_RECURSIVE_RUN_FIRST_FAIL  @family-kitchen/backend@0.1.0 build: `nest build`
+Exit status 1
+
+{"label":"06-backend-build-generated","cwd":"H:\\codex\\林家餐厅小程序\\family-kitchen-c01","node":"v24.19.0","pnpmCli":"C:\\Users\\Administrator\\AppData\\Local\\pnpm\\store\\v11\\links\\@\\pnpm\\9.12.0\\49d8fa80e8205096741f5238215a507a7cc04fc3d20ff2b1c8b726b65d71c883\\node_modules\\pnpm\\bin\\pnpm.cjs","args":["--filter","@family-kitchen/backend","build"],"started":"2026-09-03T15:53:22.476Z","timeoutSeconds":120,"sourceChanged":false,"localServicePorts":[33300,33301,33316,33319],"code":1,"signal":null,"timedOut":false,"seconds":3.857}

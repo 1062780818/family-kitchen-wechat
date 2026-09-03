@@ -1,0 +1,782 @@
+{
+  "at": "2026-09-03T16:11:04.702Z",
+  "scope": "虚构数据、本机服务、原始业务流程；微信登录和新需求未验收",
+  "evidence": [
+    {
+      "name": "存活",
+      "method": "GET",
+      "path": "/health",
+      "status": 200,
+      "expected": [200],
+      "body": {
+        "status": "ok",
+        "timestamp": "2026-09-03T16:11:02.570Z"
+      }
+    },
+    {
+      "name": "真实数据库探针",
+      "method": "GET",
+      "path": "/health/db",
+      "status": 200,
+      "expected": [200],
+      "body": {
+        "status": "ok",
+        "latencyMs": 1
+      }
+    },
+    {
+      "name": "无凭据拒绝",
+      "method": "GET",
+      "path": "/orders",
+      "status": 401,
+      "expected": [401],
+      "body": {
+        "code": "UNAUTHORIZED",
+        "message": "缺少认证 token"
+      }
+    },
+    {
+      "name": "虚构厨师密码登录",
+      "method": "POST",
+      "path": "/auth/password-login",
+      "status": 200,
+      "expected": [200],
+      "body": {
+        "token": "[已隐藏]",
+        "user": {
+          "id": "cmtlq292e0000mn9nb2akgsq4",
+          "nickname": "情侣厨房用户",
+          "avatarUrl": null,
+          "gender": "male",
+          "currentFamilyId": null
+        },
+        "isNewUser": true
+      }
+    },
+    {
+      "name": "虚构点菜者密码登录",
+      "method": "POST",
+      "path": "/auth/password-login",
+      "status": 200,
+      "expected": [200],
+      "body": {
+        "token": "[已隐藏]",
+        "user": {
+          "id": "cmtlq295f0001mn9n4l4nilpe",
+          "nickname": "情侣厨房用户",
+          "avatarUrl": null,
+          "gender": "female",
+          "currentFamilyId": null
+        },
+        "isNewUser": true
+      }
+    },
+    {
+      "name": "虚构隔离对照账号",
+      "method": "POST",
+      "path": "/auth/password-login",
+      "status": 200,
+      "expected": [200],
+      "body": {
+        "token": "[已隐藏]",
+        "user": {
+          "id": "cmtlq298t0002mn9nb0uxtcnc",
+          "nickname": "情侣厨房用户",
+          "avatarUrl": null,
+          "gender": "male",
+          "currentFamilyId": null
+        },
+        "isNewUser": true
+      }
+    },
+    {
+      "name": "原版管理员登录",
+      "method": "POST",
+      "path": "/auth/admin/login",
+      "status": 200,
+      "expected": [200],
+      "body": {
+        "token": "[已隐藏]",
+        "username": "admin"
+      }
+    },
+    {
+      "name": "管理员接口可达",
+      "method": "GET",
+      "path": "/admin/users",
+      "status": 200,
+      "expected": [200],
+      "body": {
+        "items": [
+          {
+            "id": "cmtlq298t0002mn9nb0uxtcnc",
+            "nickname": "情侣厨房用户",
+            "avatarUrl": null,
+            "gender": "male",
+            "currentFamilyId": null,
+            "orderCount": 0,
+            "createdAt": "2026-09-03T16:11:02.862Z"
+          },
+          {
+            "id": "cmtlq295f0001mn9n4l4nilpe",
+            "nickname": "情侣厨房用户",
+            "avatarUrl": null,
+            "gender": "female",
+            "currentFamilyId": null,
+            "orderCount": 0,
+            "createdAt": "2026-09-03T16:11:02.740Z"
+          },
+          {
+            "id": "cmtlq292e0000mn9nb2akgsq4",
+            "nickname": "情侣厨房用户",
+            "avatarUrl": null,
+            "gender": "male",
+            "currentFamilyId": null,
+            "orderCount": 0,
+            "createdAt": "2026-09-03T16:11:02.631Z"
+          },
+          {
+            "id": "user_wife",
+            "nickname": "吃货老婆",
+            "avatarUrl": "https://api.dicebear.com/9.x/adventurer/svg?seed=Aneka",
+            "gender": "female",
+            "currentFamilyId": "family_demo",
+            "orderCount": 3,
+            "createdAt": "2026-09-03T16:10:16.709Z"
+          },
+          {
+            "id": "user_husband",
+            "nickname": "大厨老公",
+            "avatarUrl": "https://api.dicebear.com/9.x/adventurer/svg?seed=Felix",
+            "gender": "male",
+            "currentFamilyId": "family_demo",
+            "orderCount": 3,
+            "createdAt": "2026-09-03T16:10:16.618Z"
+          }
+        ],
+        "total": 5,
+        "page": 1,
+        "pageSize": 20,
+        "totalPages": 1
+      }
+    },
+    {
+      "name": "普通用户不可访问管理端",
+      "method": "GET",
+      "path": "/admin/users",
+      "status": 403,
+      "expected": [403],
+      "body": {
+        "code": "NOT_ADMIN",
+        "message": "此接口仅管理员可访问"
+      }
+    },
+    {
+      "name": "创建审查家庭",
+      "method": "POST",
+      "path": "/families",
+      "status": 201,
+      "expected": [201],
+      "body": {
+        "id": "cmtlq29bn0004mn9nm8ta3jhd",
+        "name": "C01隔离冒烟家庭",
+        "relationType": "couple",
+        "anniversaryDate": null,
+        "status": "active",
+        "creatorUserId": "cmtlq292e0000mn9nb2akgsq4",
+        "createdAt": "2026-09-03T16:11:02.964Z",
+        "members": [
+          {
+            "userId": "cmtlq292e0000mn9nb2akgsq4",
+            "nickname": "情侣厨房用户",
+            "avatarUrl": null,
+            "role": "creator",
+            "joinedAt": "2026-09-03T16:11:02.965Z"
+          }
+        ],
+        "myRole": "creator"
+      }
+    },
+    {
+      "name": "取得测试邀请码",
+      "method": "POST",
+      "path": "/families/me/invite-code",
+      "status": 200,
+      "expected": [200],
+      "body": {
+        "inviteCode": "PKMZUY76",
+        "expiresAt": "2026-09-04T16:11:03.211Z"
+      }
+    },
+    {
+      "name": "第二人加入",
+      "method": "POST",
+      "path": "/families/join",
+      "status": 200,
+      "expected": [200],
+      "body": {
+        "id": "cmtlq29bn0004mn9nm8ta3jhd",
+        "name": "C01隔离冒烟家庭",
+        "relationType": "couple",
+        "anniversaryDate": null,
+        "status": "active",
+        "creatorUserId": "cmtlq292e0000mn9nb2akgsq4",
+        "createdAt": "2026-09-03T16:11:02.964Z",
+        "members": [
+          {
+            "userId": "cmtlq292e0000mn9nb2akgsq4",
+            "nickname": "情侣厨房用户",
+            "avatarUrl": null,
+            "role": "creator",
+            "joinedAt": "2026-09-03T16:11:02.965Z"
+          },
+          {
+            "userId": "cmtlq295f0001mn9n4l4nilpe",
+            "nickname": "情侣厨房用户",
+            "avatarUrl": null,
+            "role": "member",
+            "joinedAt": "2026-09-03T16:11:03.398Z"
+          }
+        ],
+        "myRole": "member"
+      }
+    },
+    {
+      "name": "创建隔离对照家庭",
+      "method": "POST",
+      "path": "/families",
+      "status": 201,
+      "expected": [201],
+      "body": {
+        "id": "cmtlq29pr000dmn9n2bspvi9a",
+        "name": "C01其他家庭",
+        "relationType": "couple",
+        "anniversaryDate": null,
+        "status": "active",
+        "creatorUserId": "cmtlq298t0002mn9nb0uxtcnc",
+        "createdAt": "2026-09-03T16:11:03.472Z",
+        "members": [
+          {
+            "userId": "cmtlq298t0002mn9nb0uxtcnc",
+            "nickname": "情侣厨房用户",
+            "avatarUrl": null,
+            "role": "creator",
+            "joinedAt": "2026-09-03T16:11:03.472Z"
+          }
+        ],
+        "myRole": "creator"
+      }
+    },
+    {
+      "name": "原版上传链路",
+      "method": "POST",
+      "path": "/storage/upload",
+      "status": 201,
+      "expected": [201],
+      "body": {
+        "url": "http://127.0.0.1:33319/family-kitchen/other/2026-09-03/cmtlq292e0000mn9nb2akgsq4-4B5YjXQCeob92MJ3.png",
+        "key": "other/2026-09-03/cmtlq292e0000mn9nb2akgsq4-4B5YjXQCeob92MJ3.png",
+        "size": 68,
+        "mimeType": "image/png"
+      }
+    },
+    {
+      "name": "匿名读取刚上传的隔离图片",
+      "url": "http://127.0.0.1:33319/family-kitchen/other/2026-09-03/cmtlq292e0000mn9nb2akgsq4-4B5YjXQCeob92MJ3.png",
+      "status": 200,
+      "bytes": 68
+    },
+    {
+      "name": "创建菜谱一",
+      "method": "POST",
+      "path": "/recipes",
+      "status": 201,
+      "expected": [201],
+      "body": {
+        "id": "cmtlq29u8000jmn9nb2jjkzha",
+        "familyId": "cmtlq29bn0004mn9nm8ta3jhd",
+        "name": "C01测试菜一",
+        "imageUrls": [
+          "http://127.0.0.1:33319/family-kitchen/other/2026-09-03/cmtlq292e0000mn9nb2akgsq4-4B5YjXQCeob92MJ3.png"
+        ],
+        "difficulty": 1,
+        "mealTags": [],
+        "flavorTags": [],
+        "notes": null,
+        "createdByUserId": "cmtlq292e0000mn9nb2akgsq4",
+        "orderCount": 0,
+        "avgRating": null,
+        "createdAt": "2026-09-03T16:11:03.632Z",
+        "updatedAt": "2026-09-03T16:11:03.632Z",
+        "isFavorited": false
+      }
+    },
+    {
+      "name": "原版点菜者也能创建菜谱",
+      "method": "POST",
+      "path": "/recipes",
+      "status": 201,
+      "expected": [201],
+      "body": {
+        "id": "cmtlq29w6000nmn9nsfw7lpcd",
+        "familyId": "cmtlq29bn0004mn9nm8ta3jhd",
+        "name": "C01测试菜二",
+        "imageUrls": [],
+        "difficulty": 2,
+        "mealTags": [],
+        "flavorTags": [],
+        "notes": null,
+        "createdByUserId": "cmtlq295f0001mn9n4l4nilpe",
+        "orderCount": 0,
+        "avgRating": null,
+        "createdAt": "2026-09-03T16:11:03.702Z",
+        "updatedAt": "2026-09-03T16:11:03.702Z",
+        "isFavorited": false
+      }
+    },
+    {
+      "name": "家庭菜谱列表",
+      "method": "GET",
+      "path": "/recipes",
+      "status": 200,
+      "expected": [200],
+      "body": {
+        "items": [
+          {
+            "id": "cmtlq29w6000nmn9nsfw7lpcd",
+            "familyId": "cmtlq29bn0004mn9nm8ta3jhd",
+            "name": "C01测试菜二",
+            "imageUrls": [],
+            "difficulty": 2,
+            "mealTags": [],
+            "flavorTags": [],
+            "notes": null,
+            "createdByUserId": "cmtlq295f0001mn9n4l4nilpe",
+            "orderCount": 0,
+            "avgRating": null,
+            "createdAt": "2026-09-03T16:11:03.702Z",
+            "updatedAt": "2026-09-03T16:11:03.702Z",
+            "isFavorited": false
+          },
+          {
+            "id": "cmtlq29u8000jmn9nb2jjkzha",
+            "familyId": "cmtlq29bn0004mn9nm8ta3jhd",
+            "name": "C01测试菜一",
+            "imageUrls": [
+              "http://127.0.0.1:33319/family-kitchen/other/2026-09-03/cmtlq292e0000mn9nb2akgsq4-4B5YjXQCeob92MJ3.png"
+            ],
+            "difficulty": 1,
+            "mealTags": [],
+            "flavorTags": [],
+            "notes": null,
+            "createdByUserId": "cmtlq292e0000mn9nb2akgsq4",
+            "orderCount": 0,
+            "avgRating": null,
+            "createdAt": "2026-09-03T16:11:03.632Z",
+            "updatedAt": "2026-09-03T16:11:03.632Z",
+            "isFavorited": false
+          }
+        ],
+        "total": 2,
+        "page": 1,
+        "pageSize": 20,
+        "totalPages": 1
+      }
+    },
+    {
+      "name": "两菜统一下单",
+      "method": "POST",
+      "path": "/orders",
+      "status": 201,
+      "expected": [201],
+      "body": {
+        "id": "cmtlq29zo000rmn9ntcz9tk5m",
+        "familyId": "cmtlq29bn0004mn9nm8ta3jhd",
+        "customerUserId": "cmtlq295f0001mn9n4l4nilpe",
+        "chefUserId": "cmtlq292e0000mn9nb2akgsq4",
+        "status": "pending",
+        "expectedServeAt": "2026-09-03T17:11:03.814Z",
+        "customerNotes": "纯测试",
+        "rejectReason": null,
+        "items": [
+          {
+            "id": "cmtlq29zo000tmn9nykfki0r4",
+            "recipeId": "cmtlq29u8000jmn9nb2jjkzha",
+            "recipeSnapshot": {
+              "name": "C01测试菜一",
+              "imageUrls": [
+                "http://127.0.0.1:33319/family-kitchen/other/2026-09-03/cmtlq292e0000mn9nb2akgsq4-4B5YjXQCeob92MJ3.png"
+              ],
+              "difficulty": 1
+            },
+            "customNotes": "少盐",
+            "sortOrder": 0
+          },
+          {
+            "id": "cmtlq29zo000umn9nfv43s3h1",
+            "recipeId": "cmtlq29w6000nmn9nsfw7lpcd",
+            "recipeSnapshot": {
+              "name": "C01测试菜二",
+              "imageUrls": [],
+              "difficulty": 2
+            },
+            "customNotes": null,
+            "sortOrder": 1
+          }
+        ],
+        "servedImageUrls": [],
+        "servedAt": null,
+        "completedAt": null,
+        "totalLovePoints": 0,
+        "rating": null,
+        "createdAt": "2026-09-03T16:11:03.828Z",
+        "updatedAt": "2026-09-03T16:11:03.828Z",
+        "myRole": "customer",
+        "customerNickname": "情侣厨房用户",
+        "chefNickname": "情侣厨房用户",
+        "customerAvatarUrl": null,
+        "chefAvatarUrl": null,
+        "unreadCount": 0
+      }
+    },
+    {
+      "name": "跨家庭餐单隔离",
+      "method": "GET",
+      "path": "/orders/cmtlq29zo000rmn9ntcz9tk5m",
+      "status": 403,
+      "expected": [403],
+      "body": {
+        "code": "ORDER_NOT_IN_YOUR_FAMILY",
+        "message": "不能操作其他小厨房的订单"
+      }
+    },
+    {
+      "name": "食客不能自行接单",
+      "method": "POST",
+      "path": "/orders/cmtlq29zo000rmn9ntcz9tk5m/accept",
+      "status": 403,
+      "expected": [403],
+      "body": {
+        "code": "WRONG_ROLE",
+        "message": "该操作仅 厨师 可执行"
+      }
+    },
+    {
+      "name": "原版厨师接单",
+      "method": "POST",
+      "path": "/orders/cmtlq29zo000rmn9ntcz9tk5m/accept",
+      "status": 200,
+      "expected": [200],
+      "body": {
+        "id": "cmtlq29zo000rmn9ntcz9tk5m",
+        "familyId": "cmtlq29bn0004mn9nm8ta3jhd",
+        "customerUserId": "cmtlq295f0001mn9n4l4nilpe",
+        "chefUserId": "cmtlq292e0000mn9nb2akgsq4",
+        "status": "accepted",
+        "expectedServeAt": "2026-09-03T17:11:03.814Z",
+        "customerNotes": "纯测试",
+        "rejectReason": null,
+        "items": [
+          {
+            "id": "cmtlq29zo000tmn9nykfki0r4",
+            "recipeId": "cmtlq29u8000jmn9nb2jjkzha",
+            "recipeSnapshot": {
+              "name": "C01测试菜一",
+              "imageUrls": [
+                "http://127.0.0.1:33319/family-kitchen/other/2026-09-03/cmtlq292e0000mn9nb2akgsq4-4B5YjXQCeob92MJ3.png"
+              ],
+              "difficulty": 1
+            },
+            "customNotes": "少盐",
+            "sortOrder": 0
+          },
+          {
+            "id": "cmtlq29zo000umn9nfv43s3h1",
+            "recipeId": "cmtlq29w6000nmn9nsfw7lpcd",
+            "recipeSnapshot": {
+              "name": "C01测试菜二",
+              "imageUrls": [],
+              "difficulty": 2
+            },
+            "customNotes": null,
+            "sortOrder": 1
+          }
+        ],
+        "servedImageUrls": [],
+        "servedAt": null,
+        "completedAt": null,
+        "totalLovePoints": 0,
+        "rating": null,
+        "createdAt": "2026-09-03T16:11:03.828Z",
+        "updatedAt": "2026-09-03T16:11:03.935Z",
+        "myRole": "chef",
+        "customerNickname": "情侣厨房用户",
+        "chefNickname": "情侣厨房用户",
+        "customerAvatarUrl": null,
+        "chefAvatarUrl": null,
+        "unreadCount": 0
+      }
+    },
+    {
+      "name": "原版必须备菜",
+      "method": "POST",
+      "path": "/orders/cmtlq29zo000rmn9ntcz9tk5m/prepping",
+      "status": 200,
+      "expected": [200],
+      "body": {
+        "id": "cmtlq29zo000rmn9ntcz9tk5m",
+        "familyId": "cmtlq29bn0004mn9nm8ta3jhd",
+        "customerUserId": "cmtlq295f0001mn9n4l4nilpe",
+        "chefUserId": "cmtlq292e0000mn9nb2akgsq4",
+        "status": "prepping",
+        "expectedServeAt": "2026-09-03T17:11:03.814Z",
+        "customerNotes": "纯测试",
+        "rejectReason": null,
+        "items": [
+          {
+            "id": "cmtlq29zo000tmn9nykfki0r4",
+            "recipeId": "cmtlq29u8000jmn9nb2jjkzha",
+            "recipeSnapshot": {
+              "name": "C01测试菜一",
+              "imageUrls": [
+                "http://127.0.0.1:33319/family-kitchen/other/2026-09-03/cmtlq292e0000mn9nb2akgsq4-4B5YjXQCeob92MJ3.png"
+              ],
+              "difficulty": 1
+            },
+            "customNotes": "少盐",
+            "sortOrder": 0
+          },
+          {
+            "id": "cmtlq29zo000umn9nfv43s3h1",
+            "recipeId": "cmtlq29w6000nmn9nsfw7lpcd",
+            "recipeSnapshot": {
+              "name": "C01测试菜二",
+              "imageUrls": [],
+              "difficulty": 2
+            },
+            "customNotes": null,
+            "sortOrder": 1
+          }
+        ],
+        "servedImageUrls": [],
+        "servedAt": null,
+        "completedAt": null,
+        "totalLovePoints": 0,
+        "rating": null,
+        "createdAt": "2026-09-03T16:11:03.828Z",
+        "updatedAt": "2026-09-03T16:11:04.046Z",
+        "myRole": "chef",
+        "customerNickname": "情侣厨房用户",
+        "chefNickname": "情侣厨房用户",
+        "customerAvatarUrl": null,
+        "chefAvatarUrl": null,
+        "unreadCount": 0
+      }
+    },
+    {
+      "name": "原版做饭中",
+      "method": "POST",
+      "path": "/orders/cmtlq29zo000rmn9ntcz9tk5m/cooking",
+      "status": 200,
+      "expected": [200],
+      "body": {
+        "id": "cmtlq29zo000rmn9ntcz9tk5m",
+        "familyId": "cmtlq29bn0004mn9nm8ta3jhd",
+        "customerUserId": "cmtlq295f0001mn9n4l4nilpe",
+        "chefUserId": "cmtlq292e0000mn9nb2akgsq4",
+        "status": "cooking",
+        "expectedServeAt": "2026-09-03T17:11:03.814Z",
+        "customerNotes": "纯测试",
+        "rejectReason": null,
+        "items": [
+          {
+            "id": "cmtlq29zo000tmn9nykfki0r4",
+            "recipeId": "cmtlq29u8000jmn9nb2jjkzha",
+            "recipeSnapshot": {
+              "name": "C01测试菜一",
+              "imageUrls": [
+                "http://127.0.0.1:33319/family-kitchen/other/2026-09-03/cmtlq292e0000mn9nb2akgsq4-4B5YjXQCeob92MJ3.png"
+              ],
+              "difficulty": 1
+            },
+            "customNotes": "少盐",
+            "sortOrder": 0
+          },
+          {
+            "id": "cmtlq29zo000umn9nfv43s3h1",
+            "recipeId": "cmtlq29w6000nmn9nsfw7lpcd",
+            "recipeSnapshot": {
+              "name": "C01测试菜二",
+              "imageUrls": [],
+              "difficulty": 2
+            },
+            "customNotes": null,
+            "sortOrder": 1
+          }
+        ],
+        "servedImageUrls": [],
+        "servedAt": null,
+        "completedAt": null,
+        "totalLovePoints": 0,
+        "rating": null,
+        "createdAt": "2026-09-03T16:11:03.828Z",
+        "updatedAt": "2026-09-03T16:11:04.232Z",
+        "myRole": "chef",
+        "customerNickname": "情侣厨房用户",
+        "chefNickname": "情侣厨房用户",
+        "customerAvatarUrl": null,
+        "chefAvatarUrl": null,
+        "unreadCount": 0
+      }
+    },
+    {
+      "name": "原版上菜",
+      "method": "POST",
+      "path": "/orders/cmtlq29zo000rmn9ntcz9tk5m/serve",
+      "status": 200,
+      "expected": [200],
+      "body": {
+        "id": "cmtlq29zo000rmn9ntcz9tk5m",
+        "familyId": "cmtlq29bn0004mn9nm8ta3jhd",
+        "customerUserId": "cmtlq295f0001mn9n4l4nilpe",
+        "chefUserId": "cmtlq292e0000mn9nb2akgsq4",
+        "status": "served",
+        "expectedServeAt": "2026-09-03T17:11:03.814Z",
+        "customerNotes": "纯测试",
+        "rejectReason": null,
+        "items": [
+          {
+            "id": "cmtlq29zo000tmn9nykfki0r4",
+            "recipeId": "cmtlq29u8000jmn9nb2jjkzha",
+            "recipeSnapshot": {
+              "name": "C01测试菜一",
+              "imageUrls": [
+                "http://127.0.0.1:33319/family-kitchen/other/2026-09-03/cmtlq292e0000mn9nb2akgsq4-4B5YjXQCeob92MJ3.png"
+              ],
+              "difficulty": 1
+            },
+            "customNotes": "少盐",
+            "sortOrder": 0
+          },
+          {
+            "id": "cmtlq29zo000umn9nfv43s3h1",
+            "recipeId": "cmtlq29w6000nmn9nsfw7lpcd",
+            "recipeSnapshot": {
+              "name": "C01测试菜二",
+              "imageUrls": [],
+              "difficulty": 2
+            },
+            "customNotes": null,
+            "sortOrder": 1
+          }
+        ],
+        "servedImageUrls": [
+          "http://127.0.0.1:33319/family-kitchen/other/2026-09-03/cmtlq292e0000mn9nb2akgsq4-4B5YjXQCeob92MJ3.png"
+        ],
+        "servedAt": "2026-09-03T16:11:04.388Z",
+        "completedAt": null,
+        "totalLovePoints": 0,
+        "rating": null,
+        "createdAt": "2026-09-03T16:11:03.828Z",
+        "updatedAt": "2026-09-03T16:11:04.389Z",
+        "myRole": "chef",
+        "customerNickname": "情侣厨房用户",
+        "chefNickname": "情侣厨房用户",
+        "customerAvatarUrl": null,
+        "chefAvatarUrl": null,
+        "unreadCount": 0
+      }
+    },
+    {
+      "name": "原版评价结算",
+      "method": "POST",
+      "path": "/orders/cmtlq29zo000rmn9ntcz9tk5m/rating",
+      "status": 200,
+      "expected": [201, 200],
+      "body": {
+        "rating": {
+          "id": "cmtlq2air0015mn9nw18fxid9",
+          "orderId": "cmtlq29zo000rmn9ntcz9tk5m",
+          "raterUserId": "cmtlq295f0001mn9n4l4nilpe",
+          "stars": 5,
+          "comment": "C01隔离冒烟测试",
+          "imageUrls": [],
+          "createdAt": "2026-09-03T16:11:04.515Z"
+        },
+        "lovePointsAwarded": 25,
+        "orderStatus": "completed",
+        "timelineEntryId": "cmtlq2ala001bmn9n4l2tbd8f"
+      }
+    },
+    {
+      "name": "历史餐单读取",
+      "method": "GET",
+      "path": "/orders",
+      "status": 200,
+      "expected": [200],
+      "body": {
+        "items": [
+          {
+            "id": "cmtlq29zo000rmn9ntcz9tk5m",
+            "familyId": "cmtlq29bn0004mn9nm8ta3jhd",
+            "customerUserId": "cmtlq295f0001mn9n4l4nilpe",
+            "chefUserId": "cmtlq292e0000mn9nb2akgsq4",
+            "status": "completed",
+            "expectedServeAt": "2026-09-03T17:11:03.814Z",
+            "customerNotes": "纯测试",
+            "rejectReason": null,
+            "items": [
+              {
+                "id": "cmtlq29zo000tmn9nykfki0r4",
+                "recipeId": "cmtlq29u8000jmn9nb2jjkzha",
+                "recipeSnapshot": {
+                  "name": "C01测试菜一",
+                  "imageUrls": [
+                    "http://127.0.0.1:33319/family-kitchen/other/2026-09-03/cmtlq292e0000mn9nb2akgsq4-4B5YjXQCeob92MJ3.png"
+                  ],
+                  "difficulty": 1
+                },
+                "customNotes": "少盐",
+                "sortOrder": 0
+              },
+              {
+                "id": "cmtlq29zo000umn9nfv43s3h1",
+                "recipeId": "cmtlq29w6000nmn9nsfw7lpcd",
+                "recipeSnapshot": {
+                  "name": "C01测试菜二",
+                  "imageUrls": [],
+                  "difficulty": 2
+                },
+                "customNotes": null,
+                "sortOrder": 1
+              }
+            ],
+            "servedImageUrls": [
+              "http://127.0.0.1:33319/family-kitchen/other/2026-09-03/cmtlq292e0000mn9nb2akgsq4-4B5YjXQCeob92MJ3.png"
+            ],
+            "servedAt": "2026-09-03T16:11:04.388Z",
+            "completedAt": "2026-09-03T16:11:04.516Z",
+            "totalLovePoints": 25,
+            "rating": {
+              "stars": 5,
+              "comment": "C01隔离冒烟测试",
+              "isAutoGenerated": false
+            },
+            "createdAt": "2026-09-03T16:11:03.828Z",
+            "updatedAt": "2026-09-03T16:11:04.517Z",
+            "myRole": "customer",
+            "customerNickname": "情侣厨房用户",
+            "chefNickname": "情侣厨房用户",
+            "customerAvatarUrl": null,
+            "chefAvatarUrl": null,
+            "unreadCount": 0
+          }
+        ],
+        "total": 1,
+        "page": 1,
+        "pageSize": 20,
+        "totalPages": 1
+      }
+    }
+  ]
+}

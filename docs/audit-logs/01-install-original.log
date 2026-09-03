@@ -1,0 +1,23 @@
+**********************
+PowerShell transcript start
+Start time: 20260903234938
+Username: XSP-20220801KWX\CodexSandboxOffline
+RunAs User: XSP-20220801KWX\CodexSandboxOffline
+Configuration Name: 
+Machine: XSP-20220801KWX (Microsoft Windows NT 10.0.19045.0)
+Host Application: C:\Users\Administrator\.cache\codex-runtimes\codex-primary-runtime\dependencies\native\powershell\pwsh.dll -NoProfile -Command try { [Console]::OutputEncoding=[System.Text.Encoding]::UTF8 } catch {}
+New-Item -ItemType Directory -Force -Path docs/audit-logs | Out-Null; Start-Transcript -Path docs/audit-logs/01-install-original.log; node --version; pnpm --version; pnpm install --frozen-lockfile; $resultCode = $LASTEXITCODE; Write-Output "INSTALL_EXIT_CODE=$resultCode"; Stop-Transcript; exit $resultCode
+Process ID: 25968
+PSVersion: 7.6.4
+PSEdition: Core
+GitCommitId: 7.6.4
+OS: Microsoft Windows 10.0.19045
+Platform: Win32NT
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1, 6.0, 7.0
+PSRemotingProtocolVersion: 2.4
+SerializationVersion: 1.1.0.1
+WSManStackVersion: 3.0
+**********************
+Transcript started, output file is docs/audit-logs/01-install-original.log
+
+

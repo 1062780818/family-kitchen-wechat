@@ -1,0 +1,747 @@
+{
+  "generated": "2026-09-03T15:58:16.501Z",
+  "miniPages": [
+    "pages/tabbar/home/home",
+    "pages/tabbar/menu/menu",
+    "pages/tabbar/timeline/timeline",
+    "pages/tabbar/profile/profile",
+    "pages/auth/login",
+    "pages/auth/agreement-user",
+    "pages/auth/agreement-privacy",
+    "pages/family/setup",
+    "pages/family/settings",
+    "pages/order/create",
+    "pages/order/detail",
+    "pages/order/history",
+    "pages/order/chat",
+    "pages/chat/list",
+    "pages/recipe/detail",
+    "pages/recipe/edit",
+    "pages/timeline/monthly",
+    "pages/timeline/manual",
+    "pages/profile/love-points",
+    "pages/profile/achievements",
+    "pages/profile/edit",
+    "pages/profile/bind-credentials",
+    "pages/profile/feedback",
+    "pages/profile/about",
+    "pages/profile/chef-level",
+    "pages/onboarding/index",
+    "pages/notification/list",
+    "pages/ai/recipe-gen",
+    "pages/ai/recommend",
+    "pages/ai/nutrition",
+    "pages/ai/weekly-plan"
+  ],
+  "controllers": [
+    {
+      "file": "backend\\src\\modules\\achievement\\achievement.controller.ts",
+      "lines": [
+        {
+          "line": 9,
+          "text": "@Controller('achievements')"
+        },
+        {
+          "line": 13,
+          "text": "@Get('me')"
+        },
+        {
+          "line": 19,
+          "text": "@Get('family')"
+        },
+        {
+          "line": 25,
+          "text": "@Get('progress')"
+        }
+      ]
+    },
+    {
+      "file": "backend\\src\\modules\\admin\\admin-analytics.controller.ts",
+      "lines": [
+        {
+          "line": 9,
+          "text": "@Controller('admin/analytics')"
+        },
+        {
+          "line": 13,
+          "text": "@Get()"
+        }
+      ]
+    },
+    {
+      "file": "backend\\src\\modules\\admin\\admin-badge.controller.ts",
+      "lines": [
+        {
+          "line": 19,
+          "text": "@Controller('admin/badges')"
+        },
+        {
+          "line": 23,
+          "text": "@Get()"
+        },
+        {
+          "line": 42,
+          "text": "@Get('seed')"
+        },
+        {
+          "line": 48,
+          "text": "@Get(':key')"
+        },
+        {
+          "line": 54,
+          "text": "@Post()"
+        },
+        {
+          "line": 76,
+          "text": "@Patch(':key')"
+        },
+        {
+          "line": 98,
+          "text": "@Patch(':key/toggle')"
+        },
+        {
+          "line": 104,
+          "text": "@Delete(':key')"
+        },
+        {
+          "line": 110,
+          "text": "@Get(':key/stats')"
+        }
+      ]
+    },
+    {
+      "file": "backend\\src\\modules\\admin\\admin-chef-level.controller.ts",
+      "lines": [
+        {
+          "line": 9,
+          "text": "@Controller('admin/chef-levels')"
+        },
+        {
+          "line": 13,
+          "text": "@Get()"
+        },
+        {
+          "line": 19,
+          "text": "@Get('seed')"
+        },
+        {
+          "line": 25,
+          "text": "@Get(':key')"
+        },
+        {
+          "line": 31,
+          "text": "@Post()"
+        },
+        {
+          "line": 47,
+          "text": "@Patch(':key')"
+        },
+        {
+          "line": 63,
+          "text": "@Patch(':key/toggle')"
+        },
+        {
+          "line": 69,
+          "text": "@Delete(':key')"
+        }
+      ]
+    },
+    {
+      "file": "backend\\src\\modules\\admin\\admin-family.controller.ts",
+      "lines": [
+        {
+          "line": 11,
+          "text": "@Controller('admin/families')"
+        },
+        {
+          "line": 15,
+          "text": "@Get()"
+        },
+        {
+          "line": 21,
+          "text": "@Get(':id')"
+        },
+        {
+          "line": 27,
+          "text": "@Get(':id/love-point-ledger')"
+        },
+        {
+          "line": 33,
+          "text": "@Get(':id/recipes')"
+        },
+        {
+          "line": 39,
+          "text": "@Get(':id/achievements')"
+        }
+      ]
+    },
+    {
+      "file": "backend\\src\\modules\\admin\\admin-metrics.controller.ts",
+      "lines": [
+        {
+          "line": 10,
+          "text": "@Controller('admin/metrics')"
+        },
+        {
+          "line": 14,
+          "text": "@Get()"
+        }
+      ]
+    },
+    {
+      "file": "backend\\src\\modules\\admin\\admin-order.controller.ts",
+      "lines": [
+        {
+          "line": 21,
+          "text": "@Controller('admin/orders')"
+        },
+        {
+          "line": 25,
+          "text": "@Get()"
+        },
+        {
+          "line": 37,
+          "text": "@Get(':id')"
+        },
+        {
+          "line": 43,
+          "text": "@Get(':id/messages')"
+        },
+        {
+          "line": 49,
+          "text": "@Post(':id/freeze')"
+        }
+      ]
+    },
+    {
+      "file": "backend\\src\\modules\\admin\\admin-user.controller.ts",
+      "lines": [
+        {
+          "line": 11,
+          "text": "@Controller('admin/users')"
+        },
+        {
+          "line": 15,
+          "text": "@Get()"
+        },
+        {
+          "line": 21,
+          "text": "@Get(':id')"
+        },
+        {
+          "line": 27,
+          "text": "@Get(':id/love-point-logs')"
+        },
+        {
+          "line": 33,
+          "text": "@Get(':id/achievements')"
+        },
+        {
+          "line": 39,
+          "text": "@Get(':id/orders')"
+        }
+      ]
+    },
+    {
+      "file": "backend\\src\\modules\\ai\\admin\\admin-ai.controller.ts",
+      "lines": [
+        {
+          "line": 12,
+          "text": "@Controller('admin/ai')"
+        },
+        {
+          "line": 20,
+          "text": "@Get('config')"
+        },
+        {
+          "line": 26,
+          "text": "@Post('config')"
+        },
+        {
+          "line": 35,
+          "text": "@Post('test-connection')"
+        },
+        {
+          "line": 54,
+          "text": "@Get('usage/stats')"
+        },
+        {
+          "line": 60,
+          "text": "@Get('usage/logs')"
+        }
+      ]
+    },
+    {
+      "file": "backend\\src\\modules\\ai\\ai.controller.ts",
+      "lines": [
+        {
+          "line": 14,
+          "text": "@Controller('ai')"
+        },
+        {
+          "line": 24,
+          "text": "@Post('recipes/generate')"
+        },
+        {
+          "line": 31,
+          "text": "@Post('recipes/save')"
+        },
+        {
+          "line": 51,
+          "text": "@Post('recommend')"
+        },
+        {
+          "line": 58,
+          "text": "@Post('cooking-assistant/chat')"
+        },
+        {
+          "line": 65,
+          "text": "@Post('nutrition/analyze')"
+        },
+        {
+          "line": 72,
+          "text": "@Post('nutrition/weekly-plan')"
+        }
+      ]
+    },
+    {
+      "file": "backend\\src\\modules\\auth\\auth.controller.ts",
+      "lines": [
+        {
+          "line": 11,
+          "text": "@Controller('auth')"
+        },
+        {
+          "line": 16,
+          "text": "@Post('wx-login')"
+        },
+        {
+          "line": 24,
+          "text": "@Post('password-login')"
+        },
+        {
+          "line": 32,
+          "text": "@Post('admin/login')"
+        },
+        {
+          "line": 39,
+          "text": "@Get('me')"
+        }
+      ]
+    },
+    {
+      "file": "backend\\src\\modules\\business-config\\business-config.controller.ts",
+      "lines": [
+        {
+          "line": 20,
+          "text": "@Controller('admin/business-config')"
+        },
+        {
+          "line": 28,
+          "text": "@Get()"
+        },
+        {
+          "line": 41,
+          "text": "@Get('-/changes/all')"
+        },
+        {
+          "line": 47,
+          "text": "@Get(':groupKey')"
+        },
+        {
+          "line": 56,
+          "text": "@Patch(':groupKey')"
+        },
+        {
+          "line": 68,
+          "text": "@Get(':groupKey/changes')"
+        }
+      ]
+    },
+    {
+      "file": "backend\\src\\modules\\business-config\\public-config.controller.ts",
+      "lines": [
+        {
+          "line": 8,
+          "text": "@Controller('config')"
+        },
+        {
+          "line": 16,
+          "text": "@Get('public')"
+        }
+      ]
+    },
+    {
+      "file": "backend\\src\\modules\\family\\family.controller.ts",
+      "lines": [
+        {
+          "line": 12,
+          "text": "@Controller('families')"
+        },
+        {
+          "line": 16,
+          "text": "@Post()"
+        },
+        {
+          "line": 22,
+          "text": "@Post('join')"
+        },
+        {
+          "line": 29,
+          "text": "@Get('me')"
+        },
+        {
+          "line": 35,
+          "text": "@Patch('me')"
+        },
+        {
+          "line": 41,
+          "text": "@Post('me/invite-code')"
+        },
+        {
+          "line": 48,
+          "text": "@Post('me/leave')"
+        }
+      ]
+    },
+    {
+      "file": "backend\\src\\modules\\feedback\\feedback.controller.ts",
+      "lines": [
+        {
+          "line": 16,
+          "text": "@Controller()"
+        },
+        {
+          "line": 20,
+          "text": "@Post('feedback')"
+        },
+        {
+          "line": 26,
+          "text": "@Get('admin/feedback')"
+        },
+        {
+          "line": 33,
+          "text": "@Patch('admin/feedback/:id')"
+        }
+      ]
+    },
+    {
+      "file": "backend\\src\\modules\\health\\health.controller.ts",
+      "lines": [
+        {
+          "line": 8,
+          "text": "@Controller('health')"
+        },
+        {
+          "line": 12,
+          "text": "@Get()"
+        },
+        {
+          "line": 18,
+          "text": "@Get('db')"
+        }
+      ]
+    },
+    {
+      "file": "backend\\src\\modules\\love-point\\love-point.controller.ts",
+      "lines": [
+        {
+          "line": 14,
+          "text": "@Controller('love-points')"
+        },
+        {
+          "line": 18,
+          "text": "@Get('balance')"
+        },
+        {
+          "line": 24,
+          "text": "@Get('logs')"
+        },
+        {
+          "line": 33,
+          "text": "@Post('check-in')"
+        },
+        {
+          "line": 40,
+          "text": "@Post('logs/:id/reverse')"
+        }
+      ]
+    },
+    {
+      "file": "backend\\src\\modules\\notification\\notification-log.controller.ts",
+      "lines": [
+        {
+          "line": 11,
+          "text": "@Controller('notifications')"
+        },
+        {
+          "line": 15,
+          "text": "@Get('unread-count')"
+        },
+        {
+          "line": 21,
+          "text": "@Get()"
+        },
+        {
+          "line": 33,
+          "text": "@Post(':id/read')"
+        },
+        {
+          "line": 40,
+          "text": "@Post('read-all')"
+        }
+      ]
+    },
+    {
+      "file": "backend\\src\\modules\\order\\message.controller.ts",
+      "lines": [
+        {
+          "line": 10,
+          "text": "@Controller('orders/:orderId/messages')"
+        },
+        {
+          "line": 14,
+          "text": "@Get()"
+        },
+        {
+          "line": 24,
+          "text": "@Post()"
+        },
+        {
+          "line": 36,
+          "text": "@Post('read')"
+        }
+      ]
+    },
+    {
+      "file": "backend\\src\\modules\\order\\order.controller.ts",
+      "lines": [
+        {
+          "line": 18,
+          "text": "@Controller('orders')"
+        },
+        {
+          "line": 25,
+          "text": "@Post()"
+        },
+        {
+          "line": 31,
+          "text": "@Get('active')"
+        },
+        {
+          "line": 37,
+          "text": "@Get()"
+        },
+        {
+          "line": 46,
+          "text": "@Get(':id')"
+        },
+        {
+          "line": 52,
+          "text": "@Post(':id/accept')"
+        },
+        {
+          "line": 63,
+          "text": "@Post(':id/reject')"
+        },
+        {
+          "line": 74,
+          "text": "@Post(':id/prepping')"
+        },
+        {
+          "line": 81,
+          "text": "@Post(':id/cooking')"
+        },
+        {
+          "line": 88,
+          "text": "@Post(':id/serve')"
+        },
+        {
+          "line": 99,
+          "text": "@Post(':id/cancel')"
+        },
+        {
+          "line": 110,
+          "text": "@Post(':id/rating')"
+        }
+      ]
+    },
+    {
+      "file": "backend\\src\\modules\\recipe\\recipe.controller.ts",
+      "lines": [
+        {
+          "line": 24,
+          "text": "@Controller('recipes')"
+        },
+        {
+          "line": 28,
+          "text": "@Post()"
+        },
+        {
+          "line": 34,
+          "text": "@Get()"
+        },
+        {
+          "line": 43,
+          "text": "@Get('random')"
+        },
+        {
+          "line": 49,
+          "text": "@Get(':id')"
+        },
+        {
+          "line": 55,
+          "text": "@Patch(':id')"
+        },
+        {
+          "line": 65,
+          "text": "@Delete(':id')"
+        },
+        {
+          "line": 74,
+          "text": "@Post(':id/favorite')"
+        },
+        {
+          "line": 81,
+          "text": "@Delete(':id/favorite')"
+        }
+      ]
+    },
+    {
+      "file": "backend\\src\\modules\\storage\\storage.controller.ts",
+      "lines": [
+        {
+          "line": 17,
+          "text": "@Controller('storage')"
+        },
+        {
+          "line": 21,
+          "text": "@Post('upload')"
+        }
+      ]
+    },
+    {
+      "file": "backend\\src\\modules\\timeline\\timeline.controller.ts",
+      "lines": [
+        {
+          "line": 16,
+          "text": "@Controller('timeline')"
+        },
+        {
+          "line": 20,
+          "text": "@Get()"
+        },
+        {
+          "line": 29,
+          "text": "@Get('monthly-summary')"
+        },
+        {
+          "line": 40,
+          "text": "@Post('manual')"
+        },
+        {
+          "line": 49,
+          "text": "@Patch(':id/reply')"
+        },
+        {
+          "line": 59,
+          "text": "@Patch(':id/hide')"
+        },
+        {
+          "line": 65,
+          "text": "@Patch(':id/unhide')"
+        },
+        {
+          "line": 71,
+          "text": "@Delete(':id')"
+        }
+      ]
+    },
+    {
+      "file": "backend\\src\\modules\\user\\user.controller.ts",
+      "lines": [
+        {
+          "line": 11,
+          "text": "@Controller('users')"
+        },
+        {
+          "line": 15,
+          "text": "@Get('me')"
+        },
+        {
+          "line": 21,
+          "text": "@Get('me/chef-level')"
+        },
+        {
+          "line": 27,
+          "text": "@Patch('me')"
+        },
+        {
+          "line": 33,
+          "text": "@Patch('me/credentials')"
+        },
+        {
+          "line": 43,
+          "text": "@Delete('me')"
+        },
+        {
+          "line": 51,
+          "text": "@Get('me/notification-prefs')"
+        },
+        {
+          "line": 57,
+          "text": "@Patch('me/notification-prefs')"
+        }
+      ]
+    }
+  ],
+  "models": [
+    "User",
+    "Family",
+    "FamilyMember",
+    "Recipe",
+    "RecipeFavorite",
+    "Order",
+    "OrderItem",
+    "OrderMessage",
+    "Rating",
+    "LovePointLog",
+    "BadgeDefinition",
+    "Achievement",
+    "ChefLevelDefinition",
+    "TimelineEntry",
+    "Feedback",
+    "BusinessConfig",
+    "BusinessConfigChange",
+    "NotificationLog",
+    "AiConversation",
+    "AiConversationMessage",
+    "AiUsageLog"
+  ],
+  "testFiles": [
+    "backend\\src\\modules\\achievement\\achievement.service.spec.ts",
+    "backend\\src\\modules\\admin\\admin-metrics.service.spec.ts",
+    "backend\\src\\modules\\admin\\admin-order.service.spec.ts",
+    "backend\\src\\modules\\admin\\admin.guard.spec.ts",
+    "backend\\src\\modules\\auth\\auth.service.spec.ts",
+    "backend\\src\\modules\\family\\family.service.spec.ts",
+    "backend\\src\\modules\\feedback\\feedback.service.spec.ts",
+    "backend\\src\\modules\\health\\health.controller.spec.ts",
+    "backend\\src\\modules\\love-point\\love-point-family-isolate.spec.ts",
+    "backend\\src\\modules\\love-point\\love-point-reverse.spec.ts",
+    "backend\\src\\modules\\love-point\\love-point.service.spec.ts",
+    "backend\\src\\modules\\notification\\wx-access-token.service.spec.ts",
+    "backend\\src\\modules\\notification\\wx-notify.service.spec.ts",
+    "backend\\src\\modules\\order\\message.service.spec.ts",
+    "backend\\src\\modules\\order\\order-status.spec.ts",
+    "backend\\src\\modules\\order\\order.service.spec.ts",
+    "backend\\src\\modules\\order\\rating.service.spec.ts",
+    "backend\\src\\modules\\recipe\\recipe-favorite.spec.ts",
+    "backend\\src\\modules\\recipe\\recipe.service.spec.ts",
+    "backend\\src\\modules\\storage\\storage.service.spec.ts",
+    "backend\\src\\modules\\timeline\\timeline-summary.spec.ts",
+    "backend\\src\\modules\\user\\user-bind.spec.ts",
+    "backend\\src\\modules\\user\\user-delete.spec.ts"
+  ],
+  "sourceFileCount": 282
+}

@@ -1,0 +1,29 @@
+**********************
+PowerShell transcript start
+Start time: 20260903235037
+Username: XSP-20220801KWX\Administrator
+RunAs User: XSP-20220801KWX\Administrator
+Configuration Name: 
+Machine: XSP-20220801KWX (Microsoft Windows NT 10.0.19045.0)
+Host Application: C:\Users\Administrator\.cache\codex-runtimes\codex-primary-runtime\dependencies\native\powershell\pwsh.dll -Command try { [Console]::OutputEncoding=[System.Text.Encoding]::UTF8 } catch {}
+Start-Transcript -Path docs/audit-logs/02-pnpm9-install.log; $env:PATH = 'C:\Users\Administrator\.cache\codex-runtimes\codex-primary-runtime\dependencies\native\git\mingw64\bin;' + $env:PATH; pnpm --version; pnpm dlx pnpm@9.12.0 --version; pnpm dlx pnpm@9.12.0 install --frozen-lockfile; $resultCode = $LASTEXITCODE; Write-Output "INSTALL_EXIT_CODE=$resultCode"; Stop-Transcript; exit $resultCode
+Process ID: 11984
+PSVersion: 7.6.4
+PSEdition: Core
+GitCommitId: 7.6.4
+OS: Microsoft Windows 10.0.19045
+Platform: Win32NT
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1, 6.0, 7.0
+PSRemotingProtocolVersion: 2.4
+SerializationVersion: 1.1.0.1
+WSManStackVersion: 3.0
+**********************
+Transcript started, output file is docs/audit-logs/02-pnpm9-install.log
+
+
+
+INSTALL_EXIT_CODE=0
+**********************
+PowerShell transcript end
+End time: 20260903235211
+**********************

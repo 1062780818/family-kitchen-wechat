@@ -1,0 +1,9 @@
+2026-09-03T16:04:38.633219Z 0 [System] [MY-015015] [Server] MySQL Server - start.
+2026-09-03T16:04:38.828171Z 0 [System] [MY-010116] [Server] H:\codex\ (mysqld 8.4.10) starting as process 29060
+2026-09-03T16:04:38.828215Z 0 [ERROR] [MY-010338] [Server] Can't find error-message file 'H:\share\english\errmsg.sys'. Check error-message file location and 'lc-messages-dir' configuration directive.
+2026-09-03T16:04:38.829020Z 0 [Warning] [MY-010091] [Server] Can't create test file H:\data\mysqld_tmp_file_case_insensitive_test.lower-test
+2026-09-03T16:04:38.829086Z 0 [Warning] [MY-010091] [Server] Can't create test file H:\data\mysqld_tmp_file_case_insensitive_test.lower-test
+2026-09-03T16:04:38.829141Z 0 [ERROR] [MY-013276] [Server] Failed to set datadir to 'H:\data\' (OS errno: 2 - No such file or directory)
+2026-09-03T16:04:38.829178Z 0 [ERROR] [MY-010119] [Server] Aborting
+2026-09-03T16:04:38.829482Z 0 [System] [MY-010910] [Server] H:\codex\: Shutdown complete (mysqld 8.4.10)  MySQL Community Server - GPL.
+2026-09-03T16:04:38.829483Z 0 [System] [MY-015016] [Server] MySQL Server - end.

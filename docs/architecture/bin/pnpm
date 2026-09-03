@@ -1,0 +1,3 @@
+#!/bin/sh
+# Audit-only shim for Git Bash hooks; keep pnpm pinned to the audited CLI.
+exec node "${C01_PNPM_CLI:?Set C01_PNPM_CLI to pnpm 9.12.0 bin/pnpm.cjs}" "$@"

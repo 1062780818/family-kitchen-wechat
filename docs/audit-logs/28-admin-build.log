@@ -1,0 +1,38 @@
+{"label":"28-admin-build","cwd":"H:\\codex\\林家餐厅小程序\\family-kitchen-c01","node":"v24.19.0","pnpmCli":"C:\\Users\\Administrator\\AppData\\Local\\pnpm\\store\\v11\\links\\@\\pnpm\\9.12.0\\49d8fa80e8205096741f5238215a507a7cc04fc3d20ff2b1c8b726b65d71c883\\node_modules\\pnpm\\bin\\pnpm.cjs","args":["--filter","@family-kitchen/admin","build"],"started":"2026-09-03T15:56:49.973Z","timeoutSeconds":180,"sourceChanged":false,"localServicePorts":[33300,33301,33316,33319]}
+
+> @family-kitchen/admin@0.1.0 build H:\codex\林家餐厅小程序\family-kitchen-c01\admin
+> vue-tsc -b && vite build
+
+src/composables/useDefaultAvatar.ts(14,15): error TS2339: Property 'defaultAvatarMaleUrl' does not exist on type 'AxiosResponse<{ defaultAvatarMaleUrl: string; defaultAvatarFemaleUrl: string; }, any, {}>'.
+src/composables/useDefaultAvatar.ts(14,55): error TS2339: Property 'defaultAvatarMaleUrl' does not exist on type 'AxiosResponse<{ defaultAvatarMaleUrl: string; defaultAvatarFemaleUrl: string; }, any, {}>'.
+src/composables/useDefaultAvatar.ts(15,15): error TS2339: Property 'defaultAvatarFemaleUrl' does not exist on type 'AxiosResponse<{ defaultAvatarMaleUrl: string; defaultAvatarFemaleUrl: string; }, any, {}>'.
+src/composables/useDefaultAvatar.ts(15,59): error TS2339: Property 'defaultAvatarFemaleUrl' does not exist on type 'AxiosResponse<{ defaultAvatarMaleUrl: string; defaultAvatarFemaleUrl: string; }, any, {}>'.
+src/views/badge/BadgeList.vue(11,1): error TS6133: 'formatDate' is declared but its value is never read.
+src/views/BusinessConfig.vue(91,18): error TS2322: Type 'BusinessConfigGroup | undefined' is not assignable to type 'BusinessConfigGroup'.
+  Type 'undefined' is not assignable to type 'BusinessConfigGroup'.
+src/views/family/FamilyDetail.vue(157,31): error TS2322: Type '(name: string) => void' is not assignable to type '(name: TabPaneName) => any'.
+  Types of parameters 'name' and 'name' are incompatible.
+    Type 'TabPaneName' is not assignable to type 'string'.
+      Type 'number' is not assignable to type 'string'.
+src/views/user/UserDetail.vue(152,31): error TS2322: Type '(name: string) => void' is not assignable to type '(name: TabPaneName) => any'.
+  Types of parameters 'name' and 'name' are incompatible.
+    Type 'TabPaneName' is not assignable to type 'string'.
+      Type 'number' is not assignable to type 'string'.
+../node_modules/.pnpm/unimport@3.14.6_rollup@4.60.3/node_modules/unimport/dist/index.d.mts(8,1): error TS1046: Top-level declarations in .d.ts files must start with either a 'declare' or 'export' modifier.
+../node_modules/.pnpm/unplugin@1.16.1/node_modules/unplugin/dist/index.d.mts(1,31): error TS2307: Cannot find module '@farmfe/core' or its corresponding type declarations.
+../node_modules/.pnpm/unplugin@1.16.1/node_modules/unplugin/dist/index.d.mts(2,46): error TS2307: Cannot find module '@farmfe/core' or its corresponding type declarations.
+../node_modules/.pnpm/unplugin@1.16.1/node_modules/unplugin/dist/index.d.mts(3,49): error TS2307: Cannot find module '@rspack/core/dist/config/types' or its corresponding type declarations.
+../node_modules/.pnpm/unplugin@1.16.1/node_modules/unplugin/dist/index.d.mts(7,45): error TS2307: Cannot find module 'rolldown/dist/types/plugin' or its corresponding type declarations.
+../node_modules/.pnpm/unplugin@1.16.1/node_modules/unplugin/dist/index.d.mts(14,126): error TS2307: Cannot find module '@rspack/core' or its corresponding type declarations.
+../node_modules/.pnpm/unplugin@1.16.1/node_modules/unplugin/dist/index.d.mts(15,66): error TS2307: Cannot find module '@rspack/core' or its corresponding type declarations.
+../node_modules/.pnpm/unplugin@1.16.1/node_modules/unplugin/dist/index.d.mts(19,36): error TS2307: Cannot find module 'rolldown' or its corresponding type declarations.
+../node_modules/.pnpm/unplugin@1.16.1/node_modules/unplugin/dist/index.d.mts(20,42): error TS2307: Cannot find module 'rolldown' or its corresponding type declarations.
+../node_modules/.pnpm/webpack@5.97.1/node_modules/webpack/types.d.ts(15462,15): error TS2417: Class static side 'typeof WebpackError' incorrectly extends base class static side '{ readonly prototype: Error; captureStackTrace(targetObject: object, constructorOpt?: Function | undefined): void; prepareStackTrace(err: Error, stackTraces: CallSite[]): any; stackTraceLimit: number; }'.
+  Types of property 'prepareStackTrace' are incompatible.
+    Type '((err: Error, stackTraces: CallSite[]) => any) | undefined' is not assignable to type '(err: Error, stackTraces: CallSite[]) => any'.
+      Type 'undefined' is not assignable to type '(err: Error, stackTraces: CallSite[]) => any'.
+H:\codex\林家餐厅小程序\family-kitchen-c01\admin:
+ ERR_PNPM_RECURSIVE_RUN_FIRST_FAIL  @family-kitchen/admin@0.1.0 build: `vue-tsc -b && vite build`
+Exit status 1
+
+{"label":"28-admin-build","cwd":"H:\\codex\\林家餐厅小程序\\family-kitchen-c01","node":"v24.19.0","pnpmCli":"C:\\Users\\Administrator\\AppData\\Local\\pnpm\\store\\v11\\links\\@\\pnpm\\9.12.0\\49d8fa80e8205096741f5238215a507a7cc04fc3d20ff2b1c8b726b65d71c883\\node_modules\\pnpm\\bin\\pnpm.cjs","args":["--filter","@family-kitchen/admin","build"],"started":"2026-09-03T15:56:49.973Z","timeoutSeconds":180,"sourceChanged":false,"localServicePorts":[33300,33301,33316,33319],"code":1,"signal":null,"timedOut":false,"seconds":8.272}

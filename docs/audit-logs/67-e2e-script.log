@@ -1,0 +1,19 @@
+{"label":"67-e2e-script","cwd":"H:\\codex\\林家餐厅小程序\\family-kitchen-c01","node":"v24.19.0","pnpmCli":"C:\\Users\\Administrator\\AppData\\Local\\pnpm\\store\\v11\\links\\@\\pnpm\\9.12.0\\49d8fa80e8205096741f5238215a507a7cc04fc3d20ff2b1c8b726b65d71c883\\node_modules\\pnpm\\bin\\pnpm.cjs","args":["--filter","@family-kitchen/backend","test:e2e"],"started":"2026-09-03T16:21:48.550Z","timeoutSeconds":60,"sourceChanged":false,"databaseName":"c01_baseline_audit","localServicePorts":[33300,33301,33316,33319]}
+
+> @family-kitchen/backend@0.1.0 test:e2e H:\codex\林家餐厅小程序\family-kitchen-c01\backend
+> jest --config ./test/jest-e2e.json
+
+Error: Can't find a root directory while resolving a config file path.
+Provided path to resolve: ./test/jest-e2e.json
+cwd: H:\codex\林家餐厅小程序\family-kitchen-c01\backend
+    at resolveConfigPath (H:\codex\林家餐厅小程序\family-kitchen-c01\node_modules\.pnpm\jest-config@29.7.0_@types+node@20.19.41_ts-node@10.9.2_@types+node@20.19.41_typescript@5.9.3_\node_modules\jest-config\build\resolveConfigPath.js:123:11)
+    at readInitialOptions (H:\codex\林家餐厅小程序\family-kitchen-c01\node_modules\.pnpm\jest-config@29.7.0_@types+node@20.19.41_ts-node@10.9.2_@types+node@20.19.41_typescript@5.9.3_\node_modules\jest-config\build\index.js:386:55)
+    at readConfig (H:\codex\林家餐厅小程序\family-kitchen-c01\node_modules\.pnpm\jest-config@29.7.0_@types+node@20.19.41_ts-node@10.9.2_@types+node@20.19.41_typescript@5.9.3_\node_modules\jest-config\build\index.js:147:54)
+    at readConfigs (H:\codex\林家餐厅小程序\family-kitchen-c01\node_modules\.pnpm\jest-config@29.7.0_@types+node@20.19.41_ts-node@10.9.2_@types+node@20.19.41_typescript@5.9.3_\node_modules\jest-config\build\index.js:424:32)
+    at runCLI (H:\codex\林家餐厅小程序\family-kitchen-c01\node_modules\.pnpm\@jest+core@29.7.0_ts-node@10.9.2_@types+node@20.19.41_typescript@5.9.3_\node_modules\@jest\core\build\cli\index.js:152:29)
+    at Object.run (H:\codex\林家餐厅小程序\family-kitchen-c01\node_modules\.pnpm\jest-cli@29.7.0_@types+node@20.19.41_ts-node@10.9.2_@types+node@20.19.41_typescript@5.9.3_\node_modules\jest-cli\build\run.js:130:62)
+H:\codex\林家餐厅小程序\family-kitchen-c01\backend:
+ ERR_PNPM_RECURSIVE_RUN_FIRST_FAIL  @family-kitchen/backend@0.1.0 test:e2e: `jest --config ./test/jest-e2e.json`
+Exit status 1
+
+{"label":"67-e2e-script","cwd":"H:\\codex\\林家餐厅小程序\\family-kitchen-c01","node":"v24.19.0","pnpmCli":"C:\\Users\\Administrator\\AppData\\Local\\pnpm\\store\\v11\\links\\@\\pnpm\\9.12.0\\49d8fa80e8205096741f5238215a507a7cc04fc3d20ff2b1c8b726b65d71c883\\node_modules\\pnpm\\bin\\pnpm.cjs","args":["--filter","@family-kitchen/backend","test:e2e"],"started":"2026-09-03T16:21:48.550Z","timeoutSeconds":60,"sourceChanged":false,"databaseName":"c01_baseline_audit","localServicePorts":[33300,33301,33316,33319],"pid":25464,"code":1,"signal":null,"timedOut":false,"seconds":1.154}

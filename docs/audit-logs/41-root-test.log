@@ -1,0 +1,25 @@
+{"label":"41-root-test","cwd":"H:\\codex\\林家餐厅小程序\\family-kitchen-c01","node":"v24.19.0","pnpmCli":"C:\\Users\\Administrator\\AppData\\Local\\pnpm\\store\\v11\\links\\@\\pnpm\\9.12.0\\49d8fa80e8205096741f5238215a507a7cc04fc3d20ff2b1c8b726b65d71c883\\node_modules\\pnpm\\bin\\pnpm.cjs","args":["test"],"started":"2026-09-03T16:00:19.704Z","timeoutSeconds":120,"sourceChanged":false,"localServicePorts":[33300,33301,33316,33319]}
+
+> family-kitchen@0.1.0 test H:\codex\林家餐厅小程序\family-kitchen-c01
+> pnpm -r --parallel run test
+
+Scope: 4 of 5 workspace projects
+admin test$ vitest run
+backend test$ jest
+packages/shared test$ echo "(no tests in shared package)" && exit 0
+mini-app test$ echo "(no automated tests for mini-app MVP yet)" && exit 0
+packages/shared test: "(no tests in shared package)" 
+packages/shared test: Done
+mini-app test: "(no automated tests for mini-app MVP yet)" 
+mini-app test: Done
+admin test:  RUN  v2.1.9 H:/codex/林家餐厅小程序/family-kitchen-c01/admin
+admin test: include: **/*.{test,spec}.?(c|m)[jt]s?(x)
+admin test: exclude:  **/node_modules/**, **/dist/**, **/cypress/**, **/.{idea,git,cache,output,temp}/**, **/{karma,rollup,webpack,vite,vitest,jest,ava,babel,nyc,cypress,tsup,build,eslint,prettier}.config.*
+admin test: No test files found, exiting with code 1
+admin test: Failed
+H:\codex\林家餐厅小程序\family-kitchen-c01\admin:
+ ERR_PNPM_RECURSIVE_RUN_FIRST_FAIL  @family-kitchen/admin@0.1.0 test: `vitest run`
+Exit status 1
+ ELIFECYCLE  Test failed. See above for more details.
+
+{"label":"41-root-test","cwd":"H:\\codex\\林家餐厅小程序\\family-kitchen-c01","node":"v24.19.0","pnpmCli":"C:\\Users\\Administrator\\AppData\\Local\\pnpm\\store\\v11\\links\\@\\pnpm\\9.12.0\\49d8fa80e8205096741f5238215a507a7cc04fc3d20ff2b1c8b726b65d71c883\\node_modules\\pnpm\\bin\\pnpm.cjs","args":["test"],"started":"2026-09-03T16:00:19.704Z","timeoutSeconds":120,"sourceChanged":false,"localServicePorts":[33300,33301,33316,33319],"pid":15364,"code":1,"signal":null,"timedOut":false,"seconds":3.406}

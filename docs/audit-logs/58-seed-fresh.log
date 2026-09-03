@@ -1,0 +1,34 @@
+{"label":"58-seed-fresh","cwd":"H:\\codex\\林家餐厅小程序\\family-kitchen-c01","node":"v24.19.0","pnpmCli":"C:\\Users\\Administrator\\AppData\\Local\\pnpm\\store\\v11\\links\\@\\pnpm\\9.12.0\\49d8fa80e8205096741f5238215a507a7cc04fc3d20ff2b1c8b726b65d71c883\\node_modules\\pnpm\\bin\\pnpm.cjs","args":["--filter","@family-kitchen/backend","exec","prisma","db","seed"],"started":"2026-09-03T16:10:15.042Z","timeoutSeconds":180,"sourceChanged":false,"databaseName":"c01_baseline_replay","localServicePorts":[33300,33301,33316,33319]}
+Running seed command `ts-node prisma/seed.ts` ...
+🌱 开始播种徽章定义 (60 个)...
+
+🌱 开始播种模拟数据...
+
+✅ 用户: 大厨老公, 吃货老婆
+✅ 家庭: 甜蜜小厨房
+✅ 菜谱: 8 道
+✅ 菜谱收藏: 4 条
+✅ 订单: 3 个 (cooking / served / completed)
+✅ 订单消息: 13 条
+✅ 评价: 1 条
+✅ 爱心币流水: 5 条 (老公余额 25, 老婆余额 40)
+✅ 时间线: 1 条
+✅ 厨师等级: 5 个
+✅ 徽章定义处理完成: 60 条
+   分类: chef(11), customer(8), recipe(9), love(7), interaction(8), family(10), hidden(7)
+✅ 徽章定义: 60 个
+
+🎉 模拟数据播种完成！
+
+用户:
+  👨 大厨老公 (user_husband)
+  👩 吃货老婆 (user_wife)
+家庭: 甜蜜小厨房 (family_demo)
+菜谱: 8 道 (番茄炒蛋、红烧排骨、清蒸鲈鱼...)
+订单: 3 个 (cooking / served / completed)
+厨师等级: 5 个
+徽章定义: 60 个
+
+The seed command has been executed.
+
+{"label":"58-seed-fresh","cwd":"H:\\codex\\林家餐厅小程序\\family-kitchen-c01","node":"v24.19.0","pnpmCli":"C:\\Users\\Administrator\\AppData\\Local\\pnpm\\store\\v11\\links\\@\\pnpm\\9.12.0\\49d8fa80e8205096741f5238215a507a7cc04fc3d20ff2b1c8b726b65d71c883\\node_modules\\pnpm\\bin\\pnpm.cjs","args":["--filter","@family-kitchen/backend","exec","prisma","db","seed"],"started":"2026-09-03T16:10:15.042Z","timeoutSeconds":180,"sourceChanged":false,"databaseName":"c01_baseline_replay","localServicePorts":[33300,33301,33316,33319],"pid":24948,"code":0,"signal":null,"timedOut":false,"seconds":12.837}

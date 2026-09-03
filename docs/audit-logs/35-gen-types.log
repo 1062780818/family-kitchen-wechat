@@ -1,0 +1,45 @@
+{"label":"35-gen-types","cwd":"H:\\codex\\林家餐厅小程序\\family-kitchen-c01","node":"v24.19.0","pnpmCli":"C:\\Users\\Administrator\\AppData\\Local\\pnpm\\store\\v11\\links\\@\\pnpm\\9.12.0\\49d8fa80e8205096741f5238215a507a7cc04fc3d20ff2b1c8b726b65d71c883\\node_modules\\pnpm\\bin\\pnpm.cjs","args":["gen:api-types"],"started":"2026-09-03T15:57:10.866Z","timeoutSeconds":60,"sourceChanged":false,"localServicePorts":[33300,33301,33316,33319]}
+
+> family-kitchen@0.1.0 gen:api-types H:\codex\林家餐厅小程序\family-kitchen-c01
+> pnpm --filter @family-kitchen/shared run gen:types
+
+
+> @family-kitchen/shared@0.1.0 gen:types H:\codex\林家餐厅小程序\family-kitchen-c01\packages\shared
+> openapi-typescript ./openapi.json -o ./src/api-types.generated.ts
+
+✨ openapi-typescript 7.13.0
+H:\codex\林家餐厅小程序\family-kitchen-c01\node_modules\.pnpm\@redocly+openapi-core@1.34.14_supports-color@10.2.2\node_modules\@redocly\openapi-core\lib\resolve.js:113
+            throw new ResolveError(error);
+                  ^
+
+ResolveError: ENOENT: no such file or directory 'H:\codex\林家餐厅小程序\family-kitchen-c01\packages\shared\openapi.json'
+    at BaseResolver.loadExternalRef (H:\codex\林家餐厅小程序\family-kitchen-c01\node_modules\.pnpm\@redocly+openapi-core@1.34.14_supports-color@10.2.2\node_modules\@redocly\openapi-core\lib\resolve.js:113:19)
+    at BaseResolver.resolveDocument (H:\codex\林家餐厅小程序\family-kitchen-c01\node_modules\.pnpm\@redocly+openapi-core@1.34.14_supports-color@10.2.2\node_modules\@redocly\openapi-core\lib\resolve.js:140:26)
+    at parseSchema (file:///H:/codex/%E6%9E%97%E5%AE%B6%E9%A4%90%E5%8E%85%E5%B0%8F%E7%A8%8B%E5%BA%8F/family-kitchen-c01/node_modules/.pnpm/openapi-typescript@7.13.0_typescript@5.9.3/node_modules/openapi-typescript/dist/lib/redoc.mjs:13:35)
+    at validateAndBundle (file:///H:/codex/%E6%9E%97%E5%AE%B6%E9%A4%90%E5%8E%85%E5%B0%8F%E7%A8%8B%E5%BA%8F/family-kitchen-c01/node_modules/.pnpm/openapi-typescript@7.13.0_typescript@5.9.3/node_modules/openapi-typescript/dist/lib/redoc.mjs:87:26)
+    at openapiTS (file:///H:/codex/%E6%9E%97%E5%AE%B6%E9%A4%90%E5%8E%85%E5%B0%8F%E7%A8%8B%E5%BA%8F/family-kitchen-c01/node_modules/.pnpm/openapi-typescript@7.13.0_typescript@5.9.3/node_modules/openapi-typescript/dist/index.mjs:40:24)
+    at generateSchema (file:///H:/codex/%E6%9E%97%E5%AE%B6%E9%A4%90%E5%8E%85%E5%B0%8F%E7%A8%8B%E5%BA%8F/family-kitchen-c01/node_modules/.pnpm/openapi-typescript@7.13.0_typescript@5.9.3/node_modules/openapi-typescript/bin/cli.js:143:11)
+    at main (file:///H:/codex/%E6%9E%97%E5%AE%B6%E9%A4%90%E5%8E%85%E5%B0%8F%E7%A8%8B%E5%BA%8F/family-kitchen-c01/node_modules/.pnpm/openapi-typescript@7.13.0_typescript@5.9.3/node_modules/openapi-typescript/bin/cli.js:280:26) {
+  originalError: Error: ENOENT: no such file or directory 'H:\codex\林家餐厅小程序\family-kitchen-c01\packages\shared\openapi.json'
+      at Object.lstatSync (node:fs:1771:25)
+      at BaseResolver.loadExternalRef (H:\codex\林家餐厅小程序\family-kitchen-c01\node_modules\.pnpm\@redocly+openapi-core@1.34.14_supports-color@10.2.2\node_modules\@redocly\openapi-core\lib\resolve.js:103:24)
+      at BaseResolver.resolveDocument (H:\codex\林家餐厅小程序\family-kitchen-c01\node_modules\.pnpm\@redocly+openapi-core@1.34.14_supports-color@10.2.2\node_modules\@redocly\openapi-core\lib\resolve.js:140:26)
+      at parseSchema (file:///H:/codex/%E6%9E%97%E5%AE%B6%E9%A4%90%E5%8E%85%E5%B0%8F%E7%A8%8B%E5%BA%8F/family-kitchen-c01/node_modules/.pnpm/openapi-typescript@7.13.0_typescript@5.9.3/node_modules/openapi-typescript/dist/lib/redoc.mjs:13:35)
+      at validateAndBundle (file:///H:/codex/%E6%9E%97%E5%AE%B6%E9%A4%90%E5%8E%85%E5%B0%8F%E7%A8%8B%E5%BA%8F/family-kitchen-c01/node_modules/.pnpm/openapi-typescript@7.13.0_typescript@5.9.3/node_modules/openapi-typescript/dist/lib/redoc.mjs:87:26)
+      at openapiTS (file:///H:/codex/%E6%9E%97%E5%AE%B6%E9%A4%90%E5%8E%85%E5%B0%8F%E7%A8%8B%E5%BA%8F/family-kitchen-c01/node_modules/.pnpm/openapi-typescript@7.13.0_typescript@5.9.3/node_modules/openapi-typescript/dist/index.mjs:40:24)
+      at generateSchema (file:///H:/codex/%E6%9E%97%E5%AE%B6%E9%A4%90%E5%8E%85%E5%B0%8F%E7%A8%8B%E5%BA%8F/family-kitchen-c01/node_modules/.pnpm/openapi-typescript@7.13.0_typescript@5.9.3/node_modules/openapi-typescript/bin/cli.js:143:11)
+      at main (file:///H:/codex/%E6%9E%97%E5%AE%B6%E9%A4%90%E5%8E%85%E5%B0%8F%E7%A8%8B%E5%BA%8F/family-kitchen-c01/node_modules/.pnpm/openapi-typescript@7.13.0_typescript@5.9.3/node_modules/openapi-typescript/bin/cli.js:280:26) {
+    errno: -4058,
+    code: 'ENOENT',
+    syscall: 'lstat',
+    path: 'H:\\codex\\林家餐厅小程序\\family-kitchen-c01\\packages\\shared\\openapi.json'
+  }
+}
+
+Node.js v24.19.0
+H:\codex\林家餐厅小程序\family-kitchen-c01\packages\shared:
+ ERR_PNPM_RECURSIVE_RUN_FIRST_FAIL  @family-kitchen/shared@0.1.0 gen:types: `openapi-typescript ./openapi.json -o ./src/api-types.generated.ts`
+Exit status 1
+ ELIFECYCLE  Command failed with exit code 1.
+
+{"label":"35-gen-types","cwd":"H:\\codex\\林家餐厅小程序\\family-kitchen-c01","node":"v24.19.0","pnpmCli":"C:\\Users\\Administrator\\AppData\\Local\\pnpm\\store\\v11\\links\\@\\pnpm\\9.12.0\\49d8fa80e8205096741f5238215a507a7cc04fc3d20ff2b1c8b726b65d71c883\\node_modules\\pnpm\\bin\\pnpm.cjs","args":["gen:api-types"],"started":"2026-09-03T15:57:10.866Z","timeoutSeconds":60,"sourceChanged":false,"localServicePorts":[33300,33301,33316,33319],"code":1,"signal":null,"timedOut":false,"seconds":1.755}

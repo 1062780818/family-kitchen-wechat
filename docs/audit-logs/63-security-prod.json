@@ -1,0 +1,17 @@
+{
+  "label": "63-security-prod",
+  "cwd": "H:\\codex\\林家餐厅小程序\\family-kitchen-c01",
+  "node": "v24.19.0",
+  "pnpmCli": "C:\\Users\\Administrator\\AppData\\Local\\pnpm\\store\\v11\\links\\@\\pnpm\\9.12.0\\49d8fa80e8205096741f5238215a507a7cc04fc3d20ff2b1c8b726b65d71c883\\node_modules\\pnpm\\bin\\pnpm.cjs",
+  "args": ["audit", "--prod", "--json"],
+  "started": "2026-09-03T16:11:56.985Z",
+  "timeoutSeconds": 90,
+  "sourceChanged": false,
+  "databaseName": "c01_baseline_audit",
+  "localServicePorts": [33300, 33301, 33316, 33319],
+  "pid": 28012,
+  "code": 1,
+  "signal": null,
+  "timedOut": false,
+  "seconds": 26.785
+}

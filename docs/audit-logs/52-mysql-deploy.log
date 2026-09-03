@@ -1,0 +1,21 @@
+{"label":"52-mysql-deploy","cwd":"H:\\codex\\林家餐厅小程序\\family-kitchen-c01","node":"v24.19.0","pnpmCli":"C:\\Users\\Administrator\\AppData\\Local\\pnpm\\store\\v11\\links\\@\\pnpm\\9.12.0\\49d8fa80e8205096741f5238215a507a7cc04fc3d20ff2b1c8b726b65d71c883\\node_modules\\pnpm\\bin\\pnpm.cjs","args":["--filter","@family-kitchen/backend","db:migrate:deploy"],"started":"2026-09-03T16:07:56.597Z","timeoutSeconds":120,"sourceChanged":false,"localServicePorts":[33300,33301,33316,33319]}
+
+> @family-kitchen/backend@0.1.0 db:migrate:deploy H:\codex\林家餐厅小程序\family-kitchen-c01\backend
+> prisma migrate deploy
+
+Prisma schema loaded from prisma\schema.prisma
+Datasource "db": MySQL database "c01_baseline_audit" at "127.0.0.1:33316"
+
+13 migrations found in prisma/migrations
+
+Error: P3009
+
+migrate found failed migrations in the target database, new migrations will not be applied. Read more about how to resolve migration issues in a production database: https://pris.ly/d/migrate-resolve
+The `20260513064715_init` migration started at 2026-09-03 16:07:30.810 UTC failed
+
+
+H:\codex\林家餐厅小程序\family-kitchen-c01\backend:
+ ERR_PNPM_RECURSIVE_RUN_FIRST_FAIL  @family-kitchen/backend@0.1.0 db:migrate:deploy: `prisma migrate deploy`
+Exit status 1
+
+{"label":"52-mysql-deploy","cwd":"H:\\codex\\林家餐厅小程序\\family-kitchen-c01","node":"v24.19.0","pnpmCli":"C:\\Users\\Administrator\\AppData\\Local\\pnpm\\store\\v11\\links\\@\\pnpm\\9.12.0\\49d8fa80e8205096741f5238215a507a7cc04fc3d20ff2b1c8b726b65d71c883\\node_modules\\pnpm\\bin\\pnpm.cjs","args":["--filter","@family-kitchen/backend","db:migrate:deploy"],"started":"2026-09-03T16:07:56.597Z","timeoutSeconds":120,"sourceChanged":false,"localServicePorts":[33300,33301,33316,33319],"pid":26688,"code":1,"signal":null,"timedOut":false,"seconds":10.195}

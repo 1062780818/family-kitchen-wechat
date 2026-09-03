@@ -1,0 +1,10 @@
+origin	https://github.com/llgululu/family-kitchen.git (fetch)
+origin	https://github.com/llgululu/family-kitchen.git (push)
+codex/01-baseline-audit
+commit 572f3e20fb2c2ae243013c0bdc3e05054c708745
+Author:     LLGuLuLu <96375028+llgululu@users.noreply.github.com>
+AuthorDate: Sat Jun 13 21:07:27 2026 +0800
+Commit:     GitHub <noreply@github.com>
+CommitDate: Sat Jun 13 21:07:27 2026 +0800
+
+    Update manifest.json

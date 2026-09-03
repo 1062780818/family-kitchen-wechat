@@ -1,0 +1,15 @@
+{
+  "started": "2026-09-04T00:03:45.4027889+08:00",
+  "pid": 5588,
+  "note": "仅隔离审查实例，使用占位凭据；结束时停止",
+  "arguments": [
+    "--no-defaults",
+    "--basedir=H:\\codex\\林家餐厅小程序\\.c01-tools\\mysql-8.4.10-winx64",
+    "--datadir=H:\\codex\\林家餐厅小程序\\.c01-tools\\mysql-data",
+    "--bind-address=127.0.0.1",
+    "--port=33316",
+    "--mysqlx=OFF",
+    "--console"
+  ],
+  "executable": "H:\\codex\\林家餐厅小程序\\.c01-tools\\mysql-8.4.10-winx64/bin/mysqld.exe"
+}

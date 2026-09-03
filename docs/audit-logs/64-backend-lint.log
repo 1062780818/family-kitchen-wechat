@@ -1,0 +1,55 @@
+{"label":"64-backend-lint","cwd":"H:\\codex\\林家餐厅小程序\\family-kitchen-c01","node":"v24.19.0","pnpmCli":"C:\\Users\\Administrator\\AppData\\Local\\pnpm\\store\\v11\\links\\@\\pnpm\\9.12.0\\49d8fa80e8205096741f5238215a507a7cc04fc3d20ff2b1c8b726b65d71c883\\node_modules\\pnpm\\bin\\pnpm.cjs","args":["--filter","@family-kitchen/backend","lint"],"started":"2026-09-03T16:21:31.711Z","timeoutSeconds":120,"sourceChanged":false,"databaseName":"c01_baseline_audit","localServicePorts":[33300,33301,33316,33319]}
+
+> @family-kitchen/backend@0.1.0 lint H:\codex\林家餐厅小程序\family-kitchen-c01\backend
+> eslint "{src,test}/**/*.ts" --max-warnings 0
+
+
+H:\codex\林家餐厅小程序\family-kitchen-c01\backend\src\common\all-exceptions.filter.ts
+  59:37  warning  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+H:\codex\林家餐厅小程序\family-kitchen-c01\backend\src\main.ts
+   43:15  warning  Unexpected any. Specify a different type                                       @typescript-eslint/no-explicit-any
+   99:3   warning  Unused eslint-disable directive (no problems were reported from 'no-console')
+  101:3   warning  Unused eslint-disable directive (no problems were reported from 'no-console')
+
+H:\codex\林家餐厅小程序\family-kitchen-c01\backend\src\modules\achievement\evaluator-registry.ts
+    2:15  error  'Prisma' is defined but never used                                           @typescript-eslint/no-unused-vars
+  349:5   error  'ownerType' is defined but never used. Allowed unused args must match /^_/u  @typescript-eslint/no-unused-vars
+  372:5   error  'ownerType' is defined but never used. Allowed unused args must match /^_/u  @typescript-eslint/no-unused-vars
+  541:5   error  'ownerType' is defined but never used. Allowed unused args must match /^_/u  @typescript-eslint/no-unused-vars
+  588:43  error  'ctx' is defined but never used. Allowed unused args must match /^_/u        @typescript-eslint/no-unused-vars
+  706:11  error  'mmdd' is assigned a value but never used                                    @typescript-eslint/no-unused-vars
+  719:11  error  'model' is assigned a value but never used                                   @typescript-eslint/no-unused-vars
+  722:11  error  'filters' is assigned a value but never used                                 @typescript-eslint/no-unused-vars
+
+H:\codex\林家餐厅小程序\family-kitchen-c01\backend\src\modules\admin\admin-badge.service.ts
+  236:26  error  A `require()` style import is forbidden  @typescript-eslint/no-require-imports
+
+H:\codex\林家餐厅小程序\family-kitchen-c01\backend\src\modules\admin\admin-chef-level.service.ts
+  128:26  error  A `require()` style import is forbidden  @typescript-eslint/no-require-imports
+
+H:\codex\林家餐厅小程序\family-kitchen-c01\backend\src\modules\ai\providers\deepseek.provider.ts
+  114:14  error  'e' is defined but never used  @typescript-eslint/no-unused-vars
+
+H:\codex\林家餐厅小程序\family-kitchen-c01\backend\src\modules\ai\services\cooking-assistant.service.ts
+    1:30  error  'BadRequestException' is defined but never used          @typescript-eslint/no-unused-vars
+  113:9   error  'promptTokens' is never reassigned. Use 'const' instead  prefer-const
+
+H:\codex\林家餐厅小程序\family-kitchen-c01\backend\src\modules\love-point\love-point-family-isolate.spec.ts
+   81:58  warning  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  107:58  warning  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+H:\codex\林家餐厅小程序\family-kitchen-c01\backend\src\modules\order\order.service.ts
+  418:35  warning  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  419:31  warning  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  420:36  warning  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  421:32  warning  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+✖ 23 problems (13 errors, 10 warnings)
+  1 error and 2 warnings potentially fixable with the `--fix` option.
+
+H:\codex\林家餐厅小程序\family-kitchen-c01\backend:
+ ERR_PNPM_RECURSIVE_RUN_FIRST_FAIL  @family-kitchen/backend@0.1.0 lint: `eslint "{src,test}/**/*.ts" --max-warnings 0`
+Exit status 1
+
+{"label":"64-backend-lint","cwd":"H:\\codex\\林家餐厅小程序\\family-kitchen-c01","node":"v24.19.0","pnpmCli":"C:\\Users\\Administrator\\AppData\\Local\\pnpm\\store\\v11\\links\\@\\pnpm\\9.12.0\\49d8fa80e8205096741f5238215a507a7cc04fc3d20ff2b1c8b726b65d71c883\\node_modules\\pnpm\\bin\\pnpm.cjs","args":["--filter","@family-kitchen/backend","lint"],"started":"2026-09-03T16:21:31.711Z","timeoutSeconds":120,"sourceChanged":false,"databaseName":"c01_baseline_audit","localServicePorts":[33300,33301,33316,33319],"pid":13616,"code":1,"signal":null,"timedOut":false,"seconds":10.245}

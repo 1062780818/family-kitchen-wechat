@@ -1,0 +1,6 @@
+Id	User	Host	db	Command	Time	State	Info
+5	event_scheduler	localhost	NULL	Daemon	99	Waiting on empty queue	NULL
+9	c01_audit	localhost:50430	c01_baseline_audit	Sleep	44		NULL
+11	c01_audit	localhost:50433	prisma_migrate_shadow_db_3a99db6f-6988-4aef-8498-201908484627	Query	0	After create	-- AddForeignKey
+\nALTER TABLE `timeline_entry` ADD CONSTRAINT `timeline_entry_customer_user_id_fkey`
+12	c01_audit	localhost:50506	NULL	Query	0	init	SHOW PROCESSLIST

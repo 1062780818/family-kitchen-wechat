@@ -1,0 +1,57 @@
+{"label":"57-migrate-fresh","cwd":"H:\\codex\\林家餐厅小程序\\family-kitchen-c01","node":"v24.19.0","pnpmCli":"C:\\Users\\Administrator\\AppData\\Local\\pnpm\\store\\v11\\links\\@\\pnpm\\9.12.0\\49d8fa80e8205096741f5238215a507a7cc04fc3d20ff2b1c8b726b65d71c883\\node_modules\\pnpm\\bin\\pnpm.cjs","args":["--filter","@family-kitchen/backend","db:migrate:deploy"],"started":"2026-09-03T16:08:50.984Z","timeoutSeconds":600,"sourceChanged":false,"databaseName":"c01_baseline_replay","localServicePorts":[33300,33301,33316,33319]}
+
+> @family-kitchen/backend@0.1.0 db:migrate:deploy H:\codex\林家餐厅小程序\family-kitchen-c01\backend
+> prisma migrate deploy
+
+Prisma schema loaded from prisma\schema.prisma
+Datasource "db": MySQL database "c01_baseline_replay" at "127.0.0.1:33316"
+
+13 migrations found in prisma/migrations
+
+Applying migration `20260513064715_init`
+Applying migration `20260513070000_add_business_config`
+Applying migration `20260517000000_add_user_gender`
+Applying migration `20260517000100_add_timeline_user_relations`
+Applying migration `20260522052758_`
+Applying migration `20260522060000_add_phone_password_auth`
+Applying migration `20260522070000_widen_password_hash`
+Applying migration `20260523104941_add_badge_definition`
+Applying migration `20260524100000_add_performance_indexes`
+Applying migration `20260524120000_add_notification_prefs_and_log`
+Applying migration `20260524140000_add_chef_level_definition`
+Applying migration `20260524160000_user_cascade_on_delete`
+Applying migration `20260525000000_add_ai_tables`
+
+The following migration(s) have been applied:
+
+migrations/
+  └─ 20260513064715_init/
+    └─ migration.sql
+  └─ 20260513070000_add_business_config/
+    └─ migration.sql
+  └─ 20260517000000_add_user_gender/
+    └─ migration.sql
+  └─ 20260517000100_add_timeline_user_relations/
+    └─ migration.sql
+  └─ 20260522052758_/
+    └─ migration.sql
+  └─ 20260522060000_add_phone_password_auth/
+    └─ migration.sql
+  └─ 20260522070000_widen_password_hash/
+    └─ migration.sql
+  └─ 20260523104941_add_badge_definition/
+    └─ migration.sql
+  └─ 20260524100000_add_performance_indexes/
+    └─ migration.sql
+  └─ 20260524120000_add_notification_prefs_and_log/
+    └─ migration.sql
+  └─ 20260524140000_add_chef_level_definition/
+    └─ migration.sql
+  └─ 20260524160000_user_cascade_on_delete/
+    └─ migration.sql
+  └─ 20260525000000_add_ai_tables/
+    └─ migration.sql
+      
+All migrations have been successfully applied.
+
+{"label":"57-migrate-fresh","cwd":"H:\\codex\\林家餐厅小程序\\family-kitchen-c01","node":"v24.19.0","pnpmCli":"C:\\Users\\Administrator\\AppData\\Local\\pnpm\\store\\v11\\links\\@\\pnpm\\9.12.0\\49d8fa80e8205096741f5238215a507a7cc04fc3d20ff2b1c8b726b65d71c883\\node_modules\\pnpm\\bin\\pnpm.cjs","args":["--filter","@family-kitchen/backend","db:migrate:deploy"],"started":"2026-09-03T16:08:50.984Z","timeoutSeconds":600,"sourceChanged":false,"databaseName":"c01_baseline_replay","localServicePorts":[33300,33301,33316,33319],"pid":1560,"code":0,"signal":null,"timedOut":false,"seconds":84.013}
