@@ -1,0 +1,18 @@
+{
+  "name": "migration-backup-overwrite-refused",
+  "filePath": "node",
+  "arguments": [
+    "C:\\Users\\Administrator\\AppData\\Local\\pnpm\\store\\v11\\links\\@\\pnpm\\9.12.0\\49d8fa80e8205096741f5238215a507a7cc04fc3d20ff2b1c8b726b65d71c883\\node_modules\\pnpm\\bin\\pnpm.cjs",
+    "--filter",
+    "@family-kitchen/backend",
+    "run",
+    "storage:refs:apply",
+    "C:\\Users\\Administrator\\.codex\\visualizations\\2026\\09\\02\\01a06277-ac2d-7840-ac44-b524d3978318\\.c03-004-runtime\\migration-backup-2.json"
+  ],
+  "workingDirectory": "H:\\codex\\林家餐厅小程序\\family-kitchen-c03-revalidation-004",
+  "startedAt": "2026-09-07T20:03:59.1813547+08:00",
+  "finishedAt": "2026-09-07T20:03:59.9570173+08:00",
+  "durationMs": 776.0,
+  "exitCode": 1,
+  "logPath": "H:\\codex\\林家餐厅小程序\\family-kitchen-c03-revalidation-004\\docs\\codex\\evidence\\C03_FK-C03-004\\migration-backup-overwrite-refused.log"
+}

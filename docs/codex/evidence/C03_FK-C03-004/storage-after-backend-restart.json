@@ -1,0 +1,13 @@
+{
+  "name": "storage-after-backend-restart",
+  "filePath": "node",
+  "arguments": [
+    "H:\\codex\\林家餐厅小程序\\family-kitchen-c03-revalidation-004\\tests\\qa\\revalidation\\storage-restart-revalidation.mjs"
+  ],
+  "workingDirectory": "H:\\codex\\林家餐厅小程序\\family-kitchen-c03-revalidation-004",
+  "startedAt": "2026-09-07T19:59:01.5968260+08:00",
+  "finishedAt": "2026-09-07T19:59:01.8101726+08:00",
+  "durationMs": 213.0,
+  "exitCode": 0,
+  "logPath": "H:\\codex\\林家餐厅小程序\\family-kitchen-c03-revalidation-004\\docs\\codex\\evidence\\C03_FK-C03-004\\storage-after-backend-restart.log"
+}

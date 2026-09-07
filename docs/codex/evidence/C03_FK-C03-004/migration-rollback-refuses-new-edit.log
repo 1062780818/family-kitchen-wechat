@@ -1,0 +1,11 @@
+
+> @family-kitchen/backend@0.1.0 storage:refs:rollback H:\codex\林家餐厅小程序\family-kitchen-c03-revalidation-004\backend
+> node dist/scripts/migrate-storage-refs.js rollback "C:\\Users\\Administrator\\.codex\\visualizations\\2026\\09\\02\\01a06277-ac2d-7840-ac44-b524d3978318\\.c03-004-runtime\\migration-backup-2.json"
+
+Error: rollback refused: recipe/cmtr6i47000012q5rs6i44gtc changed after migration
+    at H:\codex\林家餐厅小程序\family-kitchen-c03-revalidation-004\backend\dist\scripts\migrate-storage-refs.js:208:27
+    at async Proxy._transactionWithCallback (H:\codex\林家餐厅小程序\family-kitchen-c03-revalidation-004\node_modules\.pnpm\@prisma+client@5.22.0_prisma@5.22.0\node_modules\@prisma\client\runtime\library.js:130:8000)
+    at async main (H:\codex\林家餐厅小程序\family-kitchen-c03-revalidation-004\backend\dist\scripts\migrate-storage-refs.js:204:9)
+H:\codex\林家餐厅小程序\family-kitchen-c03-revalidation-004\backend:
+ ERR_PNPM_RECURSIVE_RUN_FIRST_FAIL  @family-kitchen/backend@0.1.0 storage:refs:rollback: `node dist/scripts/migrate-storage-refs.js rollback "C:\\Users\\Administrator\\.codex\\visualizations\\2026\\09\\02\\01a06277-ac2d-7840-ac44-b524d3978318\\.c03-004-runtime\\migration-backup-2.json"`
+Exit status 1

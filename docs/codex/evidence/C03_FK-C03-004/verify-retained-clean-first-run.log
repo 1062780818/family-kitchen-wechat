@@ -1,0 +1,408 @@
+
+> family-kitchen@0.1.0 verify:retained:clean H:\codex\林家餐厅小程序\family-kitchen-c03-revalidation-004
+> powershell -NoProfile -ExecutionPolicy Bypass -File scripts/verify-retained-clean.ps1
+
+Scope: all 5 workspace projects
+Lockfile is up to date, resolution step is skipped
+Progress: resolved 1, reused 0, downloaded 0, added 0
+Packages: +1554
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Progress: resolved 1554, reused 236, downloaded 0, added 0
+Progress: resolved 1554, reused 349, downloaded 0, added 0
+Progress: resolved 1554, reused 458, downloaded 0, added 0
+Progress: resolved 1554, reused 503, downloaded 0, added 0
+Progress: resolved 1554, reused 505, downloaded 0, added 0
+Progress: resolved 1554, reused 575, downloaded 0, added 0
+Progress: resolved 1554, reused 709, downloaded 0, added 0
+Progress: resolved 1554, reused 833, downloaded 0, added 0
+Progress: resolved 1554, reused 834, downloaded 0, added 0
+Progress: resolved 1554, reused 893, downloaded 0, added 0
+Progress: resolved 1554, reused 904, downloaded 0, added 0
+Progress: resolved 1554, reused 1041, downloaded 0, added 0
+Progress: resolved 1554, reused 1187, downloaded 0, added 0
+Progress: resolved 1554, reused 1191, downloaded 0, added 0
+Progress: resolved 1554, reused 1219, downloaded 0, added 0
+Progress: resolved 1554, reused 1536, downloaded 0, added 4
+Progress: resolved 1554, reused 1541, downloaded 0, added 254
+Progress: resolved 1554, reused 1541, downloaded 0, added 260
+Progress: resolved 1554, reused 1543, downloaded 0, added 260
+Progress: resolved 1554, reused 1543, downloaded 0, added 261
+Progress: resolved 1554, reused 1543, downloaded 0, added 414
+Progress: resolved 1554, reused 1543, downloaded 0, added 415
+Progress: resolved 1554, reused 1543, downloaded 0, added 588
+Progress: resolved 1554, reused 1543, downloaded 0, added 589
+Progress: resolved 1554, reused 1543, downloaded 0, added 670
+Progress: resolved 1554, reused 1543, downloaded 0, added 671
+Progress: resolved 1554, reused 1543, downloaded 0, added 734
+Progress: resolved 1554, reused 1543, downloaded 0, added 735
+Progress: resolved 1554, reused 1543, downloaded 0, added 807
+Progress: resolved 1554, reused 1543, downloaded 0, added 808
+Progress: resolved 1554, reused 1543, downloaded 0, added 893
+Progress: resolved 1554, reused 1543, downloaded 0, added 894
+Progress: resolved 1554, reused 1543, downloaded 0, added 1084
+Progress: resolved 1554, reused 1543, downloaded 0, added 1085
+Progress: resolved 1554, reused 1543, downloaded 0, added 1219
+Progress: resolved 1554, reused 1543, downloaded 0, added 1220
+Progress: resolved 1554, reused 1543, downloaded 0, added 1366
+Progress: resolved 1554, reused 1543, downloaded 0, added 1367
+Progress: resolved 1554, reused 1543, downloaded 0, added 1540
+Progress: resolved 1554, reused 1543, downloaded 0, added 1541
+Progress: resolved 1554, reused 1543, downloaded 0, added 1550
+Progress: resolved 1554, reused 1543, downloaded 0, added 1551
+Progress: resolved 1554, reused 1543, downloaded 0, added 1553
+Progress: resolved 1554, reused 1543, downloaded 0, added 1554, done
+
+devDependencies:
++ @commitlint/cli 19.8.1
++ @commitlint/config-conventional 19.8.1
++ @types/node 20.19.41
++ eslint 9.39.4
++ husky 9.1.7
++ lint-staged 15.5.2
++ prettier 3.8.3
++ typescript 5.9.3
+
+. prepare$ husky
+. prepare: Done
+Done in 1m 17.1s
+
+> family-kitchen@0.1.0 verify:retained H:\codex\林家餐厅小程序\family-kitchen-c03-revalidation-004
+> pnpm run db:generate && pnpm --filter @family-kitchen/shared run lint && pnpm --filter @family-kitchen/shared run typecheck && pnpm --filter @family-kitchen/shared run build && pnpm --filter @family-kitchen/shared run test && pnpm --filter @family-kitchen/backend run lint:retained && pnpm --filter @family-kitchen/backend run typecheck && pnpm --filter @family-kitchen/backend run build && pnpm --filter @family-kitchen/backend run test:retained && pnpm --filter @family-kitchen/mini-app run lint:retained && pnpm --filter @family-kitchen/mini-app run lint:storage-consumers && pnpm --filter @family-kitchen/mini-app run test:retained && pnpm --filter @family-kitchen/mini-app run build
+
+
+> family-kitchen@0.1.0 db:generate H:\codex\林家餐厅小程序\family-kitchen-c03-revalidation-004
+> pnpm --filter @family-kitchen/backend run db:generate
+
+
+> @family-kitchen/backend@0.1.0 db:generate H:\codex\林家餐厅小程序\family-kitchen-c03-revalidation-004\backend
+> prisma generate
+
+Prisma schema loaded from prisma\schema.prisma
+
+✔ Generated Prisma Client (v5.22.0) to .\..\node_modules\.pnpm\@prisma+client@5.22.0_prisma@5.22.0\node_modules\@prisma\client in 123ms
+
+Start by importing your Prisma Client (See: https://pris.ly/d/importing-client)
+
+Tip: Interested in query caching in just a few lines of code? Try Accelerate today! https://pris.ly/tip-3-accelerate
+
+
+> @family-kitchen/shared@0.1.0 lint H:\codex\林家餐厅小程序\family-kitchen-c03-revalidation-004\packages\shared
+> eslint src --max-warnings 0
+
+
+> @family-kitchen/shared@0.1.0 typecheck H:\codex\林家餐厅小程序\family-kitchen-c03-revalidation-004\packages\shared
+> tsc --noEmit
+
+
+> @family-kitchen/shared@0.1.0 build H:\codex\林家餐厅小程序\family-kitchen-c03-revalidation-004\packages\shared
+> tsc
+
+
+> @family-kitchen/shared@0.1.0 test H:\codex\林家餐厅小程序\family-kitchen-c03-revalidation-004\packages\shared
+> node --test test/*.test.cjs
+
+✔ served is terminal for the active meal-slot constraint (0.6473ms)
+ℹ tests 1
+ℹ suites 0
+ℹ pass 1
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 71.2239
+
+> @family-kitchen/backend@0.1.0 lint:retained H:\codex\林家餐厅小程序\family-kitchen-c03-revalidation-004\backend
+> eslint src/modules/storage src/modules/auth src/modules/family src/modules/recipe src/modules/user src/modules/timeline src/modules/order/order.service.ts src/modules/order/order.service.spec.ts src/modules/order/order-status.ts src/modules/order/order-status.spec.ts src/modules/order/dto/serve-order.dto.ts --max-warnings 0
+
+
+> @family-kitchen/backend@0.1.0 typecheck H:\codex\林家餐厅小程序\family-kitchen-c03-revalidation-004\backend
+> tsc --noEmit
+
+
+> @family-kitchen/backend@0.1.0 build H:\codex\林家餐厅小程序\family-kitchen-c03-revalidation-004\backend
+> nest build
+
+
+> @family-kitchen/backend@0.1.0 test:retained H:\codex\林家餐厅小程序\family-kitchen-c03-revalidation-004\backend
+> jest --config ./jest.retained.config.cjs --runInBand
+
+PASS src/modules/order/order.service.spec.ts
+PASS src/modules/storage/storage.service.spec.ts
+PASS src/modules/recipe/recipe.service.spec.ts
+PASS src/modules/auth/auth.service.spec.ts
+PASS src/modules/family/family.service.spec.ts
+PASS src/modules/user/user-bind.spec.ts
+PASS src/modules/user/user-delete.spec.ts
+PASS src/modules/timeline/timeline-summary.spec.ts
+PASS src/modules/recipe/recipe-favorite.spec.ts
+PASS src/modules/order/order-status.spec.ts
+
+Test Suites: 10 passed, 10 total
+Tests:       90 passed, 90 total
+Snapshots:   0 total
+Time:        7.14 s
+Ran all test suites.
+
+> @family-kitchen/mini-app@0.1.0 lint:retained H:\codex\林家餐厅小程序\family-kitchen-c03-revalidation-004\mini-app
+> eslint src/api/http.js src/api/auth.js src/api/family.js src/api/recipe.js src/api/order.js src/api/storage.js src/api/timeline.js src/api/user.js src/utils/storage-ref.mjs test/storage-ref.test.mjs --max-warnings 0
+
+
+> @family-kitchen/mini-app@0.1.0 lint:storage-consumers H:\codex\林家餐厅小程序\family-kitchen-c03-revalidation-004\mini-app
+> eslint src/pages/recipe/edit.vue src/pages/timeline/manual.vue src/pages/order/detail.vue src/pages/profile/edit.vue
+
+
+H:\codex\林家餐厅小程序\family-kitchen-c03-revalidation-004\mini-app\src\pages\order\detail.vue
+    2:22  warning  'class' should be on a new line                                                 vue/max-attributes-per-line
+    8:37  warning  Expected 1 line break after opening tag (`<text>`), but no line breaks found    vue/singleline-html-element-content-newline
+    8:54  warning  Expected 1 line break before closing tag (`</text>`), but no line breaks found  vue/singleline-html-element-content-newline
+   13:44  warning  'class' should be on a new line                                                 vue/max-attributes-per-line
+   14:33  warning  'size' should be on a new line                                                  vue/max-attributes-per-line
+   14:46  warning  'color' should be on a new line                                                 vue/max-attributes-per-line
+   21:32  warning  'style' should be on a new line                                                 vue/max-attributes-per-line
+   24:33  warning  'size' should be on a new line                                                  vue/max-attributes-per-line
+   24:46  warning  'color' should be on a new line                                                 vue/max-attributes-per-line
+   26:34  warning  Expected 1 line break after opening tag (`<text>`), but no line breaks found    vue/singleline-html-element-content-newline
+   26:37  warning  Expected 1 line break before closing tag (`</text>`), but no line breaks found  vue/singleline-html-element-content-newline
+   27:34  warning  Expected 1 line break after opening tag (`<text>`), but no line breaks found    vue/singleline-html-element-content-newline
+   27:60  warning  Expected 1 line break before closing tag (`</text>`), but no line breaks found  vue/singleline-html-element-content-newline
+   29:41  warning  ':key' should be on a new line                                                  vue/max-attributes-per-line
+   29:56  warning  'class' should be on a new line                                                 vue/max-attributes-per-line
+   30:33  warning  Expected 1 line break after opening tag (`<text>`), but no line breaks found    vue/singleline-html-element-content-newline
+   30:52  warning  Expected 1 line break before closing tag (`</text>`), but no line breaks found  vue/singleline-html-element-content-newline
+   31:39  warning  'class' should be on a new line                                                 vue/max-attributes-per-line
+   31:58  warning  Expected 1 line break after opening tag (`<text>`), but no line breaks found    vue/singleline-html-element-content-newline
+   31:80  warning  Expected 1 line break before closing tag (`</text>`), but no line breaks found  vue/singleline-html-element-content-newline
+   33:40  warning  'class' should be on a new line                                                 vue/max-attributes-per-line
+   34:35  warning  Expected 1 line break after opening tag (`<text>`), but no line breaks found    vue/singleline-html-element-content-newline
+   34:39  warning  Expected 1 line break before closing tag (`</text>`), but no line breaks found  vue/singleline-html-element-content-newline
+   35:34  warning  Expected 1 line break after opening tag (`<text>`), but no line breaks found    vue/singleline-html-element-content-newline
+   35:59  warning  Expected 1 line break before closing tag (`</text>`), but no line breaks found  vue/singleline-html-element-content-newline
+   46:34  warning  'size' should be on a new line                                                  vue/max-attributes-per-line
+   46:47  warning  'color' should be on a new line                                                 vue/max-attributes-per-line
+   48:34  warning  Expected 1 line break after opening tag (`<text>`), but no line breaks found    vue/singleline-html-element-content-newline
+   48:37  warning  Expected 1 line break before closing tag (`</text>`), but no line breaks found  vue/singleline-html-element-content-newline
+   63:31  warning  'class' should be on a new line                                                 vue/max-attributes-per-line
+   66:32  warning  'size' should be on a new line                                                  vue/max-attributes-per-line
+   66:45  warning  'color' should be on a new line                                                 vue/max-attributes-per-line
+   68:34  warning  Expected 1 line break after opening tag (`<text>`), but no line breaks found    vue/singleline-html-element-content-newline
+   68:36  warning  Expected 1 line break before closing tag (`</text>`), but no line breaks found  vue/singleline-html-element-content-newline
+   69:51  warning  'class' should be on a new line                                                 vue/max-attributes-per-line
+   69:68  warning  Expected 1 line break after opening tag (`<text>`), but no line breaks found    vue/singleline-html-element-content-newline
+   69:70  warning  Expected 1 line break before closing tag (`</text>`), but no line breaks found  vue/singleline-html-element-content-newline
+   81:41  warning  'class' should be on a new line                                                 vue/max-attributes-per-line
+   81:57  warning  Expected 1 line break after opening tag (`<text>`), but no line breaks found    vue/singleline-html-element-content-newline
+   81:83  warning  Expected 1 line break before closing tag (`</text>`), but no line breaks found  vue/singleline-html-element-content-newline
+   85:43  warning  '@click' should be on a new line                                                vue/max-attributes-per-line
+   89:34  warning  'size' should be on a new line                                                  vue/max-attributes-per-line
+   89:47  warning  'color' should be on a new line                                                 vue/max-attributes-per-line
+   91:36  warning  Expected 1 line break after opening tag (`<text>`), but no line breaks found    vue/singleline-html-element-content-newline
+   91:38  warning  Expected 1 line break before closing tag (`</text>`), but no line breaks found  vue/singleline-html-element-content-newline
+   93:37  warning  'size' should be on a new line                                                  vue/max-attributes-per-line
+   93:50  warning  'color' should be on a new line                                                 vue/max-attributes-per-line
+   98:54  warning  'class' should be on a new line                                                 vue/max-attributes-per-line
+   99:30  warning  'class' should be on a new line                                                 vue/max-attributes-per-line
+   99:69  warning  '@click' should be on a new line                                                vue/max-attributes-per-line
+  100:31  warning  'size' should be on a new line                                                  vue/max-attributes-per-line
+  100:44  warning  'color' should be on a new line                                                 vue/max-attributes-per-line
+  100:57  warning  'custom-style' should be on a new line                                          vue/max-attributes-per-line
+  103:30  warning  'class' should be on a new line                                                 vue/max-attributes-per-line
+  103:68  warning  '@click' should be on a new line                                                vue/max-attributes-per-line
+  106:32  warning  'class' should be on a new line                                                 vue/max-attributes-per-line
+  106:71  warning  '@click' should be on a new line                                                vue/max-attributes-per-line
+  107:30  warning  'size' should be on a new line                                                  vue/max-attributes-per-line
+  107:43  warning  'color' should be on a new line                                                 vue/max-attributes-per-line
+  107:56  warning  'custom-style' should be on a new line                                          vue/max-attributes-per-line
+  110:31  warning  'class' should be on a new line                                                 vue/max-attributes-per-line
+  110:70  warning  '@click' should be on a new line                                                vue/max-attributes-per-line
+  111:29  warning  'size' should be on a new line                                                  vue/max-attributes-per-line
+  111:42  warning  'color' should be on a new line                                                 vue/max-attributes-per-line
+  111:55  warning  'custom-style' should be on a new line                                          vue/max-attributes-per-line
+  114:29  warning  'class' should be on a new line                                                 vue/max-attributes-per-line
+  114:68  warning  '@click' should be on a new line                                                vue/max-attributes-per-line
+  115:32  warning  'size' should be on a new line                                                  vue/max-attributes-per-line
+  115:45  warning  'color' should be on a new line                                                 vue/max-attributes-per-line
+  115:58  warning  'custom-style' should be on a new line                                          vue/max-attributes-per-line
+  120:51  warning  'class' should be on a new line                                                 vue/max-attributes-per-line
+  121:52  warning  '@click' should be on a new line                                                vue/max-attributes-per-line
+  122:30  warning  'size' should be on a new line                                                  vue/max-attributes-per-line
+  122:43  warning  'color' should be on a new line                                                 vue/max-attributes-per-line
+  122:56  warning  'custom-style' should be on a new line                                          vue/max-attributes-per-line
+  127:29  warning  'class' should be on a new line                                                 vue/max-attributes-per-line
+  128:52  warning  '@click' should be on a new line                                                vue/max-attributes-per-line
+  129:33  warning  'size' should be on a new line                                                  vue/max-attributes-per-line
+  129:46  warning  'color' should be on a new line                                                 vue/max-attributes-per-line
+  129:59  warning  'custom-style' should be on a new line                                          vue/max-attributes-per-line
+  134:28  warning  'class' should be on a new line                                                 vue/max-attributes-per-line
+  135:51  warning  '@click' should be on a new line                                                vue/max-attributes-per-line
+  144:29  warning  'class' should be on a new line                                                 vue/max-attributes-per-line
+  144:45  warning  '@click' should be on a new line                                                vue/max-attributes-per-line
+  145:28  warning  '@click.stop' should be on a new line                                           vue/max-attributes-per-line
+  146:36  warning  Expected 1 line break after opening tag (`<text>`), but no line breaks found    vue/singleline-html-element-content-newline
+  146:42  warning  Expected 1 line break before closing tag (`</text>`), but no line breaks found  vue/singleline-html-element-content-newline
+  165:36  warning  '@click' should be on a new line                                                vue/max-attributes-per-line
+  165:64  warning  Expected 1 line break after opening tag (`<text>`), but no line breaks found    vue/singleline-html-element-content-newline
+  165:66  warning  Expected 1 line break before closing tag (`</text>`), but no line breaks found  vue/singleline-html-element-content-newline
+  166:56  warning  '@click' should be on a new line                                                vue/max-attributes-per-line
+  166:76  warning  Expected 1 line break after opening tag (`<text>`), but no line breaks found    vue/singleline-html-element-content-newline
+  166:78  warning  Expected 1 line break before closing tag (`</text>`), but no line breaks found  vue/singleline-html-element-content-newline
+
+H:\codex\林家餐厅小程序\family-kitchen-c03-revalidation-004\mini-app\src\pages\profile\edit.vue
+    4:32  warning  '@click' should be on a new line                                                     vue/max-attributes-per-line
+    5:31  warning  ':src' should be on a new line                                                       vue/max-attributes-per-line
+    5:73  warning  'mode' should be on a new line                                                       vue/max-attributes-per-line
+    7:34  warning  'size' should be on a new line                                                       vue/max-attributes-per-line
+    7:47  warning  'color' should be on a new line                                                      vue/max-attributes-per-line
+   10:33  warning  Expected 1 line break after opening tag (`<text>`), but no line breaks found         vue/singleline-html-element-content-newline
+   10:39  warning  Expected 1 line break before closing tag (`</text>`), but no line breaks found       vue/singleline-html-element-content-newline
+   16:32  warning  'size' should be on a new line                                                       vue/max-attributes-per-line
+   16:45  warning  'color' should be on a new line                                                      vue/max-attributes-per-line
+   17:31  warning  Expected 1 line break after opening tag (`<text>`), but no line breaks found         vue/singleline-html-element-content-newline
+   17:33  warning  Expected 1 line break before closing tag (`</text>`), but no line breaks found       vue/singleline-html-element-content-newline
+   30:32  warning  'size' should be on a new line                                                       vue/max-attributes-per-line
+   30:45  warning  'color' should be on a new line                                                      vue/max-attributes-per-line
+   31:31  warning  Expected 1 line break after opening tag (`<text>`), but no line breaks found         vue/singleline-html-element-content-newline
+   31:35  warning  Expected 1 line break before closing tag (`</text>`), but no line breaks found       vue/singleline-html-element-content-newline
+   39:34  warning  Expected 1 line break after opening tag (`<text>`), but no line breaks found         vue/singleline-html-element-content-newline
+   39:67  warning  Expected 1 line break before closing tag (`</text>`), but no line breaks found       vue/singleline-html-element-content-newline
+   43:29  warning  'round' should be on a new line                                                      vue/max-attributes-per-line
+   43:35  warning  'block' should be on a new line                                                      vue/max-attributes-per-line
+   43:41  warning  ':loading' should be on a new line                                                   vue/max-attributes-per-line
+   43:59  warning  '@click' should be on a new line                                                     vue/max-attributes-per-line
+   43:79  warning  Expected 1 line break after opening tag (`<wd-button>`), but no line breaks found    vue/singleline-html-element-content-newline
+   43:84  warning  Expected 1 line break before closing tag (`</wd-button>`), but no line breaks found  vue/singleline-html-element-content-newline
+   46:35  warning  'class' should be on a new line                                                      vue/max-attributes-per-line
+   46:61  warning  '@click' should be on a new line                                                     vue/max-attributes-per-line
+   47:34  warning  '@click.stop' should be on a new line                                                vue/max-attributes-per-line
+   49:37  warning  Expected 1 line break after opening tag (`<text>`), but no line breaks found         vue/singleline-html-element-content-newline
+   49:43  warning  Expected 1 line break before closing tag (`</text>`), but no line breaks found       vue/singleline-html-element-content-newline
+   50:37  warning  '@click' should be on a new line                                                     vue/max-attributes-per-line
+   51:35  warning  'size' should be on a new line                                                       vue/max-attributes-per-line
+   51:48  warning  'color' should be on a new line                                                      vue/max-attributes-per-line
+   54:31  warning  'class' should be on a new line                                                      vue/max-attributes-per-line
+   55:47  warning  ':key' should be on a new line                                                       vue/max-attributes-per-line
+   55:66  warning  'class' should be on a new line                                                      vue/max-attributes-per-line
+   56:39  warning  Expected 1 line break after opening tag (`<text>`), but no line breaks found         vue/singleline-html-element-content-newline
+   56:56  warning  Expected 1 line break before closing tag (`</text>`), but no line breaks found       vue/singleline-html-element-content-newline
+   65:41  warning  ':src' should be on a new line                                                       vue/max-attributes-per-line
+   65:52  warning  'mode' should be on a new line                                                       vue/max-attributes-per-line
+   66:53  warning  'class' should be on a new line                                                      vue/max-attributes-per-line
+   67:41  warning  'size' should be on a new line                                                       vue/max-attributes-per-line
+   67:54  warning  'color' should be on a new line                                                      vue/max-attributes-per-line
+  117:3   warning  The "data" property should be above the "computed" property on line 112              vue/order-in-components
+
+H:\codex\林家餐厅小程序\family-kitchen-c03-revalidation-004\mini-app\src\pages\recipe\edit.vue
+    8:34  warning  'size' should be on a new line                                                  vue/max-attributes-per-line
+    8:47  warning  'color' should be on a new line                                                 vue/max-attributes-per-line
+   10:36  warning  Expected 1 line break after opening tag (`<text>`), but no line breaks found    vue/singleline-html-element-content-newline
+   10:38  warning  Expected 1 line break before closing tag (`</text>`), but no line breaks found  vue/singleline-html-element-content-newline
+   11:39  warning  Expected 1 line break after opening tag (`<text>`), but no line breaks found    vue/singleline-html-element-content-newline
+   11:40  warning  Expected 1 line break before closing tag (`</text>`), but no line breaks found  vue/singleline-html-element-content-newline
+   13:9   warning  Disallow self-closing on HTML void elements (<input/>)                          vue/html-self-closing
+   26:36  warning  'size' should be on a new line                                                  vue/max-attributes-per-line
+   26:49  warning  'color' should be on a new line                                                 vue/max-attributes-per-line
+   28:36  warning  Expected 1 line break after opening tag (`<text>`), but no line breaks found    vue/singleline-html-element-content-newline
+   28:38  warning  Expected 1 line break before closing tag (`</text>`), but no line breaks found  vue/singleline-html-element-content-newline
+   29:35  warning  Expected 1 line break after opening tag (`<text>`), but no line breaks found    vue/singleline-html-element-content-newline
+   29:41  warning  Expected 1 line break before closing tag (`</text>`), but no line breaks found  vue/singleline-html-element-content-newline
+   32:54  warning  ':key' should be on a new line                                                  vue/max-attributes-per-line
+   32:65  warning  'class' should be on a new line                                                 vue/max-attributes-per-line
+   33:46  warning  'class' should be on a new line                                                 vue/max-attributes-per-line
+   33:60  warning  'mode' should be on a new line                                                  vue/max-attributes-per-line
+   34:34  warning  '@click' should be on a new line                                                vue/max-attributes-per-line
+   35:37  warning  'size' should be on a new line                                                  vue/max-attributes-per-line
+   35:50  warning  'color' should be on a new line                                                 vue/max-attributes-per-line
+   38:50  warning  'class' should be on a new line                                                 vue/max-attributes-per-line
+   38:66  warning  '@click' should be on a new line                                                vue/max-attributes-per-line
+   39:33  warning  'size' should be on a new line                                                  vue/max-attributes-per-line
+   39:46  warning  'color' should be on a new line                                                 vue/max-attributes-per-line
+   40:40  warning  Expected 1 line break after opening tag (`<text>`), but no line breaks found    vue/singleline-html-element-content-newline
+   40:42  warning  Expected 1 line break before closing tag (`</text>`), but no line breaks found  vue/singleline-html-element-content-newline
+   49:34  warning  'size' should be on a new line                                                  vue/max-attributes-per-line
+   49:47  warning  'color' should be on a new line                                                 vue/max-attributes-per-line
+   51:36  warning  Expected 1 line break after opening tag (`<text>`), but no line breaks found    vue/singleline-html-element-content-newline
+   51:38  warning  Expected 1 line break before closing tag (`</text>`), but no line breaks found  vue/singleline-html-element-content-newline
+   66:35  warning  'size' should be on a new line                                                  vue/max-attributes-per-line
+   66:48  warning  'color' should be on a new line                                                 vue/max-attributes-per-line
+   68:36  warning  Expected 1 line break after opening tag (`<text>`), but no line breaks found    vue/singleline-html-element-content-newline
+   68:40  warning  Expected 1 line break before closing tag (`</text>`), but no line breaks found  vue/singleline-html-element-content-newline
+   87:35  warning  'size' should be on a new line                                                  vue/max-attributes-per-line
+   87:48  warning  'color' should be on a new line                                                 vue/max-attributes-per-line
+   89:36  warning  Expected 1 line break after opening tag (`<text>`), but no line breaks found    vue/singleline-html-element-content-newline
+   89:40  warning  Expected 1 line break before closing tag (`</text>`), but no line breaks found  vue/singleline-html-element-content-newline
+  108:34  warning  'size' should be on a new line                                                  vue/max-attributes-per-line
+  108:47  warning  'color' should be on a new line                                                 vue/max-attributes-per-line
+  110:36  warning  Expected 1 line break after opening tag (`<text>`), but no line breaks found    vue/singleline-html-element-content-newline
+  110:40  warning  Expected 1 line break before closing tag (`</text>`), but no line breaks found  vue/singleline-html-element-content-newline
+  133:31  warning  Expected 1 line break after opening tag (`<text>`), but no line breaks found    vue/singleline-html-element-content-newline
+  133:35  warning  Expected 1 line break before closing tag (`</text>`), but no line breaks found  vue/singleline-html-element-content-newline
+  134:24  warning  Expected 1 line break after opening tag (`<text>`), but no line breaks found    vue/singleline-html-element-content-newline
+  134:54  warning  Expected 1 line break before closing tag (`</text>`), but no line breaks found  vue/singleline-html-element-content-newline
+
+H:\codex\林家餐厅小程序\family-kitchen-c03-revalidation-004\mini-app\src\pages\timeline\manual.vue
+   9:34  warning  'size' should be on a new line                                                  vue/max-attributes-per-line
+   9:47  warning  'color' should be on a new line                                                 vue/max-attributes-per-line
+  11:36  warning  Expected 1 line break after opening tag (`<text>`), but no line breaks found    vue/singleline-html-element-content-newline
+  11:42  warning  Expected 1 line break before closing tag (`</text>`), but no line breaks found  vue/singleline-html-element-content-newline
+  13:33  warning  Expected 1 line break after opening tag (`<text>`), but no line breaks found    vue/singleline-html-element-content-newline
+  13:46  warning  Expected 1 line break before closing tag (`</text>`), but no line breaks found  vue/singleline-html-element-content-newline
+  21:36  warning  'size' should be on a new line                                                  vue/max-attributes-per-line
+  21:49  warning  'color' should be on a new line                                                 vue/max-attributes-per-line
+  23:34  warning  Expected 1 line break after opening tag (`<text>`), but no line breaks found    vue/singleline-html-element-content-newline
+  23:36  warning  Expected 1 line break before closing tag (`</text>`), but no line breaks found  vue/singleline-html-element-content-newline
+  25:27  warning  ':value' should be on a new line                                                vue/max-attributes-per-line
+  25:46  warning  '@change' should be on a new line                                               vue/max-attributes-per-line
+  27:36  warning  Expected 1 line break after opening tag (`<text>`), but no line breaks found    vue/singleline-html-element-content-newline
+  27:51  warning  Expected 1 line break before closing tag (`</text>`), but no line breaks found  vue/singleline-html-element-content-newline
+  28:39  warning  'size' should be on a new line                                                  vue/max-attributes-per-line
+  28:52  warning  'color' should be on a new line                                                 vue/max-attributes-per-line
+  37:32  warning  'size' should be on a new line                                                  vue/max-attributes-per-line
+  37:45  warning  'color' should be on a new line                                                 vue/max-attributes-per-line
+  39:34  warning  Expected 1 line break after opening tag (`<text>`), but no line breaks found    vue/singleline-html-element-content-newline
+  39:39  warning  Expected 1 line break before closing tag (`</text>`), but no line breaks found  vue/singleline-html-element-content-newline
+  53:34  warning  'size' should be on a new line                                                  vue/max-attributes-per-line
+  53:47  warning  'color' should be on a new line                                                 vue/max-attributes-per-line
+  55:34  warning  Expected 1 line break after opening tag (`<text>`), but no line breaks found    vue/singleline-html-element-content-newline
+  55:36  warning  Expected 1 line break before closing tag (`</text>`), but no line breaks found  vue/singleline-html-element-content-newline
+  56:34  warning  Expected 1 line break after opening tag (`<text>`), but no line breaks found    vue/singleline-html-element-content-newline
+  56:65  warning  Expected 1 line break before closing tag (`</text>`), but no line breaks found  vue/singleline-html-element-content-newline
+  59:52  warning  ':key' should be on a new line                                                  vue/max-attributes-per-line
+  59:63  warning  'class' should be on a new line                                                 vue/max-attributes-per-line
+  60:44  warning  'class' should be on a new line                                                 vue/max-attributes-per-line
+  60:58  warning  'mode' should be on a new line                                                  vue/max-attributes-per-line
+  60:76  warning  '@click' should be on a new line                                                vue/max-attributes-per-line
+  61:32  warning  '@click' should be on a new line                                                vue/max-attributes-per-line
+  62:35  warning  'size' should be on a new line                                                  vue/max-attributes-per-line
+  62:48  warning  'color' should be on a new line                                                 vue/max-attributes-per-line
+  65:48  warning  'class' should be on a new line                                                 vue/max-attributes-per-line
+  65:64  warning  '@click' should be on a new line                                                vue/max-attributes-per-line
+  66:31  warning  'size' should be on a new line                                                  vue/max-attributes-per-line
+  66:44  warning  'color' should be on a new line                                                 vue/max-attributes-per-line
+  67:38  warning  Expected 1 line break after opening tag (`<text>`), but no line breaks found    vue/singleline-html-element-content-newline
+  67:40  warning  Expected 1 line break before closing tag (`</text>`), but no line breaks found  vue/singleline-html-element-content-newline
+
+✖ 221 problems (0 errors, 221 warnings)
+  0 errors and 161 warnings potentially fixable with the `--fix` option.
+
+
+> @family-kitchen/mini-app@0.1.0 test:retained H:\codex\林家餐厅小程序\family-kitchen-c03-revalidation-004\mini-app
+> node --test test/storage-ref.test.mjs
+
+✔ keeps a stable family key unchanged (0.7166ms)
+✔ recovers a stable key from a legacy MinIO signed URL (0.2425ms)
+✔ does not reinterpret an ordinary external image URL (1.0428ms)
+✔ upload consumers persist keys rather than temporary URLs (5.6575ms)
+ℹ tests 4
+ℹ suites 0
+ℹ pass 4
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 81.0922
+
+> @family-kitchen/mini-app@0.1.0 build H:\codex\林家餐厅小程序\family-kitchen-c03-revalidation-004\mini-app
+> uni build -p mp-weixin
+
+Compiling...
+DONE  Build complete.
+Run method: open Weixin Mini Program Devtools, import dist\build\mp-weixin run.

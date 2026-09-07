@@ -1,0 +1,11 @@
+{
+  "name": "verify-retained-clean-first-run",
+  "filePath": "C:\\Users\\Administrator\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\bin\\fallback\\pnpm.cmd",
+  "arguments": ["dlx", "pnpm@9.12.0", "run", "verify:retained:clean"],
+  "workingDirectory": "H:\\codex\\林家餐厅小程序\\family-kitchen-c03-revalidation-004",
+  "startedAt": "2026-09-07T19:42:36.3462582+08:00",
+  "finishedAt": "2026-09-07T19:44:49.5660278+08:00",
+  "durationMs": 133220.0,
+  "exitCode": 0,
+  "logPath": "H:\\codex\\林家餐厅小程序\\family-kitchen-c03-revalidation-004\\docs\\codex\\evidence\\C03_FK-C03-004\\verify-retained-clean-first-run.log"
+}

@@ -1,0 +1,1 @@
+{"result":"PASS","mode":"assert-key","assertions":{"trustedStateMatches":true,"externalUnchanged":true,"crossFamilyUnchanged":true,"missingObjectUnchanged":true,"wrongOwnerAvatarUnchanged":true}}

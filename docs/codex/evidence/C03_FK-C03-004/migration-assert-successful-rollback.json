@@ -1,0 +1,14 @@
+{
+  "name": "migration-assert-successful-rollback",
+  "filePath": "node",
+  "arguments": [
+    "H:\\codex\\林家餐厅小程序\\family-kitchen-c03-revalidation-004\\tests\\qa\\revalidation\\storage-migration-fixture-audit.mjs",
+    "assert-url"
+  ],
+  "workingDirectory": "H:\\codex\\林家餐厅小程序\\family-kitchen-c03-revalidation-004",
+  "startedAt": "2026-09-07T20:02:53.2213549+08:00",
+  "finishedAt": "2026-09-07T20:02:53.3471777+08:00",
+  "durationMs": 126.0,
+  "exitCode": 0,
+  "logPath": "H:\\codex\\林家餐厅小程序\\family-kitchen-c03-revalidation-004\\docs\\codex\\evidence\\C03_FK-C03-004\\migration-assert-successful-rollback.log"
+}

@@ -1,0 +1,9 @@
+
+> @family-kitchen/backend@0.1.0 storage:refs:preview H:\codex\林家餐厅小程序\family-kitchen-c03-revalidation-004\backend
+> node dist/scripts/migrate-storage-refs.js preview
+
+{
+  "mode": "preview",
+  "convertible": 0,
+  "changes": []
+}

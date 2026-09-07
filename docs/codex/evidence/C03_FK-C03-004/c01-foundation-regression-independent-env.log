@@ -1,0 +1,158 @@
+{
+  "summary": {
+    "total": 19,
+    "passed": 19,
+    "failed": 0
+  },
+  "results": [
+    {
+      "name": "login-01",
+      "pass": true,
+      "actual": 200
+    },
+    {
+      "name": "login-02",
+      "pass": true,
+      "actual": 200
+    },
+    {
+      "name": "login-03",
+      "pass": true,
+      "actual": 200
+    },
+    {
+      "name": "upload-stable-key",
+      "pass": true,
+      "actual": {
+        "status": 201,
+        "key": "family/cmtr6i1b40004iky70qnepl31/recipe/2026-09-07/cmtr6i18r0000iky716g5i97g-SRoTs3i5a5AV2INT.png"
+      }
+    },
+    {
+      "name": "recipe-persists-key",
+      "pass": true,
+      "actual": [
+        "family/cmtr6i1b40004iky70qnepl31/recipe/2026-09-07/cmtr6i18r0000iky716g5i97g-SRoTs3i5a5AV2INT.png"
+      ]
+    },
+    {
+      "name": "old-signed-url-expired",
+      "pass": true,
+      "actual": 403
+    },
+    {
+      "name": "recipe-reread-keeps-key",
+      "pass": true,
+      "actual": [
+        "family/cmtr6i1b40004iky70qnepl31/recipe/2026-09-07/cmtr6i18r0000iky716g5i97g-SRoTs3i5a5AV2INT.png"
+      ]
+    },
+    {
+      "name": "expired-link-refreshes-after-auth",
+      "pass": true,
+      "actual": {
+        "api": 200,
+        "object": 200
+      }
+    },
+    {
+      "name": "cross-family-refresh-denied",
+      "pass": true,
+      "actual": {
+        "status": 403,
+        "body": {
+          "code": "STORAGE_CROSS_FAMILY_FORBIDDEN",
+          "message": "不能访问其他家庭的图片"
+        }
+      }
+    },
+    {
+      "name": "repeat-edit-keeps-stable-ref",
+      "pass": true,
+      "actual": [
+        200,
+        200
+      ]
+    },
+    {
+      "name": "referenced-object-delete-blocked",
+      "pass": true,
+      "actual": {
+        "status": 409,
+        "body": {
+          "code": "STORAGE_OBJECT_IN_USE",
+          "message": "图片仍被业务记录使用，请先从对应记录中移除"
+        }
+      }
+    },
+    {
+      "name": "concurrent-accept-one-write",
+      "pass": true,
+      "actual": [
+        {
+          "status": 409,
+          "code": "ORDER_VERSION_CONFLICT"
+        },
+        {
+          "status": 200
+        }
+      ]
+    },
+    {
+      "name": "accept-side-effect-once",
+      "pass": true,
+      "actual": 1
+    },
+    {
+      "name": "accept-db-state-once",
+      "pass": true,
+      "actual": "accepted"
+    },
+    {
+      "name": "concurrent-prepping-one-write",
+      "pass": true,
+      "actual": [
+        {
+          "status": 200
+        },
+        {
+          "status": 409,
+          "code": "ORDER_VERSION_CONFLICT"
+        }
+      ]
+    },
+    {
+      "name": "completed-operation-retry-not-reexecuted",
+      "pass": true,
+      "actual": {
+        "status": 400,
+        "body": {
+          "code": "INVALID_STATUS_TRANSITION",
+          "message": "订单状态不能从 prepping 变到 prepping"
+        }
+      }
+    },
+    {
+      "name": "prepping-db-state-once",
+      "pass": true,
+      "actual": "prepping"
+    },
+    {
+      "name": "unreferenced-delete-and-refresh-rejected",
+      "pass": true,
+      "actual": {
+        "deleted": 200,
+        "refreshed": 400,
+        "code": "STORAGE_OBJECT_NOT_FOUND"
+      }
+    },
+    {
+      "name": "legacy-signed-url-migration-fixture-created",
+      "pass": true,
+      "actual": {
+        "familyId": "cmtr6i1b40004iky70qnepl31",
+        "imageUrl": "http://127.0.0.1:33619/c03-004/family/cmtr6i1b40004iky70qnepl31/recipe/2026-09-07/cmtr6i18r0000iky716g5i97g-SRoTs3i5a5AV2INT.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=c03qa004%2F20260907%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20260907T115003Z&X-Amz-Expires=2&X-Amz-SignedHeaders=host&X-Amz-Signature=b3dbb8491b554d915828e057539e6f966ee09a35a272a639cf048c907f915ca3"
+      }
+    }
+  ]
+}

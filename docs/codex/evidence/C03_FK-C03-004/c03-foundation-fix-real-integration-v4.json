@@ -1,0 +1,13 @@
+{
+  "name": "c03-foundation-fix-real-integration-v4",
+  "filePath": "node",
+  "arguments": [
+    "H:\\codex\\林家餐厅小程序\\family-kitchen-c03-revalidation-004\\tests\\qa\\revalidation\\foundation-fix-revalidation.mjs"
+  ],
+  "workingDirectory": "H:\\codex\\林家餐厅小程序\\family-kitchen-c03-revalidation-004",
+  "startedAt": "2026-09-07T19:57:41.6755129+08:00",
+  "finishedAt": "2026-09-07T19:57:45.9778296+08:00",
+  "durationMs": 4302.0,
+  "exitCode": 0,
+  "logPath": "H:\\codex\\林家餐厅小程序\\family-kitchen-c03-revalidation-004\\docs\\codex\\evidence\\C03_FK-C03-004\\c03-foundation-fix-real-integration-v4.log"
+}

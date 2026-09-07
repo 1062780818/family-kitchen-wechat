@@ -1,0 +1,13 @@
+{
+  "name": "c01-foundation-regression-independent-env",
+  "filePath": "node",
+  "arguments": [
+    "H:\\codex\\林家餐厅小程序\\family-kitchen-c03-revalidation-004\\tests\\integration\\foundation-defect-regression.mjs"
+  ],
+  "workingDirectory": "H:\\codex\\林家餐厅小程序\\family-kitchen-c03-revalidation-004",
+  "startedAt": "2026-09-07T19:50:03.5815669+08:00",
+  "finishedAt": "2026-09-07T19:50:07.5748809+08:00",
+  "durationMs": 3993.0,
+  "exitCode": 0,
+  "logPath": "H:\\codex\\林家餐厅小程序\\family-kitchen-c03-revalidation-004\\docs\\codex\\evidence\\C03_FK-C03-004\\c01-foundation-regression-independent-env.log"
+}

@@ -1,0 +1,33 @@
+
+> @family-kitchen/backend@0.1.0 storage:refs:preview H:\codex\林家餐厅小程序\family-kitchen-c03-revalidation-004\backend
+> node dist/scripts/migrate-storage-refs.js preview
+
+PrismaClientInitializationError: 
+Invalid `prisma.recipe.findMany()` invocation in
+H:\codex\林家餐厅小程序\family-kitchen-c03-revalidation-004\backend\dist\scripts\migrate-storage-refs.js:89:23
+
+  86 async function inspect() {
+  87     const changes = [];
+  88     const [recipes, orders, timeline, users] = await Promise.all([
+→ 89         prisma.recipe.findMany(
+error: Environment variable not found: DATABASE_URL.
+  -->  schema.prisma:11
+   | 
+10 |   provider = "mysql"
+11 |   url      = env("DATABASE_URL")
+   | 
+
+Validation Error Count: 1
+    at $n.handleRequestError (H:\codex\林家餐厅小程序\family-kitchen-c03-revalidation-004\node_modules\.pnpm\@prisma+client@5.22.0_prisma@5.22.0\node_modules\@prisma\client\runtime\library.js:121:7615)
+    at $n.handleAndLogRequestError (H:\codex\林家餐厅小程序\family-kitchen-c03-revalidation-004\node_modules\.pnpm\@prisma+client@5.22.0_prisma@5.22.0\node_modules\@prisma\client\runtime\library.js:121:6623)
+    at $n.request (H:\codex\林家餐厅小程序\family-kitchen-c03-revalidation-004\node_modules\.pnpm\@prisma+client@5.22.0_prisma@5.22.0\node_modules\@prisma\client\runtime\library.js:121:6307)
+    at async l (H:\codex\林家餐厅小程序\family-kitchen-c03-revalidation-004\node_modules\.pnpm\@prisma+client@5.22.0_prisma@5.22.0\node_modules\@prisma\client\runtime\library.js:130:9633)
+    at async Promise.all (index 0)
+    at async inspect (H:\codex\林家餐厅小程序\family-kitchen-c03-revalidation-004\backend\dist\scripts\migrate-storage-refs.js:88:48)
+    at async main (H:\codex\林家餐厅小程序\family-kitchen-c03-revalidation-004\backend\dist\scripts\migrate-storage-refs.js:216:21) {
+  clientVersion: '5.22.0',
+  errorCode: undefined
+}
+H:\codex\林家餐厅小程序\family-kitchen-c03-revalidation-004\backend:
+ ERR_PNPM_RECURSIVE_RUN_FIRST_FAIL  @family-kitchen/backend@0.1.0 storage:refs:preview: `node dist/scripts/migrate-storage-refs.js preview`
+Exit status 1

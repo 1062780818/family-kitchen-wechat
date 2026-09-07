@@ -1,0 +1,14 @@
+{
+  "name": "migration-assert-key-and-ambiguous-unchanged",
+  "filePath": "node",
+  "arguments": [
+    "H:\\codex\\林家餐厅小程序\\family-kitchen-c03-revalidation-004\\tests\\qa\\revalidation\\storage-migration-fixture-audit.mjs",
+    "assert-key"
+  ],
+  "workingDirectory": "H:\\codex\\林家餐厅小程序\\family-kitchen-c03-revalidation-004",
+  "startedAt": "2026-09-07T20:02:19.9610527+08:00",
+  "finishedAt": "2026-09-07T20:02:20.0723771+08:00",
+  "durationMs": 111.0,
+  "exitCode": 0,
+  "logPath": "H:\\codex\\林家餐厅小程序\\family-kitchen-c03-revalidation-004\\docs\\codex\\evidence\\C03_FK-C03-004\\migration-assert-key-and-ambiguous-unchanged.log"
+}

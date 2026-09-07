@@ -1,0 +1,17 @@
+[Nest] 39772  - 2026/09/07 20:10:21     LOG [NestFactory] Starting Nest application...
+[Nest] 39772  - 2026/09/07 20:10:21   ERROR [ExceptionHandler] Invalid env: An instance of EnvironmentVariables has failed the validation:
+ - property JWT_SECRET has failed the following constraints: isString 
+
+Error: Invalid env: An instance of EnvironmentVariables has failed the validation:
+ - property JWT_SECRET has failed the following constraints: isString 
+
+    at Object.envValidationSchema [as validate] (H:\codex\林家餐厅小程序\family-kitchen-c03-revalidation-004\backend\dist\config\env.validation.js:133:15)
+    at ConfigModule.forRoot (H:\codex\林家餐厅小程序\family-kitchen-c03-revalidation-004\node_modules\.pnpm\@nestjs+config@3.3.0_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_4ccxbulbtcejfsbymv6e4s3eea\node_modules\@nestjs\config\dist\config.module.js:78:45)
+    at Object.<anonymous> (H:\codex\林家餐厅小程序\family-kitchen-c03-revalidation-004\backend\dist\app.module.js:42:35)
+    at Module._compile (node:internal/modules/cjs/loader:1872:14)
+    at Object..js (node:internal/modules/cjs/loader:2003:10)
+    at Module.load (node:internal/modules/cjs/loader:1594:32)
+    at Module._load (node:internal/modules/cjs/loader:1396:12)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:255:19)
+    at Module.require (node:internal/modules/cjs/loader:1617:12)
+    at require (node:internal/modules/helpers:153:16)

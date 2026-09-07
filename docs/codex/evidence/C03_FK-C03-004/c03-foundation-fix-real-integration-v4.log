@@ -1,0 +1,527 @@
+{
+  "summary": {
+    "total": 65,
+    "passed": 65,
+    "failed": 0
+  },
+  "results": [
+    {
+      "name": "login-31",
+      "pass": true,
+      "actual": {
+        "status": 200,
+        "code": null
+      }
+    },
+    {
+      "name": "login-token-31",
+      "pass": true,
+      "actual": {
+        "hasToken": true
+      }
+    },
+    {
+      "name": "login-32",
+      "pass": true,
+      "actual": {
+        "status": 200,
+        "code": null
+      }
+    },
+    {
+      "name": "login-token-32",
+      "pass": true,
+      "actual": {
+        "hasToken": true
+      }
+    },
+    {
+      "name": "login-33",
+      "pass": true,
+      "actual": {
+        "status": 200,
+        "code": null
+      }
+    },
+    {
+      "name": "login-token-33",
+      "pass": true,
+      "actual": {
+        "hasToken": true
+      }
+    },
+    {
+      "name": "create-independent-family-a",
+      "pass": true,
+      "actual": {
+        "status": 201,
+        "code": null
+      }
+    },
+    {
+      "name": "create-independent-invite",
+      "pass": true,
+      "actual": {
+        "status": 200,
+        "code": null
+      }
+    },
+    {
+      "name": "wife-joins-independent-family",
+      "pass": true,
+      "actual": {
+        "status": 200,
+        "code": null
+      }
+    },
+    {
+      "name": "create-independent-family-b",
+      "pass": true,
+      "actual": {
+        "status": 201,
+        "code": null
+      }
+    },
+    {
+      "name": "fixture-families-remain-isolated",
+      "pass": true,
+      "actual": {
+        "husbandFamily": "cmtr6rurw002ciky7vh7q8rjt",
+        "wifeFamily": "cmtr6rurw002ciky7vh7q8rjt",
+        "outsiderFamily": "cmtr6rut4002jiky760ag1z1b"
+      }
+    },
+    {
+      "name": "frontend-identity-family-role-spoof-ignored",
+      "pass": true,
+      "actual": {
+        "status": 200,
+        "code": null
+      }
+    },
+    {
+      "name": "spoof-still-token-subject",
+      "pass": true,
+      "actual": {
+        "returnedUserId": "cmtr6ruqp0029iky7h43kplpr"
+      }
+    },
+    {
+      "name": "invalid-jwt-rejected",
+      "pass": true,
+      "actual": {
+        "status": 401,
+        "code": "INVALID_TOKEN"
+      }
+    },
+    {
+      "name": "wife-cannot-accept",
+      "pass": true,
+      "actual": {
+        "status": 403,
+        "code": "WRONG_ROLE"
+      }
+    },
+    {
+      "name": "outsider-cannot-accept",
+      "pass": true,
+      "actual": {
+        "status": 403,
+        "code": "ORDER_NOT_IN_YOUR_FAMILY"
+      }
+    },
+    {
+      "name": "prepping-before-accept-rejected",
+      "pass": true,
+      "actual": {
+        "status": 400,
+        "code": "INVALID_STATUS_TRANSITION"
+      }
+    },
+    {
+      "name": "concurrent-accept-one-success-one-version-conflict",
+      "pass": true,
+      "actual": [
+        {
+          "status": 200,
+          "code": null
+        },
+        {
+          "status": 409,
+          "code": "ORDER_VERSION_CONFLICT"
+        }
+      ]
+    },
+    {
+      "name": "accept-notification-side-effect-exactly-once",
+      "pass": true,
+      "actual": {
+        "before": 0,
+        "after": 1,
+        "delta": 1
+      }
+    },
+    {
+      "name": "accept-db-state-is-accepted",
+      "pass": true,
+      "actual": {
+        "status": "accepted"
+      }
+    },
+    {
+      "name": "completed-accept-retry-rejected",
+      "pass": true,
+      "actual": {
+        "status": 400,
+        "code": "INVALID_STATUS_TRANSITION"
+      }
+    },
+    {
+      "name": "conflicting-reject-after-accept-rejected",
+      "pass": true,
+      "actual": {
+        "status": 400,
+        "code": "INVALID_STATUS_TRANSITION"
+      }
+    },
+    {
+      "name": "concurrent-prepping-one-success-one-version-conflict",
+      "pass": true,
+      "actual": [
+        {
+          "status": 200,
+          "code": null
+        },
+        {
+          "status": 409,
+          "code": "ORDER_VERSION_CONFLICT"
+        }
+      ]
+    },
+    {
+      "name": "completed-prepping-retry-rejected",
+      "pass": true,
+      "actual": {
+        "status": 400,
+        "code": "INVALID_STATUS_TRANSITION"
+      }
+    },
+    {
+      "name": "prepping-db-state-is-prepping",
+      "pass": true,
+      "actual": {
+        "status": "prepping"
+      }
+    },
+    {
+      "name": "wife-cannot-start-cooking",
+      "pass": true,
+      "actual": {
+        "status": 403,
+        "code": "WRONG_ROLE"
+      }
+    },
+    {
+      "name": "outsider-cannot-start-cooking",
+      "pass": true,
+      "actual": {
+        "status": 403,
+        "code": "ORDER_NOT_IN_YOUR_FAMILY"
+      }
+    },
+    {
+      "name": "authorized-cooking-still-works",
+      "pass": true,
+      "actual": {
+        "status": 200,
+        "code": null
+      }
+    },
+    {
+      "name": "completed-cooking-retry-rejected",
+      "pass": true,
+      "actual": {
+        "status": 400,
+        "code": "INVALID_STATUS_TRANSITION"
+      }
+    },
+    {
+      "name": "recipe-upload",
+      "pass": true,
+      "actual": {
+        "status": 201,
+        "code": null
+      }
+    },
+    {
+      "name": "timeline-upload",
+      "pass": true,
+      "actual": {
+        "status": 201,
+        "code": null
+      }
+    },
+    {
+      "name": "avatar-upload",
+      "pass": true,
+      "actual": {
+        "status": 201,
+        "code": null
+      }
+    },
+    {
+      "name": "served-upload",
+      "pass": true,
+      "actual": {
+        "status": 201,
+        "code": null
+      }
+    },
+    {
+      "name": "outsider-recipe-upload",
+      "pass": true,
+      "actual": {
+        "status": 201,
+        "code": null
+      }
+    },
+    {
+      "name": "recipe-persists-stable-key-api",
+      "pass": true,
+      "actual": {
+        "status": 201,
+        "code": null
+      }
+    },
+    {
+      "name": "recipe-db-has-key-not-signed-url",
+      "pass": true,
+      "actual": [
+        "family/cmtr6rurw002ciky7vh7q8rjt/recipe/2026-09-07/cmtr6rups0028iky7r60f3i6n-jsafnJRvUlUUSbfx.png"
+      ]
+    },
+    {
+      "name": "recipe-rejects-temporary-signed-url",
+      "pass": true,
+      "actual": {
+        "status": 400,
+        "code": "INVALID_STORAGE_KEY"
+      }
+    },
+    {
+      "name": "recipe-rejects-wrong-category-key",
+      "pass": true,
+      "actual": {
+        "status": 400,
+        "code": "STORAGE_CATEGORY_MISMATCH"
+      }
+    },
+    {
+      "name": "recipe-rejects-cross-family-key",
+      "pass": true,
+      "actual": {
+        "status": 403,
+        "code": "STORAGE_CROSS_FAMILY_FORBIDDEN"
+      }
+    },
+    {
+      "name": "recipe-rejects-tampered-nonexistent-key",
+      "pass": true,
+      "actual": {
+        "status": 400,
+        "code": "STORAGE_OBJECT_NOT_FOUND"
+      }
+    },
+    {
+      "name": "recipe-repeat-save-stable-key-1",
+      "pass": true,
+      "actual": {
+        "status": 200,
+        "code": null
+      }
+    },
+    {
+      "name": "recipe-repeat-save-stable-key-2",
+      "pass": true,
+      "actual": {
+        "status": 200,
+        "code": null
+      }
+    },
+    {
+      "name": "recipe-repeat-save-db-still-key",
+      "pass": true,
+      "actual": [
+        "family/cmtr6rurw002ciky7vh7q8rjt/recipe/2026-09-07/cmtr6rups0028iky7r60f3i6n-jsafnJRvUlUUSbfx.png"
+      ]
+    },
+    {
+      "name": "timeline-persists-stable-key",
+      "pass": true,
+      "actual": {
+        "status": 201,
+        "code": null
+      }
+    },
+    {
+      "name": "timeline-db-has-key-not-url",
+      "pass": true,
+      "actual": [
+        "family/cmtr6rurw002ciky7vh7q8rjt/timeline/2026-09-07/cmtr6ruqp0029iky7h43kplpr-rkJ8AlZGCFG6J8r0.png"
+      ]
+    },
+    {
+      "name": "timeline-rejects-temporary-url",
+      "pass": true,
+      "actual": {
+        "status": 400,
+        "code": "INVALID_STORAGE_KEY"
+      }
+    },
+    {
+      "name": "avatar-persists-stable-key",
+      "pass": true,
+      "actual": {
+        "status": 200,
+        "code": null
+      }
+    },
+    {
+      "name": "avatar-db-has-key-not-url",
+      "pass": true,
+      "actual": {
+        "avatarUrl": "family/cmtr6rurw002ciky7vh7q8rjt/avatar/2026-09-07/cmtr6ruqp0029iky7h43kplpr-EAoklmp5uZxZhqeh.png"
+      }
+    },
+    {
+      "name": "avatar-rejects-temporary-url",
+      "pass": true,
+      "actual": {
+        "status": 409,
+        "code": "TEMPORARY_IMAGE_URL_NOT_PERSISTABLE"
+      }
+    },
+    {
+      "name": "serve-rejects-temporary-url",
+      "pass": true,
+      "actual": {
+        "status": 400,
+        "code": "INVALID_STORAGE_KEY"
+      }
+    },
+    {
+      "name": "rejected-temporary-serve-keeps-cooking",
+      "pass": true,
+      "actual": {
+        "status": "cooking"
+      }
+    },
+    {
+      "name": "serve-persists-stable-key",
+      "pass": true,
+      "actual": {
+        "status": 200,
+        "code": null
+      }
+    },
+    {
+      "name": "served-db-has-key-not-url",
+      "pass": true,
+      "actual": [
+        "family/cmtr6rurw002ciky7vh7q8rjt/order-served/2026-09-07/cmtr6rups0028iky7r60f3i6n-5y1ts8pAlNKM3Q1m.png"
+      ]
+    },
+    {
+      "name": "original-two-second-url-expires",
+      "pass": true,
+      "actual": {
+        "status": 403
+      }
+    },
+    {
+      "name": "authorized-recipe-reread-after-expiry",
+      "pass": true,
+      "actual": {
+        "status": 200,
+        "code": null
+      }
+    },
+    {
+      "name": "reread-preserves-stable-reference",
+      "pass": true,
+      "actual": [
+        "family/cmtr6rurw002ciky7vh7q8rjt/recipe/2026-09-07/cmtr6rups0028iky7r60f3i6n-jsafnJRvUlUUSbfx.png"
+      ]
+    },
+    {
+      "name": "authorized-user-can-refresh-expired-image",
+      "pass": true,
+      "actual": {
+        "status": 200,
+        "code": null
+      }
+    },
+    {
+      "name": "refreshed-url-reads-real-object",
+      "pass": true,
+      "actual": {
+        "status": 200
+      }
+    },
+    {
+      "name": "cross-family-image-refresh-rejected",
+      "pass": true,
+      "actual": {
+        "status": 403,
+        "code": "STORAGE_CROSS_FAMILY_FORBIDDEN"
+      }
+    },
+    {
+      "name": "cross-family-image-delete-rejected",
+      "pass": true,
+      "actual": {
+        "status": 403,
+        "code": "STORAGE_CROSS_FAMILY_FORBIDDEN"
+      }
+    },
+    {
+      "name": "in-use-image-delete-rejected",
+      "pass": true,
+      "actual": {
+        "status": 409,
+        "code": "STORAGE_OBJECT_IN_USE"
+      }
+    },
+    {
+      "name": "private-bucket-direct-read-rejected",
+      "pass": true,
+      "actual": {
+        "status": 403
+      }
+    },
+    {
+      "name": "orphan-upload",
+      "pass": true,
+      "actual": {
+        "status": 201,
+        "code": null
+      }
+    },
+    {
+      "name": "orphan-owner-delete",
+      "pass": true,
+      "actual": {
+        "status": 200,
+        "code": null
+      }
+    },
+    {
+      "name": "deleted-object-cannot-be-resigned",
+      "pass": true,
+      "actual": {
+        "status": 400,
+        "code": "STORAGE_OBJECT_NOT_FOUND"
+      }
+    }
+  ]
+}

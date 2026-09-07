@@ -1,0 +1,22 @@
+
+> @family-kitchen/backend@0.1.0 storage:refs:apply H:\codex\林家餐厅小程序\family-kitchen-c03-revalidation-004\backend
+> node dist/scripts/migrate-storage-refs.js apply "C:\\Users\\Administrator\\.codex\\visualizations\\2026\\09\\02\\01a06277-ac2d-7840-ac44-b524d3978318\\.c03-004-runtime\\migration-backup-2.json"
+
+{
+  "mode": "apply",
+  "convertible": 0,
+  "changes": []
+}
+Error: EEXIST: file already exists, open 'C:\Users\Administrator\.codex\visualizations\2026\09\02\01a06277-ac2d-7840-ac44-b524d3978318\.c03-004-runtime\migration-backup-2.json'
+    at Object.openSync (node:fs:622:18)
+    at writeFileSync (node:fs:2497:35)
+    at main (H:\codex\林家餐厅小程序\family-kitchen-c03-revalidation-004\backend\dist\scripts\migrate-storage-refs.js:222:37)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5) {
+  errno: -4075,
+  code: 'EEXIST',
+  syscall: 'open',
+  path: 'C:\\Users\\Administrator\\.codex\\visualizations\\2026\\09\\02\\01a06277-ac2d-7840-ac44-b524d3978318\\.c03-004-runtime\\migration-backup-2.json'
+}
+H:\codex\林家餐厅小程序\family-kitchen-c03-revalidation-004\backend:
+ ERR_PNPM_RECURSIVE_RUN_FIRST_FAIL  @family-kitchen/backend@0.1.0 storage:refs:apply: `node dist/scripts/migrate-storage-refs.js apply "C:\\Users\\Administrator\\.codex\\visualizations\\2026\\09\\02\\01a06277-ac2d-7840-ac44-b524d3978318\\.c03-004-runtime\\migration-backup-2.json"`
+Exit status 1

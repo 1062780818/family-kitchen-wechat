@@ -1,0 +1,21 @@
+
+> @family-kitchen/backend@0.1.0 storage:refs:apply H:\codex\林家餐厅小程序\family-kitchen-c03-revalidation-004\backend
+> node dist/scripts/migrate-storage-refs.js apply "--" "C:\\Users\\Administrator\\.codex\\visualizations\\2026\\09\\02\\01a06277-ac2d-7840-ac44-b524d3978318\\.c03-004-runtime\\migration-backup-1.json"
+
+{
+  "mode": "apply",
+  "convertible": 1,
+  "changes": [
+    {
+      "model": "recipe",
+      "id": "cmtr6i47000012q5rs6i44gtc",
+      "field": "imageUrls",
+      "before": [
+        "http://127.0.0.1:33619/c03-004/family/cmtr6i1b40004iky70qnepl31/recipe/2026-09-07/cmtr6i18r0000iky716g5i97g-SRoTs3i5a5AV2INT.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=c03qa004%2F20260907%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20260907T115003Z&X-Amz-Expires=2&X-Amz-SignedHeaders=host&X-Amz-Signature=b3dbb8491b554d915828e057539e6f966ee09a35a272a639cf048c907f915ca3"
+      ],
+      "after": [
+        "family/cmtr6i1b40004iky70qnepl31/recipe/2026-09-07/cmtr6i18r0000iky716g5i97g-SRoTs3i5a5AV2INT.png"
+      ]
+    }
+  ]
+}

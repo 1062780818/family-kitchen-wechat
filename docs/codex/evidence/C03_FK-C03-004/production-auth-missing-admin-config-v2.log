@@ -1,0 +1,60 @@
+{
+  "summary": {
+    "total": 6,
+    "passed": 6,
+    "failed": 0
+  },
+  "results": [
+    {
+      "name": "missing-admin-config-falls-back-to-fixed-default",
+      "pass": true,
+      "actual": {
+        "status": 200,
+        "issuedToken": true
+      }
+    },
+    {
+      "name": "default-admin-token-accesses-protected-user-data",
+      "pass": true,
+      "actual": {
+        "status": 200,
+        "exposesUserList": true
+      }
+    },
+    {
+      "name": "production-password-endpoint-self-registers",
+      "pass": true,
+      "actual": {
+        "status": 200,
+        "isNewUser": true,
+        "issuedToken": true
+      }
+    },
+    {
+      "name": "issued-user-jwt-resolves-server-identity",
+      "pass": true,
+      "actual": {
+        "status": 200,
+        "userIdMatches": true,
+        "familyId": null,
+        "membershipRole": null
+      }
+    },
+    {
+      "name": "wrong-password-rejected",
+      "pass": true,
+      "actual": {
+        "status": 401,
+        "code": "BAD_CREDENTIALS"
+      }
+    },
+    {
+      "name": "missing-token-does-not-fall-back-to-test-identity",
+      "pass": true,
+      "actual": {
+        "status": 401,
+        "code": "UNAUTHORIZED"
+      }
+    }
+  ]
+}

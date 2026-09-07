@@ -1,0 +1,14 @@
+{
+  "name": "migration-assert-new-edit-preserved",
+  "filePath": "node",
+  "arguments": [
+    "H:\\codex\\林家餐厅小程序\\family-kitchen-c03-revalidation-004\\tests\\qa\\revalidation\\storage-migration-fixture-audit.mjs",
+    "assert-mutated"
+  ],
+  "workingDirectory": "H:\\codex\\林家餐厅小程序\\family-kitchen-c03-revalidation-004",
+  "startedAt": "2026-09-07T20:04:45.6200152+08:00",
+  "finishedAt": "2026-09-07T20:04:45.7325644+08:00",
+  "durationMs": 113.0,
+  "exitCode": 0,
+  "logPath": "H:\\codex\\林家餐厅小程序\\family-kitchen-c03-revalidation-004\\docs\\codex\\evidence\\C03_FK-C03-004\\migration-assert-new-edit-preserved.log"
+}

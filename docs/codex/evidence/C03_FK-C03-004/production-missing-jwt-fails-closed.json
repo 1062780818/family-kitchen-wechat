@@ -1,0 +1,14 @@
+{
+  "name": "production-missing-jwt-fails-closed",
+  "filePath": "node",
+  "arguments": [
+    "--env-file=C:\\Users\\Administrator\\.codex\\visualizations\\2026\\09\\02\\01a06277-ac2d-7840-ac44-b524d3978318\\.c03-004-runtime\\auth-missing-jwt.env",
+    "dist/main.js"
+  ],
+  "workingDirectory": "H:\\codex\\林家餐厅小程序\\family-kitchen-c03-revalidation-004\\backend",
+  "startedAt": "2026-09-07T20:10:20.0075825+08:00",
+  "finishedAt": "2026-09-07T20:10:21.3610372+08:00",
+  "durationMs": 1353.0,
+  "exitCode": 1,
+  "logPath": "H:\\codex\\林家餐厅小程序\\family-kitchen-c03-revalidation-004\\docs\\codex\\evidence\\C03_FK-C03-004\\production-missing-jwt-fails-closed.log"
+}

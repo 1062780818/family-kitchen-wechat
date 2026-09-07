@@ -1,0 +1,13 @@
+{
+  "name": "production-auth-missing-admin-config-v2",
+  "filePath": "node",
+  "arguments": [
+    "H:\\codex\\林家餐厅小程序\\family-kitchen-c03-revalidation-004\\tests\\qa\\revalidation\\production-auth-surface.mjs"
+  ],
+  "workingDirectory": "H:\\codex\\林家餐厅小程序\\family-kitchen-c03-revalidation-004",
+  "startedAt": "2026-09-07T20:10:59.4603688+08:00",
+  "finishedAt": "2026-09-07T20:10:59.7035121+08:00",
+  "durationMs": 243.0,
+  "exitCode": 0,
+  "logPath": "H:\\codex\\林家餐厅小程序\\family-kitchen-c03-revalidation-004\\docs\\codex\\evidence\\C03_FK-C03-004\\production-auth-missing-admin-config-v2.log"
+}

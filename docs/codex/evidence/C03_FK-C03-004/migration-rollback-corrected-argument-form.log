@@ -1,0 +1,5 @@
+
+> @family-kitchen/backend@0.1.0 storage:refs:rollback H:\codex\林家餐厅小程序\family-kitchen-c03-revalidation-004\backend
+> node dist/scripts/migrate-storage-refs.js rollback "H:\\codex\\林家餐厅小程序\\family-kitchen-c03-revalidation-004\\backend\\--"
+
+{"mode":"rollback","restored":1}

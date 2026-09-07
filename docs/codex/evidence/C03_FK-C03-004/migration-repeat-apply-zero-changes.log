@@ -1,0 +1,9 @@
+
+> @family-kitchen/backend@0.1.0 storage:refs:apply H:\codex\林家餐厅小程序\family-kitchen-c03-revalidation-004\backend
+> node dist/scripts/migrate-storage-refs.js apply "C:\\Users\\Administrator\\.codex\\visualizations\\2026\\09\\02\\01a06277-ac2d-7840-ac44-b524d3978318\\.c03-004-runtime\\migration-backup-3.json"
+
+{
+  "mode": "apply",
+  "convertible": 0,
+  "changes": []
+}

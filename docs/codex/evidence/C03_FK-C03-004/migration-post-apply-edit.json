@@ -1,0 +1,14 @@
+{
+  "name": "migration-post-apply-edit",
+  "filePath": "node",
+  "arguments": [
+    "H:\\codex\\林家餐厅小程序\\family-kitchen-c03-revalidation-004\\tests\\qa\\revalidation\\storage-migration-fixture-audit.mjs",
+    "mutate"
+  ],
+  "workingDirectory": "H:\\codex\\林家餐厅小程序\\family-kitchen-c03-revalidation-004",
+  "startedAt": "2026-09-07T20:04:13.2098104+08:00",
+  "finishedAt": "2026-09-07T20:04:13.3481251+08:00",
+  "durationMs": 138.0,
+  "exitCode": 0,
+  "logPath": "H:\\codex\\林家餐厅小程序\\family-kitchen-c03-revalidation-004\\docs\\codex\\evidence\\C03_FK-C03-004\\migration-post-apply-edit.log"
+}
