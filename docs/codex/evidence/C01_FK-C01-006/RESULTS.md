@@ -51,9 +51,9 @@ node tests/integration/storage-restart-check.mjs
 
 ```powershell
 pnpm --filter @family-kitchen/backend run build
-pnpm --filter @family-kitchen/backend run storage:refs:preview
-pnpm --filter @family-kitchen/backend run storage:refs:apply -- '<new-backup.json>'
-pnpm --filter @family-kitchen/backend run storage:refs:rollback -- '<backup.json>'
+pnpm --filter @family-kitchen/backend run storage:refs:preview --env-file="<absolute-test-env-file>"
+pnpm --filter @family-kitchen/backend run storage:refs:apply --env-file="<absolute-test-env-file>" --backup="<absolute-new-backup.json>"
+pnpm --filter @family-kitchen/backend run storage:refs:rollback --env-file="<absolute-test-env-file>" --backup="<absolute-backup.json>"
 ```
 
 隔离库结果：预览识别 `1` 条；首次应用把签名 URL 转为稳定 key；回退恢复原值；第二次应用再次转为稳定 key。备份采用 `wx` 创建，已存在文件会拒绝覆盖。只转换可信 MinIO 来源、家庭／分类／上传者可核实且对象真实存在的记录；外部 URL、归属不明或对象不存在的数据保持原值。

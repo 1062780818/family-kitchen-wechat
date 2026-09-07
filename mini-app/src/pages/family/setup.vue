@@ -155,7 +155,7 @@ export default {
             uni.switchTab({ url: '/pages/tabbar/home/home' });
           },
         });
-      } catch (err) {
+      } catch {
         // ignore, toast 已显示
       } finally {
         this.loading = false;
@@ -171,7 +171,7 @@ export default {
         await family.joinByCode(code);
         uni.showToast({ title: '加入成功', icon: 'success' });
         setTimeout(() => uni.switchTab({ url: '/pages/tabbar/home/home' }), 600);
-      } catch (err) {
+      } catch {
         // ignore
       } finally {
         this.loading = false;

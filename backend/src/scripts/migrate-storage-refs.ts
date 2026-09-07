@@ -1,7 +1,17 @@
-import { readFileSync, writeFileSync } from 'node:fs';
-import { resolve } from 'node:path';
+import {
+  accessSync,
+  closeSync,
+  constants,
+  existsSync,
+  fsyncSync,
+  openSync,
+  readFileSync,
+  writeFileSync,
+} from 'node:fs';
+import { dirname, isAbsolute } from 'node:path';
 import { Client as MinioClient } from 'minio';
 import { PrismaClient, type Prisma } from '@prisma/client';
+import { config as loadEnvFile } from 'dotenv';
 
 type Change = {
   model: 'recipe' | 'order' | 'orderItem' | 'timelineEntry' | 'user';
@@ -13,10 +23,50 @@ type Change = {
 
 type Backup = { version: 1; createdAt: string; changes: Change[] };
 
-const mode = process.argv[2] ?? 'preview';
-const backupArg = process.argv[3];
-if (!['preview', 'apply', 'rollback'].includes(mode)) {
-  throw new Error('usage: migrate-storage-refs <preview|apply|rollback> [backup.json]');
+type Mode = 'preview' | 'apply' | 'rollback';
+
+function parseCliArguments(args: string[]): {
+  mode: Mode;
+  backupPath?: string;
+  envFilePath?: string;
+} {
+  const [modeArg, ...options] = args;
+  if (!['preview', 'apply', 'rollback'].includes(modeArg ?? '')) {
+    throw new Error(
+      'usage: migrate-storage-refs <preview|apply|rollback> [--env-file=<absolute-path>] [--backup=<absolute-path>]',
+    );
+  }
+  if (options.includes('--')) {
+    throw new Error(
+      'literal -- is not accepted; pass named options directly after the script name',
+    );
+  }
+  const parsed = new Map<string, string>();
+  for (const option of options) {
+    const match = option.match(/^--(env-file|backup)=(.+)$/);
+    if (!match) throw new Error(`unknown or malformed argument: ${option}`);
+    if (parsed.has(match[1])) throw new Error(`duplicate argument: --${match[1]}`);
+    parsed.set(match[1], match[2]);
+  }
+  const backupPath = parsed.get('backup');
+  const envFilePath = parsed.get('env-file');
+  for (const [name, value] of [
+    ['backup', backupPath],
+    ['env-file', envFilePath],
+  ] as const) {
+    if (value && !isAbsolute(value)) throw new Error(`--${name} must be an absolute path`);
+  }
+  if (modeArg === 'preview' && backupPath) throw new Error('preview does not accept --backup');
+  if (modeArg !== 'preview' && !backupPath) {
+    throw new Error(`${modeArg} requires --backup=<absolute-path>`);
+  }
+  return { mode: modeArg as Mode, backupPath, envFilePath };
+}
+
+const { mode, backupPath, envFilePath } = parseCliArguments(process.argv.slice(2));
+if (envFilePath) {
+  const loaded = loadEnvFile({ path: envFilePath, override: false });
+  if (loaded.error) throw new Error(`failed to load --env-file: ${loaded.error.message}`);
 }
 
 const prisma = new PrismaClient();
@@ -228,8 +278,7 @@ async function readCurrent(tx: Prisma.TransactionClient, change: Change): Promis
 
 async function main(): Promise<void> {
   if (mode === 'rollback') {
-    if (!backupArg) throw new Error('rollback requires a backup JSON path');
-    const backup = JSON.parse(readFileSync(resolve(backupArg), 'utf8')) as Backup;
+    const backup = JSON.parse(readFileSync(backupPath!, 'utf8')) as Backup;
     if (backup.version !== 1) throw new Error('unsupported backup version');
     await prisma.$transaction(async (tx) => {
       for (const change of [...backup.changes].reverse()) {
@@ -240,16 +289,23 @@ async function main(): Promise<void> {
         await writeChange(tx, change, change.before);
       }
     });
-    console.log(JSON.stringify({ mode, restored: backup.changes.length }));
+    console.log(JSON.stringify({ mode, backupPath, restored: backup.changes.length }));
     return;
   }
 
   const changes = await inspect();
-  console.log(JSON.stringify({ mode, convertible: changes.length, changes }, null, 2));
+  console.log(JSON.stringify({ mode, backupPath, convertible: changes.length, changes }, null, 2));
   if (mode === 'apply') {
-    if (!backupArg) throw new Error('apply requires a backup JSON path');
+    if (existsSync(backupPath!)) throw new Error(`backup already exists: ${backupPath}`);
+    accessSync(dirname(backupPath!), constants.W_OK);
     const backup: Backup = { version: 1, createdAt: new Date().toISOString(), changes };
-    writeFileSync(resolve(backupArg), `${JSON.stringify(backup, null, 2)}\n`, { flag: 'wx' });
+    const descriptor = openSync(backupPath!, 'wx', 0o600);
+    try {
+      writeFileSync(descriptor, `${JSON.stringify(backup, null, 2)}\n`);
+      fsyncSync(descriptor);
+    } finally {
+      closeSync(descriptor);
+    }
     await prisma.$transaction(async (tx) => {
       for (const change of changes) {
         const current = await readCurrent(tx, change);
@@ -259,6 +315,7 @@ async function main(): Promise<void> {
         await writeChange(tx, change, change.after);
       }
     });
+    console.log(JSON.stringify({ mode, backupPath, applied: changes.length }));
   }
 }
 

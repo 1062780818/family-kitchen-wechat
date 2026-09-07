@@ -14,9 +14,10 @@
     "lint:fix": "eslint . --fix",
     "lint:retained": "eslint src/api/http.js src/api/auth.js src/api/family.js src/api/recipe.js src/api/order.js src/api/storage.js src/api/timeline.js src/api/user.js src/utils/storage-ref.mjs test/storage-ref.test.mjs --max-warnings 0",
     "lint:storage-consumers": "eslint src/pages/recipe/edit.vue src/pages/timeline/manual.vue src/pages/order/detail.vue src/pages/profile/edit.vue",
+    "lint:security-consumers": "eslint vite.config.js src/api/auth.js src/stores/auth.js src/pages/auth/login.vue src/components/guest-placeholder.vue src/pages/family/settings.vue src/pages/family/setup.vue test/auth-entry.test.mjs",
     "typecheck": "echo \"(mini-app uses JS; type-check via jsconfig in IDE)\" && exit 0",
     "test": "node --test test/*.test.mjs",
-    "test:retained": "node --test test/storage-ref.test.mjs"
+    "test:retained": "node --test test/*.test.mjs"
   },
   "dependencies": {
     "@dcloudio/uni-app": "3.0.0-5000720260410001",

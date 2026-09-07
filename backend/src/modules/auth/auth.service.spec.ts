@@ -1,7 +1,7 @@
 import { Test } from '@nestjs/testing';
 import { JwtService } from '@nestjs/jwt';
 import { ConfigService } from '@nestjs/config';
-import { UnauthorizedException } from '@nestjs/common';
+import { ForbiddenException, UnauthorizedException } from '@nestjs/common';
 import { AuthService } from './auth.service';
 import { WxClient } from './wx.client';
 import { PrismaService } from '../../prisma/prisma.service';
@@ -12,6 +12,7 @@ describe('AuthService', () => {
   let prisma: { user: { findUnique: jest.Mock; create: jest.Mock } };
   let wx: { code2Session: jest.Mock };
   let jwt: { signAsync: jest.Mock };
+  let configValues: Record<string, string>;
 
   beforeEach(async () => {
     prisma = {
@@ -22,6 +23,15 @@ describe('AuthService', () => {
     };
     wx = { code2Session: jest.fn() };
     jwt = { signAsync: jest.fn().mockResolvedValue('signed-jwt') };
+    configValues = {
+      NODE_ENV: 'test',
+      PASSWORD_LOGIN_ENABLED: 'true',
+      JWT_SECRET: 'test-secret',
+      JWT_EXPIRES_IN: '30d',
+      ADMIN_ENABLED: 'true',
+      ADMIN_USERNAME: 'c01-admin',
+      ADMIN_PASSWORD: 'C01-Isolated-Admin-Password',
+    };
 
     const moduleRef = await Test.createTestingModule({
       providers: [
@@ -32,13 +42,7 @@ describe('AuthService', () => {
         {
           provide: ConfigService,
           useValue: {
-            get: (key: string, fallback?: string) => {
-              if (key === 'JWT_SECRET') return 'test-secret';
-              if (key === 'JWT_EXPIRES_IN') return '30d';
-              if (key === 'ADMIN_USERNAME') return 'admin';
-              if (key === 'ADMIN_PASSWORD') return 'admin123456';
-              return fallback;
-            },
+            get: (key: string, fallback?: string) => configValues[key] ?? fallback,
           },
         },
       ],
@@ -93,6 +97,24 @@ describe('AuthService', () => {
   });
 
   describe('passwordLogin', () => {
+    it('rejects when the isolated password-login flag is disabled', async () => {
+      configValues.PASSWORD_LOGIN_ENABLED = 'false';
+
+      await expect(service.passwordLogin('13800138998', 'secret123')).rejects.toThrow(
+        ForbiddenException,
+      );
+      expect(prisma.user.findUnique).not.toHaveBeenCalled();
+    });
+
+    it('rejects in production even if the isolated flag is set', async () => {
+      configValues.NODE_ENV = 'production';
+
+      await expect(service.passwordLogin('13800138999', 'secret123')).rejects.toThrow(
+        ForbiddenException,
+      );
+      expect(prisma.user.findUnique).not.toHaveBeenCalled();
+    });
+
     it('registers a new user when phone is unused and marks isNewUser=true', async () => {
       prisma.user.findUnique.mockResolvedValue(null);
       prisma.user.create.mockResolvedValue({
@@ -164,13 +186,35 @@ describe('AuthService', () => {
 
   describe('adminLogin', () => {
     it('returns token on correct credentials', async () => {
-      const result = await service.adminLogin('admin', 'admin123456');
+      const result = await service.adminLogin('c01-admin', 'C01-Isolated-Admin-Password');
       expect(result.token).toBe('signed-jwt');
-      expect(result.username).toBe('admin');
+      expect(result.username).toBe('c01-admin');
     });
 
     it('throws on bad credentials', async () => {
-      await expect(service.adminLogin('admin', 'wrong')).rejects.toThrow(UnauthorizedException);
+      await expect(service.adminLogin('c01-admin', 'wrong')).rejects.toThrow(UnauthorizedException);
+    });
+
+    it.each([
+      ['disabled', { ADMIN_ENABLED: 'false' }],
+      ['missing', { ADMIN_ENABLED: 'true', ADMIN_USERNAME: undefined, ADMIN_PASSWORD: undefined }],
+      ['empty', { ADMIN_ENABLED: 'true', ADMIN_USERNAME: '', ADMIN_PASSWORD: '' }],
+      [
+        'partial',
+        { ADMIN_ENABLED: 'true', ADMIN_USERNAME: 'c01-admin', ADMIN_PASSWORD: undefined },
+      ],
+      [
+        'legacy defaults',
+        { ADMIN_ENABLED: 'true', ADMIN_USERNAME: 'admin', ADMIN_PASSWORD: 'admin123456' },
+      ],
+    ])('rejects %s administrator configuration', async (_name, overrides) => {
+      Object.assign(configValues, overrides);
+      for (const [key, value] of Object.entries(overrides)) {
+        if (value === undefined) delete configValues[key];
+      }
+
+      await expect(service.adminLogin('admin', 'admin123456')).rejects.toThrow(ForbiddenException);
+      expect(jwt.signAsync).not.toHaveBeenCalled();
     });
   });
 });

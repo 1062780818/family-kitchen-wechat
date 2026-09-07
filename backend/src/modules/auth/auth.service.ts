@@ -1,4 +1,4 @@
-import { Injectable, UnauthorizedException } from '@nestjs/common';
+import { ForbiddenException, Injectable, UnauthorizedException } from '@nestjs/common';
 import { JwtService } from '@nestjs/jwt';
 import { ConfigService } from '@nestjs/config';
 import { PrismaService } from '../../prisma/prisma.service';
@@ -6,6 +6,7 @@ import { WxClient } from './wx.client';
 import type { WxLoginResponseDto } from './dto/wx-login.dto';
 import type { AdminLoginResponseDto } from './dto/admin-login.dto';
 import { hashPassword, verifyPassword } from './password.util';
+import { isPasswordLoginEnabled, resolveAdminCredentials } from '../../config/access-flags';
 
 @Injectable()
 export class AuthService {
@@ -68,6 +69,12 @@ export class AuthService {
     password: string,
     gender?: string,
   ): Promise<WxLoginResponseDto> {
+    if (!isPasswordLoginEnabled(this.config)) {
+      throw new ForbiddenException({
+        code: 'PASSWORD_LOGIN_DISABLED',
+        message: '手机号密码登录未启用',
+      });
+    }
     const existing = await this.prisma.user.findUnique({ where: { phone } });
 
     let user = existing;
@@ -116,13 +123,18 @@ export class AuthService {
 
   /**
    * 后台管理员登录。
-   * MVP 阶段：从环境变量 ADMIN_USERNAME / ADMIN_PASSWORD 校验，不存数据库。
+   * 可选管理入口：只有显式启用且凭据完整有效时才签发管理员 JWT。
    * 后期再换为 admin_user 表 + bcrypt。
    */
   async adminLogin(username: string, password: string): Promise<AdminLoginResponseDto> {
-    const expectedUsername = this.config.get<string>('ADMIN_USERNAME', 'admin');
-    const expectedPassword = this.config.get<string>('ADMIN_PASSWORD', 'admin123456');
-    if (username !== expectedUsername || password !== expectedPassword) {
+    const credentials = resolveAdminCredentials(this.config);
+    if (!credentials) {
+      throw new ForbiddenException({
+        code: 'ADMIN_ACCESS_DISABLED',
+        message: '管理入口未启用或配置无效',
+      });
+    }
+    if (username !== credentials.username || password !== credentials.password) {
       throw new UnauthorizedException({
         code: 'BAD_CREDENTIALS',
         message: '账号或密码错误',

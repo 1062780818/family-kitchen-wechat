@@ -14,12 +14,7 @@ export default {
     icon: { type: String, default: 'home' },
     title: { type: String, default: '欢迎来到情侣厨房' },
     desc: { type: String, default: '登录后开启你和 TA 的小厨房' },
-    // #ifdef MP-WEIXIN
     actionText: { type: String, default: '微信登录' },
-    // #endif
-    // #ifndef MP-WEIXIN
-    actionText: { type: String, default: '登录' },
-    // #endif
   },
   methods: {
     handleAction() {

@@ -1,5 +1,6 @@
 import { plainToInstance } from 'class-transformer';
-import { IsEnum, IsInt, IsOptional, IsString, Max, Min, validateSync } from 'class-validator';
+import { IsEnum, IsIn, IsInt, IsOptional, IsString, Max, Min, validateSync } from 'class-validator';
+import { LEGACY_ADMIN_PASSWORD, LEGACY_ADMIN_USERNAME, isExplicitlyEnabled } from './access-flags';
 
 enum Environment {
   Development = 'development',
@@ -56,11 +57,19 @@ class EnvironmentVariables {
   @IsString()
   CORS_ORIGINS?: string;
 
-  @IsString()
-  ADMIN_USERNAME: string = 'admin';
+  @IsIn(['true', 'false'])
+  ADMIN_ENABLED: string = 'false';
 
+  @IsOptional()
   @IsString()
-  ADMIN_PASSWORD: string = 'admin123456';
+  ADMIN_USERNAME?: string;
+
+  @IsOptional()
+  @IsString()
+  ADMIN_PASSWORD?: string;
+
+  @IsIn(['true', 'false'])
+  PASSWORD_LOGIN_ENABLED: string = 'false';
 
   @IsOptional()
   @IsString()
@@ -82,6 +91,27 @@ export function envValidationSchema(config: Record<string, unknown>): Environmen
   const errors = validateSync(validated, { skipMissingProperties: false });
   if (errors.length > 0) {
     throw new Error(`Invalid env: ${errors.map((e) => e.toString()).join('\n')}`);
+  }
+  if (isExplicitlyEnabled(validated.ADMIN_ENABLED)) {
+    const username = validated.ADMIN_USERNAME?.trim() ?? '';
+    const password = validated.ADMIN_PASSWORD ?? '';
+    if (!username || password.length < 12) {
+      throw new Error(
+        'Invalid env: ADMIN_ENABLED=true requires non-empty ADMIN_USERNAME and ADMIN_PASSWORD with at least 12 characters',
+      );
+    }
+    if (
+      password === LEGACY_ADMIN_PASSWORD ||
+      (username === LEGACY_ADMIN_USERNAME && password === LEGACY_ADMIN_PASSWORD)
+    ) {
+      throw new Error('Invalid env: legacy default administrator credentials are forbidden');
+    }
+  }
+  if (
+    validated.NODE_ENV === Environment.Production &&
+    isExplicitlyEnabled(validated.PASSWORD_LOGIN_ENABLED)
+  ) {
+    throw new Error('Invalid env: PASSWORD_LOGIN_ENABLED cannot be enabled in production');
   }
   return validated;
 }

@@ -228,7 +228,7 @@ export default {
         await useFamilyStore().updateMine({ name });
         this.renameDialog = false;
         uni.showToast({ title: '已更新', icon: 'success' });
-      } catch (err) {
+      } catch {
         // ignore
       }
     },

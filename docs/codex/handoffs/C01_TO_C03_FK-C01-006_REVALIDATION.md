@@ -67,9 +67,9 @@ node tests/integration/foundation-defect-regression.mjs
 旧数据工具在构建后执行：
 
 ```powershell
-pnpm --filter @family-kitchen/backend run storage:refs:preview
-pnpm --filter @family-kitchen/backend run storage:refs:apply -- '<new-backup.json>'
-pnpm --filter @family-kitchen/backend run storage:refs:rollback -- '<backup.json>'
+pnpm --filter @family-kitchen/backend run storage:refs:preview --env-file="<absolute-test-env-file>"
+pnpm --filter @family-kitchen/backend run storage:refs:apply --env-file="<absolute-test-env-file>" --backup="<absolute-new-backup.json>"
+pnpm --filter @family-kitchen/backend run storage:refs:rollback --env-file="<absolute-test-env-file>" --backup="<absolute-backup.json>"
 ```
 
 预期：只转换可信 MinIO 来源、家庭／分类／上传者可核实、对象存在的记录；外部 URL 和归属不明记录不变；备份文件不可覆盖；迁移后若记录又被编辑，rollback 应拒绝覆盖新值。

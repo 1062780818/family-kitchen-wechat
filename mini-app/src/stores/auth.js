@@ -29,15 +29,6 @@ export const useAuthStore = defineStore('auth', () => {
     return res;
   }
 
-  async function passwordLogin(phone, password, gender) {
-    const res = await authApi.passwordLogin(phone, password, gender);
-    token.value = res.token;
-    user.value = res.user;
-    persist();
-    ws.connect();
-    return res;
-  }
-
   function setUser(u) {
     user.value = u;
     persist();
@@ -50,5 +41,5 @@ export const useAuthStore = defineStore('auth', () => {
     persist();
   }
 
-  return { token, user, isLoggedIn, wxLogin, passwordLogin, setUser, logout };
+  return { token, user, isLoggedIn, wxLogin, setUser, logout };
 });
