@@ -8,11 +8,7 @@ import {
   ApiTags,
 } from '@nestjs/swagger';
 import type { FastifyRequest } from 'fastify';
-import {
-  FAMILY_FILE_URL_TTL_SECONDS,
-  MAX_UPLOAD_SIZE_BYTES,
-  StorageService,
-} from './storage.service';
+import { MAX_UPLOAD_SIZE_BYTES, StorageService } from './storage.service';
 import { StorageAccessUrlDto, StorageCategory, UploadResultDto } from './dto/upload-result.dto';
 import { CurrentUser, type AuthUser } from '../../common/current-user.decorator';
 
@@ -78,7 +74,7 @@ export class StorageController {
     @Query('key') key: string,
   ): Promise<StorageAccessUrlDto> {
     const url = await this.storageService.getFamilyFileUrl(user.userId, key);
-    return { url, expiresIn: FAMILY_FILE_URL_TTL_SECONDS };
+    return { url, expiresIn: this.storageService.getSignedUrlTtlSeconds() };
   }
 
   @Delete('object')

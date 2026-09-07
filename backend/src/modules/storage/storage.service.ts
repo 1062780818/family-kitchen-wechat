@@ -1,5 +1,6 @@
 import {
   BadRequestException,
+  ConflictException,
   ForbiddenException,
   Injectable,
   Logger,
@@ -55,6 +56,7 @@ export class StorageService implements ObjectStorage, OnModuleInit {
   private readonly client: MinioClient;
   private readonly bucket: string;
   private readonly publicBaseUrl: string;
+  private readonly signedUrlTtlSeconds: number;
   private defaultAvatarMaleUrl = '';
   private defaultAvatarFemaleUrl = '';
 
@@ -66,6 +68,12 @@ export class StorageService implements ObjectStorage, OnModuleInit {
     this.publicBaseUrl =
       config.get<string>('MINIO_PUBLIC_BASE_URL') ??
       `http://${config.get<string>('MINIO_ENDPOINT', 'localhost')}:${config.get<string>('MINIO_PORT', '9000')}/${this.bucket}`;
+    const configuredTtl = Number(
+      config.get<string>('MINIO_SIGNED_URL_TTL_SECONDS', String(FAMILY_FILE_URL_TTL_SECONDS)),
+    );
+    this.signedUrlTtlSeconds = Number.isInteger(configuredTtl)
+      ? Math.min(FAMILY_FILE_URL_TTL_SECONDS, Math.max(1, configuredTtl))
+      : FAMILY_FILE_URL_TTL_SECONDS;
     this.client = new MinioClient({
       endPoint: config.get<string>('MINIO_ENDPOINT', 'localhost'),
       port: Number(config.get<string>('MINIO_PORT', '9000')),
@@ -167,6 +175,10 @@ export class StorageService implements ObjectStorage, OnModuleInit {
     return { male: this.defaultAvatarMaleUrl, female: this.defaultAvatarFemaleUrl };
   }
 
+  getSignedUrlTtlSeconds(): number {
+    return this.signedUrlTtlSeconds;
+  }
+
   // ============================================================
   // 业务包装：从 Controller 接收 buffer + meta 后调用
   // ============================================================
@@ -202,7 +214,7 @@ export class StorageService implements ObjectStorage, OnModuleInit {
     await this.upload(input.buffer, key, input.mimeType);
 
     return {
-      url: await this.getSignedUrl(key, FAMILY_FILE_URL_TTL_SECONDS),
+      url: await this.getSignedUrl(key, this.signedUrlTtlSeconds),
       key,
       size: input.buffer.length,
       mimeType: input.mimeType,
@@ -211,11 +223,35 @@ export class StorageService implements ObjectStorage, OnModuleInit {
 
   async getFamilyFileUrl(userId: string, key: string): Promise<string> {
     await this.assertFamilyObjectAccess(userId, key, false);
-    return this.getSignedUrl(key, FAMILY_FILE_URL_TTL_SECONDS);
+    await this.assertObjectExists(key);
+    return this.getSignedUrl(key, this.signedUrlTtlSeconds);
+  }
+
+  async validateFamilyObjectKeys(
+    userId: string,
+    keys: string[],
+    expectedCategory: StorageCategory,
+  ): Promise<void> {
+    for (const key of keys) {
+      const parsed = await this.assertFamilyObjectAccess(userId, key, false);
+      if (parsed.category !== expectedCategory) {
+        throw new BadRequestException({
+          code: 'STORAGE_CATEGORY_MISMATCH',
+          message: '图片资源类型与当前业务不匹配',
+        });
+      }
+      await this.assertObjectExists(key);
+    }
   }
 
   async deleteFamilyFile(userId: string, key: string): Promise<void> {
-    await this.assertFamilyObjectAccess(userId, key, true);
+    const parsed = await this.assertFamilyObjectAccess(userId, key, true);
+    if (await this.isObjectInUse(parsed.familyId, key)) {
+      throw new ConflictException({
+        code: 'STORAGE_OBJECT_IN_USE',
+        message: '图片仍被业务记录使用，请先从对应记录中移除',
+      });
+    }
     await this.delete(key);
   }
 
@@ -223,7 +259,7 @@ export class StorageService implements ObjectStorage, OnModuleInit {
     userId: string,
     key: string,
     ownerOnly: boolean,
-  ): Promise<void> {
+  ): Promise<{ familyId: string; ownerUserId: string; category: StorageCategory }> {
     const parsed = parseFamilyObjectKey(key);
     const familyId = await requireFamilyId(this.prisma, userId);
     if (parsed.familyId !== familyId) {
@@ -238,6 +274,7 @@ export class StorageService implements ObjectStorage, OnModuleInit {
         message: '只能删除自己上传的图片',
       });
     }
+    return parsed;
   }
 
   private async requireMenuEditor(userId: string, familyId: string): Promise<void> {
@@ -252,9 +289,53 @@ export class StorageService implements ObjectStorage, OnModuleInit {
       });
     }
   }
+
+  private async assertObjectExists(key: string): Promise<void> {
+    try {
+      await this.client.statObject(this.bucket, key);
+    } catch {
+      throw new BadRequestException({
+        code: 'STORAGE_OBJECT_NOT_FOUND',
+        message: '图片资源不存在或已删除',
+      });
+    }
+  }
+
+  private async isObjectInUse(familyId: string, key: string): Promise<boolean> {
+    const [user, recipe, order, orderItem, timeline] = await Promise.all([
+      this.prisma.user.findFirst({
+        where: { currentFamilyId: familyId, avatarUrl: key },
+        select: { id: true },
+      }),
+      this.prisma.recipe.findFirst({
+        where: { familyId, imageUrls: { array_contains: key } },
+        select: { id: true },
+      }),
+      this.prisma.order.findFirst({
+        where: { familyId, servedImageUrls: { array_contains: key } },
+        select: { id: true },
+      }),
+      this.prisma.orderItem.findFirst({
+        where: {
+          order: { familyId },
+          recipeSnapshot: { path: '$.imageUrls', array_contains: key },
+        },
+        select: { id: true },
+      }),
+      this.prisma.timelineEntry.findFirst({
+        where: { familyId, imageUrls: { array_contains: key } },
+        select: { id: true },
+      }),
+    ]);
+    return Boolean(user || recipe || order || orderItem || timeline);
+  }
 }
 
-function parseFamilyObjectKey(key: string): { familyId: string; ownerUserId: string } {
+function parseFamilyObjectKey(key: string): {
+  familyId: string;
+  ownerUserId: string;
+  category: StorageCategory;
+} {
   if (key.includes('..') || key.includes('\\') || key.startsWith('/')) {
     throw invalidObjectKey();
   }
@@ -267,7 +348,7 @@ function parseFamilyObjectKey(key: string): { familyId: string; ownerUserId: str
   if (!/^\d{4}-\d{2}-\d{2}$/.test(date)) throw invalidObjectKey();
   const match = filename.match(/^(.+)-[A-Za-z0-9]{16}\.(jpg|png|webp|gif)$/);
   if (!match?.[1]) throw invalidObjectKey();
-  return { familyId, ownerUserId: match[1] };
+  return { familyId, ownerUserId: match[1], category: category as StorageCategory };
 }
 
 function invalidObjectKey(): BadRequestException {

@@ -29,8 +29,8 @@
           <text class="card-hint">最多 5 张</text>
         </view>
         <view class="images">
-          <view v-for="(url, idx) in form.imageUrls" :key="url" class="img-wrap">
-            <image :src="url" class="thumb" mode="aspectFill" />
+          <view v-for="(ref, idx) in form.imageUrls" :key="ref" class="img-wrap">
+            <image :src="imagePreviews[idx]" class="thumb" mode="aspectFill" />
             <view class="remove" @click="removeImage(idx)">
               <wd-icon name="close" size="20rpx" color="#fff" />
             </view>
@@ -151,6 +151,7 @@ export default {
       FLAVOR_TAGS,
       id: null,
       saving: false,
+      imagePreviews: [],
       form: {
         name: '',
         imageUrls: [],
@@ -182,7 +183,8 @@ export default {
       try {
         const r = await recipeApi.get(this.id);
         this.form.name = r.name;
-        this.form.imageUrls = [...r.imageUrls];
+        this.form.imageUrls = [...(r.imageRefs || r.imageUrls)];
+        this.imagePreviews = [...r.imageUrls];
         this.form.difficulty = r.difficulty;
         this.form.mealTags = [...r.mealTags];
         this.form.flavorTags = [...r.flavorTags];
@@ -198,13 +200,17 @@ export default {
           count: remaining,
           category: 'recipe',
         });
-        for (const u of uploaded) this.form.imageUrls.push(u.url);
-      } catch (err) {
+        for (const u of uploaded) {
+          this.form.imageUrls.push(u.key);
+          this.imagePreviews.push(u.url);
+        }
+      } catch {
         // user cancel or fail
       }
     },
     removeImage(idx) {
       this.form.imageUrls.splice(idx, 1);
+      this.imagePreviews.splice(idx, 1);
     },
     toggleMeal(tag) {
       const i = this.form.mealTags.indexOf(tag);

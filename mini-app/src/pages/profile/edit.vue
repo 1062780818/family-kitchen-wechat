@@ -2,7 +2,7 @@
   <view class="page">
     <view class="avatar-section">
       <view class="avatar-btn" @click="onAvatarTap">
-        <image class="avatar" :src="form.avatarUrl || avatarFallback" mode="aspectFill" />
+        <image class="avatar" :src="avatarPreviewUrl || avatarFallback" mode="aspectFill" />
         <view class="avatar-edit-badge">
           <wd-icon name="camera" size="24rpx" color="#fff" />
         </view>
@@ -81,8 +81,6 @@ import { useBusinessConfigStore } from '@/stores/business-config.js';
 import { userApi } from '@/api/user.js';
 import { uploadImage } from '@/api/storage.js';
 
-const GENDER_AVATARS = ['/static/male.jpg', '/static/female.jpg']; // fallback
-
 function getGenderAvatars() {
   const cfg = useBusinessConfigStore();
   return [cfg.avatarFallback('male'), cfg.avatarFallback('female')];
@@ -119,6 +117,7 @@ export default {
   data() {
     return {
       form: { nickname: '', avatarUrl: '', signature: '' },
+      avatarPreviewUrl: '',
       saving: false,
       showAvatarPicker: false,
       avatarGroups: buildAvatarGroups(),
@@ -128,7 +127,8 @@ export default {
     const me = await userApi.me().catch(() => null);
     if (me) {
       this.form.nickname = me.nickname || '';
-      this.form.avatarUrl = me.avatarUrl || '';
+      this.form.avatarUrl = me.avatarRef || me.avatarUrl || '';
+      this.avatarPreviewUrl = me.avatarUrl || '';
       this.form.signature = me.signature || '';
     }
   },
@@ -147,6 +147,7 @@ export default {
     },
     onPickAvatar(url) {
       this.form.avatarUrl = url;
+      this.avatarPreviewUrl = url;
       this.showAvatarPicker = false;
     },
     async onChooseAvatar(e) {
@@ -154,7 +155,8 @@ export default {
       if (!tempPath) return;
       try {
         const r = await uploadImage(tempPath, 'avatar');
-        this.form.avatarUrl = r.url;
+        this.form.avatarUrl = r.key;
+        this.avatarPreviewUrl = r.url;
       } catch {
         uni.showToast({ title: '上传失败', icon: 'none' });
       }
@@ -176,7 +178,8 @@ export default {
       const tempPath = res.tempFilePaths[0];
       try {
         const r = await uploadImage(tempPath, 'avatar');
-        this.form.avatarUrl = r.url;
+        this.form.avatarUrl = r.key;
+        this.avatarPreviewUrl = r.url;
       } catch (e) {
         console.error('uploadImage fail', e);
       }

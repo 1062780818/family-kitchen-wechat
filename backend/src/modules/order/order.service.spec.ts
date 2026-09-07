@@ -9,6 +9,7 @@ import { OrderStatus } from '@family-kitchen/shared';
 import { OrderService } from './order.service';
 import { PrismaService } from '../../prisma/prisma.service';
 import { NotificationService } from '../notification/notification.service';
+import { StorageService } from '../storage/storage.service';
 
 function makeOrder(overrides: Record<string, unknown> = {}) {
   const now = new Date();
@@ -53,6 +54,7 @@ describe('OrderService', () => {
       findFirst: jest.Mock;
       findMany: jest.Mock;
       update: jest.Mock;
+      updateMany: jest.Mock;
     };
     $transaction: jest.Mock;
   };
@@ -69,6 +71,7 @@ describe('OrderService', () => {
         findFirst: jest.fn(),
         findMany: jest.fn(),
         update: jest.fn(),
+        updateMany: jest.fn().mockResolvedValue({ count: 1 }),
       },
       $transaction: jest.fn(async (ops: unknown[]) => Promise.all(ops as Promise<unknown>[])),
     };
@@ -81,6 +84,10 @@ describe('OrderService', () => {
           provide: NotificationService,
           useValue: { sendOrderAccepted: jest.fn(), sendOrderServed: jest.fn() },
         },
+        {
+          provide: StorageService,
+          useValue: { validateFamilyObjectKeys: jest.fn().mockResolvedValue(undefined) },
+        },
       ],
     }).compile();
 
@@ -90,18 +97,20 @@ describe('OrderService', () => {
   describe('concurrent state protection', () => {
     it('uses the previously read status as a compare-and-set condition', async () => {
       prisma.order.findUnique.mockResolvedValue(makeOrder({ status: OrderStatus.PENDING }));
-      prisma.order.update.mockResolvedValue(makeOrder({ status: OrderStatus.ACCEPTED }));
+      prisma.order.findUnique
+        .mockResolvedValueOnce(makeOrder({ status: OrderStatus.PENDING }))
+        .mockResolvedValueOnce(makeOrder({ status: OrderStatus.ACCEPTED }));
 
       await service.accept('u-chef', 'o1', {} as never);
 
-      expect(prisma.order.update).toHaveBeenCalledWith(
+      expect(prisma.order.updateMany).toHaveBeenCalledWith(
         expect.objectContaining({ where: { id: 'o1', status: OrderStatus.PENDING } }),
       );
     });
 
     it('returns a conflict when another request changed the status first', async () => {
       prisma.order.findUnique.mockResolvedValue(makeOrder({ status: OrderStatus.PENDING }));
-      prisma.order.update.mockRejectedValue({ code: 'P2025' });
+      prisma.order.updateMany.mockResolvedValue({ count: 0 });
 
       await expect(service.accept('u-chef', 'o1', {} as never)).rejects.toThrow(ConflictException);
     });
@@ -212,8 +221,9 @@ describe('OrderService', () => {
     });
 
     it('happy path: pending → accepted', async () => {
-      prisma.order.findUnique.mockResolvedValue(makeOrder());
-      prisma.order.update.mockResolvedValue(makeOrder({ status: OrderStatus.ACCEPTED }));
+      prisma.order.findUnique
+        .mockResolvedValueOnce(makeOrder())
+        .mockResolvedValueOnce(makeOrder({ status: OrderStatus.ACCEPTED }));
       const result = await service.accept('u-chef', 'o1', {});
       expect(result.status).toBe(OrderStatus.ACCEPTED);
     });
@@ -228,19 +238,20 @@ describe('OrderService', () => {
     });
 
     it('happy path: cooking → served, persists images and timestamp', async () => {
-      prisma.order.findUnique.mockResolvedValue(makeOrder({ status: OrderStatus.COOKING }));
-      prisma.order.update.mockResolvedValue(
-        makeOrder({
-          status: OrderStatus.SERVED,
-          servedImageUrls: ['https://x.com/a.jpg'],
-          servedAt: new Date(),
-        }),
-      );
+      prisma.order.findUnique
+        .mockResolvedValueOnce(makeOrder({ status: OrderStatus.COOKING }))
+        .mockResolvedValueOnce(
+          makeOrder({
+            status: OrderStatus.SERVED,
+            servedImageUrls: ['family/fam1/order-served/2026-09-07/u-chef-abcdefghijklmnop.jpg'],
+            servedAt: new Date(),
+          }),
+        );
       const result = await service.serve('u-chef', 'o1', {
-        imageUrls: ['https://x.com/a.jpg'],
+        imageUrls: ['family/fam1/order-served/2026-09-07/u-chef-abcdefghijklmnop.jpg'],
       });
       expect(result.status).toBe(OrderStatus.SERVED);
-      expect(result.servedImageUrls).toContain('https://x.com/a.jpg');
+      expect(result.servedImageUrls[0]).toMatch(/^family\/fam1\/order-served\//);
       expect(result.servedAt).toBeTruthy();
     });
   });

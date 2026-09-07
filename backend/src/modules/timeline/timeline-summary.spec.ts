@@ -1,6 +1,7 @@
 import { Test } from '@nestjs/testing';
 import { TimelineService } from './timeline.service';
 import { PrismaService } from '../../prisma/prisma.service';
+import { StorageService } from '../storage/storage.service';
 
 describe('TimelineService.monthlySummary', () => {
   let service: TimelineService;
@@ -22,7 +23,14 @@ describe('TimelineService.monthlySummary', () => {
       achievement: { findMany: jest.fn().mockResolvedValue([]) },
     };
     const moduleRef = await Test.createTestingModule({
-      providers: [TimelineService, { provide: PrismaService, useValue: prisma }],
+      providers: [
+        TimelineService,
+        { provide: PrismaService, useValue: prisma },
+        {
+          provide: StorageService,
+          useValue: { validateFamilyObjectKeys: jest.fn().mockResolvedValue(undefined) },
+        },
+      ],
     }).compile();
     service = moduleRef.get<TimelineService>(TimelineService);
   });

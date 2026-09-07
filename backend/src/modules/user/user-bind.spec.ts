@@ -3,6 +3,7 @@ import { ConflictException } from '@nestjs/common';
 import { UserService } from './user.service';
 import { PrismaService } from '../../prisma/prisma.service';
 import { WsGateway } from '../ws/ws.gateway';
+import { StorageService } from '../storage/storage.service';
 import * as passwordUtil from '../auth/password.util';
 
 jest.spyOn(passwordUtil, 'hashPassword').mockResolvedValue('hashed');
@@ -22,6 +23,10 @@ describe('UserService.bindCredentials', () => {
         UserService,
         { provide: PrismaService, useValue: prisma },
         { provide: WsGateway, useValue: { sendToUser: jest.fn() } },
+        {
+          provide: StorageService,
+          useValue: { validateFamilyObjectKeys: jest.fn().mockResolvedValue(undefined) },
+        },
       ],
     }).compile();
     service = moduleRef.get<UserService>(UserService);

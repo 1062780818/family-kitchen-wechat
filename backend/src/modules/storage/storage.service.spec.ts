@@ -1,5 +1,5 @@
 import { Test } from '@nestjs/testing';
-import { BadRequestException, ForbiddenException } from '@nestjs/common';
+import { BadRequestException, ConflictException, ForbiddenException } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 import { StorageService, MAX_UPLOAD_SIZE_BYTES } from './storage.service';
 import { StorageCategory } from './dto/upload-result.dto';
@@ -45,8 +45,13 @@ describe('StorageService', () => {
       findUnique: jest.fn(({ where }: { where: { id: string } }) =>
         Promise.resolve({ currentFamilyId: where.id === 'outsider' ? 'family-2' : 'family-1' }),
       ),
+      findFirst: jest.fn().mockResolvedValue(null),
     },
     familyMember: { findFirst: jest.fn().mockResolvedValue({ id: 'membership-1' }) },
+    recipe: { findFirst: jest.fn().mockResolvedValue(null) },
+    order: { findFirst: jest.fn().mockResolvedValue(null) },
+    orderItem: { findFirst: jest.fn().mockResolvedValue(null) },
+    timelineEntry: { findFirst: jest.fn().mockResolvedValue(null) },
   };
 
   beforeEach(async () => {
@@ -160,10 +165,62 @@ describe('StorageService', () => {
       expect(mockMinioClient.removeObject).toHaveBeenCalledTimes(1);
     });
 
+    it('does not delete an object that is still referenced by a recipe', async () => {
+      prisma.recipe.findFirst.mockResolvedValueOnce({ id: 'recipe-1' });
+      await expect(service.deleteFamilyFile('u1', ownKey)).rejects.toThrow(ConflictException);
+      expect(mockMinioClient.removeObject).not.toHaveBeenCalled();
+    });
+
     it('limits the anonymous bucket policy to system assets', async () => {
       await service.onModuleInit();
       const policy = JSON.parse(mockMinioClient.setBucketPolicy.mock.calls[0][1]);
       expect(policy.Statement[0].Resource).toEqual(['arn:aws:s3:::family-kitchen/system/*']);
     });
+
+    it('rejects signed URLs and category substitution in persistent fields', async () => {
+      await expect(
+        service.validateFamilyObjectKeys(
+          'u1',
+          ['https://minio.test/x?X-Amz-Signature=fake'],
+          StorageCategory.RECIPE,
+        ),
+      ).rejects.toThrow(BadRequestException);
+      await expect(
+        service.validateFamilyObjectKeys('u1', [peerKey], StorageCategory.AVATAR),
+      ).rejects.toThrow(BadRequestException);
+    });
+
+    it('accepts an existing stable key in the expected category', async () => {
+      await expect(
+        service.validateFamilyObjectKeys('u1', [ownKey], StorageCategory.RECIPE),
+      ).resolves.toBeUndefined();
+      expect(mockMinioClient.statObject).toHaveBeenCalledWith('family-kitchen', ownKey);
+    });
+  });
+
+  it('supports a short test TTL but caps configured values at 15 minutes', async () => {
+    const shortModule = await Test.createTestingModule({
+      providers: [
+        StorageService,
+        {
+          provide: ConfigService,
+          useValue: buildConfig({ MINIO_SIGNED_URL_TTL_SECONDS: '2' }),
+        },
+        { provide: PrismaService, useValue: prisma },
+      ],
+    }).compile();
+    expect(shortModule.get(StorageService).getSignedUrlTtlSeconds()).toBe(2);
+
+    const cappedModule = await Test.createTestingModule({
+      providers: [
+        StorageService,
+        {
+          provide: ConfigService,
+          useValue: buildConfig({ MINIO_SIGNED_URL_TTL_SECONDS: '999999' }),
+        },
+        { provide: PrismaService, useValue: prisma },
+      ],
+    }).compile();
+    expect(cappedModule.get(StorageService).getSignedUrlTtlSeconds()).toBe(900);
   });
 });

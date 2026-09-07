@@ -6,12 +6,15 @@ import { WsGateway } from '../ws/ws.gateway';
 import type { UpdateProfileDto } from './dto/update-profile.dto';
 import type { BindCredentialsDto } from './dto/bind-credentials.dto';
 import type { UserDto } from './dto/user.dto';
+import { StorageService } from '../storage/storage.service';
+import { StorageCategory } from '../storage/dto/upload-result.dto';
 
 @Injectable()
 export class UserService {
   constructor(
     private readonly prisma: PrismaService,
     private readonly ws: WsGateway,
+    private readonly storage: StorageService,
   ) {}
 
   /** 获取厨师等级 */
@@ -37,7 +40,15 @@ export class UserService {
     });
 
     if (chefLevels.length === 0) {
-      return { level: '', title: '', emoji: '', totalOrders: 0, avgRating: 0, nextLevel: null, levels: [] };
+      return {
+        level: '',
+        title: '',
+        emoji: '',
+        totalOrders: 0,
+        avgRating: 0,
+        nextLevel: null,
+        levels: [],
+      };
     }
 
     const stats = await this.prisma.order.aggregate({
@@ -105,6 +116,14 @@ export class UserService {
   async updateProfile(userId: string, dto: UpdateProfileDto): Promise<UserDto> {
     if (Object.keys(dto).length === 0) {
       return this.findById(userId);
+    }
+    if (dto.avatarUrl?.startsWith('family/')) {
+      await this.storage.validateFamilyObjectKeys(userId, [dto.avatarUrl], StorageCategory.AVATAR);
+    } else if (dto.avatarUrl && isTemporarySignedUrl(dto.avatarUrl)) {
+      throw new ConflictException({
+        code: 'TEMPORARY_IMAGE_URL_NOT_PERSISTABLE',
+        message: '临时图片链接不能保存，请保存图片资源标识',
+      });
     }
     const updated = await this.prisma.user.update({
       where: { id: userId },
@@ -255,4 +274,8 @@ export class UserService {
       createdAt: user.createdAt,
     };
   }
+}
+
+function isTemporarySignedUrl(value: string): boolean {
+  return /[?&](X-Amz-Signature|X-Amz-Expires)=/i.test(value);
 }

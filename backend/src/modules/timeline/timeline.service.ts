@@ -2,6 +2,8 @@ import { ForbiddenException, Injectable, NotFoundException } from '@nestjs/commo
 import type { Prisma, PrismaClient, TimelineEntry } from '@prisma/client';
 import { AchievementOwnerType, OrderStatus, TimelineSourceType } from '@family-kitchen/shared';
 import { PrismaService } from '../../prisma/prisma.service';
+import { StorageService } from '../storage/storage.service';
+import { StorageCategory } from '../storage/dto/upload-result.dto';
 import { requireFamilyId } from '../../common/family-context';
 import { paginate, type PaginatedResponseDto } from '../../common/pagination.dto';
 import type {
@@ -30,7 +32,10 @@ export interface CreateFromOrderInput {
 
 @Injectable()
 export class TimelineService {
-  constructor(private readonly prisma: PrismaService) {}
+  constructor(
+    private readonly prisma: PrismaService,
+    private readonly storage: StorageService,
+  ) {}
 
   async list(
     userId: string,
@@ -69,6 +74,11 @@ export class TimelineService {
 
   async createManual(userId: string, dto: CreateManualEntryDto): Promise<TimelineEntryDto> {
     const familyId = await requireFamilyId(this.prisma, userId);
+    await this.storage.validateFamilyObjectKeys(
+      userId,
+      dto.imageUrls ?? [],
+      StorageCategory.TIMELINE,
+    );
     const entry = await this.prisma.timelineEntry.create({
       data: {
         familyId,

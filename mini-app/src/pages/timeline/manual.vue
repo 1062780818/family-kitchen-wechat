@@ -56,9 +56,9 @@
         <text class="card-count">{{ form.imageUrls.length }} / 5</text>
       </view>
       <view class="images">
-        <view v-for="(url, idx) in form.imageUrls" :key="url" class="img-wrap">
-          <image :src="url" class="thumb" mode="aspectFill" @click="preview(idx)" />
-          <view class="remove" @click="form.imageUrls.splice(idx, 1)">
+        <view v-for="(ref, idx) in form.imageUrls" :key="ref" class="img-wrap">
+          <image :src="imagePreviews[idx]" class="thumb" mode="aspectFill" @click="preview(idx)" />
+          <view class="remove" @click="removeImage(idx)">
             <wd-icon name="close" size="20rpx" color="#fff" />
           </view>
         </view>
@@ -100,6 +100,7 @@ export default {
         imageUrls: [],
       },
       saving: false,
+      imagePreviews: [],
     };
   },
   computed: {
@@ -115,7 +116,7 @@ export default {
   },
   methods: {
     preview(idx) {
-      uni.previewImage({ urls: this.form.imageUrls, current: this.form.imageUrls[idx] });
+      uni.previewImage({ urls: this.imagePreviews, current: this.imagePreviews[idx] });
     },
     async addImage() {
       try {
@@ -123,10 +124,17 @@ export default {
           count: 5 - this.form.imageUrls.length,
           category: 'timeline',
         });
-        for (const u of uploaded) this.form.imageUrls.push(u.url);
+        for (const u of uploaded) {
+          this.form.imageUrls.push(u.key);
+          this.imagePreviews.push(u.url);
+        }
       } catch {
         // ignore
       }
+    },
+    removeImage(idx) {
+      this.form.imageUrls.splice(idx, 1);
+      this.imagePreviews.splice(idx, 1);
     },
     async handleSubmit() {
       if (!this.canSubmit || this.saving) return;

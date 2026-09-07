@@ -11,7 +11,7 @@
     "start:prod": "node dist/main.js",
     "lint": "eslint \"{src,test}/**/*.ts\" --max-warnings 0",
     "lint:fix": "eslint \"{src,test}/**/*.ts\" --fix",
-    "lint:retained": "eslint src/modules/storage src/modules/auth src/modules/family src/modules/recipe src/modules/order/order.service.ts src/modules/order/order.service.spec.ts src/modules/order/order-status.ts src/modules/order/order-status.spec.ts --max-warnings 0",
+    "lint:retained": "eslint src/modules/storage src/modules/auth src/modules/family src/modules/recipe src/modules/user src/modules/timeline src/modules/order/order.service.ts src/modules/order/order.service.spec.ts src/modules/order/order-status.ts src/modules/order/order-status.spec.ts src/modules/order/dto/serve-order.dto.ts --max-warnings 0",
     "typecheck": "tsc --noEmit",
     "test": "jest",
     "test:retained": "jest --config ./jest.retained.config.cjs --runInBand",
@@ -23,7 +23,10 @@
     "db:migrate:deploy": "prisma migrate deploy",
     "db:reset": "prisma migrate reset",
     "db:studio": "prisma studio",
-    "openapi:export": "node dist/scripts/export-openapi.js"
+    "openapi:export": "node dist/scripts/export-openapi.js",
+    "storage:refs:preview": "node dist/scripts/migrate-storage-refs.js preview",
+    "storage:refs:apply": "node dist/scripts/migrate-storage-refs.js apply",
+    "storage:refs:rollback": "node dist/scripts/migrate-storage-refs.js rollback"
   },
   "dependencies": {
     "@family-kitchen/shared": "workspace:*",

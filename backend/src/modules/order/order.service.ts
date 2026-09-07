@@ -19,6 +19,8 @@ import type { CancelOrderDto } from './dto/cancel-order.dto';
 import type { ServeOrderDto } from './dto/serve-order.dto';
 import type { OrderQueryDto } from './dto/order-query.dto';
 import type { OrderDto, OrderItemOutputDto, OrderRatingOutputDto } from './dto/order.dto';
+import { StorageService } from '../storage/storage.service';
+import { StorageCategory } from '../storage/dto/upload-result.dto';
 
 const orderInclude = {
   items: { orderBy: { sortOrder: 'asc' } },
@@ -34,6 +36,7 @@ export class OrderService {
   constructor(
     private readonly prisma: PrismaService,
     private readonly notification: NotificationService,
+    private readonly storage: StorageService,
   ) {}
 
   // ============================================================
@@ -220,6 +223,11 @@ export class OrderService {
     const order = await this.requireOwnedOrder(userId, id);
     this.requireRole(order, userId, 'chef');
     assertTransition(order.status as OrderStatus, OrderStatus.SERVED);
+    await this.storage.validateFamilyObjectKeys(
+      userId,
+      dto.imageUrls,
+      StorageCategory.ORDER_SERVED,
+    );
 
     const updated = await this.updateWithExpectedStatus(id, order.status as OrderStatus, {
       status: OrderStatus.SERVED,
@@ -302,21 +310,24 @@ export class OrderService {
     expectedStatus: OrderStatus,
     data: Prisma.OrderUncheckedUpdateInput,
   ): Promise<OrderWithItems> {
-    try {
-      return await this.prisma.order.update({
-        where: { id, status: expectedStatus },
-        data,
-        include: orderInclude,
+    // Prisma `update` with an extended non-unique predicate performs a read before the
+    // write on some connectors. Two MySQL requests can therefore both pass the read.
+    // `updateMany` emits one conditional UPDATE and exposes the affected-row count.
+    const result = await this.prisma.order.updateMany({
+      where: { id, status: expectedStatus },
+      data,
+    });
+    if (result.count !== 1) {
+      throw new ConflictException({
+        code: 'ORDER_VERSION_CONFLICT',
+        message: '餐单状态已变化，请刷新后重试',
       });
-    } catch (error) {
-      if (isPrismaRecordNotFound(error)) {
-        throw new ConflictException({
-          code: 'ORDER_VERSION_CONFLICT',
-          message: '餐单状态已变化，请刷新后重试',
-        });
-      }
-      throw error;
     }
+    const updated = await this.prisma.order.findUnique({ where: { id }, include: orderInclude });
+    if (!updated) {
+      throw new NotFoundException({ code: 'ORDER_NOT_FOUND', message: '订单不存在' });
+    }
+    return updated;
   }
 
   private toDto(order: OrderWithItems, viewerUserId: string, unreadCount = 0): OrderDto {
@@ -372,8 +383,4 @@ export class OrderService {
       unreadCount,
     };
   }
-}
-
-function isPrismaRecordNotFound(error: unknown): boolean {
-  return typeof error === 'object' && error !== null && 'code' in error && error.code === 'P2025';
 }

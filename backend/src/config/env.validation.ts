@@ -1,5 +1,5 @@
 import { plainToInstance } from 'class-transformer';
-import { IsEnum, IsInt, IsOptional, IsString, Min, validateSync } from 'class-validator';
+import { IsEnum, IsInt, IsOptional, IsString, Max, Min, validateSync } from 'class-validator';
 
 enum Environment {
   Development = 'development',
@@ -39,6 +39,11 @@ class EnvironmentVariables {
 
   @IsString()
   STORAGE_DRIVER: string = 'minio';
+
+  @IsInt()
+  @Min(1)
+  @Max(900)
+  MINIO_SIGNED_URL_TTL_SECONDS: number = 900;
 
   @IsString()
   LOG_LEVEL: string = 'info';

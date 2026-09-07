@@ -3,6 +3,7 @@ import { ForbiddenException, NotFoundException } from '@nestjs/common';
 import { RecipeService } from './recipe.service';
 import { PrismaService } from '../../prisma/prisma.service';
 import { AchievementService } from '../achievement/achievement.service';
+import { StorageService } from '../storage/storage.service';
 
 function makeRecipe(overrides: Record<string, unknown> = {}) {
   const now = new Date();
@@ -61,6 +62,10 @@ describe('RecipeService', () => {
         RecipeService,
         { provide: PrismaService, useValue: prisma },
         { provide: AchievementService, useValue: { evaluate: jest.fn() } },
+        {
+          provide: StorageService,
+          useValue: { validateFamilyObjectKeys: jest.fn().mockResolvedValue(undefined) },
+        },
       ],
     }).compile();
 

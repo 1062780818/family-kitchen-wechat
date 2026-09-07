@@ -4,6 +4,7 @@ import { FamilyStatus } from '@family-kitchen/shared';
 import { UserService } from './user.service';
 import { PrismaService } from '../../prisma/prisma.service';
 import { WsGateway } from '../ws/ws.gateway';
+import { StorageService } from '../storage/storage.service';
 
 describe('UserService.deleteMe', () => {
   let service: UserService;
@@ -33,6 +34,10 @@ describe('UserService.deleteMe', () => {
         UserService,
         { provide: PrismaService, useValue: prisma },
         { provide: WsGateway, useValue: { sendToUser: jest.fn() } },
+        {
+          provide: StorageService,
+          useValue: { validateFamilyObjectKeys: jest.fn().mockResolvedValue(undefined) },
+        },
       ],
     }).compile();
     service = moduleRef.get<UserService>(UserService);

@@ -310,9 +310,9 @@ export default {
         return;
       }
       try {
-        const urls = uploaded.map((u) => u.url);
-        if (!urls.length) return;
-        await orderApi.serve(this.id, urls);
+        const refs = uploaded.map((u) => u.key);
+        if (!refs.length) return;
+        await orderApi.serve(this.id, refs);
         await this.refreshAfterAction();
       } catch {
         // 错误已由 http 层 toast

@@ -14,17 +14,25 @@ import type { CreateRecipeDto } from './dto/create-recipe.dto';
 import type { UpdateRecipeDto } from './dto/update-recipe.dto';
 import type { RecipeQueryDto } from './dto/recipe-query.dto';
 import type { RecipeDto } from './dto/recipe.dto';
+import { StorageService } from '../storage/storage.service';
+import { StorageCategory } from '../storage/dto/upload-result.dto';
 
 @Injectable()
 export class RecipeService {
   constructor(
     private readonly prisma: PrismaService,
     private readonly achievement: AchievementService,
+    private readonly storage: StorageService,
   ) {}
 
   async create(userId: string, dto: CreateRecipeDto): Promise<RecipeDto> {
     const familyId = await requireFamilyId(this.prisma, userId);
     await this.requireMenuEditor(userId, familyId);
+    await this.storage.validateFamilyObjectKeys(
+      userId,
+      dto.imageUrls ?? [],
+      StorageCategory.RECIPE,
+    );
     const recipe = await this.prisma.recipe.create({
       data: {
         familyId,
@@ -144,6 +152,9 @@ export class RecipeService {
   async update(userId: string, id: string, dto: UpdateRecipeDto): Promise<RecipeDto> {
     const recipe = await this.requireOwnedRecipe(userId, id);
     await this.requireMenuEditor(userId, recipe.familyId);
+    if (dto.imageUrls !== undefined) {
+      await this.storage.validateFamilyObjectKeys(userId, dto.imageUrls, StorageCategory.RECIPE);
+    }
     const updated = await this.prisma.recipe.update({
       where: { id },
       data: {

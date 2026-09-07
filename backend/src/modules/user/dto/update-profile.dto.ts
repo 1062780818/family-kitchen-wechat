@@ -10,7 +10,7 @@ export class UpdateProfileDto {
   @MaxLength(30)
   nickname?: string;
 
-  @ApiPropertyOptional({ description: '头像 URL', maxLength: 500 })
+  @ApiPropertyOptional({ description: '头像稳定资源 key 或已批准的公开头像 URL', maxLength: 500 })
   @IsOptional()
   @IsString()
   @MaxLength(500)

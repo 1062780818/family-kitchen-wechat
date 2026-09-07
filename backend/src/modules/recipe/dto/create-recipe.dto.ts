@@ -1,14 +1,5 @@
 import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger';
-import {
-  IsArray,
-  IsEnum,
-  IsInt,
-  IsOptional,
-  IsString,
-  IsUrl,
-  MinLength,
-  Validate,
-} from 'class-validator';
+import { IsArray, IsEnum, IsInt, IsOptional, IsString, MinLength, Validate } from 'class-validator';
 import { FlavorTag, MealTag } from '@family-kitchen/shared';
 import {
   ArrayMaxSizeFromConfig,
@@ -28,13 +19,13 @@ export class CreateRecipeDto {
   name!: string;
 
   @ApiPropertyOptional({
-    description: '图片 URL 列表（数量上限来自动态配置 recipe_limits.MAX_IMAGES）',
+    description: '稳定图片资源 key 列表（数量上限来自动态配置 recipe_limits.MAX_IMAGES）',
     type: [String],
   })
   @IsOptional()
   @IsArray()
   @Validate(ArrayMaxSizeFromConfig, ['recipe_limits', 'max_images'])
-  @IsUrl({ require_tld: false, require_protocol: true }, { each: true })
+  @IsString({ each: true })
   imageUrls?: string[];
 
   @ApiPropertyOptional({

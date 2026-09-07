@@ -1,4 +1,5 @@
 import { http } from './http.js';
+import { hydrateImagePayload } from './storage.js';
 
 export const recipeApi = {
   list(params = {}) {
@@ -8,19 +9,19 @@ export const recipeApi = {
     }
     if (Array.isArray(query.mealTags)) query.mealTags = query.mealTags.join(',');
     if (Array.isArray(query.flavorTags)) query.flavorTags = query.flavorTags.join(',');
-    return http.get('/recipes', query);
+    return http.get('/recipes', query).then(hydrateImagePayload);
   },
   random() {
-    return http.get('/recipes/random');
+    return http.get('/recipes/random').then(hydrateImagePayload);
   },
   get(id) {
-    return http.get(`/recipes/${id}`);
+    return http.get(`/recipes/${id}`).then(hydrateImagePayload);
   },
   create(data) {
-    return http.post('/recipes', data);
+    return http.post('/recipes', data).then(hydrateImagePayload);
   },
   update(id, data) {
-    return http.patch(`/recipes/${id}`, data);
+    return http.patch(`/recipes/${id}`, data).then(hydrateImagePayload);
   },
   remove(id) {
     return http.delete(`/recipes/${id}`);

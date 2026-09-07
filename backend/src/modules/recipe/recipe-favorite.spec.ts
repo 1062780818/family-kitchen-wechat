@@ -3,6 +3,7 @@ import { ConflictException } from '@nestjs/common';
 import { RecipeService } from './recipe.service';
 import { PrismaService } from '../../prisma/prisma.service';
 import { AchievementService } from '../achievement/achievement.service';
+import { StorageService } from '../storage/storage.service';
 
 function makeRecipe() {
   return {
@@ -52,6 +53,10 @@ describe('RecipeService favorite/unfavorite', () => {
         RecipeService,
         { provide: PrismaService, useValue: prisma },
         { provide: AchievementService, useValue: { evaluate: jest.fn() } },
+        {
+          provide: StorageService,
+          useValue: { validateFamilyObjectKeys: jest.fn().mockResolvedValue(undefined) },
+        },
       ],
     }).compile();
     service = moduleRef.get<RecipeService>(RecipeService);
