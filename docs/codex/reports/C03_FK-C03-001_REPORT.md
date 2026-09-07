@@ -50,4 +50,4 @@
 
 ## 共享远程状态
 
-三份本地工作树都只配置了原作者上游`https://github.com/llgululu/family-kitchen.git`。没有被指定为三名员工共同可写的项目远程，不向原作者仓库擅自推送。本地提交完整保留；需业务负责人仅提供/创建共同可写远程并告知URL，之后再按任务授权推送，不让用户搬运报告或合并代码。
+按FK-ALL-003，项目共享仓库`https://github.com/1062780818/family-kitchen-wechat.git`已配置为`origin`，原作者`https://github.com/llgululu/family-kitchen.git`保留为`upstream`。C03不向upstream推送、不合并main；等待C01建立`origin/main`后获取并推送本分支。员工交接只通过本报告和`docs/codex/handoffs/`，不让用户搬运报告或合并代码。
