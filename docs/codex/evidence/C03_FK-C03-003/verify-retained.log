@@ -1,0 +1,152 @@
+
+> family-kitchen@0.1.0 verify:retained H:\codex\林家餐厅小程序\family-kitchen-c03-revalidation
+> pnpm --filter @family-kitchen/shared run lint && pnpm --filter @family-kitchen/shared run typecheck && pnpm --filter @family-kitchen/shared run build && pnpm --filter @family-kitchen/shared run test && pnpm --filter @family-kitchen/backend run lint:retained && pnpm --filter @family-kitchen/backend run typecheck && pnpm --filter @family-kitchen/backend run build && pnpm --filter @family-kitchen/backend run test:retained && pnpm --filter @family-kitchen/mini-app run lint:retained && pnpm --filter @family-kitchen/mini-app run build
+
+
+> @family-kitchen/shared@0.1.0 lint H:\codex\林家餐厅小程序\family-kitchen-c03-revalidation\packages\shared
+> eslint src --max-warnings 0
+
+
+> @family-kitchen/shared@0.1.0 typecheck H:\codex\林家餐厅小程序\family-kitchen-c03-revalidation\packages\shared
+> tsc --noEmit
+
+
+> @family-kitchen/shared@0.1.0 build H:\codex\林家餐厅小程序\family-kitchen-c03-revalidation\packages\shared
+> tsc
+
+
+> @family-kitchen/shared@0.1.0 test H:\codex\林家餐厅小程序\family-kitchen-c03-revalidation\packages\shared
+> node --test test/*.test.cjs
+
+✔ served is terminal for the active meal-slot constraint (0.4661ms)
+ℹ tests 1
+ℹ suites 0
+ℹ pass 1
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 69.4473
+
+> @family-kitchen/backend@0.1.0 lint:retained H:\codex\林家餐厅小程序\family-kitchen-c03-revalidation\backend
+> eslint src/modules/storage src/modules/auth src/modules/family src/modules/recipe src/modules/order/order.service.ts src/modules/order/order.service.spec.ts src/modules/order/order-status.ts src/modules/order/order-status.spec.ts --max-warnings 0
+
+
+> @family-kitchen/backend@0.1.0 typecheck H:\codex\林家餐厅小程序\family-kitchen-c03-revalidation\backend
+> tsc --noEmit
+
+src/modules/achievement/achievement.service.ts(2,15): error TS2305: Module '"@prisma/client"' has no exported member 'Achievement'.
+src/modules/achievement/achievement.service.ts(2,28): error TS2305: Module '"@prisma/client"' has no exported member 'BadgeDefinition'.
+src/modules/achievement/achievement.service.ts(69,57): error TS2694: Namespace '"H:/codex/\u6797\u5BB6\u9910\u5385\u5C0F\u7A0B\u5E8F/family-kitchen-c03-revalidation/node_modules/.pnpm/@prisma+client@5.22.0_prisma@5.22.0/node_modules/.prisma/client/default".Prisma' has no exported member 'InputJsonValue'.
+src/modules/achievement/achievement.service.ts(124,23): error TS7006: Parameter 'a' implicitly has an 'any' type.
+src/modules/achievement/achievement.service.ts(135,23): error TS7006: Parameter 'a' implicitly has an 'any' type.
+src/modules/achievement/achievement.service.ts(160,32): error TS7006: Parameter 'a' implicitly has an 'any' type.
+src/modules/achievement/achievement.service.ts(161,34): error TS7006: Parameter 'a' implicitly has an 'any' type.
+src/modules/achievement/badge-registry.ts(89,25): error TS7006: Parameter 'o' implicitly has an 'any' type.
+src/modules/admin/admin-analytics.service.ts(88,17): error TS7006: Parameter 'r' implicitly has an 'any' type.
+src/modules/admin/admin-analytics.service.ts(104,22): error TS7006: Parameter 'r' implicitly has an 'any' type.
+src/modules/admin/admin-analytics.service.ts(200,25): error TS7006: Parameter 'r' implicitly has an 'any' type.
+src/modules/admin/admin-badge.service.ts(93,25): error TS2694: Namespace '"H:/codex/\u6797\u5BB6\u9910\u5385\u5C0F\u7A0B\u5E8F/family-kitchen-c03-revalidation/node_modules/.pnpm/@prisma+client@5.22.0_prisma@5.22.0/node_modules/.prisma/client/default".Prisma' has no exported member 'BadgeDefinitionWhereInput'.
+src/modules/admin/admin-badge.service.ts(116,18): error TS7006: Parameter 'item' implicitly has an 'any' type.
+src/modules/admin/admin-badge.service.ts(153,56): error TS2694: Namespace '"H:/codex/\u6797\u5BB6\u9910\u5385\u5C0F\u7A0B\u5E8F/family-kitchen-c03-revalidation/node_modules/.pnpm/@prisma+client@5.22.0_prisma@5.22.0/node_modules/.prisma/client/default".Prisma' has no exported member 'InputJsonValue'.
+src/modules/admin/admin-badge.service.ts(176,62): error TS2694: Namespace '"H:/codex/\u6797\u5BB6\u9910\u5385\u5C0F\u7A0B\u5E8F/family-kitchen-c03-revalidation/node_modules/.pnpm/@prisma+client@5.22.0_prisma@5.22.0/node_modules/.prisma/client/default".Prisma' has no exported member 'InputJsonValue'.
+src/modules/admin/admin-badge.service.ts(227,37): error TS7006: Parameter 'g' implicitly has an 'any' type.
+src/modules/admin/admin-family.service.ts(18,25): error TS2694: Namespace '"H:/codex/\u6797\u5BB6\u9910\u5385\u5C0F\u7A0B\u5E8F/family-kitchen-c03-revalidation/node_modules/.pnpm/@prisma+client@5.22.0_prisma@5.22.0/node_modules/.prisma/client/default".Prisma' has no exported member 'FamilyWhereInput'.
+src/modules/admin/admin-family.service.ts(36,21): error TS7006: Parameter 'f' implicitly has an 'any' type.
+src/modules/admin/admin-family.service.ts(79,36): error TS7006: Parameter 'm' implicitly has an 'any' type.
+src/modules/admin/admin-family.service.ts(105,17): error TS7006: Parameter 'l' implicitly has an 'any' type.
+src/modules/admin/admin-family.service.ts(136,20): error TS7006: Parameter 'r' implicitly has an 'any' type.
+src/modules/admin/admin-metrics.service.ts(58,32): error TS7006: Parameter 'o' implicitly has an 'any' type.
+src/modules/admin/admin-metrics.service.ts(119,49): error TS7006: Parameter 'm' implicitly has an 'any' type.
+src/modules/admin/admin-order.service.ts(29,25): error TS2694: Namespace '"H:/codex/\u6797\u5BB6\u9910\u5385\u5C0F\u7A0B\u5E8F/family-kitchen-c03-revalidation/node_modules/.pnpm/@prisma+client@5.22.0_prisma@5.22.0/node_modules/.prisma/client/default".Prisma' has no exported member 'OrderWhereInput'.
+src/modules/admin/admin-order.service.ts(48,19): error TS7006: Parameter 'o' implicitly has an 'any' type.
+src/modules/admin/admin-order.service.ts(97,31): error TS7006: Parameter 'i' implicitly has an 'any' type.
+src/modules/admin/admin-order.service.ts(142,26): error TS7006: Parameter 'm' implicitly has an 'any' type.
+src/modules/admin/admin-user.service.ts(19,25): error TS2694: Namespace '"H:/codex/\u6797\u5BB6\u9910\u5385\u5C0F\u7A0B\u5E8F/family-kitchen-c03-revalidation/node_modules/.pnpm/@prisma+client@5.22.0_prisma@5.22.0/node_modules/.prisma/client/default".Prisma' has no exported member 'UserWhereInput'.
+src/modules/admin/admin-user.service.ts(41,18): error TS7006: Parameter 'u' implicitly has an 'any' type.
+src/modules/admin/admin-user.service.ts(110,17): error TS7006: Parameter 'l' implicitly has an 'any' type.
+src/modules/admin/admin-user.service.ts(142,25): error TS2694: Namespace '"H:/codex/\u6797\u5BB6\u9910\u5385\u5C0F\u7A0B\u5E8F/family-kitchen-c03-revalidation/node_modules/.pnpm/@prisma+client@5.22.0_prisma@5.22.0/node_modules/.prisma/client/default".Prisma' has no exported member 'OrderWhereInput'.
+src/modules/admin/admin-user.service.ts(155,19): error TS7006: Parameter 'o' implicitly has an 'any' type.
+src/modules/ai/services/nutrition.service.ts(34,37): error TS7006: Parameter 'r' implicitly has an 'any' type.
+src/modules/ai/services/nutrition.service.ts(61,53): error TS7006: Parameter 'r' implicitly has an 'any' type.
+src/modules/ai/services/recipe-gen.service.ts(30,47): error TS7006: Parameter 'r' implicitly has an 'any' type.
+src/modules/ai/services/recommend.service.ts(30,53): error TS7006: Parameter 'r' implicitly has an 'any' type.
+src/modules/ai/services/recommend.service.ts(44,17): error TS7006: Parameter 'o' implicitly has an 'any' type.
+src/modules/ai/services/recommend.service.ts(44,36): error TS7006: Parameter 'i' implicitly has an 'any' type.
+src/modules/business-config/business-config.controller.ts(32,22): error TS7006: Parameter 'r' implicitly has an 'any' type.
+src/modules/business-config/business-config.service.ts(41,17): error TS7006: Parameter 'r' implicitly has an 'any' type.
+src/modules/business-config/business-config.service.ts(62,22): error TS2638: Type '{}' may represent a primitive value, which is not permitted as the right operand of the 'in' operator.
+src/modules/business-config/business-config.service.ts(157,43): error TS7006: Parameter 'tx' implicitly has an 'any' type.
+src/modules/family/family.service.ts(44,58): error TS7006: Parameter 'tx' implicitly has an 'any' type.
+src/modules/family/family.service.ts(137,43): error TS7006: Parameter 'tx' implicitly has an 'any' type.
+src/modules/family/family.service.ts(185,43): error TS7006: Parameter 'tx' implicitly has an 'any' type.
+src/modules/family/family.service.ts(300,60): error TS7006: Parameter 'm' implicitly has an 'any' type.
+src/modules/family/family.service.ts(307,43): error TS7006: Parameter 'm' implicitly has an 'any' type.
+src/modules/feedback/feedback.service.ts(2,15): error TS2305: Module '"@prisma/client"' has no exported member 'Feedback'.
+src/modules/feedback/feedback.service.ts(30,25): error TS2694: Namespace '"H:/codex/\u6797\u5BB6\u9910\u5385\u5C0F\u7A0B\u5E8F/family-kitchen-c03-revalidation/node_modules/.pnpm/@prisma+client@5.22.0_prisma@5.22.0/node_modules/.prisma/client/default".Prisma' has no exported member 'FeedbackWhereInput'.
+src/modules/feedback/feedback.service.ts(44,18): error TS7006: Parameter 'f' implicitly has an 'any' type.
+src/modules/love-point/love-point.service.ts(8,15): error TS2305: Module '"@prisma/client"' has no exported member 'LovePointLog'.
+src/modules/love-point/love-point.service.ts(72,25): error TS2694: Namespace '"H:/codex/\u6797\u5BB6\u9910\u5385\u5C0F\u7A0B\u5E8F/family-kitchen-c03-revalidation/node_modules/.pnpm/@prisma+client@5.22.0_prisma@5.22.0/node_modules/.prisma/client/default".Prisma' has no exported member 'LovePointLogWhereInput'.
+src/modules/love-point/love-point.service.ts(89,17): error TS7006: Parameter 'l' implicitly has an 'any' type.
+src/modules/love-point/love-point.service.ts(221,58): error TS7006: Parameter 'tx' implicitly has an 'any' type.
+src/modules/notification/notification-log.service.ts(51,18): error TS7006: Parameter 'i' implicitly has an 'any' type.
+src/modules/order/message.service.ts(8,15): error TS2305: Module '"@prisma/client"' has no exported member 'Order'.
+src/modules/order/message.service.ts(8,22): error TS2305: Module '"@prisma/client"' has no exported member 'OrderMessage'.
+src/modules/order/message.service.ts(49,21): error TS7006: Parameter 'm' implicitly has an 'any' type.
+src/modules/order/message.service.ts(94,29): error TS7006: Parameter 'm' implicitly has an 'any' type.
+src/modules/order/message.service.ts(118,21): error TS2694: Namespace '"H:/codex/\u6797\u5BB6\u9910\u5385\u5C0F\u7A0B\u5E8F/family-kitchen-c03-revalidation/node_modules/.pnpm/@prisma+client@5.22.0_prisma@5.22.0/node_modules/.prisma/client/default".Prisma' has no exported member 'InputJsonValue'.
+src/modules/order/message.service.ts(234,43): error TS7006: Parameter 'tx' implicitly has an 'any' type.
+src/modules/order/order.service.ts(28,29): error TS2694: Namespace '"H:/codex/\u6797\u5BB6\u9910\u5385\u5C0F\u7A0B\u5E8F/family-kitchen-c03-revalidation/node_modules/.pnpm/@prisma+client@5.22.0_prisma@5.22.0/node_modules/.prisma/client/default".Prisma' has no exported member 'OrderInclude'.
+src/modules/order/order.service.ts(30,30): error TS2694: Namespace '"H:/codex/\u6797\u5BB6\u9910\u5385\u5C0F\u7A0B\u5E8F/family-kitchen-c03-revalidation/node_modules/.pnpm/@prisma+client@5.22.0_prisma@5.22.0/node_modules/.prisma/client/default".Prisma' has no exported member 'OrderGetPayload'.
+src/modules/order/order.service.ts(82,44): error TS7006: Parameter 'r' implicitly has an 'any' type.
+src/modules/order/order.service.ts(96,32): error TS2339: Property 'id' does not exist on type '{}'.
+src/modules/order/order.service.ts(98,30): error TS2339: Property 'name' does not exist on type '{}'.
+src/modules/order/order.service.ts(99,49): error TS2339: Property 'imageUrls' does not exist on type '{}'.
+src/modules/order/order.service.ts(99,70): error TS2339: Property 'imageUrls' does not exist on type '{}'.
+src/modules/order/order.service.ts(100,36): error TS2339: Property 'difficulty' does not exist on type '{}'.
+src/modules/order/order.service.ts(101,27): error TS2694: Namespace '"H:/codex/\u6797\u5BB6\u9910\u5385\u5C0F\u7A0B\u5E8F/family-kitchen-c03-revalidation/node_modules/.pnpm/@prisma+client@5.22.0_prisma@5.22.0/node_modules/.prisma/client/default".Prisma' has no exported member 'InputJsonValue'.
+src/modules/order/order.service.ts(139,25): error TS2694: Namespace '"H:/codex/\u6797\u5BB6\u9910\u5385\u5C0F\u7A0B\u5E8F/family-kitchen-c03-revalidation/node_modules/.pnpm/@prisma+client@5.22.0_prisma@5.22.0/node_modules/.prisma/client/default".Prisma' has no exported member 'OrderWhereInput'.
+src/modules/order/order.service.ts(165,37): error TS7006: Parameter 'o' implicitly has an 'any' type.
+src/modules/order/order.service.ts(175,18): error TS7006: Parameter 'o' implicitly has an 'any' type.
+src/modules/order/order.service.ts(226,59): error TS2694: Namespace '"H:/codex/\u6797\u5BB6\u9910\u5385\u5C0F\u7A0B\u5E8F/family-kitchen-c03-revalidation/node_modules/.pnpm/@prisma+client@5.22.0_prisma@5.22.0/node_modules/.prisma/client/default".Prisma' has no exported member 'InputJsonValue'.
+src/modules/order/order.service.ts(303,18): error TS2694: Namespace '"H:/codex/\u6797\u5BB6\u9910\u5385\u5C0F\u7A0B\u5E8F/family-kitchen-c03-revalidation/node_modules/.pnpm/@prisma+client@5.22.0_prisma@5.22.0/node_modules/.prisma/client/default".Prisma' has no exported member 'OrderUncheckedUpdateInput'.
+src/modules/order/order.service.ts(323,58): error TS7006: Parameter 'i' implicitly has an 'any' type.
+src/modules/order/rating.service.ts(92,58): error TS7006: Parameter 'tx' implicitly has an 'any' type.
+src/modules/order/rating.service.ts(100,65): error TS2694: Namespace '"H:/codex/\u6797\u5BB6\u9910\u5385\u5C0F\u7A0B\u5E8F/family-kitchen-c03-revalidation/node_modules/.pnpm/@prisma+client@5.22.0_prisma@5.22.0/node_modules/.prisma/client/default".Prisma' has no exported member 'InputJsonValue'.
+src/modules/recipe/recipe.service.ts(7,23): error TS2305: Module '"@prisma/client"' has no exported member 'Recipe'.
+src/modules/recipe/recipe.service.ts(50,25): error TS2694: Namespace '"H:/codex/\u6797\u5BB6\u9910\u5385\u5C0F\u7A0B\u5E8F/family-kitchen-c03-revalidation/node_modules/.pnpm/@prisma+client@5.22.0_prisma@5.22.0/node_modules/.prisma/client/default".Prisma' has no exported member 'RecipeWhereInput'.
+src/modules/recipe/recipe.service.ts(75,25): error TS2694: Namespace '"H:/codex/\u6797\u5BB6\u9910\u5385\u5C0F\u7A0B\u5E8F/family-kitchen-c03-revalidation/node_modules/.pnpm/@prisma+client@5.22.0_prisma@5.22.0/node_modules/.prisma/client/default".Prisma' has no exported member 'RecipeWhereInput'.
+src/modules/recipe/recipe.service.ts(83,47): error TS2694: Namespace '"H:/codex/\u6797\u5BB6\u9910\u5385\u5C0F\u7A0B\u5E8F/family-kitchen-c03-revalidation/node_modules/.pnpm/@prisma+client@5.22.0_prisma@5.22.0/node_modules/.prisma/client/default".Prisma' has no exported member 'RecipeWhereInput'.
+src/modules/recipe/recipe.service.ts(84,28): error TS2694: Namespace '"H:/codex/\u6797\u5BB6\u9910\u5385\u5C0F\u7A0B\u5E8F/family-kitchen-c03-revalidation/node_modules/.pnpm/@prisma+client@5.22.0_prisma@5.22.0/node_modules/.prisma/client/default".Prisma' has no exported member 'RecipeWhereInput'.
+src/modules/recipe/recipe.service.ts(91,47): error TS2694: Namespace '"H:/codex/\u6797\u5BB6\u9910\u5385\u5C0F\u7A0B\u5E8F/family-kitchen-c03-revalidation/node_modules/.pnpm/@prisma+client@5.22.0_prisma@5.22.0/node_modules/.prisma/client/default".Prisma' has no exported member 'RecipeWhereInput'.
+src/modules/recipe/recipe.service.ts(92,28): error TS2694: Namespace '"H:/codex/\u6797\u5BB6\u9910\u5385\u5C0F\u7A0B\u5E8F/family-kitchen-c03-revalidation/node_modules/.pnpm/@prisma+client@5.22.0_prisma@5.22.0/node_modules/.prisma/client/default".Prisma' has no exported member 'RecipeWhereInput'.
+src/modules/recipe/recipe.service.ts(102,27): error TS2694: Namespace '"H:/codex/\u6797\u5BB6\u9910\u5385\u5C0F\u7A0B\u5E8F/family-kitchen-c03-revalidation/node_modules/.pnpm/@prisma+client@5.22.0_prisma@5.22.0/node_modules/.prisma/client/default".Prisma' has no exported member 'RecipeOrderByWithRelationInput'.
+src/modules/recipe/recipe.service.ts(127,18): error TS7006: Parameter 'r' implicitly has an 'any' type.
+src/modules/recipe/recipe.service.ts(131,18): error TS7006: Parameter 'r' implicitly has an 'any' type.
+src/modules/recipe/recipe.service.ts(209,30): error TS7006: Parameter 'r' implicitly has an 'any' type.
+src/modules/timeline/timeline.service.ts(2,37): error TS2305: Module '"@prisma/client"' has no exported member 'TimelineEntry'.
+src/modules/timeline/timeline.service.ts(41,25): error TS2694: Namespace '"H:/codex/\u6797\u5BB6\u9910\u5385\u5C0F\u7A0B\u5E8F/family-kitchen-c03-revalidation/node_modules/.pnpm/@prisma+client@5.22.0_prisma@5.22.0/node_modules/.prisma/client/default".Prisma' has no exported member 'TimelineEntryWhereInput'.
+src/modules/timeline/timeline.service.ts(63,18): error TS7006: Parameter 'e' implicitly has an 'any' type.
+src/modules/timeline/timeline.service.ts(77,63): error TS2694: Namespace '"H:/codex/\u6797\u5BB6\u9910\u5385\u5C0F\u7A0B\u5E8F/family-kitchen-c03-revalidation/node_modules/.pnpm/@prisma+client@5.22.0_prisma@5.22.0/node_modules/.prisma/client/default".Prisma' has no exported member 'InputJsonValue'.
+src/modules/timeline/timeline.service.ts(181,47): error TS7006: Parameter 's' implicitly has an 'any' type.
+src/modules/timeline/timeline.service.ts(181,50): error TS7006: Parameter 'o' implicitly has an 'any' type.
+src/modules/timeline/timeline.service.ts(182,49): error TS7006: Parameter 'o' implicitly has an 'any' type.
+src/modules/timeline/timeline.service.ts(185,53): error TS7006: Parameter 's' implicitly has an 'any' type.
+src/modules/timeline/timeline.service.ts(185,56): error TS7006: Parameter 'o' implicitly has an 'any' type.
+src/modules/timeline/timeline.service.ts(220,44): error TS7006: Parameter 'u' implicitly has an 'any' type.
+src/modules/timeline/timeline.service.ts(254,44): error TS7006: Parameter 'm' implicitly has an 'any' type.
+src/modules/timeline/timeline.service.ts(268,68): error TS7006: Parameter 'a' implicitly has an 'any' type.
+src/modules/timeline/timeline.service.ts(276,7): error TS2322: Type '{ userId: string; nickname: {}; cookedCount: number; orderedCount: number; }[]' is not assignable to type 'MonthlyContributorDto[]'.
+  Type '{ userId: string; nickname: {}; cookedCount: number; orderedCount: number; }' is not assignable to type 'MonthlyContributorDto'.
+    Types of property 'nickname' are incompatible.
+      Type '{}' is not assignable to type 'string'.
+src/modules/timeline/timeline.service.ts(277,7): error TS2322: Type 'unknown[]' is not assignable to type 'string[]'.
+  Type 'unknown' is not assignable to type 'string'.
+src/modules/timeline/timeline.service.ts(290,65): error TS2694: Namespace '"H:/codex/\u6797\u5BB6\u9910\u5385\u5C0F\u7A0B\u5E8F/family-kitchen-c03-revalidation/node_modules/.pnpm/@prisma+client@5.22.0_prisma@5.22.0/node_modules/.prisma/client/default".Prisma' has no exported member 'InputJsonValue'.
+src/modules/user/user.service.ts(71,46): error TS7006: Parameter 'l' implicitly has an 'any' type.
+src/modules/user/user.service.ts(87,31): error TS7006: Parameter 'lv' implicitly has an 'any' type.
+src/modules/user/user.service.ts(187,43): error TS7006: Parameter 'tx' implicitly has an 'any' type.
+H:\codex\林家餐厅小程序\family-kitchen-c03-revalidation\backend:
+ ERR_PNPM_RECURSIVE_RUN_FIRST_FAIL  @family-kitchen/backend@0.1.0 typecheck: `tsc --noEmit`
+Exit status 2
+ ELIFECYCLE  Command failed with exit code 2.

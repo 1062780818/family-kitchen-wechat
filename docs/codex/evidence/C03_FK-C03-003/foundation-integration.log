@@ -1,0 +1,465 @@
+{
+  "summary": {
+    "total": 57,
+    "passed": 55,
+    "failed": 2
+  },
+  "results": [
+    {
+      "name": "login-01",
+      "pass": true,
+      "actual": {
+        "status": 200,
+        "code": null
+      }
+    },
+    {
+      "name": "login-token-01",
+      "pass": true,
+      "actual": {
+        "hasToken": true
+      }
+    },
+    {
+      "name": "login-02",
+      "pass": true,
+      "actual": {
+        "status": 200,
+        "code": null
+      }
+    },
+    {
+      "name": "login-token-02",
+      "pass": true,
+      "actual": {
+        "hasToken": true
+      }
+    },
+    {
+      "name": "login-03",
+      "pass": true,
+      "actual": {
+        "status": 200,
+        "code": null
+      }
+    },
+    {
+      "name": "login-token-03",
+      "pass": true,
+      "actual": {
+        "hasToken": true
+      }
+    },
+    {
+      "name": "production-password-login-observed",
+      "pass": true,
+      "actual": {
+        "status": 200,
+        "createsJwt": true
+      }
+    },
+    {
+      "name": "family-a-create",
+      "pass": true,
+      "actual": {
+        "status": 201,
+        "code": null
+      }
+    },
+    {
+      "name": "family-a-invite",
+      "pass": true,
+      "actual": {
+        "status": 200,
+        "code": null
+      }
+    },
+    {
+      "name": "wife-a-join",
+      "pass": true,
+      "actual": {
+        "status": 200,
+        "code": null
+      }
+    },
+    {
+      "name": "family-b-create",
+      "pass": true,
+      "actual": {
+        "status": 201,
+        "code": null
+      }
+    },
+    {
+      "name": "families-isolated",
+      "pass": true,
+      "actual": {
+        "distinct": true
+      }
+    },
+    {
+      "name": "identity-header-spoof",
+      "pass": true,
+      "actual": {
+        "status": 200,
+        "code": null
+      }
+    },
+    {
+      "name": "identity-remains-token-subject",
+      "pass": true,
+      "actual": {
+        "returnedOwnIdentity": true
+      }
+    },
+    {
+      "name": "invalid-token-rejected",
+      "pass": true,
+      "actual": {
+        "status": 401,
+        "code": "INVALID_TOKEN"
+      }
+    },
+    {
+      "name": "husband-recipe-upload",
+      "pass": true,
+      "actual": {
+        "status": 201,
+        "code": null
+      }
+    },
+    {
+      "name": "family-key-shape",
+      "pass": true,
+      "actual": {
+        "keyShape": "family/cmtqsutjs0004bsbe1huatk5o/recipe/2026-09-07"
+      }
+    },
+    {
+      "name": "signed-object-read",
+      "pass": true,
+      "actual": {
+        "status": 200
+      }
+    },
+    {
+      "name": "signed-url-ttl-900",
+      "pass": true,
+      "actual": {
+        "expires": "900"
+      }
+    },
+    {
+      "name": "private-direct-read-denied",
+      "pass": true,
+      "actual": {
+        "status": 403
+      }
+    },
+    {
+      "name": "system-anonymous-read",
+      "pass": true,
+      "actual": {
+        "status": 200
+      }
+    },
+    {
+      "name": "wife-recipe-upload-denied",
+      "pass": true,
+      "actual": {
+        "status": 403,
+        "code": "MENU_EDITOR_ROLE_REQUIRED"
+      }
+    },
+    {
+      "name": "wife-other-upload-allowed",
+      "pass": true,
+      "actual": {
+        "status": 201,
+        "code": null
+      }
+    },
+    {
+      "name": "same-family-signed-url",
+      "pass": true,
+      "actual": {
+        "status": 200,
+        "code": null
+      }
+    },
+    {
+      "name": "cross-family-signed-url-denied",
+      "pass": true,
+      "actual": {
+        "status": 403,
+        "code": "STORAGE_CROSS_FAMILY_FORBIDDEN"
+      }
+    },
+    {
+      "name": "traversal-key-denied",
+      "pass": true,
+      "actual": {
+        "status": 400,
+        "code": "INVALID_STORAGE_KEY"
+      }
+    },
+    {
+      "name": "forged-family-key-denied",
+      "pass": true,
+      "actual": {
+        "status": 403,
+        "code": "STORAGE_CROSS_FAMILY_FORBIDDEN"
+      }
+    },
+    {
+      "name": "same-family-nonowner-delete-denied",
+      "pass": true,
+      "actual": {
+        "status": 403,
+        "code": "STORAGE_DELETE_FORBIDDEN"
+      }
+    },
+    {
+      "name": "cross-family-delete-denied",
+      "pass": true,
+      "actual": {
+        "status": 403,
+        "code": "STORAGE_CROSS_FAMILY_FORBIDDEN"
+      }
+    },
+    {
+      "name": "owner-delete-success",
+      "pass": true,
+      "actual": {
+        "status": 200,
+        "code": null
+      }
+    },
+    {
+      "name": "deleted-object-not-readable",
+      "pass": true,
+      "actual": {
+        "status": 404
+      }
+    },
+    {
+      "name": "wife-owner-delete-success",
+      "pass": true,
+      "actual": {
+        "status": 200,
+        "code": null
+      }
+    },
+    {
+      "name": "husband-recipe-create",
+      "pass": true,
+      "actual": {
+        "status": 201,
+        "code": null
+      }
+    },
+    {
+      "name": "wife-recipe-list",
+      "pass": true,
+      "actual": {
+        "status": 200,
+        "code": null
+      }
+    },
+    {
+      "name": "wife-recipe-read",
+      "pass": true,
+      "actual": {
+        "status": 200,
+        "code": null
+      }
+    },
+    {
+      "name": "wife-favorite",
+      "pass": true,
+      "actual": {
+        "status": 200,
+        "code": null
+      }
+    },
+    {
+      "name": "wife-recipe-create-denied",
+      "pass": true,
+      "actual": {
+        "status": 403,
+        "code": "MENU_EDITOR_ROLE_REQUIRED"
+      }
+    },
+    {
+      "name": "wife-body-spoof-rejected",
+      "pass": true,
+      "actual": {
+        "status": 400,
+        "code": "BadRequestException"
+      }
+    },
+    {
+      "name": "wife-recipe-update-denied",
+      "pass": true,
+      "actual": {
+        "status": 403,
+        "code": "MENU_EDITOR_ROLE_REQUIRED"
+      }
+    },
+    {
+      "name": "wife-recipe-delete-denied",
+      "pass": true,
+      "actual": {
+        "status": 403,
+        "code": "MENU_EDITOR_ROLE_REQUIRED"
+      }
+    },
+    {
+      "name": "cross-family-recipe-read-denied",
+      "pass": true,
+      "actual": {
+        "status": 403,
+        "code": "RECIPE_NOT_IN_YOUR_FAMILY"
+      }
+    },
+    {
+      "name": "cross-family-recipe-update-denied",
+      "pass": true,
+      "actual": {
+        "status": 403,
+        "code": "RECIPE_NOT_IN_YOUR_FAMILY"
+      }
+    },
+    {
+      "name": "husband-recipe-update",
+      "pass": true,
+      "actual": {
+        "status": 200,
+        "code": null
+      }
+    },
+    {
+      "name": "wife-order-create",
+      "pass": true,
+      "actual": {
+        "status": 201,
+        "code": null
+      }
+    },
+    {
+      "name": "cross-family-order-read-denied",
+      "pass": true,
+      "actual": {
+        "status": 403,
+        "code": "ORDER_NOT_IN_YOUR_FAMILY"
+      }
+    },
+    {
+      "name": "wife-accept-denied",
+      "pass": true,
+      "actual": {
+        "status": 403,
+        "code": "WRONG_ROLE"
+      }
+    },
+    {
+      "name": "concurrent-accept-one-success",
+      "pass": false,
+      "actual": {
+        "statuses": [
+          200,
+          200
+        ],
+        "codes": [
+          null,
+          null
+        ]
+      }
+    },
+    {
+      "name": "repeat-accept-denied",
+      "pass": true,
+      "actual": {
+        "status": 400,
+        "code": "INVALID_STATUS_TRANSITION"
+      }
+    },
+    {
+      "name": "concurrent-prepping-one-success",
+      "pass": false,
+      "actual": {
+        "statuses": [
+          200,
+          200
+        ],
+        "codes": [
+          null,
+          null
+        ]
+      }
+    },
+    {
+      "name": "repeat-prepping-denied",
+      "pass": true,
+      "actual": {
+        "status": 400,
+        "code": "INVALID_STATUS_TRANSITION"
+      }
+    },
+    {
+      "name": "husband-cooking-success",
+      "pass": true,
+      "actual": {
+        "status": 200,
+        "code": null
+      }
+    },
+    {
+      "name": "wife-cancel-after-accepted-requires-request",
+      "pass": true,
+      "actual": {
+        "status": 409,
+        "code": "ORDER_CHANGE_REQUEST_REQUIRED"
+      }
+    },
+    {
+      "name": "wife-serve-denied",
+      "pass": true,
+      "actual": {
+        "status": 403,
+        "code": "WRONG_ROLE"
+      }
+    },
+    {
+      "name": "cross-family-state-change-denied",
+      "pass": true,
+      "actual": {
+        "status": 403,
+        "code": "ORDER_NOT_IN_YOUR_FAMILY"
+      }
+    },
+    {
+      "name": "order-final-read",
+      "pass": true,
+      "actual": {
+        "status": 200,
+        "code": null
+      }
+    },
+    {
+      "name": "failed-operations-preserve-cooking",
+      "pass": true,
+      "actual": {
+        "status": "cooking"
+      }
+    },
+    {
+      "name": "husband-recipe-delete",
+      "pass": true,
+      "actual": {
+        "status": 200,
+        "code": null
+      }
+    }
+  ]
+}

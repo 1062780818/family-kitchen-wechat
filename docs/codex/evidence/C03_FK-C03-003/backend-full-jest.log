@@ -1,0 +1,919 @@
+ts-jest[ts-compiler] (WARN) Got a `.js` file to compile while `allowJs` option is not set to `true` (file: H:\codex\林家餐厅小程序\family-kitchen-c03-revalidation\packages\shared\dist\index.js). To fix this:
+  - if you want TypeScript to process JS files, set `allowJs` to `true` in your TypeScript config (usually tsconfig.json)
+  - if you do not want TypeScript to process your `.js` files, in your Jest config change the `transform` key which value is `ts-jest` so that it does not match `.js` files anymore
+ts-jest[ts-compiler] (WARN) Got a `.js` file to compile while `allowJs` option is not set to `true` (file: H:\codex\林家餐厅小程序\family-kitchen-c03-revalidation\packages\shared\dist\enums.js). To fix this:
+  - if you want TypeScript to process JS files, set `allowJs` to `true` in your TypeScript config (usually tsconfig.json)
+  - if you do not want TypeScript to process your `.js` files, in your Jest config change the `transform` key which value is `ts-jest` so that it does not match `.js` files anymore
+ts-jest[ts-compiler] (WARN) Got a `.js` file to compile while `allowJs` option is not set to `true` (file: H:\codex\林家餐厅小程序\family-kitchen-c03-revalidation\packages\shared\dist\constants.js). To fix this:
+  - if you want TypeScript to process JS files, set `allowJs` to `true` in your TypeScript config (usually tsconfig.json)
+  - if you do not want TypeScript to process your `.js` files, in your Jest config change the `transform` key which value is `ts-jest` so that it does not match `.js` files anymore
+PASS src/modules/order/order.service.spec.ts
+PASS src/modules/order/rating.service.spec.ts
+FAIL src/modules/order/message.service.spec.ts
+  ● MessageService › send text/emoji/image › rejects text without text field
+
+    Nest can't resolve dependencies of the MessageService (PrismaService, LovePointService, NotificationService, BusinessConfigService, ?, AchievementService). Please make sure that the argument WsGateway at index [4] is available in the RootTestModule context.
+
+    Potential solutions:
+    - Is RootTestModule a valid NestJS module?
+    - If WsGateway is a provider, is it part of the current RootTestModule?
+    - If WsGateway is exported from a separate @Module, is that module imported within RootTestModule?
+      @Module({
+        imports: [ /* the Module containing WsGateway */ ]
+      })
+
+      at TestingInjector.lookupComponentInParentModules (../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/injector.js:262:19)
+      at TestingInjector.resolveComponentInstance (../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/injector.js:215:33)
+      at TestingInjector.resolveComponentInstance (../../node_modules/.pnpm/@nestjs+testing@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_6rqcnx5ov24usvgujbeob656qu/node_modules/@nestjs/testing/testing-injector.js:19:45)
+      at resolveParam (../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/injector.js:129:38)
+          at async Promise.all (index 4)
+      at TestingInjector.resolveConstructorParams (../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/injector.js:144:27)
+      at TestingInjector.loadInstance (../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/injector.js:70:13)
+      at TestingInjector.loadProvider (../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/injector.js:98:9)
+      at ../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/instance-loader.js:56:13
+          at async Promise.all (index 3)
+
+  ● MessageService › send text/emoji/image › rejects on terminal order
+
+    Nest can't resolve dependencies of the MessageService (PrismaService, LovePointService, NotificationService, BusinessConfigService, ?, AchievementService). Please make sure that the argument WsGateway at index [4] is available in the RootTestModule context.
+
+    Potential solutions:
+    - Is RootTestModule a valid NestJS module?
+    - If WsGateway is a provider, is it part of the current RootTestModule?
+    - If WsGateway is exported from a separate @Module, is that module imported within RootTestModule?
+      @Module({
+        imports: [ /* the Module containing WsGateway */ ]
+      })
+
+      at TestingInjector.lookupComponentInParentModules (../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/injector.js:262:19)
+      at TestingInjector.resolveComponentInstance (../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/injector.js:215:33)
+      at TestingInjector.resolveComponentInstance (../../node_modules/.pnpm/@nestjs+testing@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_6rqcnx5ov24usvgujbeob656qu/node_modules/@nestjs/testing/testing-injector.js:19:45)
+      at resolveParam (../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/injector.js:129:38)
+          at async Promise.all (index 4)
+      at TestingInjector.resolveConstructorParams (../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/injector.js:144:27)
+      at TestingInjector.loadInstance (../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/injector.js:70:13)
+      at TestingInjector.loadProvider (../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/injector.js:98:9)
+      at ../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/instance-loader.js:56:13
+          at async Promise.all (index 3)
+
+  ● MessageService › send text/emoji/image › accepts emoji message and stores emojiKey
+
+    Nest can't resolve dependencies of the MessageService (PrismaService, LovePointService, NotificationService, BusinessConfigService, ?, AchievementService). Please make sure that the argument WsGateway at index [4] is available in the RootTestModule context.
+
+    Potential solutions:
+    - Is RootTestModule a valid NestJS module?
+    - If WsGateway is a provider, is it part of the current RootTestModule?
+    - If WsGateway is exported from a separate @Module, is that module imported within RootTestModule?
+      @Module({
+        imports: [ /* the Module containing WsGateway */ ]
+      })
+
+      at TestingInjector.lookupComponentInParentModules (../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/injector.js:262:19)
+      at TestingInjector.resolveComponentInstance (../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/injector.js:215:33)
+      at TestingInjector.resolveComponentInstance (../../node_modules/.pnpm/@nestjs+testing@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_6rqcnx5ov24usvgujbeob656qu/node_modules/@nestjs/testing/testing-injector.js:19:45)
+      at resolveParam (../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/injector.js:129:38)
+          at async Promise.all (index 4)
+      at TestingInjector.resolveConstructorParams (../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/injector.js:144:27)
+      at TestingInjector.loadInstance (../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/injector.js:70:13)
+      at TestingInjector.loadProvider (../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/injector.js:98:9)
+      at ../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/instance-loader.js:56:13
+          at async Promise.all (index 3)
+
+  ● MessageService › rush rate limit › rejects when chef tries to rush
+
+    Nest can't resolve dependencies of the MessageService (PrismaService, LovePointService, NotificationService, BusinessConfigService, ?, AchievementService). Please make sure that the argument WsGateway at index [4] is available in the RootTestModule context.
+
+    Potential solutions:
+    - Is RootTestModule a valid NestJS module?
+    - If WsGateway is a provider, is it part of the current RootTestModule?
+    - If WsGateway is exported from a separate @Module, is that module imported within RootTestModule?
+      @Module({
+        imports: [ /* the Module containing WsGateway */ ]
+      })
+
+      at TestingInjector.lookupComponentInParentModules (../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/injector.js:262:19)
+      at TestingInjector.resolveComponentInstance (../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/injector.js:215:33)
+      at TestingInjector.resolveComponentInstance (../../node_modules/.pnpm/@nestjs+testing@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_6rqcnx5ov24usvgujbeob656qu/node_modules/@nestjs/testing/testing-injector.js:19:45)
+      at resolveParam (../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/injector.js:129:38)
+          at async Promise.all (index 4)
+      at TestingInjector.resolveConstructorParams (../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/injector.js:144:27)
+      at TestingInjector.loadInstance (../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/injector.js:70:13)
+      at TestingInjector.loadProvider (../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/injector.js:98:9)
+      at ../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/instance-loader.js:56:13
+          at async Promise.all (index 3)
+
+  ● MessageService › rush rate limit › rejects when order is not COOKING
+
+    Nest can't resolve dependencies of the MessageService (PrismaService, LovePointService, NotificationService, BusinessConfigService, ?, AchievementService). Please make sure that the argument WsGateway at index [4] is available in the RootTestModule context.
+
+    Potential solutions:
+    - Is RootTestModule a valid NestJS module?
+    - If WsGateway is a provider, is it part of the current RootTestModule?
+    - If WsGateway is exported from a separate @Module, is that module imported within RootTestModule?
+      @Module({
+        imports: [ /* the Module containing WsGateway */ ]
+      })
+
+      at TestingInjector.lookupComponentInParentModules (../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/injector.js:262:19)
+      at TestingInjector.resolveComponentInstance (../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/injector.js:215:33)
+      at TestingInjector.resolveComponentInstance (../../node_modules/.pnpm/@nestjs+testing@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_6rqcnx5ov24usvgujbeob656qu/node_modules/@nestjs/testing/testing-injector.js:19:45)
+      at resolveParam (../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/injector.js:129:38)
+          at async Promise.all (index 4)
+      at TestingInjector.resolveConstructorParams (../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/injector.js:144:27)
+      at TestingInjector.loadInstance (../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/injector.js:70:13)
+      at TestingInjector.loadProvider (../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/injector.js:98:9)
+      at ../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/instance-loader.js:56:13
+          at async Promise.all (index 3)
+
+  ● MessageService › rush rate limit › rejects after 3 rushes
+
+    Nest can't resolve dependencies of the MessageService (PrismaService, LovePointService, NotificationService, BusinessConfigService, ?, AchievementService). Please make sure that the argument WsGateway at index [4] is available in the RootTestModule context.
+
+    Potential solutions:
+    - Is RootTestModule a valid NestJS module?
+    - If WsGateway is a provider, is it part of the current RootTestModule?
+    - If WsGateway is exported from a separate @Module, is that module imported within RootTestModule?
+      @Module({
+        imports: [ /* the Module containing WsGateway */ ]
+      })
+
+      at TestingInjector.lookupComponentInParentModules (../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/injector.js:262:19)
+      at TestingInjector.resolveComponentInstance (../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/injector.js:215:33)
+      at TestingInjector.resolveComponentInstance (../../node_modules/.pnpm/@nestjs+testing@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_6rqcnx5ov24usvgujbeob656qu/node_modules/@nestjs/testing/testing-injector.js:19:45)
+      at resolveParam (../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/injector.js:129:38)
+          at async Promise.all (index 4)
+      at TestingInjector.resolveConstructorParams (../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/injector.js:144:27)
+      at TestingInjector.loadInstance (../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/injector.js:70:13)
+      at TestingInjector.loadProvider (../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/injector.js:98:9)
+      at ../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/instance-loader.js:56:13
+          at async Promise.all (index 3)
+
+  ● MessageService › rush rate limit › rejects when last rush within cooldown
+
+    Nest can't resolve dependencies of the MessageService (PrismaService, LovePointService, NotificationService, BusinessConfigService, ?, AchievementService). Please make sure that the argument WsGateway at index [4] is available in the RootTestModule context.
+
+    Potential solutions:
+    - Is RootTestModule a valid NestJS module?
+    - If WsGateway is a provider, is it part of the current RootTestModule?
+    - If WsGateway is exported from a separate @Module, is that module imported within RootTestModule?
+      @Module({
+        imports: [ /* the Module containing WsGateway */ ]
+      })
+
+      at TestingInjector.lookupComponentInParentModules (../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/injector.js:262:19)
+      at TestingInjector.resolveComponentInstance (../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/injector.js:215:33)
+      at TestingInjector.resolveComponentInstance (../../node_modules/.pnpm/@nestjs+testing@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_6rqcnx5ov24usvgujbeob656qu/node_modules/@nestjs/testing/testing-injector.js:19:45)
+      at resolveParam (../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/injector.js:129:38)
+          at async Promise.all (index 4)
+      at TestingInjector.resolveConstructorParams (../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/injector.js:144:27)
+      at TestingInjector.loadInstance (../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/injector.js:70:13)
+      at TestingInjector.loadProvider (../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/injector.js:98:9)
+      at ../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/instance-loader.js:56:13
+          at async Promise.all (index 3)
+
+  ● MessageService › rush rate limit › allows rush after cooldown elapsed
+
+    Nest can't resolve dependencies of the MessageService (PrismaService, LovePointService, NotificationService, BusinessConfigService, ?, AchievementService). Please make sure that the argument WsGateway at index [4] is available in the RootTestModule context.
+
+    Potential solutions:
+    - Is RootTestModule a valid NestJS module?
+    - If WsGateway is a provider, is it part of the current RootTestModule?
+    - If WsGateway is exported from a separate @Module, is that module imported within RootTestModule?
+      @Module({
+        imports: [ /* the Module containing WsGateway */ ]
+      })
+
+      at TestingInjector.lookupComponentInParentModules (../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/injector.js:262:19)
+      at TestingInjector.resolveComponentInstance (../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/injector.js:215:33)
+      at TestingInjector.resolveComponentInstance (../../node_modules/.pnpm/@nestjs+testing@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_6rqcnx5ov24usvgujbeob656qu/node_modules/@nestjs/testing/testing-injector.js:19:45)
+      at resolveParam (../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/injector.js:129:38)
+          at async Promise.all (index 4)
+      at TestingInjector.resolveConstructorParams (../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/injector.js:144:27)
+      at TestingInjector.loadInstance (../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/injector.js:70:13)
+      at TestingInjector.loadProvider (../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/injector.js:98:9)
+      at ../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/instance-loader.js:56:13
+          at async Promise.all (index 3)
+
+  ● MessageService › tip settlement › rejects when chef tries to tip
+
+    Nest can't resolve dependencies of the MessageService (PrismaService, LovePointService, NotificationService, BusinessConfigService, ?, AchievementService). Please make sure that the argument WsGateway at index [4] is available in the RootTestModule context.
+
+    Potential solutions:
+    - Is RootTestModule a valid NestJS module?
+    - If WsGateway is a provider, is it part of the current RootTestModule?
+    - If WsGateway is exported from a separate @Module, is that module imported within RootTestModule?
+      @Module({
+        imports: [ /* the Module containing WsGateway */ ]
+      })
+
+      at TestingInjector.lookupComponentInParentModules (../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/injector.js:262:19)
+      at TestingInjector.resolveComponentInstance (../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/injector.js:215:33)
+      at TestingInjector.resolveComponentInstance (../../node_modules/.pnpm/@nestjs+testing@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_6rqcnx5ov24usvgujbeob656qu/node_modules/@nestjs/testing/testing-injector.js:19:45)
+      at resolveParam (../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/injector.js:129:38)
+          at async Promise.all (index 4)
+      at TestingInjector.resolveConstructorParams (../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/injector.js:144:27)
+      at TestingInjector.loadInstance (../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/injector.js:70:13)
+      at TestingInjector.loadProvider (../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/injector.js:98:9)
+      at ../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/instance-loader.js:56:13
+          at async Promise.all (index 3)
+
+  ● MessageService › tip settlement › rejects when balance insufficient
+
+    Nest can't resolve dependencies of the MessageService (PrismaService, LovePointService, NotificationService, BusinessConfigService, ?, AchievementService). Please make sure that the argument WsGateway at index [4] is available in the RootTestModule context.
+
+    Potential solutions:
+    - Is RootTestModule a valid NestJS module?
+    - If WsGateway is a provider, is it part of the current RootTestModule?
+    - If WsGateway is exported from a separate @Module, is that module imported within RootTestModule?
+      @Module({
+        imports: [ /* the Module containing WsGateway */ ]
+      })
+
+      at TestingInjector.lookupComponentInParentModules (../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/injector.js:262:19)
+      at TestingInjector.resolveComponentInstance (../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/injector.js:215:33)
+      at TestingInjector.resolveComponentInstance (../../node_modules/.pnpm/@nestjs+testing@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_6rqcnx5ov24usvgujbeob656qu/node_modules/@nestjs/testing/testing-injector.js:19:45)
+      at resolveParam (../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/injector.js:129:38)
+          at async Promise.all (index 4)
+      at TestingInjector.resolveConstructorParams (../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/injector.js:144:27)
+      at TestingInjector.loadInstance (../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/injector.js:70:13)
+      at TestingInjector.loadProvider (../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/injector.js:98:9)
+      at ../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/instance-loader.js:56:13
+          at async Promise.all (index 3)
+
+  ● MessageService › tip settlement › settles tip by inserting two love-point logs (out + in)
+
+    Nest can't resolve dependencies of the MessageService (PrismaService, LovePointService, NotificationService, BusinessConfigService, ?, AchievementService). Please make sure that the argument WsGateway at index [4] is available in the RootTestModule context.
+
+    Potential solutions:
+    - Is RootTestModule a valid NestJS module?
+    - If WsGateway is a provider, is it part of the current RootTestModule?
+    - If WsGateway is exported from a separate @Module, is that module imported within RootTestModule?
+      @Module({
+        imports: [ /* the Module containing WsGateway */ ]
+      })
+
+      at TestingInjector.lookupComponentInParentModules (../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/injector.js:262:19)
+      at TestingInjector.resolveComponentInstance (../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/injector.js:215:33)
+      at TestingInjector.resolveComponentInstance (../../node_modules/.pnpm/@nestjs+testing@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_6rqcnx5ov24usvgujbeob656qu/node_modules/@nestjs/testing/testing-injector.js:19:45)
+      at resolveParam (../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/injector.js:129:38)
+          at async Promise.all (index 4)
+      at TestingInjector.resolveConstructorParams (../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/injector.js:144:27)
+      at TestingInjector.loadInstance (../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/injector.js:70:13)
+      at TestingInjector.loadProvider (../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/injector.js:98:9)
+      at ../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/instance-loader.js:56:13
+          at async Promise.all (index 3)
+
+FAIL src/modules/achievement/achievement.service.spec.ts
+  ● AchievementService › family milestones › unlocks family_first_dish when family count reaches 1
+
+    Nest can't resolve dependencies of the AchievementService (PrismaService, ?). Please make sure that the argument EvaluatorRegistry at index [1] is available in the RootTestModule context.
+
+    Potential solutions:
+    - Is RootTestModule a valid NestJS module?
+    - If EvaluatorRegistry is a provider, is it part of the current RootTestModule?
+    - If EvaluatorRegistry is exported from a separate @Module, is that module imported within RootTestModule?
+      @Module({
+        imports: [ /* the Module containing EvaluatorRegistry */ ]
+      })
+
+      at TestingInjector.lookupComponentInParentModules (../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/injector.js:262:19)
+      at TestingInjector.resolveComponentInstance (../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/injector.js:215:33)
+      at TestingInjector.resolveComponentInstance (../../node_modules/.pnpm/@nestjs+testing@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_6rqcnx5ov24usvgujbeob656qu/node_modules/@nestjs/testing/testing-injector.js:19:45)
+      at resolveParam (../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/injector.js:129:38)
+          at async Promise.all (index 1)
+      at TestingInjector.resolveConstructorParams (../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/injector.js:144:27)
+      at TestingInjector.loadInstance (../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/injector.js:70:13)
+      at TestingInjector.loadProvider (../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/injector.js:98:9)
+      at ../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/instance-loader.js:56:13
+          at async Promise.all (index 3)
+
+  ● AchievementService › family milestones › unlocks family_10_dishes when count reaches exactly 10
+
+    Nest can't resolve dependencies of the AchievementService (PrismaService, ?). Please make sure that the argument EvaluatorRegistry at index [1] is available in the RootTestModule context.
+
+    Potential solutions:
+    - Is RootTestModule a valid NestJS module?
+    - If EvaluatorRegistry is a provider, is it part of the current RootTestModule?
+    - If EvaluatorRegistry is exported from a separate @Module, is that module imported within RootTestModule?
+      @Module({
+        imports: [ /* the Module containing EvaluatorRegistry */ ]
+      })
+
+      at TestingInjector.lookupComponentInParentModules (../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/injector.js:262:19)
+      at TestingInjector.resolveComponentInstance (../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/injector.js:215:33)
+      at TestingInjector.resolveComponentInstance (../../node_modules/.pnpm/@nestjs+testing@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_6rqcnx5ov24usvgujbeob656qu/node_modules/@nestjs/testing/testing-injector.js:19:45)
+      at resolveParam (../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/injector.js:129:38)
+          at async Promise.all (index 1)
+      at TestingInjector.resolveConstructorParams (../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/injector.js:144:27)
+      at TestingInjector.loadInstance (../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/injector.js:70:13)
+      at TestingInjector.loadProvider (../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/injector.js:98:9)
+      at ../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/instance-loader.js:56:13
+          at async Promise.all (index 3)
+
+  ● AchievementService › five star streak › does not unlock if current rating < 5
+
+    Nest can't resolve dependencies of the AchievementService (PrismaService, ?). Please make sure that the argument EvaluatorRegistry at index [1] is available in the RootTestModule context.
+
+    Potential solutions:
+    - Is RootTestModule a valid NestJS module?
+    - If EvaluatorRegistry is a provider, is it part of the current RootTestModule?
+    - If EvaluatorRegistry is exported from a separate @Module, is that module imported within RootTestModule?
+      @Module({
+        imports: [ /* the Module containing EvaluatorRegistry */ ]
+      })
+
+      at TestingInjector.lookupComponentInParentModules (../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/injector.js:262:19)
+      at TestingInjector.resolveComponentInstance (../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/injector.js:215:33)
+      at TestingInjector.resolveComponentInstance (../../node_modules/.pnpm/@nestjs+testing@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_6rqcnx5ov24usvgujbeob656qu/node_modules/@nestjs/testing/testing-injector.js:19:45)
+      at resolveParam (../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/injector.js:129:38)
+          at async Promise.all (index 1)
+      at TestingInjector.resolveConstructorParams (../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/injector.js:144:27)
+      at TestingInjector.loadInstance (../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/injector.js:70:13)
+      at TestingInjector.loadProvider (../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/injector.js:98:9)
+      at ../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/instance-loader.js:56:13
+          at async Promise.all (index 3)
+
+  ● AchievementService › five star streak › unlocks five_star_streak_5 when last 5 orders all 5 stars
+
+    Nest can't resolve dependencies of the AchievementService (PrismaService, ?). Please make sure that the argument EvaluatorRegistry at index [1] is available in the RootTestModule context.
+
+    Potential solutions:
+    - Is RootTestModule a valid NestJS module?
+    - If EvaluatorRegistry is a provider, is it part of the current RootTestModule?
+    - If EvaluatorRegistry is exported from a separate @Module, is that module imported within RootTestModule?
+      @Module({
+        imports: [ /* the Module containing EvaluatorRegistry */ ]
+      })
+
+      at TestingInjector.lookupComponentInParentModules (../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/injector.js:262:19)
+      at TestingInjector.resolveComponentInstance (../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/injector.js:215:33)
+      at TestingInjector.resolveComponentInstance (../../node_modules/.pnpm/@nestjs+testing@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_6rqcnx5ov24usvgujbeob656qu/node_modules/@nestjs/testing/testing-injector.js:19:45)
+      at resolveParam (../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/injector.js:129:38)
+          at async Promise.all (index 1)
+      at TestingInjector.resolveConstructorParams (../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/injector.js:144:27)
+      at TestingInjector.loadInstance (../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/injector.js:70:13)
+      at TestingInjector.loadProvider (../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/injector.js:98:9)
+      at ../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/instance-loader.js:56:13
+          at async Promise.all (index 3)
+
+  ● AchievementService › five star streak › does not unlock if any in last 5 is < 5 stars
+
+    Nest can't resolve dependencies of the AchievementService (PrismaService, ?). Please make sure that the argument EvaluatorRegistry at index [1] is available in the RootTestModule context.
+
+    Potential solutions:
+    - Is RootTestModule a valid NestJS module?
+    - If EvaluatorRegistry is a provider, is it part of the current RootTestModule?
+    - If EvaluatorRegistry is exported from a separate @Module, is that module imported within RootTestModule?
+      @Module({
+        imports: [ /* the Module containing EvaluatorRegistry */ ]
+      })
+
+      at TestingInjector.lookupComponentInParentModules (../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/injector.js:262:19)
+      at TestingInjector.resolveComponentInstance (../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/injector.js:215:33)
+      at TestingInjector.resolveComponentInstance (../../node_modules/.pnpm/@nestjs+testing@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_6rqcnx5ov24usvgujbeob656qu/node_modules/@nestjs/testing/testing-injector.js:19:45)
+      at resolveParam (../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/injector.js:129:38)
+          at async Promise.all (index 1)
+      at TestingInjector.resolveConstructorParams (../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/injector.js:144:27)
+      at TestingInjector.loadInstance (../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/injector.js:70:13)
+      at TestingInjector.loadProvider (../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/injector.js:98:9)
+      at ../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/instance-loader.js:56:13
+          at async Promise.all (index 3)
+
+  ● AchievementService › idempotency › does not re-unlock an existing badge
+
+    Nest can't resolve dependencies of the AchievementService (PrismaService, ?). Please make sure that the argument EvaluatorRegistry at index [1] is available in the RootTestModule context.
+
+    Potential solutions:
+    - Is RootTestModule a valid NestJS module?
+    - If EvaluatorRegistry is a provider, is it part of the current RootTestModule?
+    - If EvaluatorRegistry is exported from a separate @Module, is that module imported within RootTestModule?
+      @Module({
+        imports: [ /* the Module containing EvaluatorRegistry */ ]
+      })
+
+      at TestingInjector.lookupComponentInParentModules (../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/injector.js:262:19)
+      at TestingInjector.resolveComponentInstance (../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/injector.js:215:33)
+      at TestingInjector.resolveComponentInstance (../../node_modules/.pnpm/@nestjs+testing@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_6rqcnx5ov24usvgujbeob656qu/node_modules/@nestjs/testing/testing-injector.js:19:45)
+      at resolveParam (../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/injector.js:129:38)
+          at async Promise.all (index 1)
+      at TestingInjector.resolveConstructorParams (../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/injector.js:144:27)
+      at TestingInjector.loadInstance (../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/injector.js:70:13)
+      at TestingInjector.loadProvider (../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/injector.js:98:9)
+      at ../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/instance-loader.js:56:13
+          at async Promise.all (index 3)
+
+  ● AchievementService › listMine › filters by ownerType=user and userId
+
+    Nest can't resolve dependencies of the AchievementService (PrismaService, ?). Please make sure that the argument EvaluatorRegistry at index [1] is available in the RootTestModule context.
+
+    Potential solutions:
+    - Is RootTestModule a valid NestJS module?
+    - If EvaluatorRegistry is a provider, is it part of the current RootTestModule?
+    - If EvaluatorRegistry is exported from a separate @Module, is that module imported within RootTestModule?
+      @Module({
+        imports: [ /* the Module containing EvaluatorRegistry */ ]
+      })
+
+      at TestingInjector.lookupComponentInParentModules (../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/injector.js:262:19)
+      at TestingInjector.resolveComponentInstance (../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/injector.js:215:33)
+      at TestingInjector.resolveComponentInstance (../../node_modules/.pnpm/@nestjs+testing@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_6rqcnx5ov24usvgujbeob656qu/node_modules/@nestjs/testing/testing-injector.js:19:45)
+      at resolveParam (../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/injector.js:129:38)
+          at async Promise.all (index 1)
+      at TestingInjector.resolveConstructorParams (../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/injector.js:144:27)
+      at TestingInjector.loadInstance (../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/injector.js:70:13)
+      at TestingInjector.loadProvider (../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/injector.js:98:9)
+      at ../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/instance-loader.js:56:13
+          at async Promise.all (index 3)
+
+  ● AchievementService › uses OrderStatus.COMPLETED in count query
+
+    Nest can't resolve dependencies of the AchievementService (PrismaService, ?). Please make sure that the argument EvaluatorRegistry at index [1] is available in the RootTestModule context.
+
+    Potential solutions:
+    - Is RootTestModule a valid NestJS module?
+    - If EvaluatorRegistry is a provider, is it part of the current RootTestModule?
+    - If EvaluatorRegistry is exported from a separate @Module, is that module imported within RootTestModule?
+      @Module({
+        imports: [ /* the Module containing EvaluatorRegistry */ ]
+      })
+
+      at TestingInjector.lookupComponentInParentModules (../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/injector.js:262:19)
+      at TestingInjector.resolveComponentInstance (../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/injector.js:215:33)
+      at TestingInjector.resolveComponentInstance (../../node_modules/.pnpm/@nestjs+testing@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_6rqcnx5ov24usvgujbeob656qu/node_modules/@nestjs/testing/testing-injector.js:19:45)
+      at resolveParam (../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/injector.js:129:38)
+          at async Promise.all (index 1)
+      at TestingInjector.resolveConstructorParams (../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/injector.js:144:27)
+      at TestingInjector.loadInstance (../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/injector.js:70:13)
+      at TestingInjector.loadProvider (../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/injector.js:98:9)
+      at ../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/instance-loader.js:56:13
+          at async Promise.all (index 3)
+
+PASS src/modules/storage/storage.service.spec.ts
+PASS src/modules/auth/auth.service.spec.ts
+PASS src/modules/recipe/recipe.service.spec.ts
+PASS src/modules/family/family.service.spec.ts
+PASS src/modules/love-point/love-point.service.spec.ts
+PASS src/modules/love-point/love-point-reverse.spec.ts
+PASS src/modules/user/user-bind.spec.ts
+PASS src/modules/love-point/love-point-family-isolate.spec.ts
+PASS src/modules/admin/admin-metrics.service.spec.ts
+PASS src/modules/user/user-delete.spec.ts
+PASS src/modules/timeline/timeline-summary.spec.ts
+PASS src/modules/notification/wx-access-token.service.spec.ts
+PASS src/modules/recipe/recipe-favorite.spec.ts
+PASS src/modules/feedback/feedback.service.spec.ts
+PASS src/modules/admin/admin-order.service.spec.ts
+PASS src/modules/order/order-status.spec.ts
+PASS src/modules/notification/wx-notify.service.spec.ts
+PASS src/modules/health/health.controller.spec.ts
+PASS src/modules/admin/admin.guard.spec.ts
+
+Summary of all failing tests
+FAIL modules/order/message.service.spec.ts
+  ● MessageService › send text/emoji/image › rejects text without text field
+
+    Nest can't resolve dependencies of the MessageService (PrismaService, LovePointService, NotificationService, BusinessConfigService, ?, AchievementService). Please make sure that the argument WsGateway at index [4] is available in the RootTestModule context.
+
+    Potential solutions:
+    - Is RootTestModule a valid NestJS module?
+    - If WsGateway is a provider, is it part of the current RootTestModule?
+    - If WsGateway is exported from a separate @Module, is that module imported within RootTestModule?
+      @Module({
+        imports: [ /* the Module containing WsGateway */ ]
+      })
+
+      at TestingInjector.lookupComponentInParentModules (../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/injector.js:262:19)
+      at TestingInjector.resolveComponentInstance (../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/injector.js:215:33)
+      at TestingInjector.resolveComponentInstance (../../node_modules/.pnpm/@nestjs+testing@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_6rqcnx5ov24usvgujbeob656qu/node_modules/@nestjs/testing/testing-injector.js:19:45)
+      at resolveParam (../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/injector.js:129:38)
+          at async Promise.all (index 4)
+      at TestingInjector.resolveConstructorParams (../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/injector.js:144:27)
+      at TestingInjector.loadInstance (../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/injector.js:70:13)
+      at TestingInjector.loadProvider (../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/injector.js:98:9)
+      at ../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/instance-loader.js:56:13
+          at async Promise.all (index 3)
+
+  ● MessageService › send text/emoji/image › rejects on terminal order
+
+    Nest can't resolve dependencies of the MessageService (PrismaService, LovePointService, NotificationService, BusinessConfigService, ?, AchievementService). Please make sure that the argument WsGateway at index [4] is available in the RootTestModule context.
+
+    Potential solutions:
+    - Is RootTestModule a valid NestJS module?
+    - If WsGateway is a provider, is it part of the current RootTestModule?
+    - If WsGateway is exported from a separate @Module, is that module imported within RootTestModule?
+      @Module({
+        imports: [ /* the Module containing WsGateway */ ]
+      })
+
+      at TestingInjector.lookupComponentInParentModules (../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/injector.js:262:19)
+      at TestingInjector.resolveComponentInstance (../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/injector.js:215:33)
+      at TestingInjector.resolveComponentInstance (../../node_modules/.pnpm/@nestjs+testing@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_6rqcnx5ov24usvgujbeob656qu/node_modules/@nestjs/testing/testing-injector.js:19:45)
+      at resolveParam (../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/injector.js:129:38)
+          at async Promise.all (index 4)
+      at TestingInjector.resolveConstructorParams (../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/injector.js:144:27)
+      at TestingInjector.loadInstance (../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/injector.js:70:13)
+      at TestingInjector.loadProvider (../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/injector.js:98:9)
+      at ../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/instance-loader.js:56:13
+          at async Promise.all (index 3)
+
+  ● MessageService › send text/emoji/image › accepts emoji message and stores emojiKey
+
+    Nest can't resolve dependencies of the MessageService (PrismaService, LovePointService, NotificationService, BusinessConfigService, ?, AchievementService). Please make sure that the argument WsGateway at index [4] is available in the RootTestModule context.
+
+    Potential solutions:
+    - Is RootTestModule a valid NestJS module?
+    - If WsGateway is a provider, is it part of the current RootTestModule?
+    - If WsGateway is exported from a separate @Module, is that module imported within RootTestModule?
+      @Module({
+        imports: [ /* the Module containing WsGateway */ ]
+      })
+
+      at TestingInjector.lookupComponentInParentModules (../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/injector.js:262:19)
+      at TestingInjector.resolveComponentInstance (../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/injector.js:215:33)
+      at TestingInjector.resolveComponentInstance (../../node_modules/.pnpm/@nestjs+testing@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_6rqcnx5ov24usvgujbeob656qu/node_modules/@nestjs/testing/testing-injector.js:19:45)
+      at resolveParam (../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/injector.js:129:38)
+          at async Promise.all (index 4)
+      at TestingInjector.resolveConstructorParams (../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/injector.js:144:27)
+      at TestingInjector.loadInstance (../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/injector.js:70:13)
+      at TestingInjector.loadProvider (../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/injector.js:98:9)
+      at ../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/instance-loader.js:56:13
+          at async Promise.all (index 3)
+
+  ● MessageService › rush rate limit › rejects when chef tries to rush
+
+    Nest can't resolve dependencies of the MessageService (PrismaService, LovePointService, NotificationService, BusinessConfigService, ?, AchievementService). Please make sure that the argument WsGateway at index [4] is available in the RootTestModule context.
+
+    Potential solutions:
+    - Is RootTestModule a valid NestJS module?
+    - If WsGateway is a provider, is it part of the current RootTestModule?
+    - If WsGateway is exported from a separate @Module, is that module imported within RootTestModule?
+      @Module({
+        imports: [ /* the Module containing WsGateway */ ]
+      })
+
+      at TestingInjector.lookupComponentInParentModules (../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/injector.js:262:19)
+      at TestingInjector.resolveComponentInstance (../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/injector.js:215:33)
+      at TestingInjector.resolveComponentInstance (../../node_modules/.pnpm/@nestjs+testing@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_6rqcnx5ov24usvgujbeob656qu/node_modules/@nestjs/testing/testing-injector.js:19:45)
+      at resolveParam (../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/injector.js:129:38)
+          at async Promise.all (index 4)
+      at TestingInjector.resolveConstructorParams (../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/injector.js:144:27)
+      at TestingInjector.loadInstance (../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/injector.js:70:13)
+      at TestingInjector.loadProvider (../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/injector.js:98:9)
+      at ../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/instance-loader.js:56:13
+          at async Promise.all (index 3)
+
+  ● MessageService › rush rate limit › rejects when order is not COOKING
+
+    Nest can't resolve dependencies of the MessageService (PrismaService, LovePointService, NotificationService, BusinessConfigService, ?, AchievementService). Please make sure that the argument WsGateway at index [4] is available in the RootTestModule context.
+
+    Potential solutions:
+    - Is RootTestModule a valid NestJS module?
+    - If WsGateway is a provider, is it part of the current RootTestModule?
+    - If WsGateway is exported from a separate @Module, is that module imported within RootTestModule?
+      @Module({
+        imports: [ /* the Module containing WsGateway */ ]
+      })
+
+      at TestingInjector.lookupComponentInParentModules (../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/injector.js:262:19)
+      at TestingInjector.resolveComponentInstance (../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/injector.js:215:33)
+      at TestingInjector.resolveComponentInstance (../../node_modules/.pnpm/@nestjs+testing@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_6rqcnx5ov24usvgujbeob656qu/node_modules/@nestjs/testing/testing-injector.js:19:45)
+      at resolveParam (../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/injector.js:129:38)
+          at async Promise.all (index 4)
+      at TestingInjector.resolveConstructorParams (../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/injector.js:144:27)
+      at TestingInjector.loadInstance (../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/injector.js:70:13)
+      at TestingInjector.loadProvider (../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/injector.js:98:9)
+      at ../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/instance-loader.js:56:13
+          at async Promise.all (index 3)
+
+  ● MessageService › rush rate limit › rejects after 3 rushes
+
+    Nest can't resolve dependencies of the MessageService (PrismaService, LovePointService, NotificationService, BusinessConfigService, ?, AchievementService). Please make sure that the argument WsGateway at index [4] is available in the RootTestModule context.
+
+    Potential solutions:
+    - Is RootTestModule a valid NestJS module?
+    - If WsGateway is a provider, is it part of the current RootTestModule?
+    - If WsGateway is exported from a separate @Module, is that module imported within RootTestModule?
+      @Module({
+        imports: [ /* the Module containing WsGateway */ ]
+      })
+
+      at TestingInjector.lookupComponentInParentModules (../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/injector.js:262:19)
+      at TestingInjector.resolveComponentInstance (../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/injector.js:215:33)
+      at TestingInjector.resolveComponentInstance (../../node_modules/.pnpm/@nestjs+testing@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_6rqcnx5ov24usvgujbeob656qu/node_modules/@nestjs/testing/testing-injector.js:19:45)
+      at resolveParam (../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/injector.js:129:38)
+          at async Promise.all (index 4)
+      at TestingInjector.resolveConstructorParams (../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/injector.js:144:27)
+      at TestingInjector.loadInstance (../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/injector.js:70:13)
+      at TestingInjector.loadProvider (../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/injector.js:98:9)
+      at ../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/instance-loader.js:56:13
+          at async Promise.all (index 3)
+
+  ● MessageService › rush rate limit › rejects when last rush within cooldown
+
+    Nest can't resolve dependencies of the MessageService (PrismaService, LovePointService, NotificationService, BusinessConfigService, ?, AchievementService). Please make sure that the argument WsGateway at index [4] is available in the RootTestModule context.
+
+    Potential solutions:
+    - Is RootTestModule a valid NestJS module?
+    - If WsGateway is a provider, is it part of the current RootTestModule?
+    - If WsGateway is exported from a separate @Module, is that module imported within RootTestModule?
+      @Module({
+        imports: [ /* the Module containing WsGateway */ ]
+      })
+
+      at TestingInjector.lookupComponentInParentModules (../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/injector.js:262:19)
+      at TestingInjector.resolveComponentInstance (../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/injector.js:215:33)
+      at TestingInjector.resolveComponentInstance (../../node_modules/.pnpm/@nestjs+testing@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_6rqcnx5ov24usvgujbeob656qu/node_modules/@nestjs/testing/testing-injector.js:19:45)
+      at resolveParam (../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/injector.js:129:38)
+          at async Promise.all (index 4)
+      at TestingInjector.resolveConstructorParams (../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/injector.js:144:27)
+      at TestingInjector.loadInstance (../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/injector.js:70:13)
+      at TestingInjector.loadProvider (../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/injector.js:98:9)
+      at ../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/instance-loader.js:56:13
+          at async Promise.all (index 3)
+
+  ● MessageService › rush rate limit › allows rush after cooldown elapsed
+
+    Nest can't resolve dependencies of the MessageService (PrismaService, LovePointService, NotificationService, BusinessConfigService, ?, AchievementService). Please make sure that the argument WsGateway at index [4] is available in the RootTestModule context.
+
+    Potential solutions:
+    - Is RootTestModule a valid NestJS module?
+    - If WsGateway is a provider, is it part of the current RootTestModule?
+    - If WsGateway is exported from a separate @Module, is that module imported within RootTestModule?
+      @Module({
+        imports: [ /* the Module containing WsGateway */ ]
+      })
+
+      at TestingInjector.lookupComponentInParentModules (../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/injector.js:262:19)
+      at TestingInjector.resolveComponentInstance (../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/injector.js:215:33)
+      at TestingInjector.resolveComponentInstance (../../node_modules/.pnpm/@nestjs+testing@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_6rqcnx5ov24usvgujbeob656qu/node_modules/@nestjs/testing/testing-injector.js:19:45)
+      at resolveParam (../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/injector.js:129:38)
+          at async Promise.all (index 4)
+      at TestingInjector.resolveConstructorParams (../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/injector.js:144:27)
+      at TestingInjector.loadInstance (../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/injector.js:70:13)
+      at TestingInjector.loadProvider (../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/injector.js:98:9)
+      at ../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/instance-loader.js:56:13
+          at async Promise.all (index 3)
+
+  ● MessageService › tip settlement › rejects when chef tries to tip
+
+    Nest can't resolve dependencies of the MessageService (PrismaService, LovePointService, NotificationService, BusinessConfigService, ?, AchievementService). Please make sure that the argument WsGateway at index [4] is available in the RootTestModule context.
+
+    Potential solutions:
+    - Is RootTestModule a valid NestJS module?
+    - If WsGateway is a provider, is it part of the current RootTestModule?
+    - If WsGateway is exported from a separate @Module, is that module imported within RootTestModule?
+      @Module({
+        imports: [ /* the Module containing WsGateway */ ]
+      })
+
+      at TestingInjector.lookupComponentInParentModules (../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/injector.js:262:19)
+      at TestingInjector.resolveComponentInstance (../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/injector.js:215:33)
+      at TestingInjector.resolveComponentInstance (../../node_modules/.pnpm/@nestjs+testing@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_6rqcnx5ov24usvgujbeob656qu/node_modules/@nestjs/testing/testing-injector.js:19:45)
+      at resolveParam (../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/injector.js:129:38)
+          at async Promise.all (index 4)
+      at TestingInjector.resolveConstructorParams (../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/injector.js:144:27)
+      at TestingInjector.loadInstance (../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/injector.js:70:13)
+      at TestingInjector.loadProvider (../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/injector.js:98:9)
+      at ../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/instance-loader.js:56:13
+          at async Promise.all (index 3)
+
+  ● MessageService › tip settlement › rejects when balance insufficient
+
+    Nest can't resolve dependencies of the MessageService (PrismaService, LovePointService, NotificationService, BusinessConfigService, ?, AchievementService). Please make sure that the argument WsGateway at index [4] is available in the RootTestModule context.
+
+    Potential solutions:
+    - Is RootTestModule a valid NestJS module?
+    - If WsGateway is a provider, is it part of the current RootTestModule?
+    - If WsGateway is exported from a separate @Module, is that module imported within RootTestModule?
+      @Module({
+        imports: [ /* the Module containing WsGateway */ ]
+      })
+
+      at TestingInjector.lookupComponentInParentModules (../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/injector.js:262:19)
+      at TestingInjector.resolveComponentInstance (../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/injector.js:215:33)
+      at TestingInjector.resolveComponentInstance (../../node_modules/.pnpm/@nestjs+testing@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_6rqcnx5ov24usvgujbeob656qu/node_modules/@nestjs/testing/testing-injector.js:19:45)
+      at resolveParam (../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/injector.js:129:38)
+          at async Promise.all (index 4)
+      at TestingInjector.resolveConstructorParams (../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/injector.js:144:27)
+      at TestingInjector.loadInstance (../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/injector.js:70:13)
+      at TestingInjector.loadProvider (../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/injector.js:98:9)
+      at ../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/instance-loader.js:56:13
+          at async Promise.all (index 3)
+
+  ● MessageService › tip settlement › settles tip by inserting two love-point logs (out + in)
+
+    Nest can't resolve dependencies of the MessageService (PrismaService, LovePointService, NotificationService, BusinessConfigService, ?, AchievementService). Please make sure that the argument WsGateway at index [4] is available in the RootTestModule context.
+
+    Potential solutions:
+    - Is RootTestModule a valid NestJS module?
+    - If WsGateway is a provider, is it part of the current RootTestModule?
+    - If WsGateway is exported from a separate @Module, is that module imported within RootTestModule?
+      @Module({
+        imports: [ /* the Module containing WsGateway */ ]
+      })
+
+      at TestingInjector.lookupComponentInParentModules (../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/injector.js:262:19)
+      at TestingInjector.resolveComponentInstance (../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/injector.js:215:33)
+      at TestingInjector.resolveComponentInstance (../../node_modules/.pnpm/@nestjs+testing@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_6rqcnx5ov24usvgujbeob656qu/node_modules/@nestjs/testing/testing-injector.js:19:45)
+      at resolveParam (../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/injector.js:129:38)
+          at async Promise.all (index 4)
+      at TestingInjector.resolveConstructorParams (../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/injector.js:144:27)
+      at TestingInjector.loadInstance (../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/injector.js:70:13)
+      at TestingInjector.loadProvider (../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/injector.js:98:9)
+      at ../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/instance-loader.js:56:13
+          at async Promise.all (index 3)
+
+FAIL modules/achievement/achievement.service.spec.ts
+  ● AchievementService › family milestones › unlocks family_first_dish when family count reaches 1
+
+    Nest can't resolve dependencies of the AchievementService (PrismaService, ?). Please make sure that the argument EvaluatorRegistry at index [1] is available in the RootTestModule context.
+
+    Potential solutions:
+    - Is RootTestModule a valid NestJS module?
+    - If EvaluatorRegistry is a provider, is it part of the current RootTestModule?
+    - If EvaluatorRegistry is exported from a separate @Module, is that module imported within RootTestModule?
+      @Module({
+        imports: [ /* the Module containing EvaluatorRegistry */ ]
+      })
+
+      at TestingInjector.lookupComponentInParentModules (../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/injector.js:262:19)
+      at TestingInjector.resolveComponentInstance (../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/injector.js:215:33)
+      at TestingInjector.resolveComponentInstance (../../node_modules/.pnpm/@nestjs+testing@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_6rqcnx5ov24usvgujbeob656qu/node_modules/@nestjs/testing/testing-injector.js:19:45)
+      at resolveParam (../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/injector.js:129:38)
+          at async Promise.all (index 1)
+      at TestingInjector.resolveConstructorParams (../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/injector.js:144:27)
+      at TestingInjector.loadInstance (../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/injector.js:70:13)
+      at TestingInjector.loadProvider (../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/injector.js:98:9)
+      at ../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/instance-loader.js:56:13
+          at async Promise.all (index 3)
+
+  ● AchievementService › family milestones › unlocks family_10_dishes when count reaches exactly 10
+
+    Nest can't resolve dependencies of the AchievementService (PrismaService, ?). Please make sure that the argument EvaluatorRegistry at index [1] is available in the RootTestModule context.
+
+    Potential solutions:
+    - Is RootTestModule a valid NestJS module?
+    - If EvaluatorRegistry is a provider, is it part of the current RootTestModule?
+    - If EvaluatorRegistry is exported from a separate @Module, is that module imported within RootTestModule?
+      @Module({
+        imports: [ /* the Module containing EvaluatorRegistry */ ]
+      })
+
+      at TestingInjector.lookupComponentInParentModules (../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/injector.js:262:19)
+      at TestingInjector.resolveComponentInstance (../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/injector.js:215:33)
+      at TestingInjector.resolveComponentInstance (../../node_modules/.pnpm/@nestjs+testing@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_6rqcnx5ov24usvgujbeob656qu/node_modules/@nestjs/testing/testing-injector.js:19:45)
+      at resolveParam (../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/injector.js:129:38)
+          at async Promise.all (index 1)
+      at TestingInjector.resolveConstructorParams (../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/injector.js:144:27)
+      at TestingInjector.loadInstance (../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/injector.js:70:13)
+      at TestingInjector.loadProvider (../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/injector.js:98:9)
+      at ../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/instance-loader.js:56:13
+          at async Promise.all (index 3)
+
+  ● AchievementService › five star streak › does not unlock if current rating < 5
+
+    Nest can't resolve dependencies of the AchievementService (PrismaService, ?). Please make sure that the argument EvaluatorRegistry at index [1] is available in the RootTestModule context.
+
+    Potential solutions:
+    - Is RootTestModule a valid NestJS module?
+    - If EvaluatorRegistry is a provider, is it part of the current RootTestModule?
+    - If EvaluatorRegistry is exported from a separate @Module, is that module imported within RootTestModule?
+      @Module({
+        imports: [ /* the Module containing EvaluatorRegistry */ ]
+      })
+
+      at TestingInjector.lookupComponentInParentModules (../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/injector.js:262:19)
+      at TestingInjector.resolveComponentInstance (../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/injector.js:215:33)
+      at TestingInjector.resolveComponentInstance (../../node_modules/.pnpm/@nestjs+testing@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_6rqcnx5ov24usvgujbeob656qu/node_modules/@nestjs/testing/testing-injector.js:19:45)
+      at resolveParam (../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/injector.js:129:38)
+          at async Promise.all (index 1)
+      at TestingInjector.resolveConstructorParams (../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/injector.js:144:27)
+      at TestingInjector.loadInstance (../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/injector.js:70:13)
+      at TestingInjector.loadProvider (../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/injector.js:98:9)
+      at ../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/instance-loader.js:56:13
+          at async Promise.all (index 3)
+
+  ● AchievementService › five star streak › unlocks five_star_streak_5 when last 5 orders all 5 stars
+
+    Nest can't resolve dependencies of the AchievementService (PrismaService, ?). Please make sure that the argument EvaluatorRegistry at index [1] is available in the RootTestModule context.
+
+    Potential solutions:
+    - Is RootTestModule a valid NestJS module?
+    - If EvaluatorRegistry is a provider, is it part of the current RootTestModule?
+    - If EvaluatorRegistry is exported from a separate @Module, is that module imported within RootTestModule?
+      @Module({
+        imports: [ /* the Module containing EvaluatorRegistry */ ]
+      })
+
+      at TestingInjector.lookupComponentInParentModules (../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/injector.js:262:19)
+      at TestingInjector.resolveComponentInstance (../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/injector.js:215:33)
+      at TestingInjector.resolveComponentInstance (../../node_modules/.pnpm/@nestjs+testing@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_6rqcnx5ov24usvgujbeob656qu/node_modules/@nestjs/testing/testing-injector.js:19:45)
+      at resolveParam (../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/injector.js:129:38)
+          at async Promise.all (index 1)
+      at TestingInjector.resolveConstructorParams (../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/injector.js:144:27)
+      at TestingInjector.loadInstance (../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/injector.js:70:13)
+      at TestingInjector.loadProvider (../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/injector.js:98:9)
+      at ../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/instance-loader.js:56:13
+          at async Promise.all (index 3)
+
+  ● AchievementService › five star streak › does not unlock if any in last 5 is < 5 stars
+
+    Nest can't resolve dependencies of the AchievementService (PrismaService, ?). Please make sure that the argument EvaluatorRegistry at index [1] is available in the RootTestModule context.
+
+    Potential solutions:
+    - Is RootTestModule a valid NestJS module?
+    - If EvaluatorRegistry is a provider, is it part of the current RootTestModule?
+    - If EvaluatorRegistry is exported from a separate @Module, is that module imported within RootTestModule?
+      @Module({
+        imports: [ /* the Module containing EvaluatorRegistry */ ]
+      })
+
+      at TestingInjector.lookupComponentInParentModules (../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/injector.js:262:19)
+      at TestingInjector.resolveComponentInstance (../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/injector.js:215:33)
+      at TestingInjector.resolveComponentInstance (../../node_modules/.pnpm/@nestjs+testing@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_6rqcnx5ov24usvgujbeob656qu/node_modules/@nestjs/testing/testing-injector.js:19:45)
+      at resolveParam (../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/injector.js:129:38)
+          at async Promise.all (index 1)
+      at TestingInjector.resolveConstructorParams (../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/injector.js:144:27)
+      at TestingInjector.loadInstance (../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/injector.js:70:13)
+      at TestingInjector.loadProvider (../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/injector.js:98:9)
+      at ../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/instance-loader.js:56:13
+          at async Promise.all (index 3)
+
+  ● AchievementService › idempotency › does not re-unlock an existing badge
+
+    Nest can't resolve dependencies of the AchievementService (PrismaService, ?). Please make sure that the argument EvaluatorRegistry at index [1] is available in the RootTestModule context.
+
+    Potential solutions:
+    - Is RootTestModule a valid NestJS module?
+    - If EvaluatorRegistry is a provider, is it part of the current RootTestModule?
+    - If EvaluatorRegistry is exported from a separate @Module, is that module imported within RootTestModule?
+      @Module({
+        imports: [ /* the Module containing EvaluatorRegistry */ ]
+      })
+
+      at TestingInjector.lookupComponentInParentModules (../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/injector.js:262:19)
+      at TestingInjector.resolveComponentInstance (../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/injector.js:215:33)
+      at TestingInjector.resolveComponentInstance (../../node_modules/.pnpm/@nestjs+testing@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_6rqcnx5ov24usvgujbeob656qu/node_modules/@nestjs/testing/testing-injector.js:19:45)
+      at resolveParam (../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/injector.js:129:38)
+          at async Promise.all (index 1)
+      at TestingInjector.resolveConstructorParams (../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/injector.js:144:27)
+      at TestingInjector.loadInstance (../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/injector.js:70:13)
+      at TestingInjector.loadProvider (../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/injector.js:98:9)
+      at ../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/instance-loader.js:56:13
+          at async Promise.all (index 3)
+
+  ● AchievementService › listMine › filters by ownerType=user and userId
+
+    Nest can't resolve dependencies of the AchievementService (PrismaService, ?). Please make sure that the argument EvaluatorRegistry at index [1] is available in the RootTestModule context.
+
+    Potential solutions:
+    - Is RootTestModule a valid NestJS module?
+    - If EvaluatorRegistry is a provider, is it part of the current RootTestModule?
+    - If EvaluatorRegistry is exported from a separate @Module, is that module imported within RootTestModule?
+      @Module({
+        imports: [ /* the Module containing EvaluatorRegistry */ ]
+      })
+
+      at TestingInjector.lookupComponentInParentModules (../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/injector.js:262:19)
+      at TestingInjector.resolveComponentInstance (../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/injector.js:215:33)
+      at TestingInjector.resolveComponentInstance (../../node_modules/.pnpm/@nestjs+testing@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_6rqcnx5ov24usvgujbeob656qu/node_modules/@nestjs/testing/testing-injector.js:19:45)
+      at resolveParam (../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/injector.js:129:38)
+          at async Promise.all (index 1)
+      at TestingInjector.resolveConstructorParams (../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/injector.js:144:27)
+      at TestingInjector.loadInstance (../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/injector.js:70:13)
+      at TestingInjector.loadProvider (../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/injector.js:98:9)
+      at ../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/instance-loader.js:56:13
+          at async Promise.all (index 3)
+
+  ● AchievementService › uses OrderStatus.COMPLETED in count query
+
+    Nest can't resolve dependencies of the AchievementService (PrismaService, ?). Please make sure that the argument EvaluatorRegistry at index [1] is available in the RootTestModule context.
+
+    Potential solutions:
+    - Is RootTestModule a valid NestJS module?
+    - If EvaluatorRegistry is a provider, is it part of the current RootTestModule?
+    - If EvaluatorRegistry is exported from a separate @Module, is that module imported within RootTestModule?
+      @Module({
+        imports: [ /* the Module containing EvaluatorRegistry */ ]
+      })
+
+      at TestingInjector.lookupComponentInParentModules (../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/injector.js:262:19)
+      at TestingInjector.resolveComponentInstance (../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/injector.js:215:33)
+      at TestingInjector.resolveComponentInstance (../../node_modules/.pnpm/@nestjs+testing@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_6rqcnx5ov24usvgujbeob656qu/node_modules/@nestjs/testing/testing-injector.js:19:45)
+      at resolveParam (../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/injector.js:129:38)
+          at async Promise.all (index 1)
+      at TestingInjector.resolveConstructorParams (../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/injector.js:144:27)
+      at TestingInjector.loadInstance (../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/injector.js:70:13)
+      at TestingInjector.loadProvider (../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/injector.js:98:9)
+      at ../../node_modules/.pnpm/@nestjs+core@10.4.22_@nestjs+common@10.4.22_class-transformer@0.5.1_class-validator@0.14.4_re_n6smjgconzfuqsrxebzddwuo6q/node_modules/@nestjs/core/injector/instance-loader.js:56:13
+          at async Promise.all (index 3)
+
+
+Test Suites: 2 failed, 21 passed, 23 total
+Tests:       19 failed, 139 passed, 158 total
+Snapshots:   0 total
+Time:        7.584 s
+Ran all test suites.
+undefined
+H:\codex\林家餐厅小程序\family-kitchen-c03-revalidation\backend:
+ ERR_PNPM_RECURSIVE_EXEC_FIRST_FAIL  Command "jest" not found

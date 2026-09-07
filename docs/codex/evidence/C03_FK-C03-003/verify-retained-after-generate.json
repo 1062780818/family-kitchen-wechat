@@ -1,0 +1,11 @@
+{
+  "name": "verify-retained-after-generate",
+  "filePath": "H:\\codex\\林家餐厅小程序\\family-kitchen-c03-revalidation\\docs\\architecture\\bin\\pnpm.cmd",
+  "arguments": ["run", "verify:retained"],
+  "workingDirectory": "H:\\codex\\林家餐厅小程序\\family-kitchen-c03-revalidation",
+  "startedAt": "2026-09-07T13:19:21.7715324+08:00",
+  "finishedAt": "2026-09-07T13:19:56.6274644+08:00",
+  "durationMs": 34856.0,
+  "exitCode": 0,
+  "logPath": "H:\\codex\\林家餐厅小程序\\family-kitchen-c03-revalidation\\docs\\codex\\evidence\\C03_FK-C03-003\\verify-retained-after-generate.log"
+}

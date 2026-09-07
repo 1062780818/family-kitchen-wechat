@@ -1,0 +1,11 @@
+{
+  "name": "static-signed-url-consumers",
+  "filePath": "rg",
+  "arguments": ["-n", "u\\.url|r\\.url", "mini-app/src/pages"],
+  "workingDirectory": "H:\\codex\\林家餐厅小程序\\family-kitchen-c03-revalidation",
+  "startedAt": "2026-09-07T13:28:43.8983812+08:00",
+  "finishedAt": "2026-09-07T13:28:43.9459921+08:00",
+  "durationMs": 48.0,
+  "exitCode": 0,
+  "logPath": "H:\\codex\\林家餐厅小程序\\family-kitchen-c03-revalidation\\docs\\codex\\evidence\\C03_FK-C03-003\\static-signed-url-consumers.log"
+}

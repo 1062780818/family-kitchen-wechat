@@ -1,0 +1,16 @@
+
+> family-kitchen@0.1.0 db:generate H:\codex\林家餐厅小程序\family-kitchen-c03-revalidation
+> pnpm --filter @family-kitchen/backend run db:generate
+
+
+> @family-kitchen/backend@0.1.0 db:generate H:\codex\林家餐厅小程序\family-kitchen-c03-revalidation\backend
+> prisma generate
+
+Prisma schema loaded from prisma\schema.prisma
+
+✔ Generated Prisma Client (v5.22.0) to .\..\node_modules\.pnpm\@prisma+client@5.22.0_prisma@5.22.0\node_modules\@prisma\client in 116ms
+
+Start by importing your Prisma Client (See: https://pris.ly/d/importing-client)
+
+Tip: Interested in query caching in just a few lines of code? Try Accelerate today! https://pris.ly/tip-3-accelerate
+

@@ -1,0 +1,11 @@
+{
+  "name": "backend-full-jest",
+  "filePath": "H:\\codex\\林家餐厅小程序\\family-kitchen-c03-revalidation\\docs\\architecture\\bin\\pnpm.cmd",
+  "arguments": ["--filter", "@family-kitchen/backend", "exec", "jest", "--runInBand"],
+  "workingDirectory": "H:\\codex\\林家餐厅小程序\\family-kitchen-c03-revalidation",
+  "startedAt": "2026-09-07T13:20:08.2920030+08:00",
+  "finishedAt": "2026-09-07T13:20:17.0933220+08:00",
+  "durationMs": 8801.0,
+  "exitCode": 1,
+  "logPath": "H:\\codex\\林家餐厅小程序\\family-kitchen-c03-revalidation\\docs\\codex\\evidence\\C03_FK-C03-003\\backend-full-jest.log"
+}

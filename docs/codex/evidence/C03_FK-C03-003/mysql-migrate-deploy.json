@@ -1,0 +1,11 @@
+{
+  "name": "mysql-migrate-deploy",
+  "filePath": "H:\\codex\\林家餐厅小程序\\family-kitchen-c03-revalidation\\docs\\architecture\\bin\\pnpm.cmd",
+  "arguments": ["--filter", "@family-kitchen/backend", "exec", "prisma", "migrate", "deploy"],
+  "workingDirectory": "H:\\codex\\林家餐厅小程序\\family-kitchen-c03-revalidation",
+  "startedAt": "2026-09-07T13:23:10.9665250+08:00",
+  "finishedAt": "2026-09-07T13:23:17.0009102+08:00",
+  "durationMs": 6034.0,
+  "exitCode": 0,
+  "logPath": "H:\\codex\\林家餐厅小程序\\family-kitchen-c03-revalidation\\docs\\codex\\evidence\\C03_FK-C03-003\\mysql-migrate-deploy.log"
+}

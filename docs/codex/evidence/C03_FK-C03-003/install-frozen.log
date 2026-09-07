@@ -1,0 +1,120 @@
+Scope: all 5 workspace projects
+Lockfile is up to date, resolution step is skipped
+Progress: resolved 1, reused 0, downloaded 0, added 0
+Packages: +1554
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+   ╭──────────────────────────────────────────────────────────────────╮
+   │                                                                  │
+   │                Update available! 9.12.0 → 12.3.4.                │
+   │   Changelog: https://github.com/pnpm/pnpm/releases/tag/v12.3.4   │
+   │                Run "pnpm add -g pnpm" to update.                 │
+   │                                                                  │
+   │         Follow @pnpmjs for updates: https://x.com/pnpmjs         │
+   │                                                                  │
+   ╰──────────────────────────────────────────────────────────────────╯
+
+Progress: resolved 1554, reused 0, downloaded 12, added 11
+Progress: resolved 1554, reused 0, downloaded 64, added 64
+Progress: resolved 1554, reused 0, downloaded 165, added 163
+Progress: resolved 1554, reused 0, downloaded 205, added 203
+Progress: resolved 1554, reused 0, downloaded 274, added 270
+Progress: resolved 1554, reused 0, downloaded 278, added 274
+Progress: resolved 1554, reused 0, downloaded 295, added 294
+Progress: resolved 1554, reused 0, downloaded 315, added 316
+Progress: resolved 1554, reused 0, downloaded 379, added 380
+Progress: resolved 1554, reused 0, downloaded 380, added 380
+Progress: resolved 1554, reused 0, downloaded 502, added 504
+Progress: resolved 1554, reused 0, downloaded 503, added 504
+Progress: resolved 1554, reused 0, downloaded 628, added 629
+Progress: resolved 1554, reused 0, downloaded 635, added 635
+Progress: resolved 1554, reused 0, downloaded 635, added 636
+Progress: resolved 1554, reused 0, downloaded 744, added 745
+Progress: resolved 1554, reused 0, downloaded 775, added 778
+Progress: resolved 1554, reused 0, downloaded 776, added 778
+Progress: resolved 1554, reused 0, downloaded 920, added 926
+Progress: resolved 1554, reused 0, downloaded 937, added 943
+Progress: resolved 1554, reused 0, downloaded 938, added 943
+Progress: resolved 1554, reused 0, downloaded 1087, added 1094
+Progress: resolved 1554, reused 0, downloaded 1089, added 1094
+Progress: resolved 1554, reused 0, downloaded 1089, added 1095
+Progress: resolved 1554, reused 0, downloaded 1106, added 1113
+Progress: resolved 1554, reused 0, downloaded 1107, added 1113
+Progress: resolved 1554, reused 0, downloaded 1168, added 1171
+Progress: resolved 1554, reused 0, downloaded 1174, added 1176
+Progress: resolved 1554, reused 0, downloaded 1174, added 1177
+Progress: resolved 1554, reused 0, downloaded 1217, added 1218
+Progress: resolved 1554, reused 0, downloaded 1218, added 1218
+Progress: resolved 1554, reused 0, downloaded 1236, added 1244
+Progress: resolved 1554, reused 0, downloaded 1247, added 1255
+Progress: resolved 1554, reused 0, downloaded 1248, added 1255
+Progress: resolved 1554, reused 0, downloaded 1262, added 1268
+Progress: resolved 1554, reused 0, downloaded 1263, added 1269
+Progress: resolved 1554, reused 0, downloaded 1313, added 1322
+Progress: resolved 1554, reused 0, downloaded 1337, added 1345
+Progress: resolved 1554, reused 0, downloaded 1337, added 1346
+Progress: resolved 1554, reused 0, downloaded 1376, added 1387
+Progress: resolved 1554, reused 0, downloaded 1432, added 1443
+Progress: resolved 1554, reused 0, downloaded 1477, added 1487
+Progress: resolved 1554, reused 0, downloaded 1499, added 1506
+Progress: resolved 1554, reused 0, downloaded 1499, added 1507
+Progress: resolved 1554, reused 0, downloaded 1542, added 1552
+Progress: resolved 1554, reused 0, downloaded 1543, added 1553
+Progress: resolved 1554, reused 0, downloaded 1543, added 1554
+Progress: resolved 1554, reused 0, downloaded 1543, added 1554, done
+.../node_modules/@parcel/watcher install$ node scripts/build-from-source.js
+.../node_modules/@prisma/engines postinstall$ node scripts/postinstall.js
+.../esbuild@0.21.5/node_modules/esbuild postinstall$ node install.js
+.../node_modules/vue-demi postinstall$ node -e "try{require('./scripts/postinstall.js')}catch(e){}"
+.../node_modules/@parcel/watcher install: Done
+.../node_modules/@nestjs/core postinstall$ opencollective || exit 0
+.../esbuild@0.20.2/node_modules/esbuild postinstall$ node install.js
+.../node_modules/vue-demi postinstall: Done
+.../node_modules/core-js-pure postinstall$ node -e "try{require('./postinstall')}catch(e){}"
+.../node_modules/core-js-pure postinstall: Thank you for using core-js ( https://github.com/zloirock/core-js ) for polyfilling JavaScript standard library!
+.../node_modules/core-js-pure postinstall: The project needs your help! Please consider supporting core-js:
+.../node_modules/core-js-pure postinstall: > https://opencollective.com/core-js 
+.../node_modules/core-js-pure postinstall: > https://patreon.com/zloirock 
+.../node_modules/core-js-pure postinstall: > https://boosty.to/zloirock 
+.../node_modules/core-js-pure postinstall: > bitcoin: bc1qlea7544qtsmj2rayg0lthvza9fau63ux0fstcz 
+.../node_modules/core-js-pure postinstall: I highly recommend reading this: https://github.com/zloirock/core-js/blob/master/docs/2023-02-14-so-whats-next.md 
+.../node_modules/core-js-pure postinstall: Done
+.../node_modules/@nestjs/core postinstall:                            Thanks for installing nest 
+.../node_modules/@nestjs/core postinstall:                  Please consider donating to our open collective
+.../node_modules/@nestjs/core postinstall:                         to help us maintain this package.
+.../node_modules/@nestjs/core postinstall:                                          
+.../node_modules/@nestjs/core postinstall:                         Number of contributors: undefined
+.../node_modules/@nestjs/core postinstall:                              Number of backers: 1217
+.../node_modules/@nestjs/core postinstall:                             Annual budget: US$124,863
+.../node_modules/@nestjs/core postinstall:                             Current balance: US$14,682
+.../node_modules/@nestjs/core postinstall:                                          
+.../node_modules/@nestjs/core postinstall:              Become a partner: https://opencollective.com/nest/donate
+.../node_modules/@nestjs/core postinstall:                                          
+.../node_modules/@nestjs/core postinstall: Done
+.../node_modules/@prisma/engines postinstall: Done
+.../core-js@3.49.0/node_modules/core-js postinstall$ node -e "try{require('./postinstall')}catch(e){}"
+.../core-js@3.49.0/node_modules/core-js postinstall: Done
+.../esbuild@0.21.5/node_modules/esbuild postinstall: Done
+.../esbuild@0.20.2/node_modules/esbuild postinstall: Done
+.../prisma@5.22.0/node_modules/prisma preinstall$ node scripts/preinstall-entry.js
+.../prisma@5.22.0/node_modules/prisma preinstall: Done
+.../node_modules/@prisma/client postinstall$ node scripts/postinstall.js
+.../node_modules/@prisma/client postinstall: prisma:warn We could not find your Prisma schema in the default locations (see: https://pris.ly/d/prisma-schema-location).
+.../node_modules/@prisma/client postinstall: If you have a Prisma schema file in a custom path, you will need to run
+.../node_modules/@prisma/client postinstall: `prisma generate --schema=./path/to/your/schema.prisma` to generate Prisma Client.
+.../node_modules/@prisma/client postinstall: If you do not have a Prisma schema file yet, you can ignore this message.
+.../node_modules/@prisma/client postinstall: Done
+
+devDependencies:
++ @commitlint/cli 19.8.1
++ @commitlint/config-conventional 19.8.1
++ @types/node 20.19.41
++ eslint 9.39.4
++ husky 9.1.7
++ lint-staged 15.5.2
++ prettier 3.8.3
++ typescript 5.9.3
+
+. prepare$ husky
+. prepare: Done
+Done in 1m 36.5s

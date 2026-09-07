@@ -1,0 +1,69 @@
+
+> family-kitchen@0.1.0 verify:retained H:\codex\林家餐厅小程序\family-kitchen-c03-revalidation
+> pnpm --filter @family-kitchen/shared run lint && pnpm --filter @family-kitchen/shared run typecheck && pnpm --filter @family-kitchen/shared run build && pnpm --filter @family-kitchen/shared run test && pnpm --filter @family-kitchen/backend run lint:retained && pnpm --filter @family-kitchen/backend run typecheck && pnpm --filter @family-kitchen/backend run build && pnpm --filter @family-kitchen/backend run test:retained && pnpm --filter @family-kitchen/mini-app run lint:retained && pnpm --filter @family-kitchen/mini-app run build
+
+
+> @family-kitchen/shared@0.1.0 lint H:\codex\林家餐厅小程序\family-kitchen-c03-revalidation\packages\shared
+> eslint src --max-warnings 0
+
+
+> @family-kitchen/shared@0.1.0 typecheck H:\codex\林家餐厅小程序\family-kitchen-c03-revalidation\packages\shared
+> tsc --noEmit
+
+
+> @family-kitchen/shared@0.1.0 build H:\codex\林家餐厅小程序\family-kitchen-c03-revalidation\packages\shared
+> tsc
+
+
+> @family-kitchen/shared@0.1.0 test H:\codex\林家餐厅小程序\family-kitchen-c03-revalidation\packages\shared
+> node --test test/*.test.cjs
+
+✔ served is terminal for the active meal-slot constraint (0.5083ms)
+ℹ tests 1
+ℹ suites 0
+ℹ pass 1
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 65.1109
+
+> @family-kitchen/backend@0.1.0 lint:retained H:\codex\林家餐厅小程序\family-kitchen-c03-revalidation\backend
+> eslint src/modules/storage src/modules/auth src/modules/family src/modules/recipe src/modules/order/order.service.ts src/modules/order/order.service.spec.ts src/modules/order/order-status.ts src/modules/order/order-status.spec.ts --max-warnings 0
+
+
+> @family-kitchen/backend@0.1.0 typecheck H:\codex\林家餐厅小程序\family-kitchen-c03-revalidation\backend
+> tsc --noEmit
+
+
+> @family-kitchen/backend@0.1.0 build H:\codex\林家餐厅小程序\family-kitchen-c03-revalidation\backend
+> nest build
+
+
+> @family-kitchen/backend@0.1.0 test:retained H:\codex\林家餐厅小程序\family-kitchen-c03-revalidation\backend
+> jest --config ./jest.retained.config.cjs --runInBand
+
+PASS src/modules/order/order.service.spec.ts
+PASS src/modules/storage/storage.service.spec.ts
+PASS src/modules/auth/auth.service.spec.ts
+PASS src/modules/recipe/recipe.service.spec.ts
+PASS src/modules/family/family.service.spec.ts
+PASS src/modules/recipe/recipe-favorite.spec.ts
+PASS src/modules/order/order-status.spec.ts
+
+Test Suites: 7 passed, 7 total
+Tests:       74 passed, 74 total
+Snapshots:   0 total
+Time:        4.782 s
+Ran all test suites.
+
+> @family-kitchen/mini-app@0.1.0 lint:retained H:\codex\林家餐厅小程序\family-kitchen-c03-revalidation\mini-app
+> eslint src/api/http.js src/api/auth.js src/api/family.js src/api/recipe.js src/api/order.js src/api/storage.js --max-warnings 0
+
+
+> @family-kitchen/mini-app@0.1.0 build H:\codex\林家餐厅小程序\family-kitchen-c03-revalidation\mini-app
+> uni build -p mp-weixin
+
+Compiling...
+DONE  Build complete.
+Run method: open Weixin Mini Program Devtools, import dist\build\mp-weixin run.

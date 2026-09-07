@@ -1,0 +1,60 @@
+Prisma schema loaded from prisma\schema.prisma
+Datasource "db": MySQL database "c03_revalidation" at "127.0.0.1:33416"
+
+13 migrations found in prisma/migrations
+
+Applying migration `20260513064715_init`
+Applying migration `20260513070000_add_business_config`
+Applying migration `20260517000000_add_user_gender`
+Applying migration `20260517000100_add_timeline_user_relations`
+Applying migration `20260522052758_`
+Applying migration `20260522060000_add_phone_password_auth`
+Applying migration `20260522070000_widen_password_hash`
+Applying migration `20260523104941_add_badge_definition`
+Applying migration `20260524100000_add_performance_indexes`
+Applying migration `20260524120000_add_notification_prefs_and_log`
+Applying migration `20260524140000_add_chef_level_definition`
+Applying migration `20260524160000_user_cascade_on_delete`
+Applying migration `20260525000000_add_ai_tables`
+
+The following migration(s) have been applied:
+
+migrations/
+  └─ 20260513064715_init/
+    └─ migration.sql
+  └─ 20260513070000_add_business_config/
+    └─ migration.sql
+  └─ 20260517000000_add_user_gender/
+    └─ migration.sql
+  └─ 20260517000100_add_timeline_user_relations/
+    └─ migration.sql
+  └─ 20260522052758_/
+    └─ migration.sql
+  └─ 20260522060000_add_phone_password_auth/
+    └─ migration.sql
+  └─ 20260522070000_widen_password_hash/
+    └─ migration.sql
+  └─ 20260523104941_add_badge_definition/
+    └─ migration.sql
+  └─ 20260524100000_add_performance_indexes/
+    └─ migration.sql
+  └─ 20260524120000_add_notification_prefs_and_log/
+    └─ migration.sql
+  └─ 20260524140000_add_chef_level_definition/
+    └─ migration.sql
+  └─ 20260524160000_user_cascade_on_delete/
+    └─ migration.sql
+  └─ 20260525000000_add_ai_tables/
+    └─ migration.sql
+      
+All migrations have been successfully applied.
+┌─────────────────────────────────────────────────────────┐
+│  Update available 5.22.0 -> 8.0.0-rc.13                 │
+│                                                         │
+│  This is a major update - please follow the guide at    │
+│  https://pris.ly/d/major-version-upgrade                │
+│                                                         │
+│  Run the following to update                            │
+│    npm i --save-dev prisma@latest                       │
+│    npm i @prisma/client@latest                          │
+└─────────────────────────────────────────────────────────┘

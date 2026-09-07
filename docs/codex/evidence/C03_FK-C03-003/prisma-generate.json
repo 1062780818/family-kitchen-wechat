@@ -1,0 +1,11 @@
+{
+  "name": "prisma-generate",
+  "filePath": "H:\\codex\\林家餐厅小程序\\family-kitchen-c03-revalidation\\docs\\architecture\\bin\\pnpm.cmd",
+  "arguments": ["run", "db:generate"],
+  "workingDirectory": "H:\\codex\\林家餐厅小程序\\family-kitchen-c03-revalidation",
+  "startedAt": "2026-09-07T13:19:17.7618940+08:00",
+  "finishedAt": "2026-09-07T13:19:21.3858006+08:00",
+  "durationMs": 3624.0,
+  "exitCode": 0,
+  "logPath": "H:\\codex\\林家餐厅小程序\\family-kitchen-c03-revalidation\\docs\\codex\\evidence\\C03_FK-C03-003\\prisma-generate.log"
+}

@@ -1,0 +1,5 @@
+mini-app/src/pages\timeline\manual.vue:126:        for (const u of uploaded) this.form.imageUrls.push(u.url);
+mini-app/src/pages\recipe\edit.vue:201:        for (const u of uploaded) this.form.imageUrls.push(u.url);
+mini-app/src/pages\order\detail.vue:313:        const urls = uploaded.map((u) => u.url);
+mini-app/src/pages\profile\edit.vue:157:        this.form.avatarUrl = r.url;
+mini-app/src/pages\profile\edit.vue:179:        this.form.avatarUrl = r.url;
