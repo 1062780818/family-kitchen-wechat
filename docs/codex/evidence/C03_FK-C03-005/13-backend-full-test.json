@@ -1,0 +1,9 @@
+﻿{
+  "name": "13-backend-full-test",
+  "command": "$env:TEMP=\u0027H:\\c03-005-runtime\\temp\u0027; $env:TMP=\u0027H:\\c03-005-runtime\\temp\u0027; $env:C01_PNPM_CLI=\u0027C:\\Users\\Administrator\\AppData\\Local\\pnpm\\store\\v11\\links\\@\\pnpm\\9.12.0\\49d8fa80e8205096741f5238215a507a7cc04fc3d20ff2b1c8b726b65d71c883\\node_modules\\pnpm\\bin\\pnpm.cjs\u0027; $env:Path=\u0027H:\\codex\\林家餐厅小程序\\family-kitchen-c03-revalidation-005\\docs\\architecture\\bin;\u0027+$env:Path; pnpm --filter @family-kitchen/backend run test --runInBand",
+  "startedAt": "2026-09-07T23:23:35.5622652+08:00",
+  "endedAt": "2026-09-07T23:25:09.3889408+08:00",
+  "durationSeconds": 93.827,
+  "exitCode": 1,
+  "log": ".\\docs\\codex\\evidence\\C03_FK-C03-005\\13-backend-full-test.log"
+}

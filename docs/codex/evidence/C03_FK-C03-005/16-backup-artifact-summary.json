@@ -1,0 +1,9 @@
+﻿{
+  "name": "16-backup-artifact-summary",
+  "command": "$files=Get-ChildItem -LiteralPath H:\\c03-005-runtime\\backups -Filter \u0027apply-*.json\u0027; $summary=$files | Sort-Object Name | ForEach-Object { $data=Get-Content -Raw -LiteralPath $_.FullName | ConvertFrom-Json; [pscustomobject]@{name=$_.Name;fullPath=$_.FullName;bytes=$_.Length;version=$data.version;changes=@($data.changes).Count} }; [pscustomobject]@{artifacts=$summary;repoBackupCount=@(Get-ChildItem -Path . -Recurse -File -Filter \u0027apply-*.json\u0027 -ErrorAction SilentlyContinue).Count;literalDoubleDashExists=Test-Path -LiteralPath backend/--} | ConvertTo-Json -Depth 4",
+  "startedAt": "2026-09-07T23:27:27.0129976+08:00",
+  "endedAt": "2026-09-07T23:27:31.4220219+08:00",
+  "durationSeconds": 4.409,
+  "exitCode": 0,
+  "log": ".\\docs\\codex\\evidence\\C03_FK-C03-005\\16-backup-artifact-summary.log"
+}

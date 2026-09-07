@@ -1,0 +1,9 @@
+﻿{
+  "name": "03-foundation-regression",
+  "command": "$env:C01_API_BASE=\u0027http://127.0.0.1:33817/api/v1\u0027; $env:C01_TEST_PASSWORD=\u0027C03-Isolated-User-Password-005\u0027; $env:DATABASE_URL=\u0027mysql://fk005:C03-Isolated-Db-Password-005@127.0.0.1:33816/fk_c03_005b?charset=utf8mb4\u0027; node tests/integration/foundation-defect-regression.mjs",
+  "startedAt": "2026-09-07T23:15:26.9836228+08:00",
+  "endedAt": "2026-09-07T23:15:31.6040729+08:00",
+  "durationSeconds": 4.62,
+  "exitCode": 0,
+  "log": ".\\docs\\codex\\evidence\\C03_FK-C03-005\\03-foundation-regression.log"
+}

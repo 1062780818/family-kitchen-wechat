@@ -1,0 +1,9 @@
+﻿{
+  "name": "11-security-production-missing-admin",
+  "command": "$env:C01_API_BASE=\u0027http://127.0.0.1:33817/api/v1\u0027; $env:C01_JWT_SECRET=\u0027C03-Isolated-JWT-Secret-005-Not-Production\u0027; $env:C01_ADMIN_EXPECTED_MODE=\u0027disabled\u0027; node tests/integration/security-closeout-regression.mjs",
+  "startedAt": "2026-09-07T23:22:36.3927157+08:00",
+  "endedAt": "2026-09-07T23:22:37.5078646+08:00",
+  "durationSeconds": 1.115,
+  "exitCode": 0,
+  "log": ".\\docs\\codex\\evidence\\C03_FK-C03-005\\11-security-production-missing-admin.log"
+}

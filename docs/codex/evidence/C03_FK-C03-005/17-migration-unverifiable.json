@@ -1,0 +1,9 @@
+﻿{
+  "name": "17-migration-unverifiable",
+  "command": "powershell -NoProfile -ExecutionPolicy Bypass -File tests/qa/revalidation/Invoke-C03UnverifiableMigration.ps1 -EnvFile H:\\c03-005-runtime\\development.env -PnpmCli \u0027C:\\Users\\Administrator\\AppData\\Local\\pnpm\\store\\v11\\links\\@\\pnpm\\9.12.0\\49d8fa80e8205096741f5238215a507a7cc04fc3d20ff2b1c8b726b65d71c883\\node_modules\\pnpm\\bin\\pnpm.cjs\u0027 -MysqlCli H:\\c03-005-runtime\\mysql\\bin\\mysql.exe",
+  "startedAt": "2026-09-07T23:29:07.0779677+08:00",
+  "endedAt": "2026-09-07T23:29:09.0710511+08:00",
+  "durationSeconds": 1.993,
+  "exitCode": 0,
+  "log": ".\\docs\\codex\\evidence\\C03_FK-C03-005\\17-migration-unverifiable.log"
+}

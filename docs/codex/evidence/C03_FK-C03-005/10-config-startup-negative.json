@@ -1,0 +1,9 @@
+﻿{
+  "name": "10-config-startup-negative",
+  "command": "$env:C03_PRODUCTION_ENV_FILE=\u0027H:\\c03-005-runtime\\production-disabled.env\u0027; node tests/qa/revalidation/config-startup-regression.mjs",
+  "startedAt": "2026-09-07T23:21:46.1400695+08:00",
+  "endedAt": "2026-09-07T23:21:54.3413144+08:00",
+  "durationSeconds": 8.201,
+  "exitCode": 0,
+  "log": ".\\docs\\codex\\evidence\\C03_FK-C03-005\\10-config-startup-negative.log"
+}

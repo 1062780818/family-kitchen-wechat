@@ -1,0 +1,9 @@
+﻿{
+  "name": "15-migration-rollback-conflict",
+  "command": "powershell -NoProfile -ExecutionPolicy Bypass -File tests/qa/revalidation/Invoke-C03RollbackConflict.ps1 -EnvFile H:\\c03-005-runtime\\development.env -PnpmCli \u0027C:\\Users\\Administrator\\AppData\\Local\\pnpm\\store\\v11\\links\\@\\pnpm\\9.12.0\\49d8fa80e8205096741f5238215a507a7cc04fc3d20ff2b1c8b726b65d71c883\\node_modules\\pnpm\\bin\\pnpm.cjs\u0027 -MysqlCli H:\\c03-005-runtime\\mysql\\bin\\mysql.exe -Backup H:\\c03-005-runtime\\backups\\apply-6.json",
+  "startedAt": "2026-09-07T23:25:43.8082872+08:00",
+  "endedAt": "2026-09-07T23:25:47.7602045+08:00",
+  "durationSeconds": 3.952,
+  "exitCode": 0,
+  "log": ".\\docs\\codex\\evidence\\C03_FK-C03-005\\15-migration-rollback-conflict.log"
+}

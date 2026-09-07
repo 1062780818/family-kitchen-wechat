@@ -1,0 +1,9 @@
+﻿{
+  "name": "09-security-production-enabled-admin",
+  "command": "$env:C01_API_BASE=\u0027http://127.0.0.1:33817/api/v1\u0027; $env:C01_JWT_SECRET=\u0027C03-Isolated-JWT-Secret-005-Not-Production\u0027; $env:C01_ADMIN_EXPECTED_MODE=\u0027enabled\u0027; $env:C01_ADMIN_USERNAME=\u0027c03-qa-admin\u0027; $env:C01_ADMIN_PASSWORD=\u0027C03-Isolated-Admin-Password-005\u0027; node tests/integration/security-closeout-regression.mjs",
+  "startedAt": "2026-09-07T23:19:58.2383058+08:00",
+  "endedAt": "2026-09-07T23:19:59.3949896+08:00",
+  "durationSeconds": 1.157,
+  "exitCode": 0,
+  "log": ".\\docs\\codex\\evidence\\C03_FK-C03-005\\09-security-production-enabled-admin.log"
+}

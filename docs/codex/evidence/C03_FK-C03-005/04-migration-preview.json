@@ -1,0 +1,9 @@
+﻿{
+  "name": "04-migration-preview",
+  "command": "$env:C01_PNPM_CLI=\u0027C:\\Users\\Administrator\\AppData\\Local\\pnpm\\store\\v11\\links\\@\\pnpm\\9.12.0\\49d8fa80e8205096741f5238215a507a7cc04fc3d20ff2b1c8b726b65d71c883\\node_modules\\pnpm\\bin\\pnpm.cjs\u0027; $env:Path=\u0027H:\\codex\\林家餐厅小程序\\family-kitchen-c03-revalidation-005\\docs\\architecture\\bin;\u0027+$env:Path; pnpm --filter @family-kitchen/backend run storage:refs:preview --env-file=\u0027H:\\c03-005-runtime\\development.env\u0027",
+  "startedAt": "2026-09-07T23:15:45.9055457+08:00",
+  "endedAt": "2026-09-07T23:15:46.6327705+08:00",
+  "durationSeconds": 0.727,
+  "exitCode": 0,
+  "log": ".\\docs\\codex\\evidence\\C03_FK-C03-005\\04-migration-preview.log"
+}
