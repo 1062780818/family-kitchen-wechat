@@ -5,7 +5,9 @@ import {
   AccessDeniedError,
   AtomicMemoryRepository,
   ConflictError,
+  InMemoryOrderRequestStore,
   PrivatePhotoStore,
+  assertReservationWindow,
   idempotentWrite,
   trustedWechatIdentity,
 } from '../src/core.mjs';
@@ -129,4 +131,65 @@ test('draft rules deny all direct client database and storage access', async () 
     const rules = JSON.parse(await readFile(new URL(`../rules/${file}`, import.meta.url), 'utf8'));
     assert.deepEqual(rules, { read: false, write: false });
   }
+});
+
+const orderInput = (store, overrides = {}) => ({
+  members,
+  identity: trustedWechatIdentity({ openId: 'wx-wife-a' }),
+  familyId: 'family-a',
+  requestId: 'order-request-1',
+  mealDate: '2026-09-07',
+  mealSlot: 'dinner',
+  serverToday: '2026-09-07',
+  payload: { recipeIds: ['fake-recipe-1'] },
+  ...overrides,
+});
+
+test('reservation window includes today and today plus seven days', () => {
+  assert.doesNotThrow(() => assertReservationWindow('2026-09-07', '2026-09-07'));
+  assert.doesNotThrow(() => assertReservationWindow('2026-09-14', '2026-09-07'));
+  assert.throws(() => assertReservationWindow('2026-09-06', '2026-09-07'), /OUT_OF_RANGE/);
+  assert.throws(() => assertReservationWindow('2026-09-15', '2026-09-07'), /OUT_OF_RANGE/);
+});
+
+test('order request replay returns the same order once', () => {
+  const store = new InMemoryOrderRequestStore();
+  const first = store.create(orderInput(store));
+  const second = store.create(orderInput(store));
+  assert.equal(first.replayed, false);
+  assert.equal(second.replayed, true);
+  assert.equal(first.order.id, second.order.id);
+  assert.equal(store.size, 1);
+});
+
+test('different request for an active family date and meal returns existing order', () => {
+  const store = new InMemoryOrderRequestStore();
+  const first = store.create(orderInput(store));
+  const second = store.create(orderInput(store, { requestId: 'order-request-2' }));
+  assert.equal(second.existingSlot, true);
+  assert.equal(second.order.id, first.order.id);
+  assert.equal(store.size, 1);
+});
+
+test('served order releases the family date and meal slot', () => {
+  const store = new InMemoryOrderRequestStore();
+  const first = store.create(orderInput(store));
+  store.setStatus(first.order.id, 'served');
+  const next = store.create(orderInput(store, { requestId: 'order-request-after-served' }));
+  assert.equal(next.existingSlot, false);
+  assert.notEqual(next.order.id, first.order.id);
+  assert.equal(store.size, 2);
+});
+
+test('chef cannot forge an orderer action', () => {
+  const store = new InMemoryOrderRequestStore();
+  assert.throws(
+    () =>
+      store.create(
+        orderInput(store, {
+          identity: trustedWechatIdentity({ openId: 'wx-chef-a' }),
+        }),
+      ),
+    AccessDeniedError,
+  );
 });
