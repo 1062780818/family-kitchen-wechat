@@ -3,7 +3,7 @@
 ## 固定输入
 
 - 分支：`codex/01-backend-foundation-fixes`
-- 固定提交：以本文件所在最终提交ID为准（C01最终短卡提供）。不要按工作区浮动HEAD验收。
+- 固定实现提交：`091f1cb1e19fdc0a7fb88d6fa3b88cd6cf084132`。复验必须从包含该提交的远程分支开始，不按未提交工作区验收。
 - 需求：`docs/codex/decisions/FK_CONFIRMED_REQUIREMENTS_V0.3.md`
 - 实现报告：`docs/codex/reports/C01_FK-C01-005_REPORT.md`
 
