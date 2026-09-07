@@ -12,6 +12,7 @@
     "build:h5": "uni build",
     "lint": "eslint . --max-warnings 0",
     "lint:fix": "eslint . --fix",
+    "lint:retained": "eslint src/api/http.js src/api/auth.js src/api/family.js src/api/recipe.js src/api/order.js src/api/storage.js --max-warnings 0",
     "typecheck": "echo \"(mini-app uses JS; type-check via jsconfig in IDE)\" && exit 0",
     "test": "echo \"(no automated tests for mini-app MVP yet)\" && exit 0"
   },

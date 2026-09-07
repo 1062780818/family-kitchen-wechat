@@ -8,6 +8,7 @@ import {
 import { OrderStatus } from '@family-kitchen/shared';
 import { OrderService } from './order.service';
 import { PrismaService } from '../../prisma/prisma.service';
+import { NotificationService } from '../notification/notification.service';
 
 function makeOrder(overrides: Record<string, unknown> = {}) {
   const now = new Date();
@@ -73,10 +74,37 @@ describe('OrderService', () => {
     };
 
     const moduleRef = await Test.createTestingModule({
-      providers: [OrderService, { provide: PrismaService, useValue: prisma }],
+      providers: [
+        OrderService,
+        { provide: PrismaService, useValue: prisma },
+        {
+          provide: NotificationService,
+          useValue: { sendOrderAccepted: jest.fn(), sendOrderServed: jest.fn() },
+        },
+      ],
     }).compile();
 
     service = moduleRef.get<OrderService>(OrderService);
+  });
+
+  describe('concurrent state protection', () => {
+    it('uses the previously read status as a compare-and-set condition', async () => {
+      prisma.order.findUnique.mockResolvedValue(makeOrder({ status: OrderStatus.PENDING }));
+      prisma.order.update.mockResolvedValue(makeOrder({ status: OrderStatus.ACCEPTED }));
+
+      await service.accept('u-chef', 'o1', {} as never);
+
+      expect(prisma.order.update).toHaveBeenCalledWith(
+        expect.objectContaining({ where: { id: 'o1', status: OrderStatus.PENDING } }),
+      );
+    });
+
+    it('returns a conflict when another request changed the status first', async () => {
+      prisma.order.findUnique.mockResolvedValue(makeOrder({ status: OrderStatus.PENDING }));
+      prisma.order.update.mockRejectedValue({ code: 'P2025' });
+
+      await expect(service.accept('u-chef', 'o1', {} as never)).rejects.toThrow(ConflictException);
+    });
   });
 
   describe('create', () => {
@@ -228,14 +256,24 @@ describe('OrderService', () => {
       await expect(service.cancel('u-customer', 'o1', {})).rejects.toThrow(BadRequestException);
     });
 
-    it('both customer and chef can cancel pending orders', async () => {
+    it('allows the customer to cancel a pending order directly', async () => {
       prisma.order.findUnique.mockResolvedValue(makeOrder());
       prisma.order.update.mockResolvedValue(makeOrder({ status: OrderStatus.CANCELLED }));
 
       await expect(
         service.cancel('u-customer', 'o1', { reason: 'changed mind' }),
       ).resolves.toBeDefined();
-      await expect(service.cancel('u-chef', 'o1', { reason: 'sick today' })).resolves.toBeDefined();
+    });
+
+    it('rejects direct customer cancellation after acceptance', async () => {
+      prisma.order.findUnique.mockResolvedValue(makeOrder({ status: OrderStatus.ACCEPTED }));
+      await expect(service.cancel('u-customer', 'o1', {})).rejects.toThrow(ConflictException);
+      expect(prisma.order.update).not.toHaveBeenCalled();
+    });
+
+    it('requires the chef to reject instead of using customer cancellation', async () => {
+      prisma.order.findUnique.mockResolvedValue(makeOrder());
+      await expect(service.cancel('u-chef', 'o1', {})).rejects.toThrow(ForbiddenException);
     });
   });
 });

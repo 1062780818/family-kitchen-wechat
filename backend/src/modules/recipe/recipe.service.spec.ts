@@ -2,6 +2,7 @@ import { Test } from '@nestjs/testing';
 import { ForbiddenException, NotFoundException } from '@nestjs/common';
 import { RecipeService } from './recipe.service';
 import { PrismaService } from '../../prisma/prisma.service';
+import { AchievementService } from '../achievement/achievement.service';
 
 function makeRecipe(overrides: Record<string, unknown> = {}) {
   const now = new Date();
@@ -28,6 +29,8 @@ describe('RecipeService', () => {
   let service: RecipeService;
   let prisma: {
     user: { findUnique: jest.Mock };
+    familyMember: { findFirst: jest.Mock };
+    recipeFavorite: { findMany: jest.Mock };
     recipe: {
       create: jest.Mock;
       findMany: jest.Mock;
@@ -41,6 +44,8 @@ describe('RecipeService', () => {
   beforeEach(async () => {
     prisma = {
       user: { findUnique: jest.fn() },
+      familyMember: { findFirst: jest.fn().mockResolvedValue({ id: 'member-1' }) },
+      recipeFavorite: { findMany: jest.fn().mockResolvedValue([]) },
       recipe: {
         create: jest.fn(),
         findMany: jest.fn(),
@@ -52,7 +57,11 @@ describe('RecipeService', () => {
     };
 
     const moduleRef = await Test.createTestingModule({
-      providers: [RecipeService, { provide: PrismaService, useValue: prisma }],
+      providers: [
+        RecipeService,
+        { provide: PrismaService, useValue: prisma },
+        { provide: AchievementService, useValue: { evaluate: jest.fn() } },
+      ],
     }).compile();
 
     service = moduleRef.get<RecipeService>(RecipeService);
@@ -82,6 +91,15 @@ describe('RecipeService', () => {
         }),
       });
       expect(result.familyId).toBe('fam1');
+    });
+
+    it('rejects a non-creator attempting to add a formal recipe', async () => {
+      prisma.user.findUnique.mockResolvedValue({ currentFamilyId: 'fam1' });
+      prisma.familyMember.findFirst.mockResolvedValue(null);
+      await expect(service.create('u-wife', { name: '越权菜品' })).rejects.toThrow(
+        ForbiddenException,
+      );
+      expect(prisma.recipe.create).not.toHaveBeenCalled();
     });
   });
 

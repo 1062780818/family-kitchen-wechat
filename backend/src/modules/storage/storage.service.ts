@@ -1,10 +1,18 @@
-import { BadRequestException, Injectable, Logger, OnModuleInit } from '@nestjs/common';
+import {
+  BadRequestException,
+  ForbiddenException,
+  Injectable,
+  Logger,
+  OnModuleInit,
+} from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 import { Client as MinioClient } from 'minio';
 import { randomBytes } from 'crypto';
 import { readFileSync, existsSync } from 'fs';
 import { join } from 'path';
 import { StorageCategory, UploadResultDto } from './dto/upload-result.dto';
+import { PrismaService } from '../../prisma/prisma.service';
+import { requireFamilyId } from '../../common/family-context';
 
 const ALLOWED_MIME_TYPES = ['image/jpeg', 'image/png', 'image/webp', 'image/gif'] as const;
 const MIME_EXTENSION: Record<string, string> = {
@@ -15,6 +23,7 @@ const MIME_EXTENSION: Record<string, string> = {
 };
 
 export const MAX_UPLOAD_SIZE_BYTES = 10 * 1024 * 1024; // 10MB
+export const FAMILY_FILE_URL_TTL_SECONDS = 15 * 60;
 
 function customAlphabet(alphabet: string, size: number): () => string {
   return () => {
@@ -49,7 +58,10 @@ export class StorageService implements ObjectStorage, OnModuleInit {
   private defaultAvatarMaleUrl = '';
   private defaultAvatarFemaleUrl = '';
 
-  constructor(private readonly config: ConfigService) {
+  constructor(
+    private readonly config: ConfigService,
+    private readonly prisma: PrismaService,
+  ) {
     this.bucket = config.get<string>('MINIO_BUCKET', 'family-kitchen');
     this.publicBaseUrl =
       config.get<string>('MINIO_PUBLIC_BASE_URL') ??
@@ -70,7 +82,7 @@ export class StorageService implements ObjectStorage, OnModuleInit {
         await this.client.makeBucket(this.bucket, 'us-east-1');
         this.logger.log(`MinIO bucket "${this.bucket}" created`);
       }
-      // 公开读策略，便于小程序直接展示图片（生产前请改为签名 URL）
+      // 仅系统默认素材允许匿名读取；家庭图片一律通过鉴权后的签名 URL 读取。
       const publicReadPolicy = {
         Version: '2012-10-17',
         Statement: [
@@ -78,7 +90,7 @@ export class StorageService implements ObjectStorage, OnModuleInit {
             Effect: 'Allow',
             Principal: { AWS: ['*'] },
             Action: ['s3:GetObject'],
-            Resource: [`arn:aws:s3:::${this.bucket}/*`],
+            Resource: [`arn:aws:s3:::${this.bucket}/system/*`],
           },
         ],
       };
@@ -142,6 +154,12 @@ export class StorageService implements ObjectStorage, OnModuleInit {
   }
 
   publicUrl(key: string): string {
+    if (!key.startsWith('system/')) {
+      throw new BadRequestException({
+        code: 'PRIVATE_OBJECT_REQUIRES_SIGNED_URL',
+        message: '家庭图片必须使用签名 URL',
+      });
+    }
     return `${this.publicBaseUrl.replace(/\/$/, '')}/${key}`;
   }
 
@@ -173,17 +191,88 @@ export class StorageService implements ObjectStorage, OnModuleInit {
       });
     }
 
+    const familyId = await requireFamilyId(this.prisma, input.userId);
+    if (input.category === StorageCategory.RECIPE) {
+      await this.requireMenuEditor(input.userId, familyId);
+    }
     const ext = MIME_EXTENSION[input.mimeType] ?? 'bin';
     const today = new Date().toISOString().slice(0, 10);
-    const key = `${input.category}/${today}/${input.userId}-${generateKey()}.${ext}`;
+    const key = `family/${familyId}/${input.category}/${today}/${input.userId}-${generateKey()}.${ext}`;
 
     await this.upload(input.buffer, key, input.mimeType);
 
     return {
-      url: this.publicUrl(key),
+      url: await this.getSignedUrl(key, FAMILY_FILE_URL_TTL_SECONDS),
       key,
       size: input.buffer.length,
       mimeType: input.mimeType,
     };
   }
+
+  async getFamilyFileUrl(userId: string, key: string): Promise<string> {
+    await this.assertFamilyObjectAccess(userId, key, false);
+    return this.getSignedUrl(key, FAMILY_FILE_URL_TTL_SECONDS);
+  }
+
+  async deleteFamilyFile(userId: string, key: string): Promise<void> {
+    await this.assertFamilyObjectAccess(userId, key, true);
+    await this.delete(key);
+  }
+
+  private async assertFamilyObjectAccess(
+    userId: string,
+    key: string,
+    ownerOnly: boolean,
+  ): Promise<void> {
+    const parsed = parseFamilyObjectKey(key);
+    const familyId = await requireFamilyId(this.prisma, userId);
+    if (parsed.familyId !== familyId) {
+      throw new ForbiddenException({
+        code: 'STORAGE_CROSS_FAMILY_FORBIDDEN',
+        message: '不能访问其他家庭的图片',
+      });
+    }
+    if (ownerOnly && parsed.ownerUserId !== userId) {
+      throw new ForbiddenException({
+        code: 'STORAGE_DELETE_FORBIDDEN',
+        message: '只能删除自己上传的图片',
+      });
+    }
+  }
+
+  private async requireMenuEditor(userId: string, familyId: string): Promise<void> {
+    const membership = await this.prisma.familyMember.findFirst({
+      where: { familyId, userId, leftAt: null, role: 'creator' },
+      select: { id: true },
+    });
+    if (!membership) {
+      throw new ForbiddenException({
+        code: 'MENU_EDITOR_ROLE_REQUIRED',
+        message: '只有家庭创建者（丈夫）可以管理正式菜品图片',
+      });
+    }
+  }
+}
+
+function parseFamilyObjectKey(key: string): { familyId: string; ownerUserId: string } {
+  if (key.includes('..') || key.includes('\\') || key.startsWith('/')) {
+    throw invalidObjectKey();
+  }
+  const parts = key.split('/');
+  if (parts.length !== 5 || parts[0] !== 'family') throw invalidObjectKey();
+  const [, familyId, category, date, filename] = parts;
+  if (!familyId || !Object.values(StorageCategory).includes(category as StorageCategory)) {
+    throw invalidObjectKey();
+  }
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(date)) throw invalidObjectKey();
+  const match = filename.match(/^(.+)-[A-Za-z0-9]{16}\.(jpg|png|webp|gif)$/);
+  if (!match?.[1]) throw invalidObjectKey();
+  return { familyId, ownerUserId: match[1] };
+}
+
+function invalidObjectKey(): BadRequestException {
+  return new BadRequestException({
+    code: 'INVALID_STORAGE_KEY',
+    message: '无效的图片资源标识',
+  });
 }

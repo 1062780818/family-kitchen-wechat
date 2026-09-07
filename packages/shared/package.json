@@ -16,7 +16,7 @@
     "lint": "eslint src --max-warnings 0",
     "lint:fix": "eslint src --fix",
     "typecheck": "tsc --noEmit",
-    "test": "echo \"(no tests in shared package)\" && exit 0",
+    "test": "node --test test/*.test.cjs",
     "build": "tsc"
   },
   "devDependencies": {

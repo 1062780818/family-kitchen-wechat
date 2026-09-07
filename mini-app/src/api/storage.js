@@ -50,7 +50,6 @@ export async function chooseAndUploadImages({ count = 5, category = 'other' } = 
   const filePaths = chosen.tempFilePaths || [];
   const results = [];
   for (const path of filePaths) {
-    // eslint-disable-next-line no-await-in-loop
     const r = await uploadImage(path, category);
     results.push(r);
   }

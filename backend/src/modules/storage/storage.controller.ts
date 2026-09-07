@@ -1,4 +1,4 @@
-import { BadRequestException, Controller, Post, Query, Req } from '@nestjs/common';
+import { BadRequestException, Controller, Delete, Get, Post, Query, Req } from '@nestjs/common';
 import {
   ApiBearerAuth,
   ApiBody,
@@ -8,8 +8,12 @@ import {
   ApiTags,
 } from '@nestjs/swagger';
 import type { FastifyRequest } from 'fastify';
-import { StorageService, MAX_UPLOAD_SIZE_BYTES } from './storage.service';
-import { StorageCategory, UploadResultDto } from './dto/upload-result.dto';
+import {
+  FAMILY_FILE_URL_TTL_SECONDS,
+  MAX_UPLOAD_SIZE_BYTES,
+  StorageService,
+} from './storage.service';
+import { StorageAccessUrlDto, StorageCategory, UploadResultDto } from './dto/upload-result.dto';
 import { CurrentUser, type AuthUser } from '../../common/current-user.decorator';
 
 @ApiTags('Storage')
@@ -21,7 +25,7 @@ export class StorageController {
   @Post('upload')
   @ApiOperation({
     summary: '图片上传',
-    description: `multipart/form-data 单文件上传。最大 ${MAX_UPLOAD_SIZE_BYTES / 1024 / 1024} MB，仅图片。返回可直接展示的 URL。`,
+    description: `multipart/form-data 单文件上传。最大 ${MAX_UPLOAD_SIZE_BYTES / 1024 / 1024} MB，仅图片。返回对象 key 与短期签名 URL。`,
   })
   @ApiConsumes('multipart/form-data')
   @ApiQuery({
@@ -65,6 +69,22 @@ export class StorageController {
       category,
       userId: user.userId,
     });
+  }
+
+  @Get('url')
+  @ApiOperation({ summary: '获取当前家庭图片的短期签名 URL' })
+  async getUrl(
+    @CurrentUser() user: AuthUser,
+    @Query('key') key: string,
+  ): Promise<StorageAccessUrlDto> {
+    const url = await this.storageService.getFamilyFileUrl(user.userId, key);
+    return { url, expiresIn: FAMILY_FILE_URL_TTL_SECONDS };
+  }
+
+  @Delete('object')
+  @ApiOperation({ summary: '删除当前用户上传的家庭图片' })
+  async remove(@CurrentUser() user: AuthUser, @Query('key') key: string): Promise<void> {
+    await this.storageService.deleteFamilyFile(user.userId, key);
   }
 }
 

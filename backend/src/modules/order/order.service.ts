@@ -11,8 +11,6 @@ import { PrismaService } from '../../prisma/prisma.service';
 import { requireFamilyId } from '../../common/family-context';
 import { paginate, type PaginatedResponseDto } from '../../common/pagination.dto';
 import { NotificationService } from '../notification/notification.service';
-import { AchievementService } from '../achievement/achievement.service';
-import type { EvaluateContext } from '../achievement/evaluator-registry';
 import { assertTransition } from './order-status';
 import type { CreateOrderDto } from './dto/create-order.dto';
 import type { AcceptOrderDto } from './dto/accept-order.dto';
@@ -36,7 +34,6 @@ export class OrderService {
   constructor(
     private readonly prisma: PrismaService,
     private readonly notification: NotificationService,
-    private readonly achievement: AchievementService,
   ) {}
 
   // ============================================================
@@ -110,9 +107,6 @@ export class OrderService {
       },
       include: orderInclude,
     });
-
-    // 触发 order_created 成就评估（fire-and-forget）
-    void this.triggerOrderCreated(userId, familyId, order);
 
     return this.toDto(order, userId);
   }
@@ -194,13 +188,9 @@ export class OrderService {
     this.requireRole(order, userId, 'chef');
     assertTransition(order.status as OrderStatus, OrderStatus.ACCEPTED);
 
-    const updated = await this.prisma.order.update({
-      where: { id },
-      data: {
-        status: OrderStatus.ACCEPTED,
-        ...(dto.expectedServeAt ? { expectedServeAt: new Date(dto.expectedServeAt) } : {}),
-      },
-      include: orderInclude,
+    const updated = await this.updateWithExpectedStatus(id, order.status as OrderStatus, {
+      status: OrderStatus.ACCEPTED,
+      ...(dto.expectedServeAt ? { expectedServeAt: new Date(dto.expectedServeAt) } : {}),
     });
     void this.notification.sendOrderAccepted(updated.id);
     return this.toDto(updated, userId);
@@ -211,13 +201,9 @@ export class OrderService {
     this.requireRole(order, userId, 'chef');
     assertTransition(order.status as OrderStatus, OrderStatus.REJECTED);
 
-    const updated = await this.prisma.order.update({
-      where: { id },
-      data: {
-        status: OrderStatus.REJECTED,
-        rejectReason: dto.reason ?? null,
-      },
-      include: orderInclude,
+    const updated = await this.updateWithExpectedStatus(id, order.status as OrderStatus, {
+      status: OrderStatus.REJECTED,
+      rejectReason: dto.reason ?? null,
     });
     return this.toDto(updated, userId);
   }
@@ -235,35 +221,29 @@ export class OrderService {
     this.requireRole(order, userId, 'chef');
     assertTransition(order.status as OrderStatus, OrderStatus.SERVED);
 
-    const updated = await this.prisma.order.update({
-      where: { id },
-      data: {
-        status: OrderStatus.SERVED,
-        servedImageUrls: dto.imageUrls as unknown as Prisma.InputJsonValue,
-        servedAt: new Date(),
-      },
-      include: orderInclude,
+    const updated = await this.updateWithExpectedStatus(id, order.status as OrderStatus, {
+      status: OrderStatus.SERVED,
+      servedImageUrls: dto.imageUrls as unknown as Prisma.InputJsonValue,
+      servedAt: new Date(),
     });
     void this.notification.sendOrderServed(updated.id);
-
-    // 触发 order_served 成就评估（fire-and-forget）
-    void this.triggerOrderServed(userId, updated);
 
     return this.toDto(updated, userId);
   }
 
   async cancel(userId: string, id: string, dto: CancelOrderDto): Promise<OrderDto> {
     const order = await this.requireOwnedOrder(userId, id);
-    // 食客和厨师都可以取消（MVP 简化：不强制对方同意）
+    this.requireRole(order, userId, 'customer');
     assertTransition(order.status as OrderStatus, OrderStatus.CANCELLED);
-
-    const updated = await this.prisma.order.update({
-      where: { id },
-      data: {
-        status: OrderStatus.CANCELLED,
-        rejectReason: dto.reason ?? null,
-      },
-      include: orderInclude,
+    if (order.status !== OrderStatus.PENDING) {
+      throw new ConflictException({
+        code: 'ORDER_CHANGE_REQUEST_REQUIRED',
+        message: '已接单餐单需先提交取消申请并由厨师同意',
+      });
+    }
+    const updated = await this.updateWithExpectedStatus(id, order.status as OrderStatus, {
+      status: OrderStatus.CANCELLED,
+      rejectReason: dto.reason ?? null,
     });
     return this.toDto(updated, userId);
   }
@@ -277,10 +257,8 @@ export class OrderService {
     this.requireRole(order, userId, 'chef');
     assertTransition(order.status as OrderStatus, next);
 
-    const updated = await this.prisma.order.update({
-      where: { id },
-      data: { status: next },
-      include: orderInclude,
+    const updated = await this.updateWithExpectedStatus(id, order.status as OrderStatus, {
+      status: next,
     });
     return this.toDto(updated, userId);
   }
@@ -319,53 +297,25 @@ export class OrderService {
     }
   }
 
-  private async triggerOrderCreated(
-    userId: string,
-    familyId: string,
-    order: OrderWithItems,
-  ): Promise<void> {
+  private async updateWithExpectedStatus(
+    id: string,
+    expectedStatus: OrderStatus,
+    data: Prisma.OrderUncheckedUpdateInput,
+  ): Promise<OrderWithItems> {
     try {
-      const ctx: EvaluateContext = {
-        prisma: this.prisma,
-        userId,
-        familyId,
-        triggerType: 'order_created',
-        order: {
-          id: order.id,
-          familyId: order.familyId,
-          customerUserId: order.customerUserId,
-          chefUserId: order.chefUserId,
-        },
-      };
-      await this.achievement.evaluate('order_created', ctx);
-    } catch {
-      // 成就评估失败不应影响主流程
-    }
-  }
-
-  private async triggerOrderServed(userId: string, order: OrderWithItems): Promise<void> {
-    try {
-      const ctx: EvaluateContext = {
-        prisma: this.prisma,
-        userId,
-        familyId: order.familyId,
-        triggerType: 'order_served',
-        order: {
-          id: order.id,
-          familyId: order.familyId,
-          customerUserId: order.customerUserId,
-          chefUserId: order.chefUserId,
-          servedAt: order.servedAt,
-          acceptedAt: order.createdAt, // 使用 createdAt 作为近似值（无 acceptedAt 字段）
-          items: order.items.map((i) => ({
-            recipeId: i.recipeId,
-            recipeSnapshot: i.recipeSnapshot,
-          })),
-        },
-      };
-      await this.achievement.evaluate('order_served', ctx);
-    } catch {
-      // 成就评估失败不应影响主流程
+      return await this.prisma.order.update({
+        where: { id, status: expectedStatus },
+        data,
+        include: orderInclude,
+      });
+    } catch (error) {
+      if (isPrismaRecordNotFound(error)) {
+        throw new ConflictException({
+          code: 'ORDER_VERSION_CONFLICT',
+          message: '餐单状态已变化，请刷新后重试',
+        });
+      }
+      throw error;
     }
   }
 
@@ -415,11 +365,15 @@ export class OrderService {
       createdAt: order.createdAt,
       updatedAt: order.updatedAt,
       myRole: order.customerUserId === viewerUserId ? 'customer' : 'chef',
-      customerNickname: (order as any).customer?.nickname ?? null,
-      chefNickname: (order as any).chef?.nickname ?? null,
-      customerAvatarUrl: (order as any).customer?.avatarUrl ?? null,
-      chefAvatarUrl: (order as any).chef?.avatarUrl ?? null,
+      customerNickname: order.customer?.nickname ?? null,
+      chefNickname: order.chef?.nickname ?? null,
+      customerAvatarUrl: order.customer?.avatarUrl ?? null,
+      chefAvatarUrl: order.chef?.avatarUrl ?? null,
       unreadCount,
     };
   }
+}
+
+function isPrismaRecordNotFound(error: unknown): boolean {
+  return typeof error === 'object' && error !== null && 'code' in error && error.code === 'P2025';
 }

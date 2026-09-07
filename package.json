@@ -23,6 +23,7 @@
     "dev:h5": "pnpm --filter @family-kitchen/mini-app run dev:h5",
     "build:h5": "pnpm --filter @family-kitchen/mini-app run build:h5",
     "test:backend": "pnpm --filter @family-kitchen/backend run test",
+    "verify:retained": "pnpm --filter @family-kitchen/shared run lint && pnpm --filter @family-kitchen/shared run typecheck && pnpm --filter @family-kitchen/shared run build && pnpm --filter @family-kitchen/shared run test && pnpm --filter @family-kitchen/backend run lint:retained && pnpm --filter @family-kitchen/backend run typecheck && pnpm --filter @family-kitchen/backend run build && pnpm --filter @family-kitchen/backend run test:retained && pnpm --filter @family-kitchen/mini-app run lint:retained && pnpm --filter @family-kitchen/mini-app run build",
     "db:generate": "pnpm --filter @family-kitchen/backend run db:generate",
     "db:migrate": "pnpm --filter @family-kitchen/backend run db:migrate",
     "gen:api-types": "pnpm --filter @family-kitchen/shared run gen:types"

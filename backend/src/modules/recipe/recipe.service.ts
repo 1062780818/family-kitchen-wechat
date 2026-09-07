@@ -24,6 +24,7 @@ export class RecipeService {
 
   async create(userId: string, dto: CreateRecipeDto): Promise<RecipeDto> {
     const familyId = await requireFamilyId(this.prisma, userId);
+    await this.requireMenuEditor(userId, familyId);
     const recipe = await this.prisma.recipe.create({
       data: {
         familyId,
@@ -141,7 +142,8 @@ export class RecipeService {
   }
 
   async update(userId: string, id: string, dto: UpdateRecipeDto): Promise<RecipeDto> {
-    await this.requireOwnedRecipe(userId, id);
+    const recipe = await this.requireOwnedRecipe(userId, id);
+    await this.requireMenuEditor(userId, recipe.familyId);
     const updated = await this.prisma.recipe.update({
       where: { id },
       data: {
@@ -158,7 +160,8 @@ export class RecipeService {
   }
 
   async remove(userId: string, id: string): Promise<{ id: string; deleted: true }> {
-    await this.requireOwnedRecipe(userId, id);
+    const recipe = await this.requireOwnedRecipe(userId, id);
+    await this.requireMenuEditor(userId, recipe.familyId);
     await this.prisma.recipe.update({
       where: { id },
       data: { isDeleted: true },
@@ -222,6 +225,19 @@ export class RecipeService {
       });
     }
     return recipe;
+  }
+
+  private async requireMenuEditor(userId: string, familyId: string): Promise<void> {
+    const membership = await this.prisma.familyMember.findFirst({
+      where: { familyId, userId, leftAt: null, role: 'creator' },
+      select: { id: true },
+    });
+    if (!membership) {
+      throw new ForbiddenException({
+        code: 'MENU_EDITOR_ROLE_REQUIRED',
+        message: '只有家庭创建者（丈夫）可以管理正式菜单',
+      });
+    }
   }
 
   private toDto(recipe: Recipe, isFavorited: boolean): RecipeDto {

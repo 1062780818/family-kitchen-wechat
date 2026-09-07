@@ -2,6 +2,7 @@ import { Test } from '@nestjs/testing';
 import { ConflictException } from '@nestjs/common';
 import { RecipeService } from './recipe.service';
 import { PrismaService } from '../../prisma/prisma.service';
+import { AchievementService } from '../achievement/achievement.service';
 
 function makeRecipe() {
   return {
@@ -26,6 +27,7 @@ describe('RecipeService favorite/unfavorite', () => {
   let service: RecipeService;
   let prisma: {
     user: { findUnique: jest.Mock };
+    familyMember: { findFirst: jest.Mock };
     recipe: { findUnique: jest.Mock };
     recipeFavorite: {
       create: jest.Mock;
@@ -37,6 +39,7 @@ describe('RecipeService favorite/unfavorite', () => {
   beforeEach(async () => {
     prisma = {
       user: { findUnique: jest.fn().mockResolvedValue({ currentFamilyId: 'fam1' }) },
+      familyMember: { findFirst: jest.fn() },
       recipe: { findUnique: jest.fn().mockResolvedValue(makeRecipe()) },
       recipeFavorite: {
         create: jest.fn().mockResolvedValue({}),
@@ -45,7 +48,11 @@ describe('RecipeService favorite/unfavorite', () => {
       },
     };
     const moduleRef = await Test.createTestingModule({
-      providers: [RecipeService, { provide: PrismaService, useValue: prisma }],
+      providers: [
+        RecipeService,
+        { provide: PrismaService, useValue: prisma },
+        { provide: AchievementService, useValue: { evaluate: jest.fn() } },
+      ],
     }).compile();
     service = moduleRef.get<RecipeService>(RecipeService);
   });

@@ -12,7 +12,7 @@ export const StorageCategory = {
 export type StorageCategory = (typeof StorageCategory)[keyof typeof StorageCategory];
 
 export class UploadResultDto {
-  @ApiProperty({ description: '可直接访问的 URL（已含 baseUrl）' })
+  @ApiProperty({ description: '短期有效的签名读取 URL，不应持久化' })
   url!: string;
 
   @ApiProperty({ description: '对象存储中的 key（path），存数据库时建议存这个' })
@@ -23,4 +23,12 @@ export class UploadResultDto {
 
   @ApiProperty()
   mimeType!: string;
+}
+
+export class StorageAccessUrlDto {
+  @ApiProperty({ description: '短期有效的签名读取 URL' })
+  url!: string;
+
+  @ApiProperty({ description: '有效期（秒）' })
+  expiresIn!: number;
 }

@@ -24,7 +24,6 @@ export const ACTIVE_ORDER_STATUSES = [
   OrderStatus.ACCEPTED,
   OrderStatus.PREPPING,
   OrderStatus.COOKING,
-  OrderStatus.SERVED,
 ] as const;
 
 /** 订单内消息类型 */
