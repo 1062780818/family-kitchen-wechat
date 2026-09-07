@@ -25,7 +25,10 @@ if ($version -ne '9.12.0') {
   throw "pnpm 9.12.0 is required; found $version"
 }
 
-Invoke-PinnedPnpm @('install', '--frozen-lockfile')
+# Serialize lifecycle hooks. pnpm 9.12 can otherwise fail under the Windows
+# non-interactive runner with `readStream must be readable` while multiple
+# install hooks write concurrently.
+Invoke-PinnedPnpm @('install', '--frozen-lockfile', '--child-concurrency=1', '--reporter=append-only')
 if ($LASTEXITCODE -ne 0) { throw 'frozen dependency install failed' }
 
 # verify:retained performs Prisma generation before any backend typecheck/build.
